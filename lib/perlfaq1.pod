@@ -170,7 +170,7 @@ page at http://dev.perl.org/perl6/ and get involved.
 "We're really serious about reinventing everything that needs reinventing."
 --Larry Wall
 
-As Perl 6 is a reinvention of Perl 5, it is a language in the same lineage but
+As Perl 6 is a reinvention of Perl, it is a language in the same lineage but
 not compatible. The two are complementary, not mutually exclusive. Perl 6 is not
 meant to replace Perl 5, and vice versa.
 
