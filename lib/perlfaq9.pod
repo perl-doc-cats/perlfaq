@@ -48,10 +48,9 @@ systems. C<CGI.pm> selects an appropriate newline representation
 (contributed by brian d foy)
 
 There are many things that might be wrong with your CGI program, and only
-some of them might be related to Perl. Try going through the troubleshooting
-guide on Perlmonks:
-
-	http://www.perlmonks.org/?node_id=380424
+some of them might be related to Perl. Try going through the L<troubleshooting
+guide|http://www.perlmonks.org/?node_id=380424> on 
+L<Perlmonks|http://www.perlmonks.org>
 
 =head2 How can I get better error messages from a CGI program?
 
