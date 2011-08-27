@@ -53,7 +53,7 @@ information on where to get such a binary version.
 You might look around the net for a pre-built binary of Perl (or a
 C compiler!) that meets your needs, though:
 
-For Windows, <Vanilla Perl|http://vanillaperl.com/> and 
+For Windows, L<Vanilla Perl|http://vanillaperl.com/> and 
 L<Strawberry Perl|http://strawberryperl.com/> come with a
 bundled C compiler. ActivePerl is a pre-compiled version of Perl
 ready-to-use.
@@ -165,7 +165,7 @@ expressions, L<perlthrtut> for threads, L<perldebtut> for debugging,
 and L<perlxstut> for linking C and Perl together. There may be more
 by the time you read this. These URLs might also be useful:
 
-=over4
+=over 4
 
 =item * L<Perldoc|http://perldoc.perl.org/>
 
@@ -342,7 +342,7 @@ of mailing lists, web sites, and other services. There are also many
 other sub-domains for special topics like learning Perl, Perl news,
 jobs in Perl, such as:
 
-=over4
+=over 4
 
 =item * L<Perl.org|http://www.perl.org/>
 
