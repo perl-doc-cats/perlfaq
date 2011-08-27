@@ -1829,7 +1829,7 @@ permutation is returned.
 C<NextPermute> uses string order and C<NextPermuteNum> numeric order, so
 you can enumerate all the permutations of C<0..9> like this:
 
-	use Algorithm::Loops qw(NextPermuteNum);
+    use Algorithm::Loops qw(NextPermuteNum);
 
     my @list= 0..9;
     do { print "@list\n" } while NextPermuteNum @list;

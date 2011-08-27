@@ -108,15 +108,15 @@ such as C<Tie::File> can fake it.
 A Perl program to do these tasks takes the basic form of opening a
 file, printing its lines, then closing the file:
 
-	open my $in,  '<',  $file      or die "Can't read old file: $!";
-	open my $out, '>', "$file.new" or die "Can't write new file: $!";
+    open my $in,  '<',  $file      or die "Can't read old file: $!";
+    open my $out, '>', "$file.new" or die "Can't write new file: $!";
 
-	while( <$in> )
-		{
-		print $out $_;
-		}
+    while( <$in> )
+        {
+            print $out $_;
+        }
 
-   close $out;
+    close $out;
 
 Within that basic form, add the parts that you need to insert, change,
 or delete lines.
@@ -124,35 +124,35 @@ or delete lines.
 To prepend lines to the beginning, print those lines before you enter
 the loop that prints the existing lines.
 
-	open my $in,  '<',  $file      or die "Can't read old file: $!";
-	open my $out, '>', "$file.new" or die "Can't write new file: $!";
+    open my $in,  '<',  $file      or die "Can't read old file: $!";
+    open my $out, '>', "$file.new" or die "Can't write new file: $!";
 
-	print $out "# Add this line to the top\n"; # <--- HERE'S THE MAGIC
+    print $out "# Add this line to the top\n"; # <--- HERE'S THE MAGIC
 
-	while( <$in> )
-		{
-		print $out $_;
-		}
+    while( <$in> )
+        {
+            print $out $_;
+        }
 
-   close $out;
+    close $out;
 
 To change existing lines, insert the code to modify the lines inside
 the C<while> loop. In this case, the code finds all lowercased
 versions of "perl" and uppercases them. The happens for every line, so
 be sure that you're supposed to do that on every line!
 
-	open my $in,  '<',  $file      or die "Can't read old file: $!";
-	open my $out, '>', "$file.new" or die "Can't write new file: $!";
+    open my $in,  '<',  $file      or die "Can't read old file: $!";
+    open my $out, '>', "$file.new" or die "Can't write new file: $!";
 
-	print $out "# Add this line to the top\n";
+    print $out "# Add this line to the top\n";
 
-	while( <$in> )
-		{
-		s/\b(perl)\b/Perl/g;
-		print $out $_;
-		}
+    while( <$in> )
+        {
+        s/\b(perl)\b/Perl/g;
+        print $out $_;
+        }
 
-   close $out;
+    close $out;
 
 To change only a particular line, the input line number, C<$.>, is
 useful. First read and print the lines up to the one you  want to
@@ -1212,53 +1212,53 @@ If your system supports the portable operating system programming
 interface (POSIX), you can use the following code, which you'll note
 turns off echo processing as well.
 
-	#!/usr/bin/perl -w
-	use strict;
-	$| = 1;
-	for (1..4) {
-		print "gimme: ";
-		my $got = getone();
-		print "--> $got\n";
-		}
+    #!/usr/bin/perl -w
+    use strict;
+    $| = 1;
+    for (1..4) {
+    	print "gimme: ";
+    	my $got = getone();
+    	print "--> $got\n";
+    	}
     exit;
 
-	BEGIN {
-	use POSIX qw(:termios_h);
+    BEGIN {
+    use POSIX qw(:termios_h);
 
-	my ($term, $oterm, $echo, $noecho, $fd_stdin);
+    my ($term, $oterm, $echo, $noecho, $fd_stdin);
 
-	my $fd_stdin = fileno(STDIN);
+    my $fd_stdin = fileno(STDIN);
 
-	$term     = POSIX::Termios->new();
-	$term->getattr($fd_stdin);
-	$oterm     = $term->getlflag();
+    $term     = POSIX::Termios->new();
+    $term->getattr($fd_stdin);
+    $oterm     = $term->getlflag();
 
-	$echo     = ECHO | ECHOK | ICANON;
-	$noecho   = $oterm & ~$echo;
+    $echo     = ECHO | ECHOK | ICANON;
+    $noecho   = $oterm & ~$echo;
 
-	sub cbreak {
-		$term->setlflag($noecho);
-		$term->setcc(VTIME, 1);
-		$term->setattr($fd_stdin, TCSANOW);
-		}
+    sub cbreak {
+    	$term->setlflag($noecho);
+    	$term->setcc(VTIME, 1);
+    	$term->setattr($fd_stdin, TCSANOW);
+    	}
 
-	sub cooked {
-		$term->setlflag($oterm);
-		$term->setcc(VTIME, 0);
-		$term->setattr($fd_stdin, TCSANOW);
-		}
+    sub cooked {
+    	$term->setlflag($oterm);
+    	$term->setcc(VTIME, 0);
+    	$term->setattr($fd_stdin, TCSANOW);
+    	}
 
-	sub getone {
-		my $key = '';
-		cbreak();
-		sysread(STDIN, $key, 1);
-		cooked();
-		return $key;
-		}
+    sub getone {
+    	my $key = '';
+    	cbreak();
+    	sysread(STDIN, $key, 1);
+    	cooked();
+    	return $key;
+    	}
 
-	}
+    }
 
-	END { cooked() }
+    END { cooked() }
 
 The Term::ReadKey module from CPAN may be easier to use. Recent versions
 include also support for non-portable systems as well.

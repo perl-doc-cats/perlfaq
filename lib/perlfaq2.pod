@@ -33,21 +33,13 @@ source release of perl).
 
 (contributed by brian d foy)
 
-ActiveState: Windows, Linux, Mac OS X, Solaris, AIX and HP-UX
+L<ActiveState|http://www.activestate.com/> Windows, Linux, Mac OS X, Solaris, AIX and HP-UX
 
-	http://www.activestate.com/
+L<Sunfreeware.com|http://www.sunfreeware.com/> Solaris 2.5 to Solaris 10 (SPARC and x86)
 
-Sunfreeware.com: Solaris 2.5 to Solaris 10 (SPARC and x86)
+L<Strawberry Perl|http://www.strawberryperl.com> Windows, Perl 5.8.8 and 5.10.0
 
-	http://www.sunfreeware.com/
-
-Strawberry Perl: Windows, Perl 5.8.8 and 5.10.0
-
-	http://www.strawberryperl.com
-
-IndigoPerl: Windows
-
-	http://indigostar.com/
+L<IndigoPerl|http://indigostar.com/> Windows
 
 =head2 I don't have a C compiler. How can I build my own Perl interpreter?
 
@@ -61,8 +53,8 @@ information on where to get such a binary version.
 You might look around the net for a pre-built binary of Perl (or a
 C compiler!) that meets your needs, though:
 
-For Windows, Vanilla Perl ( http://vanillaperl.com/ ) and Strawberry Perl
-( http://strawberryperl.com/ ) come with a
+For Windows, <Vanilla Perl|http://vanillaperl.com/> and 
+L<Strawberry Perl|http://strawberryperl.com/> come with a
 bundled C compiler. ActivePerl is a pre-compiled version of Perl
 ready-to-use.
 
@@ -173,9 +165,15 @@ expressions, L<perlthrtut> for threads, L<perldebtut> for debugging,
 and L<perlxstut> for linking C and Perl together. There may be more
 by the time you read this. These URLs might also be useful:
 
-    http://perldoc.perl.org/
-    http://www.perl.org/
-    http://learn.perl.org/
+=over4
+
+=item * L<Perldoc|http://perldoc.perl.org/>
+
+=item * L<Perl.org|http://www.perl.org/>
+
+=item * L<Learn.perl.org|http://learn.perl.org/>
+
+=back
 
 =head2 What are the Perl newsgroups on Usenet? Where do I post questions?
 
@@ -262,9 +260,8 @@ Most of the major modules (C<Tk>, C<CGI>, C<libwww-perl>) have their own
 mailing lists. Consult the documentation that came with the module for
 subscription information.
 
-A comprehensive list of Perl-related mailing lists can be found at:
-
-	http://lists.perl.org/
+A comprehensive list of Perl-related mailing lists can be found at
+http://lists.perl.org/
 
 =head2 Where are the archives for comp.lang.perl.misc?
 
@@ -332,32 +329,38 @@ module documentation too.
 
 =head2 What is perl.com? Perl Mongers? pm.org? perl.org? cpan.org?
 
-Perl.com ( http://www.perl.com/ ) used to be part of the O'Reilly
+L<Perl.com|http://www.perl.com/> used to be part of the O'Reilly
 Network, a subsidiary of O'Reilly Media. Although it retains most of
 the original content from its O'Reilly Network, it is now hosted by
 The Perl Foundation.
 
 The Perl Foundation is an advocacy organization for the Perl language
-which maintains the web site ( http://www.perl.org/ ) as a general
+which maintains the web site L<Perl.org|http://www.perl.org/> as a general
 advocacy site for the Perl language. It uses the domain to provide
 general support services to the Perl community, including the hosting
 of mailing lists, web sites, and other services. There are also many
 other sub-domains for special topics like learning Perl, Perl news,
 jobs in Perl, such as:
 
-	http://www.perl.org/
-	http://learn.perl.org/
-	http://jobs.perl.org/
-	http://lists.perl.org/
+=over4
+
+=item * L<Perl.org|http://www.perl.org/>
+
+=item * L<Learn.perl.org|http://learn.perl.org/>
+
+=item * L<Jobs.perl.org|http://jobs.perl.org/>
+
+=item * L<Lists.perl.org|http://lists.perl.org/>
+
+=back
 
 Perl Mongers uses the pm.org domain for services related to Perl user
 groups, including the hosting of mailing lists and web sites. See the
-Perl Mongers website ( http://www.pm.org/ ) for more information about
+L<Perl Mongers website|http://www.pm.org/> for more information about
 joining, starting, or requesting services for a Perl user group.
 
-CPAN, or the Comprehensive Perl Archive Network (
-http://www.cpan.org/ ), is a replicated, worldwide repository of Perl
-software.
+CPAN, or the L<Comprehensive Perl Archive Network|http://www.cpan.org/>,
+is a replicated, worldwide repository of Perl software.
 See L<What is CPAN?|/"What modules and extensions are available for Perl? What is CPAN? What does CPANE<sol>srcE<sol>... mean?">.
 
 =head1 AUTHOR AND COPYRIGHT

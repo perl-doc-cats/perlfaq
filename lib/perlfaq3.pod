@@ -13,18 +13,51 @@ Have you looked at CPAN (see L<perlfaq2>)?  The chances are that
 someone has already written a module that can solve your problem.
 Have you read the appropriate manpages?  Here's a brief index:
 
-	Basics	        perldata, perlvar, perlsyn, perlop, perlsub
-	Execution	perlrun, perldebug
-	Functions	perlfunc
-	Objects		perlref, perlmod, perlobj, perltie
-	Data Structures	perlref, perllol, perldsc
-	Modules		perlmod, perlmodlib, perlsub
-	Regexes		perlre, perlfunc, perlop, perllocale
-	Moving to perl5	perltrap, perl
-	Linking w/C	perlxstut, perlxs, perlcall, perlguts, perlembed
-	Various 	http://www.cpan.org/misc/olddoc/FMTEYEWTK.tgz
-			(not a man-page but still useful, a collection
-			 of various essays on Perl techniques)
+=over 4
+
+=item Basics
+
+perldata, perlvar, perlsyn, perlop, perlsub
+
+=item Execution
+
+perlrun, perldebug
+
+=item Functions
+
+perlfunc
+
+=item Objects
+
+perlref, perlmod, perlobj, perltie
+
+=item Data Structures
+
+perlref, perllol, perldsc
+
+=item Modules
+
+perlmod, perlmodlib, perlsub
+
+=item Regexes
+
+perlre, perlfunc, perlop, perllocale
+
+=item Moving to perl5
+
+perltrap, perl
+
+=item Linking with C
+
+perlxstut, perlxs, perlcall, perlguts, perlembed
+
+=item Various
+
+http://www.cpan.org/misc/olddoc/FMTEYEWTK.tgz 
+(not a man-page but still useful, a collection of various essays on 
+Perl techniques)
+
+=back
 
 A crude table of contents for the Perl manpage set is found in L<perltoc>.
 
