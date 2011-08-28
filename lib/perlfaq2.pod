@@ -179,11 +179,11 @@ by the time you read this. These URLs might also be useful:
 
 Several groups devoted to the Perl language are on Usenet:
 
-	comp.lang.perl.announce      Moderated announcement group
-	comp.lang.perl.misc          High traffic general Perl discussion
-	comp.lang.perl.moderated     Moderated discussion group
-	comp.lang.perl.modules       Use and development of Perl modules
-	comp.lang.perl.tk            Using Tk (and X) from Perl
+    comp.lang.perl.announce      Moderated announcement group
+    comp.lang.perl.misc          High traffic general Perl discussion
+    comp.lang.perl.moderated     Moderated discussion group
+    comp.lang.perl.modules       Use and development of Perl modules
+    comp.lang.perl.tk            Using Tk (and X) from Perl
 
 Some years ago, comp.lang.perl was divided into those groups, and
 comp.lang.perl itself officially removed. While that group may still
