@@ -774,8 +774,8 @@ Yes. Perl's garbage collection system takes care of this so
 everything works out right.
 
     sub makeone {
-    my @a = ( 1 .. 10 );
-    return \@a;
+        my @a = ( 1 .. 10 );
+        return \@a;
     }
 
     for ( 1 .. 10 ) {

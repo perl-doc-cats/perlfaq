@@ -70,8 +70,8 @@ one-liners:
     }
 
     @lines = (
-    "There Beren came from mountains cold",
-    "And lost he wandered under leaves",
+        "There Beren came from mountains cold",
+        "And lost he wandered under leaves",
     );
 
 =head2 How do I skip some return values?
@@ -96,8 +96,8 @@ allows fine control of what warning are produced.
 See L<perllexwarn> for more details.
 
     {
-    no warnings;          # temporarily turn off warnings
-    $a = $b + $c;         # I know these might be undef
+        no warnings;          # temporarily turn off warnings
+        $a = $b + $c;         # I know these might be undef
     }
 
 Additionally, you can enable and disable categories of warnings.
@@ -106,16 +106,16 @@ get other categories of warnings.  See L<perllexwarn> for the
 complete details, including the category names and hierarchy.
 
     {
-    no warnings 'uninitialized';
-    $a = $b + $c;
+        no warnings 'uninitialized';
+        $a = $b + $c;
     }
 
 If you have an older version of Perl, the C<$^W> variable (documented
 in L<perlvar>) controls runtime warnings for a block:
 
     {
-    local $^W = 0;        # temporarily turn off warnings
-    $a = $b + $c;         # I know these might be undef
+        local $^W = 0;        # temporarily turn off warnings
+        $a = $b + $c;         # I know these might be undef
     }
 
 Note that like all the punctuation variables, you cannot currently
@@ -282,7 +282,7 @@ Here's a classic non-closure function-generating function:
 
     sub add_function_generator {
         return sub { shift() + shift() };
-        }
+    }
 
     $add_sub = add_function_generator();
     $sum = $add_sub->(4,5);                # $sum is 9 now.
@@ -350,7 +350,7 @@ variable's value this way, but now it's much harder.  Take this code:
     my $f = 'foo';
     sub T {
         while ($i++ < 3) { my $f = $f; $f .= "bar"; print $f, "\n" }
-        }
+    }
 
     T;
     print "Finally $f\n";
@@ -410,7 +410,7 @@ which you treat as any other scalar.
         my $passed_fh = shift;
 
         my $line = <$passed_fh>;
-        }
+    }
 
 Before Perl 5.6, you had to use the C<*FH> or C<\*FH> notations.
 These are "typeglobs"--see L<perldata/"Typeglobs and Filehandles">
@@ -534,17 +534,17 @@ For instance:
 
     sub visible {
         print "var has value $var\n";
-        }
+    }
 
     sub dynamic {
         local $var = 'local';    # new temporary value for the still-global
         visible();              #   variable called $var
-        }
+    }
 
     sub lexical {
         my $var = 'private';    # new private variable, $var
         visible();              # (invisible outside of sub scope)
-        }
+    }
 
     $var = 'global';
 
@@ -691,7 +691,7 @@ In Perl 5.10, use the C<given-when> construct described in L<perlsyn>:
         when( 'Barney' )      { say "I found Barney!" }
         when( /Bamm-?Bamm/ )  { say "I found Bamm-Bamm!" }
         default               { say "I don't recognize the name!" }
-        };
+    };
 
 If one wants to use pure Perl and to be compatible with Perl versions
 prior to 5.10, the general answer is to use C<if-elsif-else>:
@@ -701,7 +701,7 @@ prior to 5.10, the general answer is to use C<if-elsif-else>:
         elsif (/pat2/)  { }     # do something else
         elsif (/pat3/)  { }     # do something else
         else            { }     # default
-        }
+    }
 
 Here's a simple example of a switch based on pattern matching,
 lined up in a way to make it look more like a switch statement.
@@ -710,31 +710,31 @@ in $whatchamacallit:
 
     SWITCH: for (ref $whatchamacallit) {
 
-    /^$/        && die "not a reference";
+        /^$/           && die "not a reference";
 
-    /SCALAR/    && do {
-                print_scalar($$ref);
-                last SWITCH;
-            };
+        /SCALAR/       && do {
+                        print_scalar($$ref);
+                        last SWITCH;
+                      };
 
-    /ARRAY/        && do {
-                print_array(@$ref);
-                last SWITCH;
-            };
+        /ARRAY/        && do {
+                        print_array(@$ref);
+                        last SWITCH;
+                      };
 
-    /HASH/        && do {
-                print_hash(%$ref);
-                last SWITCH;
-            };
+        /HASH/        && do {
+                        print_hash(%$ref);
+                        last SWITCH;
+                      };
 
-    /CODE/        && do {
-                warn "can't print function ref";
-                last SWITCH;
-            };
+        /CODE/        && do {
+                        warn "can't print function ref";
+                        last SWITCH;
+                      };
 
-    # DEFAULT
+        # DEFAULT
 
-    warn "User defined type skipped";
+        warn "User defined type skipped";
 
     }
 
@@ -918,7 +918,7 @@ Use this code, provided by Mark-Jason Dominus:
             undef %$fullname;
             undef &$fullname;
             undef *$fullname;
-    }
+        }
     }
 
 Or, if you're using a recent release of Perl, you can

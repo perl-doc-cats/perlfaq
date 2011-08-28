@@ -231,7 +231,7 @@ being in memory at the end.
         foreach my $record ( m/\G((?s).*?)your_pattern/gc ) {
             # do stuff here.
         }
-    substr( $_, 0, pos ) = "" if pos;
+        substr( $_, 0, pos ) = "" if pos;
     }
 
 
@@ -284,7 +284,7 @@ longer than the original, you can use this code, by Jeff Pinyan:
         else { $from .= substr $to, $lf }
 
         return uc $to | ($from ^ uc $from);
-        }
+    }
 
 This changes the sentence to "this is a SUcCess case."
 
@@ -400,7 +400,7 @@ prints the lines of input that match it:
 
     while( <> ) {
         print if m/$pattern/;
-        }
+    }
 
 Versions of Perl prior to 5.6 would recompile the regular expression
 for each iteration, even if C<$pattern> had not changed. The C</o>
@@ -411,7 +411,7 @@ time, then reuse that for subsequent iterations:
 
     while( <> ) {
         print if m/$pattern/o; # useful for Perl < 5.6
-        }
+    }
 
 In versions 5.6 and later, Perl won't recompile the regular expression
 if the variable hasn't changed, so you probably don't need the C</o>
@@ -434,7 +434,7 @@ later, you should only see C<re> report that for the first iteration.
         print STDERR "-" x 73, "\n";
         print STDERR "Trying $_...\n";
         print STDERR "\t$_ is good!\n" if m/$regex/;
-        }
+    }
 
 =head2 How do I use a regular expression to strip C-style comments from a file?
 
@@ -600,15 +600,14 @@ to process. Keep doing that until you get no matches:
 
     $" = "\n\t";
 
-    while( @queue )
-        {
+    while( @queue ) {
         my $string = shift @queue;
 
         my @groups = $string =~ m/$regex/g;
         print "Found:\n\t@groups\n\n" if @groups;
 
         unshift @queue, map { s/^<//; s/>$//; $_ } @groups;
-        }
+    }
 
 The output shows all of the groups. The outermost matches show up
 first and the nested matches so up later:
@@ -685,14 +684,14 @@ in the previous question:
 
     while ( ($word, $count) = each %seen ) {
         print "$count $word\n";
-        }
+    }
 
 If you wanted to do the same thing for lines, you wouldn't need a
 regular expression:
 
     while (<>) {
         $seen{$_}++;
-        }
+    }
 
     while ( ($line, $count) = each %seen ) {
         print "$count $line";
@@ -719,7 +718,7 @@ match against an array of regular expression objects:
 
     if( $string ~~ @patterns ) {
         ...
-        };
+    };
 
 The smart match stops when it finds a match, so it doesn't have to try
 every expression.
@@ -737,9 +736,9 @@ C<$pattern> will be:
             if( /\b$pattern\b/i ) {
                 print;
                 next LINE;
-                }
             }
         }
+    }
 
 The C<qr//> operator showed up in perl 5.005. It compiles a regular
 expression, but doesn't apply it. When you use the pre-compiled
@@ -751,13 +750,12 @@ the script is the same, but faster:
 
     LINE: while( <> ) {
         foreach $pattern ( @patterns ) {
-            if( /$pattern/ )
-                {
+            if( /$pattern/ ) {
                 print;
                 next LINE;
-                }
             }
         }
+    }
 
 In some cases, you may be able to make several patterns into a single
 regular expression. Beware of situations that require backtracking
@@ -767,7 +765,7 @@ though.
 
     LINE: while( <> ) {
         print if /\b(?:$regex)\b/i;
-        }
+    }
 
 For more details on regular expression efficiency, see I<Mastering
 Regular Expressions> by Jeffrey Friedl. He explains how regular
@@ -897,19 +895,17 @@ You can also use the C<\G> anchor in scalar context. You
 still need the C<g> flag.
 
     $_ = "1122a44";
-    while( m/\G(\d\d)/g )
-        {
+    while( m/\G(\d\d)/g ) {
         print "Found $1\n";
-        }
+    }
 
 After the match fails at the letter C<a>, perl resets C<pos()>
 and the next match on the same string starts at the beginning.
 
     $_ = "1122a44";
-    while( m/\G(\d\d)/g )
-        {
+    while( m/\G(\d\d)/g ) {
         print "Found $1\n";
-        }
+    }
 
     print "Found $1 after while" if m/(\d\d)/g; # finds "11"
 
@@ -922,10 +918,9 @@ and since it does not use any anchor it can skip over the C<a> to find
 C<44>.
 
     $_ = "1122a44";
-    while( m/\G(\d\d)/gc )
-        {
+    while( m/\G(\d\d)/gc ) {
         print "Found $1\n";
-        }
+    }
 
     print "Found $1 after while" if m/(\d\d)/g; # finds "44"
 
@@ -1027,14 +1022,14 @@ Or like this:
     # above is conceptually similar to:     @chars = $text =~ m/(.)/g;
     #
     foreach $char (@chars) {
-    print "found GX!\n", last if $char eq 'GX';
+        print "found GX!\n", last if $char eq 'GX';
     }
 
 Or like this:
 
     while ($martian =~ m/\G([A-Z][A-Z]|.)/gs) {  # \G probably unneeded
         print "found GX!\n", last if $1 eq 'GX';
-        }
+    }
 
 Here's another, slightly less painful, way to do it from Benjamin
 Goldberg, who uses a zero-width negative look-behind assertion.
@@ -1121,7 +1116,7 @@ around the whole thing.
 
     eval {
         if( $string =~ m/\Q$input\E/ ) { ... }
-        };
+    };
     warn $@ if $@;
 
 Or...
@@ -1129,10 +1124,10 @@ Or...
     my $regex = eval { qr/$input/is };
     if( defined $regex ) {
         $string =~ m/$regex/;
-        }
+    }
     else {
         warn $@;
-        }
+    }
 
 =head1 AUTHOR AND COPYRIGHT
 

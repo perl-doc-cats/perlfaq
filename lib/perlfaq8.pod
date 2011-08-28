@@ -432,8 +432,8 @@ it exits.
 
     unless ($pid = fork) {
         unless (fork) {
-        exec "what you really wanna do";
-        die "exec failed!";
+            exec "what you really wanna do";
+            die "exec failed!";
         }
         exit 0;
     }
@@ -1023,7 +1023,7 @@ file test:
 
     if( -t STDOUT ) {
         print "I'm connected to a terminal!\n";
-        }
+    }
 
 However, you might be out of luck if you expect that means there is a
 real person on the other side. With the C<Expect> module, another
@@ -1049,7 +1049,7 @@ Testers, for instance, set the value of C<AUTOMATED_TESTING>:
 
     unless( $ENV{AUTOMATED_TESTING} ) {
         print "Hello interactive tester!\n";
-        }
+    }
 
 =head2 How do I timeout a slow event?
 
@@ -1151,8 +1151,8 @@ you need to figure out the problem.
     #!/usr/bin/perl -w
 
     BEGIN {
-    $SIG{__WARN__} = sub{ print STDERR "Perl: ", @_; };
-    $SIG{__DIE__}  = sub{ print STDERR "Perl: ", @_; exit 1};
+        $SIG{__WARN__} = sub{ print STDERR "Perl: ", @_; };
+        $SIG{__DIE__}  = sub{ print STDERR "Perl: ", @_; exit 1};
     }
 
     $a = 1 + undef;
@@ -1242,7 +1242,7 @@ C<import> method for the loaded package. These two are the same:
     BEGIN {
         require MODULE;
         MODULE->import(import list);
-        }
+    }
 
 However, you can suppress the C<import> by using an explicit, empty
 import list. Both of these still happen at compile-time:
@@ -1251,7 +1251,7 @@ import list. Both of these still happen at compile-time:
 
     BEGIN {
         require MODULE;
-        }
+    }
 
 Since C<use> will also call the C<import> method, the actual value
 for C<MODULE> must be a bareword. That is, C<use> cannot load files
@@ -1326,7 +1326,7 @@ directory with the C<Cwd> module, which comes with Perl:
     BEGIN {
         use Cwd;
         our $directory = cwd;
-        }
+    }
 
     use lib $directory;
 
@@ -1340,7 +1340,7 @@ it into an absolute path. Once you have the
 
         my $path   = rel2abs( $0 );
         our $directory = dirname( $path );
-        }
+    }
 
     use lib $directory;
 
