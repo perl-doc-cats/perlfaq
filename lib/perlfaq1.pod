@@ -325,7 +325,7 @@ to sign email and usenet messages starting in the late 1980s. He
 previously used the phrase with many subjects ("Just another x hacker,"),
 so to distinguish his JAPH, he started to write them as Perl programs:
 
-	print "Just another Perl hacker,";
+    print "Just another Perl hacker,";
 
 Other people picked up on this and started to write clever or obfuscated
 programs to produce the same output, spinning things quickly out of
