@@ -292,14 +292,14 @@ the programmer says:
 
     if ("\020\020" & "\101\101") {
         # ...
-        }
+    }
 
 but a string consisting of two null bytes (the result of C<"\020\020"
 & "\101\101">) is not a false value in Perl.  You need:
 
     if ( ("\020\020" & "\101\101") !~ /[^\000]/) {
         # ...
-        }
+    }
 
 =head2 How do I multiply matrices?
 
@@ -322,7 +322,7 @@ results:
 
     foreach $iterator (@array) {
         some_func($iterator);
-        }
+    }
 
 To call a function on each integer in a (small) range, you B<can> use:
 
@@ -335,14 +335,14 @@ ranges.  Instead use:
     @results = ();
     for ($i=5; $i <= 500_005; $i++) {
         push(@results, some_func($i));
-        }
+    }
 
 This situation has been fixed in Perl5.005. Use of C<..> in a C<for>
 loop will iterate over the range, without creating the entire range.
 
     for my $i (5 .. 500_005) {
         push(@results, some_func($i));
-        }
+    }
 
 will not create a list of 500,000 integers.
 
@@ -401,7 +401,7 @@ integers (inclusive), For example: C<random_int_between(50,120)>.
         return $min if $min == $max;
         ($min, $max) = ($max, $min)  if  $min > $max;
         return $min + int rand(1 + $max - $min);
-        }
+    }
 
 =head1 Data: Dates
 
@@ -446,11 +446,11 @@ Use the following simple functions:
 
     sub get_century    {
         return int((((localtime(shift || time))[5] + 1999))/100);
-        }
+    }
 
     sub get_millennium {
         return 1+int((((localtime(shift || time))[5] + 1899))/1000);
-        }
+    }
 
 On some systems, the C<POSIX> module's C<strftime()> function has been
 extended in a non-standard way to use a C<%C> format, which they
@@ -476,7 +476,7 @@ operators so you can compare them directly:
 
     if( $date1 < $date2 ) {
         print "The date was in the past\n";
-        }
+    }
 
 You can also get differences with a subtraction, which returns a
 C<Time::Seconds> object:
@@ -732,7 +732,7 @@ pull out the smallest nesting parts one at a time:
 
     while (s/BEGIN((?:(?!BEGIN)(?!END).)*)END//gs) {
         # do something with $1
-        }
+    }
 
 A more complicated and sneaky approach is to make Perl's regular
 expression engine do it for you.  This is courtesy Dean Inada, and
@@ -829,8 +829,8 @@ loop, keeping count of matches.
     while (/(\w+)\s+fish\b/gi) {
         if (++$count == $WANT) {
             print "The third fish is a $1 one.\n";
-            }
         }
+    }
 
 That prints out: C<"The third fish is a red one.">  You can also use a
 repetition count and repeated pattern like this:
@@ -877,7 +877,7 @@ for you.
     print $x, "\n";
     for my $style (qw( sentence title highlight )) {
         print autoformat($x, { case => $style }), "\n";
-        }
+    }
 
 How do you want to capitalize those words?
 
@@ -925,7 +925,7 @@ suggests (assuming your string is contained in C<$text>):
          "([^\"\\]*(?:\\.[^\"\\]*)*)",?  # groups the phrase inside the quotes
         | ([^,]+),?
         | ,
-        }gx;
+     }gx;
      push(@new, undef) if substr($text,-1,1) eq ',';
 
 If you want to represent quotation marks inside a
@@ -968,7 +968,7 @@ would remove all by itself:
     while( <> ) {
         s/^\s+|\s+$//g;
         print "$_\n";
-        }
+    }
 
 For a multi-line string, you can apply the regular expression to each
 logical line in the string by adding the C</m> flag (for
@@ -1157,7 +1157,7 @@ a reference:
     sub func {
         my $aref = shift;
         my $oref = "$aref";  # WRONG
-        }
+    }
 
 You can also get into subtle problems on those few operations in Perl
 that actually do care about the difference between a string and a
@@ -1294,11 +1294,11 @@ You can change an array element, but you can't change a list element:
 
     foreach ( @animals ) {
         s/^d/fr/;  # works fine
-        }
+    }
 
     foreach ( qw( dog cat bird ) ) {
         s/^d/fr/;  # Error! Modification of read only value!
-        }
+    }
 
 However, if the list element is itself a variable, it appears that you
 can change a list element. However, the list element is the variable, not
@@ -1407,11 +1407,10 @@ next element.
     my @unique = ();
     my %seen   = ();
 
-    foreach my $elem ( @array )
-        {
+    foreach my $elem ( @array ) {
         next if $seen{ $elem }++;
         push @unique, $elem;
-        }
+    }
 
 You can write this more briefly using a grep, which does the
 same thing.
@@ -1433,15 +1432,13 @@ contained in an array or a hash:
 
     use 5.010;
 
-    if( $item ~~ @array )
-        {
+    if( $item ~~ @array ) {
         say "The array contains $item"
-        }
+    }
 
-    if( $item ~~ %hash )
-        {
+    if( $item ~~ %hash ) {
         say "The hash contains $item"
-        }
+    }
 
 With earlier versions of Perl, you have to do a bit more work. If you
 are going to make this query many times over arbitrary string values,
@@ -1514,7 +1511,7 @@ element is unique in a given array:
     foreach $element (keys %count) {
         push @union, $element;
         push @{ $count{$element} > 1 ? \@intersection : \@difference }, $element;
-        }
+    }
 
 Note that this is the I<symmetric difference>, that is, all elements
 in either A or in B but not in both.  Think of it as an xor operation.
@@ -1526,15 +1523,13 @@ with the least amount of work:
 
     use 5.010;
 
-    if( @array1 ~~ @array2 )
-        {
+    if( @array1 ~~ @array2 ) {
         say "The arrays are the same";
-        }
+    }
 
-    if( %hash1 ~~ %hash2 ) # doesn't check values!
-        {
+    if( %hash1 ~~ %hash2 ) # doesn't check values!  {
         say "The hash keys are the same";
-        }
+    }
 
 The following code works for single-level arrays.  It uses a
 stringwise comparison, and does not distinguish defined versus
@@ -1548,9 +1543,9 @@ undefined empty strings.  Modify if you have other needs.
         return 0 unless @$first == @$second;
         for (my $i = 0; $i < @$first; $i++) {
             return 0 if $first->[$i] ne $second->[$i];
-            }
-        return 1;
         }
+        return 1;
+    }
 
 For multilevel structures, you may wish to use an approach more
 like this one.  It uses the CPAN module C<FreezeThaw>:
@@ -1600,7 +1595,7 @@ same thing.  Once you find the element, you stop the loop with last.
     my $found;
     foreach ( @array ) {
         if( /Perl/ ) { $found = $_; last }
-        }
+    }
 
 If you want the array index, you can iterate through the indices
 and check the array element at each index until you find one
@@ -1612,8 +1607,8 @@ that satisfies the condition.
             $found = $array[$i];
             $index = $i;
             last;
-            }
         }
+    }
 
 =head2 How do I handle linked lists?
 
@@ -1650,7 +1645,7 @@ index modulo the number of elements in the array:
     while( 1 ) {
         print $array[ $i++ % @array ], "\n";
         last if $i > 20;
-        }
+    }
 
 You can also use C<Tie::Cycle> to use a scalar that always has the
 next element of the circular array:
@@ -1674,7 +1669,7 @@ circular arrays:
 
     foreach ( 1 .. 20 ) {
         print $color_iterator->next, "\n";
-        }
+    }
 
 =head2 How do I shuffle an array randomly?
 
@@ -1695,7 +1690,7 @@ If not, you can use a Fisher-Yates shuffle.
         while (--$i) {
             my $j = int rand ($i+1);
             @$deck[$i,$j] = @$deck[$j,$i];
-            }
+        }
     }
 
     # shuffle my mpeg collection
@@ -1716,7 +1711,7 @@ randomly picking another element to swap the current element with
     @old = 1 .. 10;  # just a demo
     while (@old) {
         push(@new, splice(@old, rand @old, 1));
-        }
+    }
 
 This is bad because splice is already O(N), and since you do it N
 times, you just invented a quadratic algorithm; that is, O(N**2).
@@ -1730,14 +1725,14 @@ Use C<for>/C<foreach>:
     for (@lines) {
         s/foo/bar/;    # change that word
         tr/XZ/ZX/;    # swap those letters
-        }
+    }
 
 Here's another; let's compute spherical volumes:
 
     for (@volumes = @radii) {   # @volumes has changed parts
         $_ **= 3;
         $_ *= (4/3) * 3.14159;  # this will be constant folded
-        }
+    }
 
 which can also be done with C<map()> which is made to transform
 one list into another:
@@ -1751,7 +1746,7 @@ case), you modify the value.
 
     for $orbit ( values %orbits ) {
         ($orbit **= 3) *= (4/3) * 3.14159;
-        }
+    }
 
 Prior to perl 5.6 C<values> returned copies of the values,
 so older perl code often contains constructions such as
@@ -1784,7 +1779,7 @@ written in XS code and is very efficient:
 
     while (my @perm = $p_iterator->next) {
        print "next permutation: (@perm)\n";
-        }
+    }
 
 For even faster execution, you could do:
 
@@ -1794,7 +1789,7 @@ For even faster execution, you could do:
 
     Algorithm::Permute::permute {
         print "next permutation: (@array)\n";
-        } @array;
+    } @array;
 
 Here's a little program that generates all permutations of all the
 words on each line of input. The algorithm embodied in the
@@ -1855,7 +1850,7 @@ case-insensitively.
     for (@data) {
         ($item) = /\d+\s*(\S+)/;
         push @idx, uc($item);
-        }
+    }
     @sorted = @data[ sort { $idx[$a] cmp $idx[$b] } 0 .. $#idx ];
 
 which could also be written this way, using a trick
@@ -1871,7 +1866,7 @@ If you need to sort on several fields, the following paradigm is useful.
         field1($a) <=> field1($b) ||
         field2($a) cmp field2($b) ||
         field3($a) cmp field3($b)
-        } @data;
+    } @data;
 
 This can be conveniently combined with precalculation of keys as given
 above.
@@ -1896,7 +1891,7 @@ sets C<$vec> to have bit N set only if C<$ints[N]> was set:
     $vec = '';
     foreach( 0 .. $#ints ) {
         vec($vec,$_,1) = 1 if $ints[$_];
-        }
+    }
 
 The string C<$vec> only takes up as many bits as it needs. For
 instance, if you had 16 entries in C<@ints>, C<$vec> only needs two
@@ -1924,18 +1919,18 @@ your C<@ints> array:
                 push @ints, $i if vec($vec, ++$i, 1);
                 push @ints, $i if vec($vec, ++$i, 1);
                 push @ints, $i if vec($vec, ++$i, 1);
-                }
             }
+        }
         else {
             # This method is a fast general algorithm
             use integer;
             my $bits = unpack "b*", $vec;
             push @ints, 0 if $bits =~ s/^(\d)// && $1;
             push @ints, pos $bits while($bits =~ /1/g);
-            }
+        }
 
         return \@ints;
-        }
+    }
 
 This method gets faster the more sparse the bit vector is.
 (Courtesy of Tim Bunce and Winfried Koenig.)
@@ -1945,7 +1940,7 @@ from Benjamin Goldberg:
 
     while($vec =~ /[^\0]+/g ) {
         push @ints, grep vec($vec, $_, 1), $-[0] * 8 .. $+[0] * 8;
-        }
+    }
 
 Or use the CPAN module C<Bit::Vector>:
 
@@ -1986,7 +1981,7 @@ Here's a more extensive illustration using vec():
         vec($vector, $offset, $width) = $value;
         print "offset=$offset width=$width value=$value\n";
         pvec($vector);
-        }
+    }
 
     sub pvec {
         my $vector = shift;
@@ -1997,7 +1992,7 @@ Here's a more extensive illustration using vec():
         print "vector length in bytes: ", length($vector), "\n";
         @bytes = unpack("A8" x length($vector), $bits);
         print "bits are: @bytes\n\n";
-        }
+    }
 
 =head2 Why does defined() return true on empty arrays and hashes?
 
@@ -2022,7 +2017,7 @@ can then get the value through the particular key you're processing:
     foreach my $key ( keys %hash ) {
         my $value = $hash{$key}
         ...
-        }
+    }
 
 Once you have the list of keys, you can process that list before you
 process the hash elements. For instance, you can sort the keys so you
@@ -2031,7 +2026,7 @@ can process them in lexical order:
     foreach my $key ( sort keys %hash ) {
         my $value = $hash{$key}
         ...
-        }
+    }
 
 Or, you might want to only process some of the items. If you only want
 to deal with the keys that start with C<text:>, you can select just
@@ -2040,7 +2035,7 @@ those using C<grep>:
     foreach my $key ( grep /^text:/, keys %hash ) {
         my $value = $hash{$key}
         ...
-        }
+    }
 
 If the hash is very large, you might not want to create a long list of
 keys. To save some memory, you can grab one key-value pair at a time using
@@ -2048,7 +2043,7 @@ C<each()>, which returns a pair you haven't seen yet:
 
     while( my( $key, $value ) = each( %hash ) ) {
         ...
-        }
+    }
 
 The C<each> operator returns the pairs in apparently random order, so if
 ordering matters to you, you'll have to stick with the C<keys> method.
@@ -2078,38 +2073,32 @@ duplicates:
 
     my %new_hash = %hash1; # make a copy; leave %hash1 alone
 
-    foreach my $key2 ( keys %hash2 )
-        {
-        if( exists $new_hash{$key2} )
-            {
+    foreach my $key2 ( keys %hash2 ) {
+        if( exists $new_hash{$key2} ) {
             warn "Key [$key2] is in both hashes!";
             # handle the duplicate (perhaps only warning)
             ...
             next;
-            }
-        else
-            {
-            $new_hash{$key2} = $hash2{$key2};
-            }
         }
+        else {
+            $new_hash{$key2} = $hash2{$key2};
+        }
+    }
 
 If you don't want to create a new hash, you can still use this looping
 technique; just change the C<%new_hash> to C<%hash1>.
 
-    foreach my $key2 ( keys %hash2 )
-        {
-        if( exists $hash1{$key2} )
-            {
+    foreach my $key2 ( keys %hash2 ) {
+        if( exists $hash1{$key2} ) {
             warn "Key [$key2] is in both hashes!";
             # handle the duplicate (perhaps only warning)
             ...
             next;
-            }
-        else
-            {
-            $hash1{$key2} = $hash2{$key2};
-            }
         }
+        else {
+            $hash1{$key2} = $hash2{$key2};
+        }
+      }
 
 If you don't care that one hash overwrites keys and values from the other, you
 could just use a hash slice to add one hash to another. In this case, values
@@ -2141,7 +2130,7 @@ to use:
 
     while (($key, $value) = each %by_key) {
         $by_value{$value} = $key;
-        }
+    }
 
 If your hash could have repeated values, the methods above will only find
 one of the associated keys.   This may or may not worry you.  If it does
@@ -2149,7 +2138,7 @@ worry you, you can always reverse the hash into a hash of arrays instead:
 
     while (($key, $value) = each %by_key) {
          push @{$key_list_by_value{$value}}, $key;
-        }
+    }
 
 =head2 How can I know how many entries are in a hash?
 
@@ -2195,10 +2184,9 @@ create a report which lists the keys in ASCIIbetical order.
 
     my @keys = sort { $a cmp $b } keys %hash;
 
-    foreach my $key ( @keys )
-        {
+    foreach my $key ( @keys ) {
         printf "%-20s %6d\n", $key, $hash{$key};
-        }
+    }
 
 We could get more fancy in the C<sort()> block though. Instead of
 comparing the keys, we can compute a value with them and use that
@@ -2228,7 +2216,7 @@ we can provide a secondary sort on the hash key.
         $hash{$a} <=> $hash{$b}
             or
         "\L$a" cmp "\L$b"
-        } keys %hash;
+    } keys %hash;
 
 =head2 How can I always keep my hash sorted?
 X<hash tie sort DB_File Tie::IxHash>
@@ -2350,7 +2338,7 @@ the "removing duplicates" problem described above.  For example:
     %seen = ();
     for $element (keys(%foo), keys(%bar)) {
         $seen{$element}++;
-        }
+    }
     @uniq = keys %seen;
 
 Or more succinctly:
@@ -2385,7 +2373,7 @@ Use the C<Tie::IxHash> from CPAN.
 
     for (my $i=0; $i<20; $i++) {
         $myhash{$i} = 2*$i;
-        }
+    }
 
     my @keys = keys %myhash;
     # @keys = (0,1,2,3,...)
@@ -2413,7 +2401,7 @@ make that assignment so it created the hash key ahead of time:
     sub my_sub {
         # $_[0] = 'bar'; # create hash key in case you do this
         1;
-        }
+    }
 
 Since Perl 5.004, however, this situation is a special case and Perl
 creates the hash key only when you make the assignment:
@@ -2423,7 +2411,7 @@ creates the hash key only when you make the assignment:
 
     sub my_sub {
         $_[0] = 'bar';
-        }
+    }
 
 However, if you want the old behavior (and think carefully about that
 because it's a weird side effect), you can pass a hash slice instead.
@@ -2487,7 +2475,7 @@ you want to check three keys deep, you might naE<0xEF>vely try this:
     my %hash;
     if( exists $hash{key1}{key2}{key3} ) {
         ...;
-        }
+    }
 
 Even though you started with a completely empty hash, after that call to
 C<exists> you've created the structure you needed to check for C<key3>:
@@ -2503,10 +2491,10 @@ easiest way is to just turn it off. The lexical C<autovivification>
 pragma is available on CPAN. Now you don't add to the hash:
 
     {
-    no autovivification;
-    my %hash;
-    if( exists $hash{key1}{key2}{key3} ) {
-        ...;
+        no autovivification;
+        my %hash;
+        if( exists $hash{key1}{key2}{key3} ) {
+            ...;
         }
     }
 
@@ -2530,7 +2518,7 @@ C<Data::Diver> does for you:
 
     if( check_hash( \%hash, qw(key1 key2 key3) ) ) {
         ...;
-        }
+    }
 
     sub check_hash {
        my( $hash, @keys ) = @_;
@@ -2540,10 +2528,10 @@ C<Data::Diver> does for you:
        foreach my $key ( @keys ) {
            return unless eval { exists $hash->{$key} };
            $hash = $hash->{$key};
-           }
+        }
 
        return 1;
-       }
+    }
 
 =head1 Data: Misc
 
@@ -2580,7 +2568,7 @@ Assuming that you don't care about IEEE notations like "NaN" or
             { say "\tis a real number"; continue }
         when( /^[+-]?(?=\.?\d)\d*\.?\d*(?:e[+-]?\d+)?\z/i)
             { say "\tis a C float" }
-        }
+    }
 
 There are also some commonly used modules for the task.
 L<Scalar::Util> (distributed with 5.8) provides access to perl's
@@ -2608,11 +2596,11 @@ C<getnum> if you just want to say, "Is this a float?"
         my($num, $unparsed) = strtod($str);
         if (($str eq '') || ($unparsed != 0) || $!) {
                 return undef;
-            }
+        }
         else {
             return $num;
-            }
         }
+    }
 
     sub is_numeric { defined getnum($_[0]) }
 
