@@ -50,9 +50,6 @@ every 6 hours (or so), and the community of volunteers reviews and
 updates the answers. If you'd like to help review and update the
 answers, check out comp.lang.perl.misc.
 
-You can also fork the perl repository, make your changes, and send them
-to Perl 5 Porters. See L<perlgit>.
-
 =head2 What will happen if you mail your Perl programming problems to the authors?
 
 The perlfaq-workers like to keep all traffic on the perlfaq-workers list
