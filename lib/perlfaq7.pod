@@ -822,7 +822,7 @@ into strings like you can with variables:
     print "I am in package $current_package\n";
 
 If you want to find the package calling your code, perhaps to give better
-diagnostics as C<Carp> does, use the C<caller> built-in:
+diagnostics as L<Carp> does, use the C<caller> built-in:
 
     sub foo {
         my @args = ...;
@@ -836,7 +836,7 @@ always be in some package.
 
 This is different from finding out the package an object is blessed
 into, which might not be the current package. For that, use C<blessed>
-from C<Scalar::Util>, part of the Standard Library since Perl 5.8:
+from L<Scalar::Util>, part of the Standard Library since Perl 5.8:
 
     use Scalar::Util qw(blessed);
     my $object_package = blessed( $object );

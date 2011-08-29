@@ -77,9 +77,9 @@ your filehandle a C<:unix> layer, which is unbuffered:
     }
 
 For more information on output layers, see the entries for C<binmode>
-and C<open> in L<perlfunc>, and the C<PerlIO> module documentation.
+and L<open> in L<perlfunc>, and the L<PerlIO> module documentation.
 
-If you are using C<IO::Handle> or one of its subclasses, you can
+If you are using L<IO::Handle> or one of its subclasses, you can
 call the C<autoflush> method to change the settings of the
 filehandle:
 
@@ -87,7 +87,7 @@ filehandle:
     open my( $io_fh ), ">", "output.txt";
     $io_fh->autoflush(1);
 
-The C<IO::Handle> objects also have a C<flush> method. You can flush
+The L<IO::Handle> objects also have a C<flush> method. You can flush
 the buffer any time you want without auto-buffering
 
     $io_fh->flush;
@@ -102,7 +102,7 @@ file involves reading and printing the file to the point you want to
 make the change, making the change, then reading and printing the rest
 of the file. Perl doesn't provide random access to lines (especially
 since the record input separator, C<$/>, is mutable), although modules
-such as C<Tie::File> can fake it.
+such as L<Tie::File> can fake it.
 
 A Perl program to do these tasks takes the basic form of opening a
 file, printing its lines, then closing the file:
@@ -200,7 +200,7 @@ you can fit the whole thing in memory!):
 
     print $out @lines;
 
-Modules such as C<File::Slurp> and C<Tie::File> can help with that
+Modules such as L<File::Slurp> and L<Tie::File> can help with that
 too. If you can, however, avoid reading the entire file at once. Perl
 won't give that memory back to the operating system until the process
 finishes.
@@ -325,7 +325,7 @@ without making more than one pass over the file, or how to do it
 without a lot of copying. The easy concept is the hard reality when
 you might have millions of lines in your file.
 
-One trick is to use C<File::ReadBackwards>, which starts at the end of
+One trick is to use L<File::ReadBackwards>, which starts at the end of
 the file. That module provides an object that wraps the real filehandle
 to make it easy for you to move around the file. Once you get to the
 spot you need, you can get the actual filehandle and work with it as
@@ -348,10 +348,10 @@ line you want to keep and truncate the file to that point:
 
     truncate( $filename, $bw->tell );
 
-The C<File::ReadBackwards> module also has the advantage of setting
+The L<File::ReadBackwards> module also has the advantage of setting
 the input record separator to a regular expression.
 
-You can also use the C<Tie::File> module which lets you access
+You can also use the L<Tie::File> module which lets you access
 the lines through a tied array. You can use normal array operations
 to modify your file, including setting the last index and using
 C<splice>.
@@ -387,7 +387,7 @@ X<copy> X<file, copy> X<File::Copy>
 
 (contributed by brian d foy)
 
-Use the C<File::Copy> module. It comes with Perl and can do a
+Use the L<File::Copy> module. It comes with Perl and can do a
 true copy across file systems, and it does its magic in
 a portable fashion.
 
@@ -395,7 +395,7 @@ a portable fashion.
 
     copy( $original, $new_copy ) or die "Copy failed: $!";
 
-If you can't use C<File::Copy>, you'll have to do the work yourself:
+If you can't use L<File::Copy>, you'll have to do the work yourself:
 open the original file, open the destination file, then print
 to the destination file as you read the original. You also have to
 remember to copy the permissions, owner, and group to the new file.
@@ -698,7 +698,7 @@ This file handle can then be used to read from or write to the string:
     open(my $fh, '<', \$string) or die "Could not open string for reading";
     my $x = <$fh>;    # $x now contains "foo\n"
 
-With older versions of Perl, the C<IO::String> module provides similar
+With older versions of Perl, the L<IO::String> module provides similar
 functionality.
 
 =head2 How can I output my numbers with commas added?
@@ -743,7 +743,7 @@ X<tilde> X<tilde expansion>
 Use the E<lt>E<gt> (C<glob()>) operator, documented in L<perlfunc>.
 Versions of Perl older than 5.6 require that you have a shell
 installed that groks tildes. Later versions of Perl have this feature
-built in. The C<File::KGlob> module (available from CPAN) gives more
+built in. The L<File::KGlob> module (available from CPAN) gives more
 portable glob functionality.
 
 Within Perl, you may use this directly:
@@ -777,7 +777,7 @@ Using ">" always clobbers or creates. Using "<" never does
 either. The "+" doesn't change this.
 
 Here are examples of many kinds of file opens. Those using C<sysopen>
-all assume that you've pulled in the constants from C<Fcntl>:
+all assume that you've pulled in the constants from L<Fcntl>:
 
     use Fcntl;
 
@@ -882,7 +882,7 @@ functional equivalent, this works:
 
     rename($old, $new) or system("mv", $old, $new);
 
-It may be more portable to use the C<File::Copy> module instead.
+It may be more portable to use the L<File::Copy> module instead.
 You just copy to the new file to the new name (checking return
 values), then delete the old one. This isn't really the same
 semantically as a C<rename()>, which preserves meta-information like
@@ -1141,12 +1141,12 @@ Since you don't necessarily have to load the data, mmap-ing can be
 very fast and may not increase your memory footprint.
 
 You might also find it more
-fun to use the standard C<Tie::File> module, or the C<DB_File> module's
+fun to use the standard L<Tie::File> module, or the L<DB_File> module's
 C<$DB_RECNO> bindings, which allow you to tie an array to a file so that
 accessing an element of the array actually accesses the corresponding
 line in the file.
 
-If you want to load the entire file, you can use the C<File::Slurp>
+If you want to load the entire file, you can use the L<File::Slurp>
 module to do it in one one simple and efficient step:
 
     use File::Slurp;
@@ -1343,10 +1343,10 @@ then you need something more like this:
     }
 
 If this still doesn't work, look into the C<clearerr> method
-from C<IO::Handle>, which resets the error and end-of-file states
+from L<IO::Handle>, which resets the error and end-of-file states
 on the handle.
 
-There's also a C<File::Tail> module from CPAN.
+There's also a L<File::Tail> module from CPAN.
 
 =head2 How do I dup() a filehandle in Perl?
 X<dup>
@@ -1374,7 +1374,7 @@ X<file, closing file descriptors> X<POSIX> X<close>
 
 If, for some reason, you have a file descriptor instead of a
 filehandle (perhaps you used C<POSIX::open>), you can use the
-C<close()> function from the C<POSIX> module:
+C<close()> function from the L<POSIX> module:
 
     use POSIX ();
 
@@ -1451,13 +1451,13 @@ This has a significant advantage in space over reading the whole file
 in. You can find a proof of this method in I<The Art of Computer
 Programming>, Volume 2, Section 3.4.2, by Donald E. Knuth.
 
-You can use the C<File::Random> module which provides a function
+You can use the L<File::Random> module which provides a function
 for that algorithm:
 
     use File::Random qw/random_line/;
     my $line = random_line($filename);
 
-Another way is to use the C<Tie::File> module, which treats the entire
+Another way is to use the L<Tie::File> module, which treats the entire
 file as an array. Simply access a random array element.
 
 =head2 Why do I get weird spaces when I print an array of lines?
@@ -1507,7 +1507,7 @@ array in double quotes. You can send it to print without them:
 
 (contributed by brian d foy)
 
-The C<File::Find> module, which comes with Perl, does all of the hard
+The L<File::Find> module, which comes with Perl, does all of the hard
 work to traverse a directory structure. It comes with Perl. You simply
 call the C<find> subroutine with a callback subroutine and the
 directories you want to traverse:
@@ -1522,10 +1522,10 @@ directories you want to traverse:
         ... do whatever you want to do ...
     }
 
-The C<File::Find::Closures>, which you can download from CPAN, provides
-many ready-to-use subroutines that you can use with C<File::Find>.
+The L<File::Find::Closures>, which you can download from CPAN, provides
+many ready-to-use subroutines that you can use with L<File::Find>.
 
-The C<File::Finder>, which you can download from CPAN, can help you
+The L<File::Finder>, which you can download from CPAN, can help you
 create the callback subroutine using something closer to the syntax of
 the C<find> command-line utility:
 
@@ -1536,7 +1536,7 @@ the C<find> command-line utility:
 
     find( $deep_dirs->as_options, @places );
 
-The C<File::Find::Rule> module, which you can download from CPAN, has
+The L<File::Find::Rule> module, which you can download from CPAN, has
 a similar interface, but does the traversal for you too:
 
     use File::Find::Rule;
@@ -1554,14 +1554,14 @@ If the directory is not empty (so, no files or subdirectories), you
 either have to empty it yourself (a lot of work) or use a module to
 help you.
 
-The C<File::Path> module, which comes with Perl, has a C<remove_tree>
+The L<File::Path> module, which comes with Perl, has a C<remove_tree>
 which can take care of all of the hard work for you:
 
     use File::Path qw(remove_tree);
 
     remove_tree( @directories );
 
-The C<File::Path> module also has a legacy interface to the older
+The L<File::Path> module also has a legacy interface to the older
 C<rmtree> subroutine.
 
 =head2 How do I copy an entire directory?

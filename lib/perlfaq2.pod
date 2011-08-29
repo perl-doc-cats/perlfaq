@@ -256,7 +256,7 @@ http://www.ddj.com/ or brian d foy's index of online TPJ content
 
 =head2 What mailing lists are there for Perl?
 
-Most of the major modules (C<Tk>, C<CGI>, C<libwww-perl>) have their own
+Most of the major modules (L<Tk>, L<CGI>, L<libwww-perl>) have their own
 mailing lists. Consult the documentation that came with the module for
 subscription information.
 
@@ -310,17 +310,17 @@ information about your installation to include with your message, then
 sends the message to the right place.
 
 To determine if a module came with your version of Perl, you can
-use the C<Module::CoreList> module. It has the information about
+use the L<Module::CoreList> module. It has the information about
 the modules (with their versions) included with each release of Perl.
 
-If C<Module::CoreList> is not installed on your system, check out
+If L<Module::CoreList> is not installed on your system, check out
 http://perlpunks.de/corelist .
 
 Every CPAN module has a bug tracker set up in RT, http://rt.cpan.org .
 You can submit bugs to RT either through its web interface or by
 email. To email a bug report, send it to
 bug-E<lt>distribution-nameE<gt>@rt.cpan.org . For example, if you
-wanted to report a bug in C<Business::ISBN>, you could send a message to
+wanted to report a bug in L<Business::ISBN>, you could send a message to
 bug-Business-ISBN@rt.cpan.org .
 
 Some modules might have special reporting requirements, such as a

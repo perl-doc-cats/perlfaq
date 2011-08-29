@@ -66,7 +66,7 @@ in this section of the perlfaq.
 In general, you don't, because you don't know whether
 the recipient has a color-aware display device.  If you
 know that they have an ANSI terminal that understands
-color, you can use the C<Term::ANSIColor> module from CPAN:
+color, you can use the L<Term::ANSIColor> module from CPAN:
 
     use Term::ANSIColor;
     print color("red"), "Stop!\n", color("reset");
@@ -92,7 +92,7 @@ portability snags.
     sysread(TTY, $key, 1);    # probably this does
     system "stty -cbreak </dev/tty >/dev/tty 2>&1";
 
-The C<Term::ReadKey> module from CPAN offers an easy-to-use interface that
+The L<Term::ReadKey> module from CPAN offers an easy-to-use interface that
 should be more efficient than shelling out to B<stty> for each key.
 It even includes limited support for Windows.
 
@@ -103,7 +103,7 @@ It even includes limited support for Windows.
 
 However, using the code requires that you have a working C compiler
 and can use it to build and install a CPAN module.  Here's a solution
-using the standard C<POSIX> module, which is already on your system
+using the standard L<POSIX> module, which is already on your system
 (assuming your system supports POSIX).
 
     use HotKey;
@@ -157,7 +157,7 @@ to manipulate the POSIX termios structures.
 =head2 How do I check whether input is ready on the keyboard?
 
 The easiest way to do this is to read a key in nonblocking mode with the
-C<Term::ReadKey> module from CPAN, passing it an argument of -1 to indicate
+L<Term::ReadKey> module from CPAN, passing it an argument of -1 to indicate
 not to block:
 
     use Term::ReadKey;
@@ -180,7 +180,7 @@ To clear the screen, you just have to print the special sequence
 that tells the terminal to clear the screen. Once you have that
 sequence, output it when you want to clear the screen.
 
-You can use the C<Term::ANSIScreen> module to get the special
+You can use the L<Term::ANSIScreen> module to get the special
 sequence. Import the C<cls> function (or the C<:screen> tag):
 
     use Term::ANSIScreen qw(cls);
@@ -188,7 +188,7 @@ sequence. Import the C<cls> function (or the C<:screen> tag):
 
     print $clear_screen;
 
-The C<Term::Cap> module can also get the special sequence if you want
+The L<Term::Cap> module can also get the special sequence if you want
 to deal with the low-level details of terminal control. The C<Tputs>
 method returns the string for the given capability:
 
@@ -199,7 +199,7 @@ method returns the string for the given capability:
 
     print $clear_screen;
 
-On Windows, you can use the C<Win32::Console> module. After creating
+On Windows, you can use the L<Win32::Console> module. After creating
 an object for the output filehandle you want to affect, call the
 C<Cls> method:
 
@@ -220,7 +220,7 @@ later:
 
 =head2 How do I get the screen size?
 
-If you have C<Term::ReadKey> module installed from CPAN,
+If you have L<Term::ReadKey> module installed from CPAN,
 you can use it to fetch the width and height in characters
 and in pixels:
 
@@ -252,7 +252,7 @@ You may do this with an old-style C<ioctl()> function, POSIX terminal
 control (see L<POSIX> or its documentation the Camel Book), or a call
 to the B<stty> program, with varying degrees of portability.
 
-You can also do this for most systems using the C<Term::ReadKey> module
+You can also do this for most systems using the L<Term::ReadKey> module
 from CPAN, which is easier to use and in theory more portable.
 
     use Term::ReadKey;
@@ -282,7 +282,7 @@ If you expect to use both read and write operations on the device,
 you'll have to open it for update (see L<perlfunc/"open"> for
 details).  You may wish to open it without running the risk of
 blocking by using C<sysopen()> and C<O_RDWR|O_NDELAY|O_NOCTTY> from the
-C<Fcntl> module (part of the standard perl distribution).  See
+L<Fcntl> module (part of the standard perl distribution).  See
 L<perlfunc/"sysopen"> for more on this approach.
 
 =item end of line
@@ -385,10 +385,10 @@ have to wait for it to finish before your program moves on to other
 tasks. Process management depends on your particular operating system,
 and many of the techniques are in L<perlipc>.
 
-Several CPAN modules may be able to help, including C<IPC::Open2> or
-C<IPC::Open3>, C<IPC::Run>, C<Parallel::Jobs>,
-C<Parallel::ForkManager>, C<POE>, C<Proc::Background>, and
-C<Win32::Process>. There are many other modules you might use, so
+Several CPAN modules may be able to help, including L<IPC::Open2> or
+L<IPC::Open3>, L<IPC::Run>, L<Parallel::Jobs>,
+L<Parallel::ForkManager>, L<POE>, L<Proc::Background>, and
+L<Win32::Process>. There are many other modules you might use, so
 check those namespaces for other options too.
 
 If you are on a Unix-like system, you might be able to get away with a
@@ -505,19 +505,19 @@ X<Time::HiRes> X<BSD::Itimer> X<sleep> X<select>
 
 If you want finer granularity than the 1 second that the C<sleep()>
 function provides, the easiest way is to use the C<select()> function as
-documented in L<perlfunc/"select">.  Try the C<Time::HiRes> and
-the C<BSD::Itimer> modules (available from CPAN, and starting from
-Perl 5.8 C<Time::HiRes> is part of the standard distribution).
+documented in L<perlfunc/"select">.  Try the L<Time::HiRes> and
+the L<BSD::Itimer> modules (available from CPAN, and starting from
+Perl 5.8 L<Time::HiRes> is part of the standard distribution).
 
 =head2 How can I measure time under a second?
 X<Time::HiRes> X<BSD::Itimer> X<sleep> X<select>
 
 (contributed by brian d foy)
 
-The C<Time::HiRes> module (part of the standard distribution as of
+The L<Time::HiRes> module (part of the standard distribution as of
 Perl 5.8) measures time with the C<gettimeofday()> system call, which
 returns the time in microseconds since the epoch. If you can't install
-C<Time::HiRes> for older Perls and you are on a Unixish system, you
+L<Time::HiRes> for older Perls and you are on a Unixish system, you
 may be able to call C<gettimeofday(2)> directly. See
 L<perlfunc/syscall>.
 
@@ -546,7 +546,7 @@ handler for a blocking C<flock()> in L<perlipc/"Signals"> or the
 section on "Signals" in I<Programming Perl>.
 
 If exception handling is all you're interested in, use one of the
-many CPAN modules that handle exceptions, such as C<Try::Tiny>.
+many CPAN modules that handle exceptions, such as L<Try::Tiny>.
 
 If you want the C<atexit()> syntax (and an C<rmexit()> as well), try the
 C<AtExit> module available from CPAN.
@@ -571,13 +571,13 @@ L<perlfunc>).
 
 Remember to check the modules that came with your distribution, and
 CPAN as well--someone may already have written a module to do it. On
-Windows, try C<Win32::API>.  On Macs, try C<Mac::Carbon>.  If no module
+Windows, try L<Win32::API>.  On Macs, try L<Mac::Carbon>.  If no module
 has an interface to the C function, you can inline a bit of C in your
-Perl source with C<Inline::C>.
+Perl source with L<Inline::C>.
 
 =head2 Where do I get the include files to do ioctl() or syscall()?
 
-Historically, these would be generated by the C<h2ph> tool, part of the
+Historically, these would be generated by the L<h2ph> tool, part of the
 standard perl distribution.  This program converts C<cpp(1)> directives
 in C header files to files containing subroutine definitions, like
 C<&SYS_getitimer>, which you can use as arguments to your functions.
@@ -591,12 +591,12 @@ Here's how to install the *.ph files:
     3.  h2ph *.h */*.h
 
 If your system supports dynamic loading, for reasons of portability and
-sanity you probably ought to use C<h2xs> (also part of the standard perl
+sanity you probably ought to use L<h2xs> (also part of the standard perl
 distribution).  This tool converts C header files to Perl extensions.
-See L<perlxstut> for how to get started with C<h2xs>.
+See L<perlxstut> for how to get started with L<h2xs>.
 
 If your system doesn't support dynamic loading, you still probably
-ought to use C<h2xs>.  See L<perlxstut> and L<ExtUtils::MakeMaker> for
+ought to use L<h2xs>.  See L<perlxstut> and L<ExtUtils::MakeMaker> for
 more information (in brief, just use B<make perl> instead of a plain
 B<make> to rebuild perl with a new static extension).
 
@@ -608,16 +608,16 @@ scripts inherently insecure.  Perl gives you a number of options
 
 =head2 How can I open a pipe both to and from a command?
 
-The C<IPC::Open2> module (part of the standard perl distribution) is
+The L<IPC::Open2> module (part of the standard perl distribution) is
 an easy-to-use approach that internally uses C<pipe()>, C<fork()>, and
 C<exec()> to do the job.  Make sure you read the deadlock warnings in
 its documentation, though (see L<IPC::Open2>).  See
 L<perlipc/"Bidirectional Communication with Another Process"> and
 L<perlipc/"Bidirectional Communication with Yourself">
 
-You may also use the C<IPC::Open3> module (part of the standard perl
+You may also use the L<IPC::Open3> module (part of the standard perl
 distribution), but be warned that it has a different order of
-arguments from C<IPC::Open2> (see L<IPC::Open3>).
+arguments from L<IPC::Open2> (see L<IPC::Open3>).
 
 =head2 Why can't I get the output of a command with system()?
 
@@ -642,7 +642,7 @@ With C<system()>, both STDOUT and STDERR will go the same place as the
 script's STDOUT and STDERR, unless the C<system()> command redirects them.
 Backticks and C<open()> read B<only> the STDOUT of your command.
 
-You can also use the C<open3()> function from C<IPC::Open3>.  Benjamin
+You can also use the C<open3()> function from L<IPC::Open3>.  Benjamin
 Goldberg provides some sample code:
 
 To capture a program's STDOUT, but discard its STDERR:
@@ -788,7 +788,7 @@ your Perl program can find out is whether the shell itself could be
 successfully started.  You can still capture the shell's STDERR and
 check it for error messages.  See L<"How can I capture STDERR from an
 external command?"> elsewhere in this document, or use the
-C<IPC::Open3> module.
+L<IPC::Open3> module.
 
 If there are no shell metacharacters in the argument of C<open()>, Perl
 runs the command directly, without using the shell, and can correctly
@@ -867,7 +867,7 @@ stuck, because Windows does not have an argc/argv-style API.
 
 This happens only if your perl is compiled to use stdio instead of
 perlio, which is the default. Some (maybe all?) stdios set error and
-eof flags that you may need to clear. The C<POSIX> module defines
+eof flags that you may need to clear. The L<POSIX> module defines
 C<clearerr()> that you can use.  That is the technically correct way to
 do it.  Here are some less reliable workarounds:
 
@@ -908,10 +908,10 @@ causes many inefficiencies.
 
 =head2 Can I use perl to run a telnet or ftp session?
 
-Try the C<Net::FTP>, C<TCP::Client>, and C<Net::Telnet> modules
+Try the L<Net::FTP>, L<TCP::Client>, and L<Net::Telnet> modules
 (available from CPAN).
 http://www.cpan.org/scripts/netstuff/telnet.emul.shar will also help
-for emulating the telnet protocol, but C<Net::Telnet> is quite
+for emulating the telnet protocol, but L<Net::Telnet> is quite
 probably easier to use.
 
 If all you want to do is pretend to be telnet but don't need
@@ -937,7 +937,7 @@ Once upon a time, there was a library called F<chat2.pl> (part of the
 standard perl distribution), which never really got finished.  If you
 find it somewhere, I<don't use it>.  These days, your best bet is to
 look at the Expect module available from CPAN, which also requires two
-other modules from CPAN, C<IO::Pty> and C<IO::Stty>.
+other modules from CPAN, L<IO::Pty> and L<IO::Stty>.
 
 =head2 Is there a way to hide perl's command line from programs such as "ps"?
 
@@ -1007,7 +1007,7 @@ Background yourself like this:
 
 =back
 
-The C<Proc::Daemon> module, available from CPAN, provides a function to
+The L<Proc::Daemon> module, available from CPAN, provides a function to
 perform these actions for you.
 
 =head2 How do I find out if I'm running interactively or not?
@@ -1026,11 +1026,11 @@ file test:
     }
 
 However, you might be out of luck if you expect that means there is a
-real person on the other side. With the C<Expect> module, another
+real person on the other side. With the L<Expect> module, another
 program can pretend to be a person. The program might even come close
 to passing the Turing test.
 
-The C<IO::Interactive> module does the best it can to give you an
+The L<IO::Interactive> module does the best it can to give you an
 answer. Its C<is_interactive> function returns an output filehandle;
 that filehandle points to standard output if the module thinks the
 session is interactive. Otherwise, the filehandle is a null handle
@@ -1056,7 +1056,7 @@ Testers, for instance, set the value of C<AUTOMATED_TESTING>:
 Use the C<alarm()> function, probably in conjunction with a signal
 handler, as documented in L<perlipc/"Signals"> and the section on
 "Signals" in the Camel.  You may instead use the more flexible
-C<Sys::AlarmCall> module available from CPAN.
+L<Sys::AlarmCall> module available from CPAN.
 
 The C<alarm()> function is not implemented on all versions of Windows.
 Check the documentation for your specific version of Perl.
@@ -1066,7 +1066,7 @@ X<BSD::Resource> X<limit> X<CPU>
 
 (contributed by Xho)
 
-Use the C<BSD::Resource> module from CPAN. As an example:
+Use the L<BSD::Resource> module from CPAN. As an example:
 
     use BSD::Resource;
     setrlimit(RLIMIT_CPU,10,20) or die $!;
@@ -1078,7 +1078,7 @@ trapped, will cause the process to terminate.  If that signal is
 trapped, then after 10 more seconds (20 seconds in total) the process
 will be killed with a non-trappable signal.
 
-See the C<BSD::Resource> and your systems documentation for the gory
+See the L<BSD::Resource> and your systems documentation for the gory
 details.
 
 =head2 How do I avoid zombies on a Unix system?
@@ -1089,14 +1089,14 @@ in L<perlfaq8/"How do I start a process in the background?">.
 
 =head2 How do I use an SQL database?
 
-The C<DBI> module provides an abstract interface to most database
+The L<DBI> module provides an abstract interface to most database
 servers and types, including Oracle, DB2, Sybase, mysql, Postgresql,
 ODBC, and flat files.  The DBI module accesses each database type
 through a database driver, or DBD.  You can see a complete list of
 available drivers on CPAN: http://www.cpan.org/modules/by-module/DBD/ .
 You can read more about DBI on http://dbi.perl.org .
 
-Other modules provide more specific access: C<Win32::ODBC>, C<Alzabo>,
+Other modules provide more specific access: L<Win32::ODBC>, L<Alzabo>,
 C<iodbc>, and others found on CPAN Search: http://search.cpan.org .
 
 =head2 How do I make a system() exit on control-C?
@@ -1266,7 +1266,7 @@ See the entry for C<use> in L<perlfunc> for more details.
 When you build modules, tell Perl where to install the modules.
 
 If you want to install modules for your own use, the easiest way might
-be C<local::lib>, which you can download from CPAN. It sets various
+be L<local::lib>, which you can download from CPAN. It sets various
 installation settings for you, and uses those same settings within
 your programs.
 
@@ -1303,11 +1303,11 @@ installed modules.
 
 There is one caveat with INSTALL_BASE, though, since it acts
 differently from the PREFIX and LIB settings that older versions of
-C<ExtUtils::MakeMaker> advocated. INSTALL_BASE does not support
+L<ExtUtils::MakeMaker> advocated. INSTALL_BASE does not support
 installing modules for multiple versions of Perl or different
 architectures under the same directory. You should consider whether you
 really want that and, if you do, use the older PREFIX and LIB
-settings. See the C<ExtUtils::Makemaker> documentation for more details.
+settings. See the L<ExtUtils::Makemaker> documentation for more details.
 
 =head2 How do I add the directory my program lives in to the module/library search path?
 
@@ -1344,19 +1344,19 @@ it into an absolute path. Once you have the
 
     use lib $directory;
 
-The C<FindBin> module, which comes with Perl, might work. It finds the
+The L<FindBin> module, which comes with Perl, might work. It finds the
 directory of the currently running script and puts it in C<$Bin>, which
 you can then use to construct the right library path:
 
     use FindBin qw($Bin);
 
-You can also use C<local::lib> to do much of the same thing. Install
-modules using C<local::lib>'s settings then use the module in your
+You can also use L<local::lib> to do much of the same thing. Install
+modules using L<local::lib>'s settings then use the module in your
 program:
 
      use local::lib; # sets up a local lib at ~/perl5
 
-See the C<local::lib> documentation for more details.
+See the L<local::lib> documentation for more details.
 
 =head2 How do I add a directory to my include path (@INC) at runtime?
 
@@ -1383,7 +1383,7 @@ environment variables, run-time switches, and in-code statements:
 
     use lib "$ENV{HOME}/myown_perllib";
 
-=item the C<local::lib> module:
+=item the L<local::lib> module:
 
     use local::lib;
 
@@ -1398,7 +1398,7 @@ included with the 5.002 release of Perl.
 =head2 What is socket.ph and where do I get it?
 
 It's a Perl 4 style file defining values for system networking
-constants.  Sometimes it is built using C<h2ph> when Perl is installed,
+constants.  Sometimes it is built using L<h2ph> when Perl is installed,
 but other times it is not.  Modern programs C<use Socket;> instead.
 
 =head1 AUTHOR AND COPYRIGHT

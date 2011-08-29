@@ -100,7 +100,7 @@ easiest route.
 
     printf("%.3f", 3.1415926535);   # prints 3.142
 
-The C<POSIX> module (part of the standard Perl distribution)
+The Perltidy module (part of the standard Perl distribution)
 implements C<ceil()>, C<floor()>, and a number of other mathematical
 and trigonometric functions.
 
@@ -108,10 +108,10 @@ and trigonometric functions.
     $ceil   = ceil(3.5);   # 4
     $floor  = floor(3.5);  # 3
 
-In 5.000 to 5.003 perls, trigonometry was done in the C<Math::Complex>
-module.  With 5.004, the C<Math::Trig> module (part of the standard Perl
+In 5.000 to 5.003 perls, trigonometry was done in the L<Math::Complex>
+module.  With 5.004, the L<Math::Trig> module (part of the standard Perl
 distribution) implements the trigonometric functions. Internally it
-uses the C<Math::Complex> module and some functions can break out from
+uses the L<Math::Complex> module and some functions can break out from
 the real axis into the complex plane, for example the inverse sine of
 2.
 
@@ -141,8 +141,8 @@ few examples of approaches to making common conversions between number
 representations.  This is intended to be representational rather than
 exhaustive.
 
-Some of the examples later in L<perlfaq4> use the C<Bit::Vector>
-module from CPAN. The reason you might choose C<Bit::Vector> over the
+Some of the examples later in L<perlfaq4> use the L<Bit::Vector>
+module from CPAN. The reason you might choose L<Bit::Vector> over the
 perl built-in functions is that it works with numbers of ANY size,
 that it is optimized for speed on some operations, and for at least
 some programmers the notation might be familiar.
@@ -180,13 +180,13 @@ Using C<unpack>:
 
     $hex = unpack("H*", pack("N", 3735928559));
 
-Using C<Bit::Vector>:
+Using L<Bit::Vector>:
 
     use Bit::Vector;
     $vec = Bit::Vector->new_Dec(32, -559038737);
     $hex = $vec->to_Hex();
 
-And C<Bit::Vector> supports odd bit counts:
+And L<Bit::Vector> supports odd bit counts:
 
     use Bit::Vector;
     $vec = Bit::Vector->new_Dec(33, 3735928559);
@@ -203,7 +203,7 @@ Using the C<oct> function:
 
     $dec = oct("33653337357");
 
-Using C<Bit::Vector>:
+Using L<Bit::Vector>:
 
     use Bit::Vector;
     $vec = Bit::Vector->new(32);
@@ -216,7 +216,7 @@ Using C<sprintf>:
 
     $oct = sprintf("%o", 3735928559);
 
-Using C<Bit::Vector>:
+Using L<Bit::Vector>:
 
     use Bit::Vector;
     $vec = Bit::Vector->new_Dec(32, -559038737);
@@ -246,7 +246,7 @@ Using C<pack> and C<unpack> for larger strings:
 
     # substr() is used to left-pad a 32-character string with zeros.
 
-Using C<Bit::Vector>:
+Using L<Bit::Vector>:
 
     $vec = Bit::Vector->new_Bin(32, "11011110101011011011111011101111");
     $dec = $vec->to_Dec();
@@ -261,7 +261,7 @@ Using C<unpack>:
 
     $bin = unpack("B*", pack("N", 3735928559));
 
-Using C<Bit::Vector>:
+Using L<Bit::Vector>:
 
     use Bit::Vector;
     $vec = Bit::Vector->new_Dec(32, -559038737);
@@ -303,8 +303,8 @@ but a string consisting of two null bytes (the result of C<"\020\020"
 
 =head2 How do I multiply matrices?
 
-Use the C<Math::Matrix> or C<Math::MatrixReal> modules (available from CPAN)
-or the C<PDL> extension (also available from CPAN).
+Use the L<Math::Matrix> or L<Math::MatrixReal> modules (available from CPAN)
+or the L<PDL> extension (also available from CPAN).
 
 =head2 How do I perform an operation on a series of integers?
 
@@ -370,7 +370,7 @@ who attempts to generate random numbers by deterministic means is, of
 course, living in a state of sin."
 
 If you want numbers that are more random than C<rand> with C<srand>
-provides, you should also check out the C<Math::TrulyRandom> module from
+provides, you should also check out the L<Math::TrulyRandom> module from
 CPAN.  It uses the imperfections in your system's timer to generate
 random numbers, but this takes quite a while.  If you want a better
 pseudorandom generator than comes with your operating system, look at
@@ -413,28 +413,28 @@ argument C<localtime> uses the current time.
 
     my $day_of_year = (localtime)[7];
 
-The C<POSIX> module can also format a date as the day of the year or
+The L<POSIX> module can also format a date as the day of the year or
 week of the year.
 
     use POSIX qw/strftime/;
     my $day_of_year  = strftime "%j", localtime;
     my $week_of_year = strftime "%W", localtime;
 
-To get the day of year for any date, use C<POSIX>'s C<mktime> to get
+To get the day of year for any date, use L<POSIX>'s C<mktime> to get
 a time in epoch seconds for the argument to C<localtime>.
 
     use POSIX qw/mktime strftime/;
     my $week_of_year = strftime "%W",
         localtime( mktime( 0, 0, 0, 18, 11, 87 ) );
 
-You can also use C<Time::Piece>, which comes with Perl and provides a
+You can also use L<Time::Piece>, which comes with Perl and provides a
 C<localtime> that returns an object:
 
     use Time::Piece;
     my $day_of_year  = localtime->yday;
     my $week_of_year = localtime->week;
 
-The C<Date::Calc> module provides two functions to calculate these, too:
+The L<Date::Calc> module provides two functions to calculate these, too:
 
     use Date::Calc;
     my $day_of_year  = Day_of_Year(  1987, 12, 18 );
@@ -452,7 +452,7 @@ Use the following simple functions:
         return 1+int((((localtime(shift || time))[5] + 1899))/1000);
     }
 
-On some systems, the C<POSIX> module's C<strftime()> function has been
+On some systems, the L<POSIX> module's C<strftime()> function has been
 extended in a non-standard way to use a C<%C> format, which they
 sometimes claim is the "century". It isn't, because on most such
 systems, this is only the first two digits of the four-digit year, and
@@ -466,7 +466,7 @@ millennium.
 You could just store all your dates as a number and then subtract.
 Life isn't always that simple though.
 
-The C<Time::Piece> module, which comes with Perl, replaces C<localtime>
+The L<Time::Piece> module, which comes with Perl, replaces L<localtime>
 with a version that returns an object. It also overloads the comparison
 operators so you can compare them directly:
 
@@ -479,26 +479,26 @@ operators so you can compare them directly:
     }
 
 You can also get differences with a subtraction, which returns a
-C<Time::Seconds> object:
+L<Time::Seconds> object:
 
     my $diff = $date1 - $date2;
     print "The difference is ", $date_diff->days, " days\n";
 
-If you want to work with formatted dates, the C<Date::Manip>,
-C<Date::Calc>, or C<DateTime> modules can help you.
+If you want to work with formatted dates, the L<Date::Manip>,
+L<Date::Calc>, or L<DateTime> modules can help you.
 
 =head2 How can I take a string and turn it into epoch seconds?
 
 If it's a regular enough string that it always has the same format,
 you can split it up and pass the parts to C<timelocal> in the standard
-C<Time::Local> module.  Otherwise, you should look into the C<Date::Calc>,
-C<Date::Parse>, and C<Date::Manip> modules from CPAN.
+L<Time::Local> module.  Otherwise, you should look into the L<Date::Calc>,
+L<Date::Parse>, and L<Date::Manip> modules from CPAN.
 
 =head2 How can I find the Julian Day?
 
 (contributed by brian d foy and Dave Cross)
 
-You can use the C<Time::Piece> module, part of the Standard Library,
+You can use the L<Time::Piece> module, part of the Standard Library,
 which can convert a date/time to a Julian Day:
 
     $ perl -MTime::Piece -le 'print localtime->julian_day'
@@ -515,7 +515,7 @@ Julian day):
     $ perl -MTime::Piece -le 'print localtime->yday'
     45
 
-You can also do the same things with the C<DateTime> module:
+You can also do the same things with the L<DateTime> module:
 
     $ perl -MDateTime -le'print DateTime->today->jd'
     2453401.5
@@ -524,7 +524,7 @@ You can also do the same things with the C<DateTime> module:
     $ perl -MDateTime -le'print DateTime->today->doy'
     31
 
-You can use the C<Time::JulianDay> module available on CPAN.  Ensure
+You can use the L<Time::JulianDay> module available on CPAN.  Ensure
 that you really want to find a Julian day, though, as many people have
 different ideas about Julian days (see http://www.hermetic.ch/cal_stud/jdn.htm
 for instance):
@@ -540,7 +540,7 @@ X<timelocal>
 (contributed by brian d foy)
 
 To do it correctly, you can use one of the C<Date> modules since they
-work with calendars instead of times. The C<DateTime> module makes it
+work with calendars instead of times. The L<DateTime> module makes it
 simple, and give you the same time of day, only the day before,
 despite daylight saving time changes:
 
@@ -550,7 +550,7 @@ despite daylight saving time changes:
 
     print "Yesterday was $yesterday\n";
 
-You can also use the C<Date::Calc> module using its C<Today_and_Now>
+You can also use the L<Date::Calc> module using its C<Today_and_Now>
 function.
 
     use Date::Calc qw( Today_and_Now Add_Delta_DHMS );
@@ -565,7 +565,7 @@ most people, there are two days a year when they aren't: the switch to
 and from summer time throws this off. For example, the rest of the
 suggestions will be wrong sometimes:
 
-Starting with Perl 5.10, C<Time::Piece> and C<Time::Seconds> are part
+Starting with Perl 5.10, L<Time::Piece> and L<Time::Seconds> are part
 of the standard distribution, so you might think that you could do
 something like this:
 
@@ -575,14 +575,14 @@ something like this:
     my $yesterday = localtime() - ONE_DAY; # WRONG
     print "Yesterday was $yesterday\n";
 
-The C<Time::Piece> module exports a new C<localtime> that returns an
-object, and C<Time::Seconds> exports the C<ONE_DAY> constant that is a
+The L<Time::Piece> module exports a new C<localtime> that returns an
+object, and L<Time::Seconds> exports the C<ONE_DAY> constant that is a
 set number of seconds. This means that it always gives the time 24
 hours ago, which is not always yesterday. This can cause problems
 around the end of daylight saving time when there's one day that is 25
 hours long.
 
-You have the same problem with C<Time::Local>, which will give the wrong
+You have the same problem with L<Time::Local>, which will give the wrong
 answer for those same special cases:
 
     # contributed by Gunnar Hjalmarsson
@@ -625,11 +625,11 @@ though.
 There are many ways to ensure that values are what you expect or
 want to accept. Besides the specific examples that we cover in the
 perlfaq, you can also look at the modules with "Assert" and "Validate"
-in their names, along with other modules such as C<Regexp::Common>.
+in their names, along with other modules such as L<Regexp::Common>.
 
 Some modules have validation for particular types of input, such
-as C<Business::ISBN>, C<Business::CreditCard>, C<Email::Valid>,
-and C<Data::Validate::IP>.
+as L<Business::ISBN>, L<Business::CreditCard>, L<Email::Valid>,
+and L<Data::Validate::IP>.
 
 =head2 How do I unescape a string?
 
@@ -723,9 +723,9 @@ parser.
 
 If you are serious about writing a parser, there are a number of
 modules or oddities that will make your life a lot easier.  There are
-the CPAN modules C<Parse::RecDescent>, C<Parse::Yapp>, and
-C<Text::Balanced>; and the C<byacc> program. Starting from perl 5.8
-the C<Text::Balanced> is part of the standard distribution.
+the CPAN modules L<Parse::RecDescent>, L<Parse::Yapp>, and
+L<Text::Balanced>; and the C<byacc> program. Starting from perl 5.8
+the L<Text::Balanced> is part of the standard distribution.
 
 One simple destructive, inside-out approach that you might try is to
 pull out the smallest nesting parts one at a time:
@@ -762,7 +762,7 @@ You can do it yourself:
 
     1 while $string =~ s/\t+/' ' x (length($&) * 8 - length($`) % 8)/e;
 
-Or you can just use the C<Text::Tabs> module (part of the standard Perl
+Or you can just use the L<Text::Tabs> module (part of the standard Perl
 distribution).
 
     use Text::Tabs;
@@ -770,21 +770,21 @@ distribution).
 
 =head2 How do I reformat a paragraph?
 
-Use C<Text::Wrap> (part of the standard Perl distribution):
+Use L<Text::Wrap> (part of the standard Perl distribution):
 
     use Text::Wrap;
     print wrap("\t", '  ', @paragraphs);
 
-The paragraphs you give to C<Text::Wrap> should not contain embedded
-newlines.  C<Text::Wrap> doesn't justify the lines (flush-right).
+The paragraphs you give to L<Text::Wrap> should not contain embedded
+newlines.  L<Text::Wrap> doesn't justify the lines (flush-right).
 
-Or use the CPAN module C<Text::Autoformat>.  Formatting files can be
+Or use the CPAN module L<Text::Autoformat>.  Formatting files can be
 easily done by making a shell alias, like so:
 
     alias fmt="perl -i -MText::Autoformat -n0777 \
         -e 'print autoformat $_, {all=>1}' $*"
 
-See the documentation for C<Text::Autoformat> to appreciate its many
+See the documentation for L<Text::Autoformat> to appreciate its many
 capabilities.
 
 =head2 How can I access or change N characters of a string?
@@ -905,8 +905,8 @@ L<Text::Autoformat> and get on with the next problem. :)
 
 =head2 How can I split a [character]-delimited string except when inside [character]?
 
-Several modules can handle this sort of parsing--C<Text::Balanced>,
-C<Text::CSV>, C<Text::CSV_XS>, and C<Text::ParseWords>, among others.
+Several modules can handle this sort of parsing--L<Text::Balanced>,
+L<Text::CSV>, L<Text::CSV_XS>, and L<Text::ParseWords>, among others.
 
 Take the example case of trying to split a string that is
 comma-separated into its different fields. You can't use C<split(/,/)>
@@ -932,7 +932,7 @@ If you want to represent quotation marks inside a
 quotation-mark-delimited field, escape them with backslashes (eg,
 C<"like \"this\"">.
 
-Alternatively, the C<Text::ParseWords> module (part of the standard
+Alternatively, the L<Text::ParseWords> module (part of the standard
 Perl distribution) lets you say:
 
     use Text::ParseWords;
@@ -1054,8 +1054,8 @@ appear as part of the data.
 
 If you want to work with comma-separated values, don't do this since
 that format is a bit more complicated. Use one of the modules that
-handle that format, such as C<Text::CSV>, C<Text::CSV_XS>, or
-C<Text::CSV_PP>.
+handle that format, such as L<Text::CSV>, L<Text::CSV_XS>, or
+L<Text::CSV_PP>.
 
 If you want to break apart an entire line of fixed columns, you can use
 C<unpack> with the A (ASCII) format. By using a number after the format
@@ -1071,16 +1071,16 @@ spaces. If you have space separated data, you may want C<split> instead.
 
 (contributed by brian d foy)
 
-You can use the Text::Soundex module. If you want to do fuzzy or close
-matching, you might also try the C<String::Approx>, and
-C<Text::Metaphone>, and C<Text::DoubleMetaphone> modules.
+You can use the C<Text::Soundex> module. If you want to do fuzzy or close
+matching, you might also try the L<String::Approx>, and
+L<Text::Metaphone>, and L<Text::DoubleMetaphone> modules.
 
 =head2 How can I expand variables in text strings?
 
 (contributed by brian d foy)
 
 If you can avoid it, don't, or if you can use a templating system,
-such as C<Text::Template> or C<Template> Toolkit, do that instead. You
+such as L<Text::Template> or L<Template> Toolkit, do that instead. You
 might even be able to get the job done with C<sprintf> or C<printf>:
 
     my $string = sprintf 'Say hello to %s and %s', $foo, $bar;
@@ -1385,7 +1385,7 @@ elements.
     my @unique = keys %hash;
 
 If you want to use a module, try the C<uniq> function from
-C<List::MoreUtils>. In list context it returns the unique elements,
+L<List::MoreUtils>. In list context it returns the unique elements,
 preserving their order in the list. In scalar context, it returns the
 number of unique elements.
 
@@ -1475,7 +1475,7 @@ These methods guarantee fast individual tests but require a re-organization
 of the original list or array.  They only pay off if you have to test
 multiple values against the same array.
 
-If you are testing only once, the standard module C<List::Util> exports
+If you are testing only once, the standard module L<List::Util> exports
 the function C<first> for this purpose.  It works by stopping once it
 finds the element. It's written in C for speed, and its Perl equivalent
 looks like this subroutine:
@@ -1548,7 +1548,7 @@ undefined empty strings.  Modify if you have other needs.
     }
 
 For multilevel structures, you may wish to use an approach more
-like this one.  It uses the CPAN module C<FreezeThaw>:
+like this one.  It uses the CPAN module L<FreezeThaw>:
 
     use FreezeThaw qw(cmpStr);
     @a = @b = ( "this", "that", [ "more", "stuff" ] );
@@ -1581,7 +1581,7 @@ an exercise to the reader.
 =head2 How do I find the first array element for which a condition is true?
 
 To find the first array element which satisfies a condition, you can
-use the C<first()> function in the C<List::Util> module, which comes
+use the C<first()> function in the L<List::Util> module, which comes
 with Perl 5.8. This example finds the first element that contains
 "Perl".
 
@@ -1589,7 +1589,7 @@ with Perl 5.8. This example finds the first element that contains
 
     my $element = first { /Perl/ } @array;
 
-If you cannot use C<List::Util>, you can make your own loop to do the
+If you cannot use L<List::Util>, you can make your own loop to do the
 same thing.  Once you find the element, you stop the loop with last.
 
     my $found;
@@ -1628,7 +1628,7 @@ the chain.
 
 Steve Lembark goes through the details in his YAPC::NA 2009 talk "Perly
 Linked Lists" ( http://www.slideshare.net/lembark/perly-linked-lists ),
-although you can just use his C<LinkedList::Single> module.
+although you can just use his L<LinkedList::Single> module.
 
 =head2 How do I handle circular lists?
 X<circular> X<array> X<Tie::Cycle> X<Array::Iterator::Circular>
@@ -1647,7 +1647,7 @@ index modulo the number of elements in the array:
         last if $i > 20;
     }
 
-You can also use C<Tie::Cycle> to use a scalar that always has the
+You can also use L<Tie::Cycle> to use a scalar that always has the
 next element of the circular array:
 
     use Tie::Cycle;
@@ -1658,7 +1658,7 @@ next element of the circular array:
     print $cycle; # 000000
     print $cycle; # FFFF00
 
-The C<Array::Iterator::Circular> creates an iterator object for
+The L<Array::Iterator::Circular> creates an iterator object for
 circular arrays:
 
     use Array::Iterator::Circular;
@@ -1768,8 +1768,8 @@ Or, simply:
 X<List::Permutor> X<permute> X<Algorithm::Loops> X<Knuth>
 X<The Art of Computer Programming> X<Fischer-Krause>
 
-Use the C<List::Permutor> module on CPAN. If the list is actually an
-array, try the C<Algorithm::Permute> module (also on CPAN). It's
+Use the L<List::Permutor> module on CPAN. If the list is actually an
+array, try the L<Algorithm::Permute> module (also on CPAN). It's
 written in XS code and is very efficient:
 
     use Algorithm::Permute;
@@ -1814,7 +1814,7 @@ Knuth's I<The Art of Computer Programming> and will work on any list:
 
     permute { print "@_\n" } split;
 
-The C<Algorithm::Loops> module also provides the C<NextPermute> and
+The L<Algorithm::Loops> module also provides the C<NextPermute> and
 C<NextPermuteNum> functions which efficiently find all unique permutations
 of an array, even if it contains duplicate values, modifying it in-place:
 if its elements are in reverse-sorted order then the array is reversed,
@@ -1942,13 +1942,13 @@ from Benjamin Goldberg:
         push @ints, grep vec($vec, $_, 1), $-[0] * 8 .. $+[0] * 8;
     }
 
-Or use the CPAN module C<Bit::Vector>:
+Or use the CPAN module L<Bit::Vector>:
 
     $vector = Bit::Vector->new($num_of_bits);
     $vector->Index_List_Store(@ints);
     @ints = $vector->Index_List_Read();
 
-C<Bit::Vector> provides efficient methods for bit vector, sets of
+L<Bit::Vector> provides efficient methods for bit vector, sets of
 small integers and "big int" math.
 
 Here's a more extensive illustration using vec():
@@ -2223,7 +2223,7 @@ X<hash tie sort DB_File Tie::IxHash>
 
 You can look into using the C<DB_File> module and C<tie()> using the
 C<$DB_BTREE> hash bindings as documented in L<DB_File/"In Memory
-Databases">. The C<Tie::IxHash> module from CPAN might also be
+Databases">. The L<Tie::IxHash> module from CPAN might also be
 instructive. Although this does keep your hash sorted, you might not
 like the slowdown you suffer from the tie interface. Are you sure you
 need to do this? :)
@@ -2365,7 +2365,7 @@ it can be a bit slow.
 
 =head2 How can I make my hash remember the order I put elements into it?
 
-Use the C<Tie::IxHash> from CPAN.
+Use the L<Tie::IxHash> from CPAN.
 
     use Tie::IxHash;
 
@@ -2498,7 +2498,7 @@ pragma is available on CPAN. Now you don't add to the hash:
         }
     }
 
-The C<Data::Diver> module on CPAN can do it for you too. Its C<Dive>
+The L<Data::Diver> module on CPAN can do it for you too. Its C<Dive>
 subroutine can tell you not only if the keys exist but also get the
 value:
 
@@ -2514,7 +2514,7 @@ value:
 
 You can easily do this yourself too by checking each level of the hash
 before you move onto the next level. This is essentially what
-C<Data::Diver> does for you:
+L<Data::Diver> does for you:
 
     if( check_hash( \%hash, qw(key1 key2 key3) ) ) {
         ...;
@@ -2575,7 +2575,7 @@ L<Scalar::Util> (distributed with 5.8) provides access to perl's
 internal function C<looks_like_number> for determining whether a
 variable looks like a number. L<Data::Types> exports functions that
 validate data types using both the above and other regular
-expressions. Thirdly, there is C<Regexp::Common> which has regular
+expressions. Thirdly, there is L<Regexp::Common> which has regular
 expressions to match various types of numbers. Those three modules are
 available from the CPAN.
 
@@ -2610,9 +2610,9 @@ instead.
 =head2 How do I keep persistent data across program calls?
 
 For some specific applications, you can use one of the DBM modules.
-See L<AnyDBM_File>.  More generically, you should consult the C<FreezeThaw>
-or C<Storable> modules from CPAN.  Starting from Perl 5.8 C<Storable> is part
-of the standard distribution.  Here's one example using C<Storable>'s C<store>
+See L<AnyDBM_File>.  More generically, you should consult the L<FreezeThaw>
+or L<Storable> modules from CPAN.  Starting from Perl 5.8 L<Storable> is part
+of the standard distribution.  Here's one example using L<Storable>'s C<store>
 and C<retrieve> functions:
 
     use Storable;
@@ -2624,8 +2624,8 @@ and C<retrieve> functions:
 
 =head2 How do I print out or copy a recursive data structure?
 
-The C<Data::Dumper> module on CPAN (or the 5.005 release of Perl) is great
-for printing out data structures.  The C<Storable> module on CPAN (or the
+The L<Data::Dumper> module on CPAN (or the 5.005 release of Perl) is great
+for printing out data structures.  The L<Storable> module on CPAN (or the
 5.8 release of Perl), provides a function called C<dclone> that recursively
 copies its argument.
 
@@ -2652,13 +2652,13 @@ Moose that supports roles.
 
 =head2 How do I verify a credit card checksum?
 
-Get the C<Business::CreditCard> module from CPAN.
+Get the L<Business::CreditCard> module from CPAN.
 
 =head2 How do I pack arrays of doubles or floats for XS code?
 
-The arrays.h/arrays.c code in the C<PGPLOT> module on CPAN does just this.
+The arrays.h/arrays.c code in the L<PGPLOT> module on CPAN does just this.
 If you're doing a lot of float or double processing, consider using
-the C<PDL> module from CPAN instead--it makes number-crunching easy.
+the L<PDL> module from CPAN instead--it makes number-crunching easy.
 
 See L<http://search.cpan.org/dist/PGPLOT> for the code.
 
