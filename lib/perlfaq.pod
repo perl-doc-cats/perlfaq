@@ -18,7 +18,7 @@ that lets you read the L<perlfaq>:
 
 or search the perlfaq question headings:
 
-       $ perldoc -q open
+    $ perldoc -q open
 
 See L<perldoc> for more information.
 
