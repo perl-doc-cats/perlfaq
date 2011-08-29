@@ -31,15 +31,7 @@ source release of perl).
 
 =head2 How can I get a binary version of perl?
 
-(contributed by brian d foy)
-
-L<ActiveState|http://www.activestate.com/> Windows, Linux, Mac OS X, Solaris, AIX and HP-UX
-
-L<Sunfreeware.com|http://www.sunfreeware.com/> Solaris 2.5 to Solaris 10 (SPARC and x86)
-
-L<Strawberry Perl|http://www.strawberryperl.com> Windows, Perl 5.8.8 and 5.10.0
-
-L<IndigoPerl|http://indigostar.com/> Windows
+See L<CPAN Ports|http://www.cpan.org/ports/>
 
 =head2 I don't have a C compiler. How can I build my own Perl interpreter?
 
