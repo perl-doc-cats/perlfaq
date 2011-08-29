@@ -1,3 +1,6 @@
+5.01500302 Mon 29 Aug 2011 10:53:08 +0100
+  * Update "How to contribute to the perlfaq"
+
 5.01500301  Mon, 29 Aug 2011 11:08:17 +0200
   * Cause the 'perlfaq' package to be indexed by PAUSE so we can make use of its
     permission system.
