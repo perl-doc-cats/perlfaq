@@ -1,3 +1,13 @@
+5.0150033 Tue 30 Aug 2011 21:46:25 +0100
+  * Perl 6 changes (apeiron)
+  * Replace tabs with spaces (ranguard)
+  * Link to www.cpan.org/ports/ for binary (ranguard)
+  * Switch C<> over to L<> for any module on CPAN (ranguard)
+  * Change brace stype (apeiron)
+  * Extra dzil tests (rafl)
+  * Changes so more semantic, and better rendered HTML (ranguard)
+  * Point to repo for how to update perlfaq (ranguard)
+
 5.0150032 Tue 30 Aug 2011 19:51:59 +0100
   * Version number fix only
 
@@ -5,8 +15,8 @@
   * Update "How to contribute to the perlfaq"
 
 5.01500301  Mon, 29 Aug 2011 11:08:17 +0200
-  * Cause the 'perlfaq' package to be indexed by PAUSE so we can make use of its
-    permission system.
+  * Cause the 'perlfaq' package to be indexed by PAUSE so we can make use 
+    of its permission system.
 
 5.015003  Fri, 26 Aug 2011 14:37:47 +0200
   * Replace old bookmarks.cpan link with www.perl.org and learn.perl.org
@@ -16,5 +26,14 @@
   * Add a note on searching perlfaq (Matthew Horsfall).
 
 5.015000  Fri, 08 Jul 2011 11:37:58 +0200
-  * First stand-alone release to CPAN. This release is identical to the version
-    of perlfaq included with the perl code as of 5.15.0.
+  * First stand-alone release to CPAN. This release is identical to 
+    the version of perlfaq included with the perl code as of 5.15.0.
+
+-----
+
+For prior history please see the Perl repository:
+
+git clone git://perl5.git.perl.org/perl.git
+cd perl
+git co a2afbef4476f724afce78f808244bff05314ad11
+git log pod/perlfaq*
