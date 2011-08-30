@@ -1,3 +1,13 @@
+5.0150033 Tue 30 Aug 2011 21:46:25 +0100
+  * Perl 6 changes (apeiron)
+  * Replace tabs with spaces (ranguard)
+  * Link to www.cpan.org/ports/ for binary (ranguard)
+  * Switch C<> over to L<> for any module on CPAN (ranguard)
+  * Change brace stype (apeiron)
+  * Extra dzil tests (rafl)
+  * Changes so more semantic, and better rendered HTML (ranguard)
+  * Point to repo for how to update perlfaq (ranguard)
+
 5.0150032 Tue 30 Aug 2011 19:51:59 +0100
   * Version number fix only
 
