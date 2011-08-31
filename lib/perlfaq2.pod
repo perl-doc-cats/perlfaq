@@ -82,48 +82,25 @@ It describes in detail how to cope with most idiosyncrasies that the
 C<Configure> script can't work around for any given system or
 architecture.
 
-=head2 What modules and extensions are available for Perl? What is CPAN? What does CPAN/src/... mean?
+=head2 What modules and extensions are available for Perl? What is CPAN?
 
 CPAN stands for Comprehensive Perl Archive Network, a multi-gigabyte
 archive replicated on hundreds of machines all over the world. CPAN
-contains source code, non-native ports, documentation, scripts, and
-many third-party modules and extensions, designed for everything from
-commercial database interfaces to keyboard/screen control to web
-walking and CGI scripts. The master web site for CPAN is
-L<http://www.cpan.org/> and there is the CPAN Multiplexer at
-L<http://www.cpan.org/CPAN.html> which will choose a mirror near you via
-DNS. See L<http://www.perl.com/CPAN> (without a slash at the end) for
-how this process works. Also, L<http://mirror.cpan.org/> has a nice
-interface to the L<http://www.cpan.org/MIRRORED.BY> mirror directory.
+contains tens of thousands of modules and extensions, source code 
+and documentation, designed for I<everything> from commercial 
+database interfaces to keyboard/screen control and running large web sites.
+
+The master web site for CPAN is L<http://www.cpan.org/>, 
+L<http://www.cpan.org/SITES.html> lists all mirrors.
 
 See the CPAN FAQ at L<http://www.cpan.org/misc/cpan-faq.html> for answers
-to the most frequently asked questions about CPAN including how to
-become a mirror.
+to the most frequently asked questions about CPAN.
 
-F<CPAN/path/...> is a naming convention for files available on CPAN
-sites. CPAN indicates the base directory of a CPAN mirror, and the
-rest of the path is the path from that directory to the file. For
-instance, if you're using L<ftp://ftp.funet.fi/pub/languages/perl/CPAN>
-as your CPAN site, the file F<CPAN/misc/japh> is downloadable as
-L<ftp://ftp.funet.fi/pub/languages/perl/CPAN/misc/japh>.
+The L<Task::Kensho> module has a list of recommended modules which
+you should review as a good starting point.
 
-Considering that, as of 2006, there are over ten thousand existing
-modules in the archive, one probably exists to do nearly anything you
-can think of. Current categories under C<CPAN/modules/by-category/>
-include Perl core modules; development support; operating system
-interfaces; networking, devices, and interprocess communication; data
-type utilities; database interfaces; user interfaces; interfaces to
-other languages; filenames, file systems, and file locking;
-internationalization and locale; world wide web support; server and
-daemon utilities; archiving and compression; image manipulation; mail
-and news; control flow utilities; filehandle and I/O; Microsoft
-Windows modules; and miscellaneous modules.
-
-See L<http://www.cpan.org/modules/00modlist.long.html> or
-L<http://search.cpan.org/> for a more complete list of modules by
-category.
-
-CPAN is a free service and is not affiliated with O'Reilly Media.
+You can also search CPAN on L<http://metacpan.org> or
+L<http://search.cpan.org/>.
 
 =head2 Is there an ISO or ANSI certified version of Perl?
 
