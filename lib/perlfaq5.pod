@@ -13,7 +13,7 @@ X<flush> X<buffer> X<unbuffer> X<autoflush>
 (contributed by brian d foy)
 
 You might like to read Mark Jason Dominus's "Suffering From Buffering"
-at http://perl.plover.com/FAQs/Buffering.html .
+at L<http://perl.plover.com/FAQs/Buffering.html> .
 
 Perl normally buffers output so it doesn't make a system call for every
 bit of output. By saving up output, it makes fewer expensive system calls.
@@ -1426,7 +1426,7 @@ documentation for details.
 
 This is elaborately and painstakingly described in the
 F<file-dir-perms> article in the "Far More Than You Ever Wanted To
-Know" collection in http://www.cpan.org/misc/olddoc/FMTEYEWTK.tgz .
+Know" collection in L<http://www.cpan.org/misc/olddoc/FMTEYEWTK.tgz> .
 
 The executive summary: learn how your filesystem works. The
 permissions on a file say what can happen to the data in that file.

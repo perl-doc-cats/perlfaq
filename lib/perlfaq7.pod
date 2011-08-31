@@ -195,7 +195,7 @@ ExtUtils::ModuleMaker and Module::Starter, can help you
 create a skeleton module distribution.
 
 You may also want to see Sam Tregar's "Writing Perl Modules
-for CPAN" ( http://apress.com/book/bookDisplay.html?bID=14 )
+for CPAN" ( L<http://apress.com/book/bookDisplay.html?bID=14> )
 which is the best hands-on guide to creating module
 distributions.
 
@@ -216,7 +216,7 @@ treat each case individually.
 =item *
 
 Get a login for the Perl Authors Upload Server (PAUSE) if you don't
-already have one: http://pause.perl.org
+already have one: L<http://pause.perl.org>
 
 =item *
 

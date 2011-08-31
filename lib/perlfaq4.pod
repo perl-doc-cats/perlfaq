@@ -526,7 +526,7 @@ You can also do the same things with the L<DateTime> module:
 
 You can use the L<Time::JulianDay> module available on CPAN.  Ensure
 that you really want to find a Julian day, though, as many people have
-different ideas about Julian days (see http://www.hermetic.ch/cal_stud/jdn.htm
+different ideas about Julian days (see L<http://www.hermetic.ch/cal_stud/jdn.htm>
 for instance):
 
     $  perl -MTime::JulianDay -le 'print local_julian_day( time )'
@@ -1627,7 +1627,7 @@ reallocate less memory, or quickly insert elements in the middle of
 the chain.
 
 Steve Lembark goes through the details in his YAPC::NA 2009 talk "Perly
-Linked Lists" ( http://www.slideshare.net/lembark/perly-linked-lists ),
+Linked Lists" ( L<http://www.slideshare.net/lembark/perly-linked-lists> ),
 although you can just use his L<LinkedList::Single> module.
 
 =head2 How do I handle circular lists?
@@ -1872,7 +1872,7 @@ This can be conveniently combined with precalculation of keys as given
 above.
 
 See the F<sort> article in the "Far More Than You Ever Wanted
-To Know" collection in http://www.cpan.org/misc/olddoc/FMTEYEWTK.tgz for
+To Know" collection in L<http://www.cpan.org/misc/olddoc/FMTEYEWTK.tgz> for
 more about this approach.
 
 See also the question later in L<perlfaq4> on sorting hashes.

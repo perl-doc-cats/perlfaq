@@ -23,20 +23,20 @@ or search the perlfaq question headings:
 See L<perldoc> for more information.
 
 Besides your local system, you can find the perlfaq on the web, including
-at http://perldoc.perl.org/ .
+at L<http://perldoc.perl.org/>.
 
 The perlfaq is an evolving document and you can read the latest version
-at http://faq.perl.org/ .
+at L<http://faq.perl.org/>.
 
 =head2 How to contribute to the perlfaq
 
-Please review https://github.com/perl-doc-cats/perlfaq/wiki
+Please review L<https://github.com/perl-doc-cats/perlfaq/wiki>
 if you do not find your suggestion please create an issue or pull request
-against https://github.com/perl-doc-cats/perlfaq .
+against L<https://github.com/perl-doc-cats/perlfaq>.
 
 Once approved they will then be merged into 
-https://github.com/tpf/perlfaq which is the latest live version that
-drives http://faq.perl.org/ and will be distributed with the next
+L<https://github.com/tpf/perlfaq> which is the latest live version that
+drives L<http://faq.perl.org/> and will be distributed with the next
 release of Perl 5.
 
 =head2 What if my question isn't answered in the FAQ?

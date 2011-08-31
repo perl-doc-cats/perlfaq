@@ -14,10 +14,10 @@ and a few on the web.
 The Common Gateway Interface (CGI) specifies a software interface between
 a program ("CGI script") and a web server (HTTPD). It is not specific
 to Perl, and has its own FAQs and tutorials, and usenet group,
-comp.infosystems.www.authoring.cgi
+comp.infosystems.L<www.authoring.cgi>
 
 The CGI specification is outlined in an informational RFC:
-http://www.ietf.org/rfc/rfc3875
+L<http://www.ietf.org/rfc/rfc3875>
 
 These Perl FAQs very selectively cover some CGI issues. However, Perl
 programmers are strongly advised to use the C<CGI.pm> module, to take care
@@ -49,8 +49,8 @@ systems. C<CGI.pm> selects an appropriate newline representation
 
 There are many things that might be wrong with your CGI program, and only
 some of them might be related to Perl. Try going through the L<troubleshooting
-guide|http://www.perlmonks.org/?node_id=380424> on 
-L<Perlmonks|http://www.perlmonks.org>
+guide|L<http://www.perlmonks.org/?node_id=380424>> on 
+L<Perlmonks|L<http://www.perlmonks.org>>
 
 =head2 How can I get better error messages from a CGI program?
 
@@ -105,7 +105,7 @@ Here's one "simple-minded" approach, that works for most files:
 
 If you want a more complete solution, see the 3-stage striphtml
 program in
-http://www.cpan.org/authors/Tom_Christiansen/scripts/striphtml.gz
+L<http://www.cpan.org/authors/Tom_Christiansen/scripts/striphtml.gz>
 .
 
 Here are some tricky cases that you should think about when picking
@@ -203,13 +203,13 @@ resources and give their content back to you as a string:
 
     use LWP::Simple qw(get);
 
-    my $html = get( "http://www.example.com/index.html" );
+    my $html = get( "L<http://www.example.com/index.html"> );
 
 It can also store the resource directly in a file:
 
     use LWP::Simple qw(getstore);
 
-    getstore( "http://www.example.com/index.html", "foo.html" );
+    getstore( "L<http://www.example.com/index.html">, "foo.html" );
 
 If you need to do something more complicated, you can use
 L<LWP::UserAgent> module to create your own user-agent (e.g. browser)
@@ -228,7 +228,7 @@ the form using the C<query_form> method:
     use LWP::Simple;
     use URI::URL;
 
-    my $url = url('http://www.perl.com/cgi-bin/cpan_mod');
+    my $url = url('L<http://www.perl.com/cgi-bin/cpan_mod')>;
     $url->query_form(module => 'DB_File', readme => 1);
     $content = get($url);
 
@@ -239,7 +239,7 @@ the content appropriately.
     use LWP::UserAgent;
 
     $ua = LWP::UserAgent->new();
-    my $req = POST 'http://www.perl.com/cgi-bin/cpan_mod',
+    my $req = POST 'L<http://www.perl.com/cgi-bin/cpan_mod'>,
                    [ module => 'DB_File', readme => 1 ];
     $content = $ua->request($req)->as_string;
 
@@ -299,7 +299,7 @@ with a complete URL. This redirection is handled by the web browser.
 
     use CGI qw/:standard/;
 
-    my $url = 'http://www.cpan.org/';
+    my $url = 'L<http://www.cpan.org/'>;
     print redirect($url);
 
 This example shows a redirection with an absolute URLpath.  This
@@ -664,7 +664,7 @@ makes it quite easy to fetch a file:
 
     use LWP::Simple;
 
-    my $data = get( 'ftp://some.ftp.site/some/file.txt' );
+    my $data = get( 'L<ftp://some.ftp.site/some/file.txt'> );
 
 If you want more direct or low-level control of the FTP process, you can use
 the L<Net::FTP> module (in the Standard Library since Perl 5.8). It's
@@ -675,7 +675,7 @@ documentation has examples showing you just how to do that.
 (contributed by brian d foy)
 
 Use one of the RPC modules you can find on CPAN (
-http://search.cpan.org/search?query=RPC&mode=all ).
+L<http://search.cpan.org/search?query=RPC&mode=all> ).
 
 =head1 AUTHOR AND COPYRIGHT
 

@@ -159,7 +159,7 @@ If you just want to get work done, use a module and forget about the
 regular expressions. The L<XML::Parser> and L<HTML::Parser> modules
 are good starts, although each namespace has other parsing modules
 specialized for certain tasks and different ways of doing it. Start at
-CPAN Search ( http://search.cpan.org ) and wonder at all the work people
+CPAN Search ( L<http://search.cpan.org> ) and wonder at all the work people
 have done for you already! :)
 
 The problem with things such as XML is that they have balanced text

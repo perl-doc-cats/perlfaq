@@ -36,11 +36,11 @@ In particular, the core development team (known as the Perl Porters)
 are a rag-tag band of highly altruistic individuals committed to
 producing better software for free than you could hope to purchase for
 money. You may snoop on pending developments via the archives at
-http://www.xray.mpe.mpg.de/mailing-lists/perl5-porters/
-and http://archive.develooper.com/perl5-porters@perl.org/
+L<http://www.xray.mpe.mpg.de/mailing-lists/perl5-porters/>
+and L<http://archive.develooper.com/perl5-porters@perl.org/>
 or the news gateway nntp://nntp.perl.org/perl.perl5.porters or
-its web interface at http://nntp.perl.org/group/perl.perl5.porters ,
-or read the faq at http://dev.perl.org/perl5/docs/p5p-faq.html ,
+its web interface at L<http://nntp.perl.org/group/perl.perl5.porters> ,
+or read the faq at L<http://dev.perl.org/perl5/docs/p5p-faq.html> ,
 or you can subscribe to the mailing list by sending
 perl5-porters-subscribe@perl.org a subscription request
 (an empty message with no subject is fine).
@@ -86,7 +86,7 @@ so you'll have an easier time finding help for those.
 
 Versions prior to perl5.004 had serious security problems with buffer
 overflows, and in some cases have CERT advisories (for instance,
-http://www.cert.org/advisories/CA-1997-17.html ).
+L<http://www.cert.org/advisories/CA-1997-17.html> ).
 
 =item *
 
@@ -109,7 +109,7 @@ as its whitewashed bones have fractured or eroded.
 
 The current leading implementation of Perl 6, Rakudo, released a "useful,
 usable, 'early adopter'" distribution of Perl 6 (called Rakudo Star) in July of
-2010. Please see http://rakudo.org/ for more information.
+2010. Please see L<http://rakudo.org/> for more information.
 
 =item *
 
@@ -151,7 +151,7 @@ has proven to be a fascinating source of ideas for those using Perl 5 (the Moose
 object system is a well-known example). There is overlap in the communities, and
 this overlap fosters the tradition of sharing and borrowing that have been
 instrumental to Perl's success. The current leading implementation of Perl 6 is
-Rakudo, and you can learn more about it at http://rakudo.org.
+Rakudo, and you can learn more about it at L<http://rakudo.org>.
 
 See L<perlhist> for a history of Perl revisions.
 
@@ -165,7 +165,7 @@ of Perl and its implementation, but was ultimately abandoned.
 
 If you want to learn more about Perl 6, or have a desire to help in
 the crusade to make Perl a better place then read the Perl 6 developers
-page at http://dev.perl.org/perl6/ and get involved.
+page at L<http://dev.perl.org/perl6/> and get involved.
 
 "We're really serious about reinventing everything that needs reinventing."
 --Larry Wall
@@ -224,7 +224,7 @@ Probably the best thing to do is try to write equivalent code to do a
 set of tasks. These languages have their own newsgroups in which you
 can learn about (but hopefully not argue about) them.
 
-Some comparison documents can be found at http://www.perl.com/doc/FMTEYEWTK/versus/
+Some comparison documents can be found at L<http://www.perl.com/doc/FMTEYEWTK/versus/>
 if you really can't stop yourself.
 
 =head2 Can I do [task] in Perl?
@@ -332,7 +332,7 @@ programs to produce the same output, spinning things quickly out of
 control while still providing hours of amusement for their creators and
 readers.
 
-CPAN has several JAPH programs at http://www.cpan.org/misc/japh .
+CPAN has several JAPH programs at L<http://www.cpan.org/misc/japh>.
 
 =head2 Where can I get a list of Larry Wall witticisms?
 
@@ -345,7 +345,7 @@ Wikiquote has the witticisms from Larry along with their source,
 including his usenet postings and source code comments.
 
 If you want a plain text file, try
-http://www.cpan.org/misc/lwall-quotes.txt.gz .
+L<http://www.cpan.org/misc/lwall-quotes.txt.gz>.
 
 =head2 How can I convince others to use Perl?
 
@@ -365,8 +365,8 @@ choice and how Perl might satisfy that requirement.
 
 You don't have to worry about finding or paying for Perl; it's freely
 available and several popular operating systems come with Perl. Community
-support in places such as Perlmonks ( http://www.perlmonks.com )
-and the various Perl mailing lists ( http://lists.perl.org ) means that
+support in places such as Perlmonks ( L<http://www.perlmonks.com> )
+and the various Perl mailing lists ( L<http://lists.perl.org> ) means that
 you can usually get quick answers to your problems.
 
 Finally, keep in mind that Perl might not be the right tool for every
@@ -379,9 +379,9 @@ You might find these links useful:
 
 =over 4
 
-=item * http://perltraining.com.au/whyperl.html
+=item * L<http://perltraining.com.au/whyperl.html>
 
-=item * http://www.perl.org/advocacy/whyperl.html
+=item * L<http://www.perl.org/advocacy/whyperl.html>
 
 =back
 

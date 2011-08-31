@@ -53,7 +53,7 @@ perlxstut, perlxs, perlcall, perlguts, perlembed
 
 =item Various
 
-http://www.cpan.org/misc/olddoc/FMTEYEWTK.tgz 
+L<http://www.cpan.org/misc/olddoc/FMTEYEWTK.tgz> 
 (not a man-page but still useful, a collection of various essays on 
 Perl techniques)
 
@@ -80,12 +80,12 @@ that combines the interactive nature of a Unix shell with the power of
 Perl. The goal is a full-featured shell that behaves as expected for
 normal shell activity and uses Perl syntax and functionality for
 control-flow statements and other things. You can get L<psh> at
-https://metacpan.org/release/psh .
+L<https://metacpan.org/release/psh> .
 
 L<Zoidberg> is a similar project and provides a shell written in perl,
 configured in perl and operated in perl. It is intended as a login shell
 and development environment. It can be found at
-https://metacpan.org/release/Zoidberg.
+L<https://metacpan.org/release/Zoidberg>.
 
 The C<Shell.pm> module (distributed with Perl) makes Perl try commands
 which aren't part of the Perl language as shell commands.  C<perlsh> from
@@ -225,19 +225,19 @@ or I<Mastering Perl>, chapter 5.
 L<perldebguts> documents creating a custom debugger if you need to
 create a special sort of profiler. brian d foy describes the process
 in I<The Perl Journal>, "Creating a Perl Debugger",
-http://www.ddj.com/184404522 , and "Profiling in Perl"
-http://www.ddj.com/184404580 .
+L<http://www.ddj.com/184404522> , and "Profiling in Perl"
+L<http://www.ddj.com/184404580> .
 
 Perl.com has two interesting articles on profiling: "Profiling Perl",
-by Simon Cozens, http://www.perl.com/lpt/a/850 and "Debugging and
+by Simon Cozens, L<http://www.perl.com/lpt/a/850> and "Debugging and
 Profiling mod_perl Applications", by Frank Wiles,
-http://www.perl.com/pub/a/2006/02/09/debug_mod_perl.html .
+L<http://www.perl.com/pub/a/2006/02/09/debug_mod_perl.html> .
 
 Randal L. Schwartz writes about profiling in "Speeding up Your Perl
 Programs" for I<Unix Review>,
-http://www.stonehenge.com/merlyn/UnixReview/col49.html , and "Profiling
+L<http://www.stonehenge.com/merlyn/UnixReview/col49.html> , and "Profiling
 in Template Toolkit via Overriding" for I<Linux Magazine>,
-http://www.stonehenge.com/merlyn/LinuxMag/col75.html .
+L<http://www.stonehenge.com/merlyn/LinuxMag/col75.html> .
 
 =head2 How do I cross-reference my Perl programs?
 
@@ -269,7 +269,7 @@ Put that in your F<.exrc> file (replacing the caret characters
 with control characters) and away you go.  In insert mode, ^T is
 for indenting, ^D is for undenting, and ^O is for blockdenting--as
 it were.  A more complete example, with comments, can be found at
-http://www.cpan.org/authors/id/TOMC/scripts/toms.exrc.gz
+L<http://www.cpan.org/authors/id/TOMC/scripts/toms.exrc.gz>
 
 =head2 Is there a ctags for Perl?
 
@@ -279,9 +279,9 @@ Ctags uses an index to quickly find things in source code, and many
 popular editors support ctags for several different languages,
 including Perl.
 
-Exuberant ctags supports Perl: http://ctags.sourceforge.net/
+Exuberant ctags supports Perl: L<http://ctags.sourceforge.net/>
 
-You might also try pltags: http://www.mscha.com/pltags.zip
+You might also try pltags: L<http://www.mscha.com/pltags.zip>
 
 =head2 Is there an IDE or Windows Perl Editor?
 
@@ -298,14 +298,14 @@ order of preference):
 
 =item Eclipse
 
-http://e-p-i-c.sf.net/
+L<http://e-p-i-c.sf.net/>
 
 The Eclipse Perl Integration Project integrates Perl
 editing/debugging with Eclipse.
 
 =item Enginsite
 
-http://www.enginsite.com/
+L<http://www.enginsite.com/>
 
 Perl Editor by EngInSite is a complete integrated development
 environment (IDE) for creating, testing, and  debugging  Perl scripts;
@@ -313,7 +313,7 @@ the tool runs on Windows 9x/NT/2000/XP or later.
 
 =item Komodo
 
-http://www.ActiveState.com/Products/Komodo/
+L<http://www.ActiveState.com/Products/Komodo/>
 
 ActiveState's cross-platform (as of October 2004, that's Windows, Linux,
 and Solaris), multi-language IDE has Perl support, including a regular expression
@@ -321,11 +321,11 @@ debugger and remote debugging.
 
 =item Notepad++
 
-http://notepad-plus.sourceforge.net/
+L<http://notepad-plus.sourceforge.net/>
 
 =item Open Perl IDE
 
-http://open-perl-ide.sourceforge.net/
+L<http://open-perl-ide.sourceforge.net/>
 
 Open Perl IDE is an integrated development environment for writing
 and debugging Perl scripts with ActiveState's ActivePerl distribution
@@ -333,40 +333,40 @@ under Windows 95/98/NT/2000.
 
 =item OptiPerl
 
-http://www.optiperl.com/
+L<http://www.optiperl.com/>
 
 OptiPerl is a Windows IDE with simulated CGI environment, including
 debugger and syntax-highlighting editor.
 
 =item Padre
 
-http://padre.perlide.org/
+L<http://padre.perlide.org/>
 
 Padre is cross-platform IDE for Perl written in Perl using wxWidgets to provide
 a native look and feel. It's open source under the Artistic License.
 
 =item PerlBuilder
 
-http://www.solutionsoft.com/perl.htm
+L<http://www.solutionsoft.com/perl.htm>
 
 PerlBuilder is an integrated development environment for Windows that
 supports Perl development.
 
 =item visiPerl+
 
-http://helpconsulting.net/visiperl/index.html
+L<http://helpconsulting.net/visiperl/index.html>
 
 From Help Consulting, for Windows.
 
 =item Visual Perl
 
-http://www.activestate.com/Products/Visual_Perl/
+L<http://www.activestate.com/Products/Visual_Perl/>
 
 Visual Perl is a Visual Studio.NET plug-in from ActiveState.
 
 =item Zeus
 
-http://www.zeusedit.com/lookmain.html
+L<http://www.zeusedit.com/lookmain.html>
 
 Zeus for Window is another Win32 multi-language editor/IDE
 that comes with support for Perl.
@@ -384,32 +384,32 @@ Microsoft Word or WordPerfect, typically do not work since they insert
 all sorts of behind-the-scenes information, although some allow you to
 save files as "Text Only". You can also download text editors designed
 specifically for programming, such as Textpad (
-http://www.textpad.com/ ) and UltraEdit ( http://www.ultraedit.com/ ),
+L<http://www.textpad.com/> ) and UltraEdit ( L<http://www.ultraedit.com/> ),
 among others.
 
 If you are using MacOS, the same concerns apply. MacPerl (for Classic
 environments) comes with a simple editor. Popular external editors are
-BBEdit ( http://www.bbedit.com/ ) or Alpha (
-http://www.his.com/~jguyer/Alpha/Alpha8.html ). MacOS X users can use
+BBEdit ( L<http://www.bbedit.com/> ) or Alpha (
+L<http://www.his.com/~jguyer/Alpha/Alpha8.html> ). MacOS X users can use
 Unix editors as well.
 
 =over 4
 
 =item GNU Emacs
 
-http://www.gnu.org/software/emacs/windows/ntemacs.html
+L<http://www.gnu.org/software/emacs/windows/ntemacs.html>
 
 =item MicroEMACS
 
-http://www.microemacs.de/
+L<http://www.microemacs.de/>
 
 =item XEmacs
 
-http://www.xemacs.org/Download/index.html
+L<http://www.xemacs.org/Download/index.html>
 
 =item Jed
 
-http://space.mit.edu/~davis/jed/
+L<http://space.mit.edu/~davis/jed/>
 
 =back
 
@@ -419,11 +419,11 @@ or a vi clone such as
 
 =item Vim
 
-http://www.vim.org/
+L<http://www.vim.org/>
 
 =item Vile
 
-http://dickey.his.com/vile/vile.html
+L<http://dickey.his.com/vile/vile.html>
 
 =back
 
@@ -433,27 +433,27 @@ The following are Win32 multilanguage editor/IDEs that support Perl:
 
 =item Codewright
 
-http://www.borland.com/codewright/
+L<http://www.borland.com/codewright/>
 
 =item MultiEdit
 
-http://www.MultiEdit.com/
+L<http://www.MultiEdit.com/>
 
 =item SlickEdit
 
-http://www.slickedit.com/
+L<http://www.slickedit.com/>
 
 =item ConTEXT
 
-http://www.contexteditor.org/
+L<http://www.contexteditor.org/>
 
 =back
 
 There is also a toyedit Text widget based editor written in Perl
 that is distributed with the Tk module on CPAN.  The ptkdb
-( http://ptkdb.sourceforge.net/ ) is a Perl/Tk-based debugger that
+( L<http://ptkdb.sourceforge.net/> ) is a Perl/Tk-based debugger that
 acts as a development environment of sorts.  Perl Composer
-( http://perlcomposer.sourceforge.net/ ) is an IDE for Perl/Tk
+( L<http://perlcomposer.sourceforge.net/> ) is an IDE for Perl/Tk
 GUI creation.
 
 In addition to an editor/IDE you might be interested in a more
@@ -463,21 +463,21 @@ powerful shell environment for Win32.  Your options include
 
 =item Bash
 
-from the Cygwin package ( http://sources.redhat.com/cygwin/ )
+from the Cygwin package ( L<http://sources.redhat.com/cygwin/> )
 
 =item Ksh
 
-from the MKS Toolkit ( http://www.mkssoftware.com/ ), or the Bourne shell of
-the U/WIN environment ( http://www.research.att.com/sw/tools/uwin/ )
+from the MKS Toolkit ( L<http://www.mkssoftware.com/> ), or the Bourne shell of
+the U/WIN environment ( L<http://www.research.att.com/sw/tools/uwin/> )
 
 =item Tcsh
 
-ftp://ftp.astron.com/pub/tcsh/ , see also
-http://www.primate.wisc.edu/software/csh-tcsh-book/
+L<ftp://ftp.astron.com/pub/tcsh/> , see also
+L<http://www.primate.wisc.edu/software/csh-tcsh-book/>
 
 =item Zsh
 
-http://www.zsh.org/
+L<http://www.zsh.org/>
 
 =back
 
@@ -501,28 +501,28 @@ no 32k limit).
 =item Affrus
 
 is a full Perl development environment with full debugger support
-( http://www.latenightsw.com ).
+( L<http://www.latenightsw.com> ).
 
 =item Alpha
 
 is an editor, written and extensible in Tcl, that nonetheless has
 built-in support for several popular markup and programming languages,
-including Perl and HTML ( http://www.his.com/~jguyer/Alpha/Alpha8.html ).
+including Perl and HTML ( L<http://www.his.com/~jguyer/Alpha/Alpha8.html> ).
 
 =item BBEdit and BBEdit Lite
 
 are text editors for Mac OS that have a Perl sensitivity mode
-( http://web.barebones.com/ ).
+( L<http://web.barebones.com/> ).
 
 =back
 
 =head2 Where can I get Perl macros for vi?
 
 For a complete version of Tom Christiansen's vi configuration file,
-see http://www.cpan.org/authors/Tom_Christiansen/scripts/toms.exrc.gz ,
+see L<http://www.cpan.org/authors/Tom_Christiansen/scripts/toms.exrc.gz> ,
 the standard benchmark file for vi emulators.  The file runs best with nvi,
 the current version of vi out of Berkeley, which incidentally can be built
-with an embedded Perl interpreter--see http://www.cpan.org/src/misc/ .
+with an embedded Perl interpreter--see L<http://www.cpan.org/src/misc/> .
 
 =head2 Where can I get perl-mode or cperl-mode for emacs?
 X<emacs>
@@ -536,13 +536,13 @@ Note that the perl-mode of emacs will have fits with C<"main'foo">
 are probably using C<"main::foo"> in new Perl code anyway, so this
 shouldn't be an issue.
 
-For CPerlMode, see http://www.emacswiki.org/cgi-bin/wiki/CPerlMode
+For CPerlMode, see L<http://www.emacswiki.org/cgi-bin/wiki/CPerlMode>
 
 =head2 How can I use curses with Perl?
 
 The Curses module from CPAN provides a dynamically loadable object
 module interface to a curses library.  A small demo can be found at the
-directory http://www.cpan.org/authors/Tom_Christiansen/scripts/rep.gz ;
+directory L<http://www.cpan.org/authors/Tom_Christiansen/scripts/rep.gz> ;
 this program repeats a command and updates the screen as needed, rendering
 B<rep ps axu> similar to B<top>.
 
@@ -567,7 +567,7 @@ simple gui. It hasn't been updated in a while.
 =item Wx
 
 This is a Perl binding for the cross-platform wxWidgets toolkit
-( http://www.wxwidgets.org ). It works under Unix, Win32 and Mac OS X,
+( L<http://www.wxwidgets.org> ). It works under Unix, Win32 and Mac OS X,
 using native widgets (Gtk under Unix). The interface follows the C++
 interface closely, but the documentation is a little sparse for someone
 who doesn't know the library, mostly just referring you to the C++
@@ -575,7 +575,7 @@ documentation.
 
 =item Gtk and Gtk2
 
-These are Perl bindings for the Gtk toolkit ( http://www.gtk.org ). The
+These are Perl bindings for the Gtk toolkit ( L<http://www.gtk.org> ). The
 interface changed significantly between versions 1 and 2 so they have
 separate Perl modules. It runs under Unix, Win32 and Mac OS X (currently
 it requires an X server on Mac OS, but a 'native' port is underway), and
@@ -594,7 +594,7 @@ require familiarity with the C Win32 APIs, or reference to MSDN.
 
 =item CamelBones
 
-CamelBones ( http://camelbones.sourceforge.net ) is a Perl interface to
+CamelBones ( L<http://camelbones.sourceforge.net> ) is a Perl interface to
 Mac OS X's Cocoa GUI toolkit, and as such can be used to produce native
 GUIs on Mac OS X. It's not on CPAN, as it requires frameworks that
 CPAN.pm doesn't know how to install, but installation is via the
@@ -817,7 +817,7 @@ you> because the process start-up overhead is where the bottleneck is.
 
 There are two popular ways to avoid this overhead.  One solution
 involves running the Apache HTTP server (available from
-http://www.apache.org/ ) with either of the mod_perl or mod_fastcgi
+L<http://www.apache.org/> ) with either of the mod_perl or mod_fastcgi
 plugin modules.
 
 With mod_perl and the Apache::Registry module (distributed with
@@ -826,10 +826,10 @@ pre-compiles your script and then executes it within the same address
 space without forking.  The Apache extension also gives Perl access to
 the internal server API, so modules written in Perl can do just about
 anything a module written in C can.  For more on mod_perl, see
-http://perl.apache.org/
+L<http://perl.apache.org/>
 
 With the FCGI module (from CPAN) and the mod_fastcgi
-module (available from http://www.fastcgi.com/ ) each of your Perl
+module (available from L<http://www.fastcgi.com/> ) each of your Perl
 programs becomes a permanent CGI daemon process.
 
 Both of these solutions can have far-reaching effects on your system
@@ -837,7 +837,7 @@ and on the way you write your CGI programs, so investigate them with
 care.
 
 See also
-http://www.cpan.org/modules/by-category/15_World_Wide_Web_HTML_HTTP_CGI/ .
+L<http://www.cpan.org/modules/by-category/15_World_Wide_Web_HTML_HTTP_CGI/> .
 
 =head2 How can I hide the source for my Perl program?
 
@@ -895,18 +895,18 @@ You probably won't see much of a speed increase either, since most
 solutions simply bundle a Perl interpreter in the final product
 (but see L<How can I make my Perl program run faster?>).
 
-The Perl Archive Toolkit ( http://par.perl.org/ ) is Perl's
+The Perl Archive Toolkit ( L<http://par.perl.org/> ) is Perl's
 analog to Java's JAR.  It's freely available and on CPAN (
-http://search.cpan.org/dist/PAR/ ).
+L<http://search.cpan.org/dist/PAR/> ).
 
 There are also some commercial products that may work for you, although
 you have to buy a license for them.
 
-The Perl Dev Kit ( http://www.activestate.com/Products/Perl_Dev_Kit/ )
+The Perl Dev Kit ( L<http://www.activestate.com/Products/Perl_Dev_Kit/> )
 from ActiveState can "Turn your Perl programs into ready-to-run
 executables for HP-UX, Linux, Solaris and Windows."
 
-Perl2Exe ( http://www.indigostar.com/perl2exe.htm ) is a command line
+Perl2Exe ( L<http://www.indigostar.com/perl2exe.htm> ) is a command line
 program for converting perl scripts to executable files.  It targets both
 Windows and Unix platforms.
 
@@ -933,7 +933,7 @@ run the program C<install-linux.pl> merely by typing C<install-linux>.
 Under "Classic" MacOS, a perl program will have the appropriate Creator and
 Type, so that double-clicking them will invoke the MacPerl application.
 Under Mac OS X, clickable apps can be made from any C<#!> script using Wil
-Sanchez' DropScript utility: http://www.wsanchez.net/software/ .
+Sanchez' DropScript utility: L<http://www.wsanchez.net/software/> .
 
 I<IMPORTANT!>: Whatever you do, PLEASE don't get frustrated, and just
 throw the perl interpreter into your cgi-bin directory, in order to
@@ -1020,7 +1020,7 @@ do I get 500 Errors" or "Why doesn't it run from the browser right
 when it runs fine on the command line", see the troubleshooting
 guides and references in L<perlfaq9> or in the CGI MetaFAQ:
 
-    http://www.perl.org/CGI_MetaFAQ.html
+    L<http://www.perl.org/CGI_MetaFAQ.html>
 
 =head2 Where can I learn about object-oriented Perl programming?
 
