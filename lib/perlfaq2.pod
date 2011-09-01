@@ -12,7 +12,7 @@ related matters.
 
 The standard release of perl (the one maintained by the perl
 development team) is distributed only in source code form. You
-can find the latest releases at L<http://www.cpan.org/src/README.html>.
+can find the latest releases at L<http://www.cpan.org/src/>.
 
 Perl builds and runs on a bewildering number of platforms. Virtually
 all known and current Unix derivatives are supported (perl's native
