@@ -93,10 +93,6 @@ you should review as a good starting point.
 You can also search CPAN on L<http://metacpan.org> or
 L<http://search.cpan.org/>.
 
-=head2 Is there an ISO or ANSI certified version of Perl?
-
-Certainly not. Larry expects that he'll be certified before Perl is.
-
 =head2 Where can I get information on Perl?
 
 The complete Perl documentation is available with the Perl distribution.
