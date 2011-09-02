@@ -31,27 +31,18 @@ source release of perl).
 
 =head2 How can I get a binary version of perl?
 
-See CPAN Ports: L<http://www.cpan.org/ports/>
+See L<CPAN Ports|http://www.cpan.org/ports/>
 
 =head2 I don't have a C compiler. How can I build my own Perl interpreter?
 
-Since you don't have a C compiler, you're doomed and your vendor
-should be sacrificed to the Sun gods. But that doesn't help you.
-
-What you need to do is get a binary version of C<gcc> for your system
-first. Consult the Usenet FAQs for your operating system for
-information on where to get such a binary version.
-
-You might look around the net for a pre-built binary of Perl (or a
-C compiler!) that meets your needs, though:
-
-For Windows, 
-Strawberry Perl L<http://strawberryperl.com/> and
-ActivePerl L<http://www.activestate.com/activeperl> come with a
+For Windows, use a binary version of Perl, 
+L<Strawberry Perl|http://strawberryperl.com/> and
+L<ActivePerl|http://www.activestate.com/activeperl> come with a
 bundled C compiler.
 
-For Sun systems, SunFreeware.com provides binaries of most popular
-applications, including compilers and Perl.
+Otherwise if you really do want to build Perl, you need to get a 
+binary version of C<gcc> for your system first. Use a search 
+engine to find out how to do this for your operating system.
 
 =head2 I copied the perl binary from one machine to another, but scripts don't work.
 
