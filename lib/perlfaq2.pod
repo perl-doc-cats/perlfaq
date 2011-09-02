@@ -127,8 +127,7 @@ L<stackoverflow|http://stackoverflow.com/questions/tagged/perl>.
 
 =head2 Perl Books
 
-There are many good books on Perl. See the L<perlbook> documentation or
-( L<http://books.perl.org> ).
+There are many good L<books on Perl|http://www.perl.org/books/library.html>.
 
 =head2 Which magazines have Perl content?
 
