@@ -153,119 +153,119 @@ some programmers the notation might be familiar.
 
 Using perl's built in conversion of C<0x> notation:
 
-    $dec = 0xDEADBEEF;
+    my $dec = 0xDEADBEEF;
 
 Using the C<hex> function:
 
-    $dec = hex("DEADBEEF");
+    my $dec = hex("DEADBEEF");
 
 Using C<pack>:
 
-    $dec = unpack("N", pack("H8", substr("0" x 8 . "DEADBEEF", -8)));
+    my $dec = unpack("N", pack("H8", substr("0" x 8 . "DEADBEEF", -8)));
 
 Using the CPAN module C<Bit::Vector>:
 
     use Bit::Vector;
-    $vec = Bit::Vector->new_Hex(32, "DEADBEEF");
-    $dec = $vec->to_Dec();
+    my $vec = Bit::Vector->new_Hex(32, "DEADBEEF");
+    my $dec = $vec->to_Dec();
 
 =item How do I convert from decimal to hexadecimal
 
 Using C<sprintf>:
 
-    $hex = sprintf("%X", 3735928559); # upper case A-F
-    $hex = sprintf("%x", 3735928559); # lower case a-f
+    my $hex = sprintf("%X", 3735928559); # upper case A-F
+    my $hex = sprintf("%x", 3735928559); # lower case a-f
 
 Using C<unpack>:
 
-    $hex = unpack("H*", pack("N", 3735928559));
+    my $hex = unpack("H*", pack("N", 3735928559));
 
 Using L<Bit::Vector>:
 
     use Bit::Vector;
-    $vec = Bit::Vector->new_Dec(32, -559038737);
-    $hex = $vec->to_Hex();
+    my $vec = Bit::Vector->new_Dec(32, -559038737);
+    my $hex = $vec->to_Hex();
 
 And L<Bit::Vector> supports odd bit counts:
 
     use Bit::Vector;
-    $vec = Bit::Vector->new_Dec(33, 3735928559);
+    my $vec = Bit::Vector->new_Dec(33, 3735928559);
     $vec->Resize(32); # suppress leading 0 if unwanted
-    $hex = $vec->to_Hex();
+    my $hex = $vec->to_Hex();
 
 =item How do I convert from octal to decimal
 
 Using Perl's built in conversion of numbers with leading zeros:
 
-    $dec = 033653337357; # note the leading 0!
+    my $dec = 033653337357; # note the leading 0!
 
 Using the C<oct> function:
 
-    $dec = oct("33653337357");
+    my $dec = oct("33653337357");
 
 Using L<Bit::Vector>:
 
     use Bit::Vector;
-    $vec = Bit::Vector->new(32);
+    my $vec = Bit::Vector->new(32);
     $vec->Chunk_List_Store(3, split(//, reverse "33653337357"));
-    $dec = $vec->to_Dec();
+    my $dec = $vec->to_Dec();
 
 =item How do I convert from decimal to octal
 
 Using C<sprintf>:
 
-    $oct = sprintf("%o", 3735928559);
+    my $oct = sprintf("%o", 3735928559);
 
 Using L<Bit::Vector>:
 
     use Bit::Vector;
-    $vec = Bit::Vector->new_Dec(32, -559038737);
-    $oct = reverse join('', $vec->Chunk_List_Read(3));
+    my $vec = Bit::Vector->new_Dec(32, -559038737);
+    my $oct = reverse join('', $vec->Chunk_List_Read(3));
 
 =item How do I convert from binary to decimal
 
 Perl 5.6 lets you write binary numbers directly with
 the C<0b> notation:
 
-    $number = 0b10110110;
+    my $number = 0b10110110;
 
 Using C<oct>:
 
     my $input = "10110110";
-    $decimal = oct( "0b$input" );
+    my $decimal = oct( "0b$input" );
 
 Using C<pack> and C<ord>:
 
-    $decimal = ord(pack('B8', '10110110'));
+    my $decimal = ord(pack('B8', '10110110'));
 
 Using C<pack> and C<unpack> for larger strings:
 
-    $int = unpack("N", pack("B32",
+    my $int = unpack("N", pack("B32",
     substr("0" x 32 . "11110101011011011111011101111", -32)));
-    $dec = sprintf("%d", $int);
+    my $dec = sprintf("%d", $int);
 
     # substr() is used to left-pad a 32-character string with zeros.
 
 Using L<Bit::Vector>:
 
-    $vec = Bit::Vector->new_Bin(32, "11011110101011011011111011101111");
-    $dec = $vec->to_Dec();
+    my $vec = Bit::Vector->new_Bin(32, "11011110101011011011111011101111");
+    my $dec = $vec->to_Dec();
 
 =item How do I convert from decimal to binary
 
 Using C<sprintf> (perl 5.6+):
 
-    $bin = sprintf("%b", 3735928559);
+    my $bin = sprintf("%b", 3735928559);
 
 Using C<unpack>:
 
-    $bin = unpack("B*", pack("N", 3735928559));
+    my $bin = unpack("B*", pack("N", 3735928559));
 
 Using L<Bit::Vector>:
 
     use Bit::Vector;
-    $vec = Bit::Vector->new_Dec(32, -559038737);
-    $bin = $vec->to_Bin();
+    my $vec = Bit::Vector->new_Dec(32, -559038737);
+    my $bin = $vec->to_Bin();
 
 The remaining transformations (e.g. hex -> oct, bin -> hex, etc.)
 are left as an exercise to the inclined reader.
@@ -311,29 +311,29 @@ or the L<PDL> extension (also available from CPAN).
 To call a function on each element in an array, and collect the
 results, use:
 
-    @results = map { my_func($_) } @array;
+    my @results = map { my_func($_) } @array;
 
 For example:
 
-    @triple = map { 3 * $_ } @single;
+    my @triple = map { 3 * $_ } @single;
 
 To call a function on each element of an array, but ignore the
 results:
 
-    foreach $iterator (@array) {
+    foreach my $iterator (@array) {
         some_func($iterator);
     }
 
 To call a function on each integer in a (small) range, you B<can> use:
 
-    @results = map { some_func($_) } (5 .. 25);
+    my @results = map { some_func($_) } (5 .. 25);
 
 but you should be aware that the C<..> operator creates a list of
 all integers in the range.  This can take a lot of memory for large
 ranges.  Instead use:
 
-    @results = ();
-    for ($i=5; $i <= 500_005; $i++) {
+    my @results = ();
+    for (my $i=5; $i <= 500_005; $i++) {
         push(@results, some_func($i));
     }
 
