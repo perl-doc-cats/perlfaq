@@ -163,26 +163,16 @@ L<http://www.ddj.com/> or brian d foy's index of online TPJ content
 A comprehensive list of Perl-related mailing lists can be found at
 L<http://lists.perl.org/>
 
-=head2 Where can I buy a commercial version of perl?
+=head2 Where can I buy a commercial version of Perl?
 
-In a real sense, perl already I<is> commercial software: it has a license
+Perl already I<is> commercial software: it has a license
 that you can grab and carefully read to your manager. It is distributed
 in releases and comes in well-defined packages. There is a very large
-user community and an extensive literature. The comp.lang.perl.*
-newsgroups and several of the mailing lists provide free answers to your
-questions in near real-time. Perl has traditionally been supported by
-Larry, scores of software designers and developers, and myriad
-programmers, all working for free to create a useful thing to make life
-better for everyone.
+and supportive user community and an extensive literature.
 
-However, these answers may not suffice for managers who require a
-purchase order from a company whom they can sue should anything go awry.
-Or maybe they need very serious hand-holding and contractual obligations.
-Shrink-wrapped CDs with perl on them are available from several sources if
-that will help. For example, many Perl books include a distribution of perl,
-as do the O'Reilly Perl Resource Kits (in both the Unix flavor
-and in the proprietary Microsoft flavor); the free Unix distributions
-also all come with perl.
+If you still need commercial support 
+L<ActiveState|http://www.activestate.com/activeperl> offers
+this.
 
 =head2 Where do I send bug reports?
 
