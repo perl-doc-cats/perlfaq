@@ -125,19 +125,6 @@ Other places to ask questions are on the
 L<PerlMonks site|http://www.perlmonks.org/> or
 L<stackoverflow|http://stackoverflow.com/questions/tagged/perl>.
 
-=head2 Where should I post source code?
-
-You should post source code to whichever group is most appropriate, but
-feel free to cross-post to comp.lang.perl.misc. If you want to cross-post
-to alt.sources, please make sure it follows their posting standards,
-including setting the Followup-To header line to NOT include alt.sources;
-see their FAQ ( L<http://www.faqs.org/faqs/alt-sources-intro/> ) for details.
-
-If you're just looking for software, first use Google
-( L<http://www.google.com> ), Google's Usenet search interface
-( L<http://groups.google.com> ), and CPAN Search ( L<http://search.cpan.org> ).
-This is faster and more productive than just posting a request.
-
 =head2 Perl Books
 
 There are many good books on Perl. See the L<perlbook> documentation or
