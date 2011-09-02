@@ -1003,19 +1003,19 @@ right with blanks and it will truncate the result to a maximum length of
 C<$pad_len>.
 
     # Left padding a string with blanks (no truncation):
-    $padded = sprintf("%${pad_len}s", $text);
-    $padded = sprintf("%*s", $pad_len, $text);  # same thing
+    my $padded = sprintf("%${pad_len}s", $text);
+    my $padded = sprintf("%*s", $pad_len, $text);  # same thing
 
     # Right padding a string with blanks (no truncation):
-    $padded = sprintf("%-${pad_len}s", $text);
-    $padded = sprintf("%-*s", $pad_len, $text); # same thing
+    my $padded = sprintf("%-${pad_len}s", $text);
+    my $padded = sprintf("%-*s", $pad_len, $text); # same thing
 
     # Left padding a number with 0 (no truncation):
-    $padded = sprintf("%0${pad_len}d", $num);
-    $padded = sprintf("%0*d", $pad_len, $num); # same thing
+    my $padded = sprintf("%0${pad_len}d", $num);
+    my $padded = sprintf("%0*d", $pad_len, $num); # same thing
 
     # Right padding a string with blanks using pack (will truncate):
-    $padded = pack("A$pad_len",$text);
+    my $padded = pack("A$pad_len",$text);
 
 If you need to pad with a character other than blank or zero you can use
 one of the following methods.  They all generate a pad string with the
@@ -1024,8 +1024,8 @@ not truncate C<$text>.
 
 Left and right padding with any character, creating a new string:
 
-    $padded = $pad_char x ( $pad_len - length( $text ) ) . $text;
-    $padded = $text . $pad_char x ( $pad_len - length( $text ) );
+    my $padded = $pad_char x ( $pad_len - length( $text ) ) . $text;
+    my $padded = $text . $pad_char x ( $pad_len - length( $text ) );
 
 Left and right padding with any character, modifying C<$text> directly:
 
@@ -1140,14 +1140,14 @@ have a string, why do you need more?
 If you get used to writing odd things like these:
 
     print "$var";       # BAD
-    $new = "$old";       # BAD
+    my $new = "$old";       # BAD
     somefunc("$var");    # BAD
 
 You'll be in trouble.  Those should (in 99.8% of the cases) be
 the simpler and more direct:
 
     print $var;
-    $new = $old;
+    my $new = $old;
     somefunc($var);
 
 Otherwise, besides slowing you down, you're going to break code when
@@ -1167,7 +1167,7 @@ syscall() function.
 
 Stringification also destroys arrays.
 
-    @lines = `command`;
+    my @lines = `command`;
     print "@lines";     # WRONG - extra blanks
     print @lines;       # right
 
@@ -1191,7 +1191,7 @@ If you want to indent the text in the here document, you
 can do this:
 
     # all in one
-    ($VAR = <<HERE_TARGET) =~ s/^\s+//gm;
+    (my $VAR = <<HERE_TARGET) =~ s/^\s+//gm;
         your text
         goes here
     HERE_TARGET
@@ -1200,7 +1200,7 @@ But the HERE_TARGET must still be flush against the margin.
 If you want that indented also, you'll have to quote
 in the indentation.
 
-    ($quote = <<'    FINIS') =~ s/^\s+//gm;
+    (my $quote = <<'    FINIS') =~ s/^\s+//gm;
             ...we will have peace, when you and all your works have
             perished--and the works of your dark master to whom you
             would deliver us. You are a liar, Saruman, and a corrupter
@@ -1229,7 +1229,7 @@ subsequent line.
 
 This works with leading special strings, dynamically determined:
 
-    $remember_the_main = fix<<'    MAIN_INTERPRETER_LOOP';
+    my $remember_the_main = fix<<'    MAIN_INTERPRETER_LOOP';
     @@@ int
     @@@ runops() {
     @@@     SAVEI32(runlevel);
@@ -1243,7 +1243,7 @@ This works with leading special strings, dynamically determined:
 Or with a fixed amount of leading whitespace, with remaining
 indentation correctly preserved:
 
-    $poem = fix<<EVER_ON_AND_ON;
+    my $poem = fix<<EVER_ON_AND_ON;
        Now far ahead the Road has gone,
       And I must follow, if I can,
        Pursuing it with eager feet,
@@ -1446,8 +1446,8 @@ are going to make this query many times over arbitrary string values,
 the fastest way is probably to invert the original array and maintain a
 hash whose keys are the first array's values:
 
-    @blues = qw/azure cerulean teal turquoise lapis-lazuli/;
-    %is_blue = ();
+    my @blues = qw/azure cerulean teal turquoise lapis-lazuli/;
+    my %is_blue = ();
     for (@blues) { $is_blue{$_} = 1 }
 
 Now you can check whether C<$is_blue{$some_color}>.  It might have
@@ -1456,8 +1456,8 @@ been a good idea to keep the blues all in a hash in the first place.
 If the values are all small integers, you could use a simple indexed
 array.  This kind of an array will take up less space:
 
-    @primes = (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31);
-    @is_tiny_prime = ();
+    my @primes = (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31);
+    my @is_tiny_prime = ();
     for (@primes) { $is_tiny_prime[$_] = 1 }
     # or simply  @istiny_prime[@primes] = (1) x @primes;
 
@@ -1466,7 +1466,7 @@ Now you check whether $is_tiny_prime[$some_number].
 If the values in question are integers instead of strings, you can save
 quite a lot of space by using bit strings instead:
 
-    @articles = ( 1..10, 150..2000, 2017 );
+    my @articles = ( 1..10, 150..2000, 2017 );
     undef $read;
     for (@articles) { vec($read,$_,1) = 1 }
 
@@ -1506,10 +1506,10 @@ list context.
 Use a hash.  Here's code to do both and more.  It assumes that each
 element is unique in a given array:
 
-    @union = @intersection = @difference = ();
-    %count = ();
-    foreach $element (@array1, @array2) { $count{$element}++ }
-    foreach $element (keys %count) {
+    my (@union, @intersection, @difference);
+    my %count = ();
+    foreach my $element (@array1, @array2) { $count{$element}++ }
+    foreach my $element (keys %count) {
         push @union, $element;
         push @{ $count{$element} > 1 ? \@intersection : \@difference }, $element;
     }
@@ -1552,7 +1552,7 @@ For multilevel structures, you may wish to use an approach more
 like this one.  It uses the CPAN module L<FreezeThaw>:
 
     use FreezeThaw qw(cmpStr);
-    @a = @b = ( "this", "that", [ "more", "stuff" ] );
+    my @a = my @b = ( "this", "that", [ "more", "stuff" ] );
 
     printf "a and b contain %s arrays\n",
         cmpStr(\@a, \@b) == 0
@@ -1564,7 +1564,7 @@ two different answers:
 
     use FreezeThaw qw(cmpStr cmpStrHard);
 
-    %a = %b = ( "this" => "that", "extra" => [ "more", "stuff" ] );
+    my %a = my %b = ( "this" => "that", "extra" => [ "more", "stuff" ] );
     $a{EXTRA} = \%b;
     $b{EXTRA} = \%a;
 
@@ -1730,7 +1730,8 @@ Use C<for>/C<foreach>:
 
 Here's another; let's compute spherical volumes:
 
-    for (@volumes = @radii) {   # @volumes has changed parts
+    my @volumes = @radii;
+    for (@volumes) {   # @volumes has changed parts
         $_ **= 3;
         $_ *= (4/3) * 3.14159;  # this will be constant folded
     }
@@ -1738,14 +1739,14 @@ Here's another; let's compute spherical volumes:
 which can also be done with C<map()> which is made to transform
 one list into another:
 
-    @volumes = map {$_ ** 3 * (4/3) * 3.14159} @radii;
+    my @volumes = map {$_ ** 3 * (4/3) * 3.14159} @radii;
 
 If you want to do the same thing to modify the values of the
 hash, you can use the C<values> function.  As of Perl 5.6
 the values are not copied, so if you modify $orbit (in this
 case), you modify the value.
 
-    for $orbit ( values %orbits ) {
+    for my $orbit ( values %orbits ) {
         ($orbit **= 3) *= (4/3) * 3.14159;
     }
 
@@ -1758,8 +1759,8 @@ the hash is to be modified.
 
 Use the C<rand()> function (see L<perlfunc/rand>):
 
-    $index   = rand @array;
-    $element = $array[$index];
+    my $index   = rand @array;
+    my $element = $array[$index];
 
 Or, simply:
 
@@ -1847,23 +1848,24 @@ same element.  Here's an example of how to pull out the first word
 after the first number on each item, and then sort those words
 case-insensitively.
 
-    @idx = ();
+    my @idx;
     for (@data) {
+        my $item;
         ($item) = /\d+\s*(\S+)/;
         push @idx, uc($item);
     }
-    @sorted = @data[ sort { $idx[$a] cmp $idx[$b] } 0 .. $#idx ];
+    my @sorted = @data[ sort { $idx[$a] cmp $idx[$b] } 0 .. $#idx ];
 
 which could also be written this way, using a trick
 that's come to be known as the Schwartzian Transform:
 
-    @sorted = map  { $_->[0] }
+    my @sorted = map  { $_->[0] }
         sort { $a->[1] cmp $b->[1] }
         map  { [ $_, uc( (/\d+\s*(\S+)/)[0]) ] } @data;
 
 If you need to sort on several fields, the following paradigm is useful.
 
-    @sorted = sort {
+    my @sorted = sort {
         field1($a) <=> field1($b) ||
         field2($a) cmp field2($b) ||
         field3($a) cmp field3($b)
@@ -1888,8 +1890,8 @@ For example, you don't have to store individual bits in an array
 array of bits to a string, use C<vec()> to set the right bits. This
 sets C<$vec> to have bit N set only if C<$ints[N]> was set:
 
-    @ints = (...); # array of bits, e.g. ( 1, 0, 0, 1, 1, 0 ... )
-    $vec = '';
+    my @ints = (...); # array of bits, e.g. ( 1, 0, 0, 1, 1, 0 ... )
+    my $vec = '';
     foreach( 0 .. $#ints ) {
         vec($vec,$_,1) = 1 if $ints[$_];
     }
@@ -1945,9 +1947,9 @@ from Benjamin Goldberg:
 
 Or use the CPAN module L<Bit::Vector>:
 
-    $vector = Bit::Vector->new($num_of_bits);
+    my $vector = Bit::Vector->new($num_of_bits);
     $vector->Index_List_Store(@ints);
-    @ints = $vector->Index_List_Read();
+    my @ints = $vector->Index_List_Read();
 
 L<Bit::Vector> provides efficient methods for bit vector, sets of
 small integers and "big int" math.
@@ -1955,10 +1957,10 @@ small integers and "big int" math.
 Here's a more extensive illustration using vec():
 
     # vec demo
-    $vector = "\xff\x0f\xef\xfe";
+    my $vector = "\xff\x0f\xef\xfe";
     print "Ilya's string \\xff\\x0f\\xef\\xfe represents the number ",
     unpack("N", $vector), "\n";
-    $is_set = vec($vector, 23, 1);
+    my $is_set = vec($vector, 23, 1);
     print "Its 23rd bit is ", $is_set ? "set" : "clear", ".\n";
     pvec($vector);
 
@@ -2123,13 +2125,13 @@ entry for C<each()> in L<perlfunc>.
 
 Create a reverse hash:
 
-    %by_value = reverse %by_key;
-    $key = $by_value{$value};
+    my %by_value = reverse %by_key;
+    my $key = $by_value{$value};
 
 That's not particularly efficient.  It would be more space-efficient
 to use:
 
-    while (($key, $value) = each %by_key) {
+    while (my ($key, $value) = each %by_key) {
         $by_value{$value} = $key;
     }
 
@@ -2137,7 +2139,7 @@ If your hash could have repeated values, the methods above will only find
 one of the associated keys.   This may or may not worry you.  If it does
 worry you, you can always reverse the hash into a hash of arrays instead:
 
-    while (($key, $value) = each %by_key) {
+    while (my ($key, $value) = each %by_key) {
          push @{$key_list_by_value{$value}}, $key;
     }
 
@@ -2336,26 +2338,26 @@ See the documentation for C<each> in L<perlfunc>.
 First you extract the keys from the hashes into lists, then solve
 the "removing duplicates" problem described above.  For example:
 
-    %seen = ();
-    for $element (keys(%foo), keys(%bar)) {
+    my %seen = ();
+    for my $element (keys(%foo), keys(%bar)) {
         $seen{$element}++;
     }
-    @uniq = keys %seen;
+    my @uniq = keys %seen;
 
 Or more succinctly:
 
-    @uniq = keys %{{%foo,%bar}};
+    my @uniq = keys %{{%foo,%bar}};
 
 Or if you really want to save space:
 
-    %seen = ();
+    my %seen = ();
     while (defined ($key = each %foo)) {
         $seen{$key}++;
     }
     while (defined ($key = each %bar)) {
         $seen{$key}++;
     }
-    @uniq = keys %seen;
+    my @uniq = keys %seen;
 
 =head2 How can I store a multidimensional array in a DBM file?
 
