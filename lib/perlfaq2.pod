@@ -95,41 +95,25 @@ L<http://search.cpan.org/>.
 
 =head2 Where can I get information on Perl?
 
-The complete Perl documentation is available with the Perl distribution.
-If you have Perl installed locally, you probably have the documentation
-installed as well: type C<man perl> if you're on a system resembling Unix.
-This will lead you to other important man pages, including how to set your
-C<$MANPATH>. If you're not on a Unix system, access to the documentation
-will be different; for example, documentation might only be in HTML format. All
-proper perl installations have fully-accessible documentation.
-
-You might also try C<perldoc perl> in case your system doesn't
-have a proper C<man> command, or it's been misinstalled. If that doesn't
-work, try looking in C</usr/local/lib/perl5/pod> for documentation.
-
-If all else fails, consult L<http://perldoc.perl.org/> which has the
-complete documentation in HTML and PDF format.
-
-Many good books have been written about Perl--see the section later in
-L<perlfaq2> for more details.
-
-Tutorial documents included in current or upcoming Perl releases
-include L<perltoot> for objects or L<perlboot> for a beginner's
-approach to objects, L<perlopentut> for file opening semantics,
-L<perlreftut> for managing references, L<perlretut> for regular
-expressions, L<perlthrtut> for threads, L<perldebtut> for debugging,
-and L<perlxstut> for linking C and Perl together. There may be more
-by the time you read this. These URLs might also be useful:
-
 =over 4
-
-=item * L<http://perldoc.perl.org/>
 
 =item * L<http://www.perl.org/>
 
+=item * L<http://perldoc.perl.org/>
+
 =item * L<http://learn.perl.org/>
 
+=item * L<http://faq.perl.org/>
+
 =back
+
+The complete Perl documentation is available with the Perl distribution.
+If you have Perl installed locally, you probably have the documentation
+installed as well: type C<perldoc perl> in a terminal or
+L<view online|http://perldoc.perl.org/perl.html>.
+
+Many good books have been written about Perl--see the section later in
+L<perlfaq2> for more details.
 
 =head2 What are the Perl newsgroups on Usenet? Where do I post questions?
 
