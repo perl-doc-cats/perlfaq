@@ -754,7 +754,7 @@ really does work:
 Use C<reverse()> in scalar context, as documented in
 L<perlfunc/reverse>.
 
-    $reversed = reverse $string;
+    my $reversed = reverse $string;
 
 =head2 How do I expand tabs in a string?
 
@@ -766,7 +766,7 @@ Or you can just use the L<Text::Tabs> module (part of the standard Perl
 distribution).
 
     use Text::Tabs;
-    @expanded_lines = expand(@lines_with_tabs);
+    my @expanded_lines = expand(@lines_with_tabs);
 
 =head2 How do I reformat a paragraph?
 
@@ -794,8 +794,8 @@ To get the first character, for example, start at position 0
 and grab the string of length 1.
 
 
-    $string = "Just another Perl Hacker";
-    $first_char = substr( $string, 0, 1 );  #  'J'
+    my $string = "Just another Perl Hacker";
+    my $first_char = substr( $string, 0, 1 );  #  'J'
 
 To change part of a string, you can use the optional fourth
 argument which is the replacement string.
@@ -843,8 +843,8 @@ There are a number of ways, with varying efficiency.  If you want a
 count of a certain single character (X) within a string, you can use the
 C<tr///> function like so:
 
-    $string = "ThisXlineXhasXsomeXx'sXinXit";
-    $count = ($string =~ tr/X//);
+    my $string = "ThisXlineXhasXsomeXx'sXinXit";
+    my $count = ($string =~ tr/X//);
     print "There are $count X characters in the string";
 
 This is fine if you are just looking for a single character.  However,
@@ -853,14 +853,15 @@ larger string, C<tr///> won't work.  What you can do is wrap a while()
 loop around a global pattern match.  For example, let's count negative
 integers:
 
-    $string = "-9 55 48 -2 23 -76 4 14 -44";
+    my $string = "-9 55 48 -2 23 -76 4 14 -44";
+    my $count = 0;
     while ($string =~ /-\d+/g) { $count++ }
     print "There are $count negative numbers in the string";
 
 Another version uses a global match in list context, then assigns the
 result to a scalar, producing a count of the number of matches.
 
-    $count = () = $string =~ /-\d+/g;
+    my $count = () = $string =~ /-\d+/g;
 
 =head2 How do I capitalize all the words on one line?
 X<Text::Autoformat> X<capitalize> X<case, title> X<case, sentence>
@@ -920,7 +921,7 @@ problem.  Thankfully, we have Jeffrey Friedl, author of
 I<Mastering Regular Expressions>, to handle these for us.  He
 suggests (assuming your string is contained in C<$text>):
 
-     @new = ();
+     my @new = ();
      push(@new, $+) while $text =~ m{
          "([^\"\\]*(?:\\.[^\"\\]*)*)",?  # groups the phrase inside the quotes
         | ([^,]+),?
