@@ -163,18 +163,6 @@ L<http://www.ddj.com/> or brian d foy's index of online TPJ content
 A comprehensive list of Perl-related mailing lists can be found at
 L<http://lists.perl.org/>
 
-=head2 Where are the archives for comp.lang.perl.misc?
-
-The Google search engine now carries archived and searchable newsgroup
-content.
-
-L<http://groups.google.com/group/comp.lang.perl.misc/topics>
-
-If you have a question, you can be sure someone has already asked the
-same question at some point on c.l.p.m. It requires some time and patience
-to sift through all the content but often you will find the answer you
-seek.
-
 =head2 Where can I buy a commercial version of perl?
 
 In a real sense, perl already I<is> commercial software: it has a license
