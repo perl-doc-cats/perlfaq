@@ -2614,7 +2614,7 @@ instead.
 
 For some specific applications, you can use one of the DBM modules.
 See L<AnyDBM_File>.  More generically, you should consult the L<FreezeThaw>
-or L<Storable> modules from CPAN.  Starting from Perl 5.8 L<Storable> is part
+or L<Storable> modules from CPAN.  Starting from Perl 5.8, L<Storable> is part
 of the standard distribution.  Here's one example using L<Storable>'s C<store>
 and C<retrieve> functions:
 
