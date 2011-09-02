@@ -105,8 +105,8 @@ implements C<ceil()>, C<floor()>, and a number of other mathematical
 and trigonometric functions.
 
     use POSIX;
-    $ceil   = ceil(3.5);   # 4
-    $floor  = floor(3.5);  # 3
+    my $ceil   = ceil(3.5);   # 4
+    my $floor  = floor(3.5);  # 3
 
 In 5.000 to 5.003 perls, trigonometry was done in the L<Math::Complex>
 module.  With 5.004, the L<Math::Trig> module (part of the standard Perl
