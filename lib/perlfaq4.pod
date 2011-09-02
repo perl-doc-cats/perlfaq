@@ -373,8 +373,8 @@ If you want numbers that are more random than C<rand> with C<srand>
 provides, you should also check out the L<Math::TrulyRandom> module from
 CPAN.  It uses the imperfections in your system's timer to generate
 random numbers, but this takes quite a while.  If you want a better
-pseudorandom generator than comes with your operating system, look at
-"Numerical Recipes in C" at L<http://www.nr.com/>.
+pseudorandom generator than the one that comes with your operating system,
+look at "Numerical Recipes in C" at L<http://www.nr.com/>.
 
 =head2 How do I get a random number between X and Y?
 
