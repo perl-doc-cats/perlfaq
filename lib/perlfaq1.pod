@@ -334,19 +334,6 @@ readers.
 
 CPAN has several JAPH programs at L<http://www.cpan.org/misc/japh>.
 
-=head2 Where can I get a list of Larry Wall witticisms?
-
-(contributed by brian d foy)
-
-Google "larry wall quotes"! You might even try the "I feel lucky" button.
-:)
-
-Wikiquote has the witticisms from Larry along with their source,
-including his usenet postings and source code comments.
-
-If you want a plain text file, try
-L<http://www.cpan.org/misc/lwall-quotes.txt.gz>.
-
 =head2 How can I convince others to use Perl?
 
 (contributed by brian d foy)
