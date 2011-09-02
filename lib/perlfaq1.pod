@@ -231,6 +231,7 @@ if you really can't stop yourself.
 
 Perl is flexible and extensible enough for you to use on virtually any
 task, from one-line file-processing tasks to large, elaborate systems.
+
 For many people, Perl serves as a great replacement for shell scripting.
 For others, it serves as a convenient, high-level replacement for most of
 what they'd program in low-level languages like C or C++. It's ultimately
@@ -271,31 +272,6 @@ is "perl" with a lowercase "p".
 
 You may or may not choose to follow this usage. But never write "PERL",
 because perl is not an acronym.
-
-=head2 Is it a Perl program or a Perl script?
-
-Larry doesn't really care. He says (half in jest) that "a script is
-what you give the actors. A program is what you give the audience."
-
-Originally, a script was a canned sequence of normally interactive
-commands--that is, a chat script. Something like a UUCP or PPP chat
-script or an expect script fits the bill nicely, as do configuration
-scripts run by a program at its start up, such F<.cshrc> or F<.ircrc>,
-for example. Chat scripts were just drivers for existing programs,
-not stand-alone programs in their own right.
-
-A computer scientist will correctly explain that all programs are
-interpreted and that the only question is at what level. But if you
-ask this question of someone who isn't a computer scientist, they might
-tell you that a I<program> has been compiled to physical machine code
-once and can then be run multiple times, whereas a I<script> must be
-translated by a program each time it's used.
-
-Now that "script" and "scripting" are terms that have been seized by
-unscrupulous or unknowing marketeers for their own nefarious purposes,
-they have begun to take on strange and often pejorative meanings,
-like "non serious" or "not real programming". Consequently, some Perl
-programmers prefer to avoid them altogether.
 
 =head2 What is a JAPH?
 
