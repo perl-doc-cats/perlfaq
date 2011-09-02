@@ -100,7 +100,7 @@ easiest route.
 
     printf("%.3f", 3.1415926535);   # prints 3.142
 
-The Perltidy module (part of the standard Perl distribution)
+The POSIX module (part of the standard Perl distribution)
 implements C<ceil()>, C<floor()>, and a number of other mathematical
 and trigonometric functions.
 
