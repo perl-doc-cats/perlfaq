@@ -188,11 +188,9 @@ information about your installation to include with your message, then
 sends the message to the right place.
 
 To determine if a module came with your version of Perl, you can
-use the L<Module::CoreList> module. It has the information about
-the modules (with their versions) included with each release of Perl.
-
-If L<Module::CoreList> is not installed on your system, check out
-L<http://perlpunks.de/corelist>.
+install and use the L<Module::CoreList> module. It has the information 
+about the modules (with their versions) included with each release 
+of Perl.
 
 Every CPAN module has a bug tracker set up in RT, L<http://rt.cpan.org>.
 You can submit bugs to RT either through its web interface or by
@@ -202,23 +200,23 @@ wanted to report a bug in L<Business::ISBN>, you could send a message to
 bug-Business-ISBN@rt.cpan.org .
 
 Some modules might have special reporting requirements, such as a
-Sourceforge or Google Code tracking system, so you should check the
+Github or Google Code tracking system, so you should check the
 module documentation too.
 
 =head2 What is perl.com? Perl Mongers? pm.org? perl.org? cpan.org?
 
-L<http://www.perl.com/> used to be part of the O'Reilly
+L<Perl.com|http://www.perl.com/> used to be part of the O'Reilly
 Network, a subsidiary of O'Reilly Media. Although it retains most of
 the original content from its O'Reilly Network, it is now hosted by
-The Perl Foundation.
+L<The Perl Foundation|http://www.perlfoundation.org/>.
 
 The Perl Foundation is an advocacy organization for the Perl language
 which maintains the web site L<http://www.perl.org/> as a general
 advocacy site for the Perl language. It uses the domain to provide
 general support services to the Perl community, including the hosting
 of mailing lists, web sites, and other services. There are also many
-other sub-domains for special topics like learning Perl, Perl news,
-jobs in Perl, such as:
+other sub-domains for special topics like learning Perl and jobs in Perl, 
+such as:
 
 =over 4
 
@@ -232,10 +230,11 @@ jobs in Perl, such as:
 
 =back
 
-Perl Mongers uses the pm.org domain for services related to Perl user
-groups, including the hosting of mailing lists and web sites. See the
-Perl Mongers website L<http://www.pm.org/> for more information about
-joining, starting, or requesting services for a Perl user group.
+L<Perl Mongers|http://www.pm.org/> uses the pm.org domain for services 
+related to local Perl user groups, including the hosting of mailing lists 
+and web sites. See the L<Perl Mongers website|http://www.pm.org/> for more 
+information about joining, starting, or requesting services for a 
+Perl user group.
 
 CPAN, or the Comprehensive Perl Archive Network L<http://www.cpan.org/>,
 is a replicated, worldwide repository of Perl software.
