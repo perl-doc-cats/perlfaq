@@ -259,16 +259,9 @@ application written in another language that's all done (and done
 well), or you have an application language specifically designed for a
 certain task (e.g. prolog, make).
 
-For various reasons, Perl is probably not well-suited for real-time
-embedded systems, low-level operating systems development work like
-device drivers or context-switching code, complex multi-threaded
-shared-memory applications, or extremely large applications. You'll
-notice that perl is not itself written in Perl.
-
-Perl remains fundamentally a dynamically typed language, not
-a statically typed one. You certainly won't be chastised if you don't
-trust nuclear-plant or brain-surgery monitoring code to it. And Larry
-will sleep easier, too--Wall Street programs not withstanding. :-)
+If you find that you need to speed up a specific part of a Perl
+application (not something you often need) you may want to use C, 
+but you can access this from your Perl code with L<perlxs>.
 
 =head2 What's the difference between "perl" and "Perl"?
 
