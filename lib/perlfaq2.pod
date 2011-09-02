@@ -81,6 +81,9 @@ contains tens of thousands of modules and extensions, source code
 and documentation, designed for I<everything> from commercial 
 database interfaces to keyboard/screen control and running large web sites.
 
+You can search CPAN on L<http://metacpan.org> or
+L<http://search.cpan.org/>.
+
 The master web site for CPAN is L<http://www.cpan.org/>, 
 L<http://www.cpan.org/SITES.html> lists all mirrors.
 
@@ -89,9 +92,6 @@ to the most frequently asked questions about CPAN.
 
 The L<Task::Kensho> module has a list of recommended modules which
 you should review as a good starting point.
-
-You can also search CPAN on L<http://metacpan.org> or
-L<http://search.cpan.org/>.
 
 =head2 Where can I get information on Perl?
 
@@ -114,6 +114,43 @@ L<view online|http://perldoc.perl.org/perl.html>.
 
 Many good books have been written about Perl--see the section later in
 L<perlfaq2> for more details.
+
+=head2 What is perl.com? Perl Mongers? pm.org? perl.org? cpan.org?
+
+L<Perl.com|http://www.perl.com/> used to be part of the O'Reilly
+Network, a subsidiary of O'Reilly Media. Although it retains most of
+the original content from its O'Reilly Network, it is now hosted by
+L<The Perl Foundation|http://www.perlfoundation.org/>.
+
+The Perl Foundation is an advocacy organization for the Perl language
+which maintains the web site L<http://www.perl.org/> as a general
+advocacy site for the Perl language. It uses the domain to provide
+general support services to the Perl community, including the hosting
+of mailing lists, web sites, and other services. There are also many
+other sub-domains for special topics like learning Perl and jobs in Perl, 
+such as:
+
+=over 4
+
+=item * L<http://www.perl.org/>
+
+=item * L<http://learn.perl.org/>
+
+=item * L<http://jobs.perl.org/>
+
+=item * L<http://lists.perl.org/>
+
+=back
+
+L<Perl Mongers|http://www.pm.org/> uses the pm.org domain for services 
+related to local Perl user groups, including the hosting of mailing lists 
+and web sites. See the L<Perl Mongers website|http://www.pm.org/> for more 
+information about joining, starting, or requesting services for a 
+Perl user group.
+
+CPAN, or the Comprehensive Perl Archive Network L<http://www.cpan.org/>,
+is a replicated, worldwide repository of Perl software.
+See L<What is CPAN?|/"What modules and extensions are available for Perl? What is CPAN? What does CPANE<sol>srcE<sol>... mean?">.
 
 =head2 Where can I post questions?
 
@@ -202,43 +239,6 @@ bug-Business-ISBN@rt.cpan.org .
 Some modules might have special reporting requirements, such as a
 Github or Google Code tracking system, so you should check the
 module documentation too.
-
-=head2 What is perl.com? Perl Mongers? pm.org? perl.org? cpan.org?
-
-L<Perl.com|http://www.perl.com/> used to be part of the O'Reilly
-Network, a subsidiary of O'Reilly Media. Although it retains most of
-the original content from its O'Reilly Network, it is now hosted by
-L<The Perl Foundation|http://www.perlfoundation.org/>.
-
-The Perl Foundation is an advocacy organization for the Perl language
-which maintains the web site L<http://www.perl.org/> as a general
-advocacy site for the Perl language. It uses the domain to provide
-general support services to the Perl community, including the hosting
-of mailing lists, web sites, and other services. There are also many
-other sub-domains for special topics like learning Perl and jobs in Perl, 
-such as:
-
-=over 4
-
-=item * L<http://www.perl.org/>
-
-=item * L<http://learn.perl.org/>
-
-=item * L<http://jobs.perl.org/>
-
-=item * L<http://lists.perl.org/>
-
-=back
-
-L<Perl Mongers|http://www.pm.org/> uses the pm.org domain for services 
-related to local Perl user groups, including the hosting of mailing lists 
-and web sites. See the L<Perl Mongers website|http://www.pm.org/> for more 
-information about joining, starting, or requesting services for a 
-Perl user group.
-
-CPAN, or the Comprehensive Perl Archive Network L<http://www.cpan.org/>,
-is a replicated, worldwide repository of Perl software.
-See L<What is CPAN?|/"What modules and extensions are available for Perl? What is CPAN? What does CPANE<sol>srcE<sol>... mean?">.
 
 =head1 AUTHOR AND COPYRIGHT
 
