@@ -76,15 +76,15 @@ If you want to use the same literal digits (644) in Perl, you have to tell
 Perl to treat them as octal numbers either by prefixing the digits with
 a C<0> or using C<oct>:
 
-    chmod(     0644, $file);   # right, has leading zero
-    chmod( oct(644), $file );  # also correct
+    chmod(     0644, $filename);   # right, has leading zero
+    chmod( oct(644), $filename );  # also correct
 
 The problem comes in when you take your numbers from something that Perl
 thinks is a string, such as a command line argument in C<@ARGV>:
 
-    chmod( $ARGV[0],      $file);   # wrong, even if "0644"
+    chmod( $ARGV[0],      $filename);   # wrong, even if "0644"
 
-    chmod( oct($ARGV[0]), $file );  # correct, treat string as octal
+    chmod( oct($ARGV[0]), $filename );  # correct, treat string as octal
 
 You can always check the value you're using by printing it in octal
 notation to ensure it matches what you think it should be. Print it
