@@ -1,3 +1,11 @@
+  
+  * Start moving away from global file handles (shlomif)
+  * Typos, clarity and other cleanups (shlomif)
+  * Cleanup copy (ranguard)
+  * Start to add "my" to variables (shlomif)
+  * Remove verbose/history copy (ranguard)
+  * Switch to L<> around URLs (ranguard)
+
 5.0150033 Tue 30 Aug 2011 21:46:25 +0100
   * Perl 6 changes (apeiron)
   * Replace tabs with spaces (ranguard)
