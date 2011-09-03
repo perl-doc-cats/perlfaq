@@ -76,15 +76,15 @@ If you want to use the same literal digits (644) in Perl, you have to tell
 Perl to treat them as octal numbers either by prefixing the digits with
 a C<0> or using C<oct>:
 
-    chmod(     0644, $file);   # right, has leading zero
-    chmod( oct(644), $file );  # also correct
+    chmod(     0644, $filename);   # right, has leading zero
+    chmod( oct(644), $filename );  # also correct
 
 The problem comes in when you take your numbers from something that Perl
 thinks is a string, such as a command line argument in C<@ARGV>:
 
-    chmod( $ARGV[0],      $file);   # wrong, even if "0644"
+    chmod( $ARGV[0],      $filename);   # wrong, even if "0644"
 
-    chmod( oct($ARGV[0]), $file );  # correct, treat string as octal
+    chmod( oct($ARGV[0]), $filename );  # correct, treat string as octal
 
 You can always check the value you're using by printing it in octal
 notation to ensure it matches what you think it should be. Print it
@@ -100,13 +100,13 @@ easiest route.
 
     printf("%.3f", 3.1415926535);   # prints 3.142
 
-The Perltidy module (part of the standard Perl distribution)
+The POSIX module (part of the standard Perl distribution)
 implements C<ceil()>, C<floor()>, and a number of other mathematical
 and trigonometric functions.
 
     use POSIX;
-    $ceil   = ceil(3.5);   # 4
-    $floor  = floor(3.5);  # 3
+    my $ceil   = ceil(3.5);   # 4
+    my $floor  = floor(3.5);  # 3
 
 In 5.000 to 5.003 perls, trigonometry was done in the L<Math::Complex>
 module.  With 5.004, the L<Math::Trig> module (part of the standard Perl
@@ -124,7 +124,7 @@ need yourself.
 To see why, notice how you'll still have an issue on half-way-point
 alternation:
 
-    for ($i = 0; $i < 1.01; $i += 0.05) { printf "%.1f ",$i}
+    for (my $i = 0; $i < 1.01; $i += 0.05) { printf "%.1f ",$i}
 
     0.0 0.1 0.1 0.2 0.2 0.2 0.3 0.3 0.4 0.4 0.5 0.5 0.6 0.7 0.7
     0.8 0.8 0.9 0.9 1.0 1.0
@@ -153,119 +153,119 @@ some programmers the notation might be familiar.
 
 Using perl's built in conversion of C<0x> notation:
 
-    $dec = 0xDEADBEEF;
+    my $dec = 0xDEADBEEF;
 
 Using the C<hex> function:
 
-    $dec = hex("DEADBEEF");
+    my $dec = hex("DEADBEEF");
 
 Using C<pack>:
 
-    $dec = unpack("N", pack("H8", substr("0" x 8 . "DEADBEEF", -8)));
+    my $dec = unpack("N", pack("H8", substr("0" x 8 . "DEADBEEF", -8)));
 
 Using the CPAN module C<Bit::Vector>:
 
     use Bit::Vector;
-    $vec = Bit::Vector->new_Hex(32, "DEADBEEF");
-    $dec = $vec->to_Dec();
+    my $vec = Bit::Vector->new_Hex(32, "DEADBEEF");
+    my $dec = $vec->to_Dec();
 
 =item How do I convert from decimal to hexadecimal
 
 Using C<sprintf>:
 
-    $hex = sprintf("%X", 3735928559); # upper case A-F
-    $hex = sprintf("%x", 3735928559); # lower case a-f
+    my $hex = sprintf("%X", 3735928559); # upper case A-F
+    my $hex = sprintf("%x", 3735928559); # lower case a-f
 
 Using C<unpack>:
 
-    $hex = unpack("H*", pack("N", 3735928559));
+    my $hex = unpack("H*", pack("N", 3735928559));
 
 Using L<Bit::Vector>:
 
     use Bit::Vector;
-    $vec = Bit::Vector->new_Dec(32, -559038737);
-    $hex = $vec->to_Hex();
+    my $vec = Bit::Vector->new_Dec(32, -559038737);
+    my $hex = $vec->to_Hex();
 
 And L<Bit::Vector> supports odd bit counts:
 
     use Bit::Vector;
-    $vec = Bit::Vector->new_Dec(33, 3735928559);
+    my $vec = Bit::Vector->new_Dec(33, 3735928559);
     $vec->Resize(32); # suppress leading 0 if unwanted
-    $hex = $vec->to_Hex();
+    my $hex = $vec->to_Hex();
 
 =item How do I convert from octal to decimal
 
 Using Perl's built in conversion of numbers with leading zeros:
 
-    $dec = 033653337357; # note the leading 0!
+    my $dec = 033653337357; # note the leading 0!
 
 Using the C<oct> function:
 
-    $dec = oct("33653337357");
+    my $dec = oct("33653337357");
 
 Using L<Bit::Vector>:
 
     use Bit::Vector;
-    $vec = Bit::Vector->new(32);
+    my $vec = Bit::Vector->new(32);
     $vec->Chunk_List_Store(3, split(//, reverse "33653337357"));
-    $dec = $vec->to_Dec();
+    my $dec = $vec->to_Dec();
 
 =item How do I convert from decimal to octal
 
 Using C<sprintf>:
 
-    $oct = sprintf("%o", 3735928559);
+    my $oct = sprintf("%o", 3735928559);
 
 Using L<Bit::Vector>:
 
     use Bit::Vector;
-    $vec = Bit::Vector->new_Dec(32, -559038737);
-    $oct = reverse join('', $vec->Chunk_List_Read(3));
+    my $vec = Bit::Vector->new_Dec(32, -559038737);
+    my $oct = reverse join('', $vec->Chunk_List_Read(3));
 
 =item How do I convert from binary to decimal
 
 Perl 5.6 lets you write binary numbers directly with
 the C<0b> notation:
 
-    $number = 0b10110110;
+    my $number = 0b10110110;
 
 Using C<oct>:
 
     my $input = "10110110";
-    $decimal = oct( "0b$input" );
+    my $decimal = oct( "0b$input" );
 
 Using C<pack> and C<ord>:
 
-    $decimal = ord(pack('B8', '10110110'));
+    my $decimal = ord(pack('B8', '10110110'));
 
 Using C<pack> and C<unpack> for larger strings:
 
-    $int = unpack("N", pack("B32",
+    my $int = unpack("N", pack("B32",
     substr("0" x 32 . "11110101011011011111011101111", -32)));
-    $dec = sprintf("%d", $int);
+    my $dec = sprintf("%d", $int);
 
     # substr() is used to left-pad a 32-character string with zeros.
 
 Using L<Bit::Vector>:
 
-    $vec = Bit::Vector->new_Bin(32, "11011110101011011011111011101111");
-    $dec = $vec->to_Dec();
+    my $vec = Bit::Vector->new_Bin(32, "11011110101011011011111011101111");
+    my $dec = $vec->to_Dec();
 
 =item How do I convert from decimal to binary
 
 Using C<sprintf> (perl 5.6+):
 
-    $bin = sprintf("%b", 3735928559);
+    my $bin = sprintf("%b", 3735928559);
 
 Using C<unpack>:
 
-    $bin = unpack("B*", pack("N", 3735928559));
+    my $bin = unpack("B*", pack("N", 3735928559));
 
 Using L<Bit::Vector>:
 
     use Bit::Vector;
-    $vec = Bit::Vector->new_Dec(32, -559038737);
-    $bin = $vec->to_Bin();
+    my $vec = Bit::Vector->new_Dec(32, -559038737);
+    my $bin = $vec->to_Bin();
 
 The remaining transformations (e.g. hex -> oct, bin -> hex, etc.)
 are left as an exercise to the inclined reader.
@@ -311,29 +311,29 @@ or the L<PDL> extension (also available from CPAN).
 To call a function on each element in an array, and collect the
 results, use:
 
-    @results = map { my_func($_) } @array;
+    my @results = map { my_func($_) } @array;
 
 For example:
 
-    @triple = map { 3 * $_ } @single;
+    my @triple = map { 3 * $_ } @single;
 
 To call a function on each element of an array, but ignore the
 results:
 
-    foreach $iterator (@array) {
+    foreach my $iterator (@array) {
         some_func($iterator);
     }
 
 To call a function on each integer in a (small) range, you B<can> use:
 
-    @results = map { some_func($_) } (5 .. 25);
+    my @results = map { some_func($_) } (5 .. 25);
 
 but you should be aware that the C<..> operator creates a list of
 all integers in the range.  This can take a lot of memory for large
 ranges.  Instead use:
 
-    @results = ();
-    for ($i=5; $i <= 500_005; $i++) {
+    my @results = ();
+    for (my $i=5; $i <= 500_005; $i++) {
         push(@results, some_func($i));
     }
 
@@ -373,8 +373,8 @@ If you want numbers that are more random than C<rand> with C<srand>
 provides, you should also check out the L<Math::TrulyRandom> module from
 CPAN.  It uses the imperfections in your system's timer to generate
 random numbers, but this takes quite a while.  If you want a better
-pseudorandom generator than comes with your operating system, look at
-"Numerical Recipes in C" at L<http://www.nr.com/>.
+pseudorandom generator than the one that comes with your operating system,
+look at "Numerical Recipes in C" at L<http://www.nr.com/>.
 
 =head2 How do I get a random number between X and Y?
 
@@ -754,7 +754,7 @@ really does work:
 Use C<reverse()> in scalar context, as documented in
 L<perlfunc/reverse>.
 
-    $reversed = reverse $string;
+    my $reversed = reverse $string;
 
 =head2 How do I expand tabs in a string?
 
@@ -766,7 +766,7 @@ Or you can just use the L<Text::Tabs> module (part of the standard Perl
 distribution).
 
     use Text::Tabs;
-    @expanded_lines = expand(@lines_with_tabs);
+    my @expanded_lines = expand(@lines_with_tabs);
 
 =head2 How do I reformat a paragraph?
 
@@ -794,8 +794,8 @@ To get the first character, for example, start at position 0
 and grab the string of length 1.
 
 
-    $string = "Just another Perl Hacker";
-    $first_char = substr( $string, 0, 1 );  #  'J'
+    my $string = "Just another Perl Hacker";
+    my $first_char = substr( $string, 0, 1 );  #  'J'
 
 To change part of a string, you can use the optional fourth
 argument which is the replacement string.
@@ -843,8 +843,8 @@ There are a number of ways, with varying efficiency.  If you want a
 count of a certain single character (X) within a string, you can use the
 C<tr///> function like so:
 
-    $string = "ThisXlineXhasXsomeXx'sXinXit";
-    $count = ($string =~ tr/X//);
+    my $string = "ThisXlineXhasXsomeXx'sXinXit";
+    my $count = ($string =~ tr/X//);
     print "There are $count X characters in the string";
 
 This is fine if you are just looking for a single character.  However,
@@ -853,14 +853,15 @@ larger string, C<tr///> won't work.  What you can do is wrap a while()
 loop around a global pattern match.  For example, let's count negative
 integers:
 
-    $string = "-9 55 48 -2 23 -76 4 14 -44";
+    my $string = "-9 55 48 -2 23 -76 4 14 -44";
+    my $count = 0;
     while ($string =~ /-\d+/g) { $count++ }
     print "There are $count negative numbers in the string";
 
 Another version uses a global match in list context, then assigns the
 result to a scalar, producing a count of the number of matches.
 
-    $count = () = $string =~ /-\d+/g;
+    my $count = () = $string =~ /-\d+/g;
 
 =head2 How do I capitalize all the words on one line?
 X<Text::Autoformat> X<capitalize> X<case, title> X<case, sentence>
@@ -920,7 +921,7 @@ problem.  Thankfully, we have Jeffrey Friedl, author of
 I<Mastering Regular Expressions>, to handle these for us.  He
 suggests (assuming your string is contained in C<$text>):
 
-     @new = ();
+     my @new = ();
      push(@new, $+) while $text =~ m{
          "([^\"\\]*(?:\\.[^\"\\]*)*)",?  # groups the phrase inside the quotes
         | ([^,]+),?
@@ -1002,19 +1003,19 @@ right with blanks and it will truncate the result to a maximum length of
 C<$pad_len>.
 
     # Left padding a string with blanks (no truncation):
-    $padded = sprintf("%${pad_len}s", $text);
-    $padded = sprintf("%*s", $pad_len, $text);  # same thing
+    my $padded = sprintf("%${pad_len}s", $text);
+    my $padded = sprintf("%*s", $pad_len, $text);  # same thing
 
     # Right padding a string with blanks (no truncation):
-    $padded = sprintf("%-${pad_len}s", $text);
-    $padded = sprintf("%-*s", $pad_len, $text); # same thing
+    my $padded = sprintf("%-${pad_len}s", $text);
+    my $padded = sprintf("%-*s", $pad_len, $text); # same thing
 
     # Left padding a number with 0 (no truncation):
-    $padded = sprintf("%0${pad_len}d", $num);
-    $padded = sprintf("%0*d", $pad_len, $num); # same thing
+    my $padded = sprintf("%0${pad_len}d", $num);
+    my $padded = sprintf("%0*d", $pad_len, $num); # same thing
 
     # Right padding a string with blanks using pack (will truncate):
-    $padded = pack("A$pad_len",$text);
+    my $padded = pack("A$pad_len",$text);
 
 If you need to pad with a character other than blank or zero you can use
 one of the following methods.  They all generate a pad string with the
@@ -1023,8 +1024,8 @@ not truncate C<$text>.
 
 Left and right padding with any character, creating a new string:
 
-    $padded = $pad_char x ( $pad_len - length( $text ) ) . $text;
-    $padded = $text . $pad_char x ( $pad_len - length( $text ) );
+    my $padded = $pad_char x ( $pad_len - length( $text ) ) . $text;
+    my $padded = $text . $pad_char x ( $pad_len - length( $text ) );
 
 Left and right padding with any character, modifying C<$text> directly:
 
@@ -1139,14 +1140,14 @@ have a string, why do you need more?
 If you get used to writing odd things like these:
 
     print "$var";       # BAD
-    $new = "$old";       # BAD
+    my $new = "$old";       # BAD
     somefunc("$var");    # BAD
 
 You'll be in trouble.  Those should (in 99.8% of the cases) be
 the simpler and more direct:
 
     print $var;
-    $new = $old;
+    my $new = $old;
     somefunc($var);
 
 Otherwise, besides slowing you down, you're going to break code when
@@ -1166,7 +1167,7 @@ syscall() function.
 
 Stringification also destroys arrays.
 
-    @lines = `command`;
+    my @lines = `command`;
     print "@lines";     # WRONG - extra blanks
     print @lines;       # right
 
@@ -1190,7 +1191,7 @@ If you want to indent the text in the here document, you
 can do this:
 
     # all in one
-    ($VAR = <<HERE_TARGET) =~ s/^\s+//gm;
+    (my $VAR = <<HERE_TARGET) =~ s/^\s+//gm;
         your text
         goes here
     HERE_TARGET
@@ -1199,7 +1200,7 @@ But the HERE_TARGET must still be flush against the margin.
 If you want that indented also, you'll have to quote
 in the indentation.
 
-    ($quote = <<'    FINIS') =~ s/^\s+//gm;
+    (my $quote = <<'    FINIS') =~ s/^\s+//gm;
             ...we will have peace, when you and all your works have
             perished--and the works of your dark master to whom you
             would deliver us. You are a liar, Saruman, and a corrupter
@@ -1228,7 +1229,7 @@ subsequent line.
 
 This works with leading special strings, dynamically determined:
 
-    $remember_the_main = fix<<'    MAIN_INTERPRETER_LOOP';
+    my $remember_the_main = fix<<'    MAIN_INTERPRETER_LOOP';
     @@@ int
     @@@ runops() {
     @@@     SAVEI32(runlevel);
@@ -1242,7 +1243,7 @@ This works with leading special strings, dynamically determined:
 Or with a fixed amount of leading whitespace, with remaining
 indentation correctly preserved:
 
-    $poem = fix<<EVER_ON_AND_ON;
+    my $poem = fix<<EVER_ON_AND_ON;
        Now far ahead the Road has gone,
       And I must follow, if I can,
        Pursuing it with eager feet,
@@ -1445,8 +1446,8 @@ are going to make this query many times over arbitrary string values,
 the fastest way is probably to invert the original array and maintain a
 hash whose keys are the first array's values:
 
-    @blues = qw/azure cerulean teal turquoise lapis-lazuli/;
-    %is_blue = ();
+    my @blues = qw/azure cerulean teal turquoise lapis-lazuli/;
+    my %is_blue = ();
     for (@blues) { $is_blue{$_} = 1 }
 
 Now you can check whether C<$is_blue{$some_color}>.  It might have
@@ -1455,8 +1456,8 @@ been a good idea to keep the blues all in a hash in the first place.
 If the values are all small integers, you could use a simple indexed
 array.  This kind of an array will take up less space:
 
-    @primes = (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31);
-    @is_tiny_prime = ();
+    my @primes = (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31);
+    my @is_tiny_prime = ();
     for (@primes) { $is_tiny_prime[$_] = 1 }
     # or simply  @istiny_prime[@primes] = (1) x @primes;
 
@@ -1465,7 +1466,7 @@ Now you check whether $is_tiny_prime[$some_number].
 If the values in question are integers instead of strings, you can save
 quite a lot of space by using bit strings instead:
 
-    @articles = ( 1..10, 150..2000, 2017 );
+    my @articles = ( 1..10, 150..2000, 2017 );
     undef $read;
     for (@articles) { vec($read,$_,1) = 1 }
 
@@ -1505,10 +1506,10 @@ list context.
 Use a hash.  Here's code to do both and more.  It assumes that each
 element is unique in a given array:
 
-    @union = @intersection = @difference = ();
-    %count = ();
-    foreach $element (@array1, @array2) { $count{$element}++ }
-    foreach $element (keys %count) {
+    my (@union, @intersection, @difference);
+    my %count = ();
+    foreach my $element (@array1, @array2) { $count{$element}++ }
+    foreach my $element (keys %count) {
         push @union, $element;
         push @{ $count{$element} > 1 ? \@intersection : \@difference }, $element;
     }
@@ -1551,7 +1552,7 @@ For multilevel structures, you may wish to use an approach more
 like this one.  It uses the CPAN module L<FreezeThaw>:
 
     use FreezeThaw qw(cmpStr);
-    @a = @b = ( "this", "that", [ "more", "stuff" ] );
+    my @a = my @b = ( "this", "that", [ "more", "stuff" ] );
 
     printf "a and b contain %s arrays\n",
         cmpStr(\@a, \@b) == 0
@@ -1563,7 +1564,7 @@ two different answers:
 
     use FreezeThaw qw(cmpStr cmpStrHard);
 
-    %a = %b = ( "this" => "that", "extra" => [ "more", "stuff" ] );
+    my %a = my %b = ( "this" => "that", "extra" => [ "more", "stuff" ] );
     $a{EXTRA} = \%b;
     $b{EXTRA} = \%a;
 
@@ -1729,7 +1730,8 @@ Use C<for>/C<foreach>:
 
 Here's another; let's compute spherical volumes:
 
-    for (@volumes = @radii) {   # @volumes has changed parts
+    my @volumes = @radii;
+    for (@volumes) {   # @volumes has changed parts
         $_ **= 3;
         $_ *= (4/3) * 3.14159;  # this will be constant folded
     }
@@ -1737,14 +1739,14 @@ Here's another; let's compute spherical volumes:
 which can also be done with C<map()> which is made to transform
 one list into another:
 
-    @volumes = map {$_ ** 3 * (4/3) * 3.14159} @radii;
+    my @volumes = map {$_ ** 3 * (4/3) * 3.14159} @radii;
 
 If you want to do the same thing to modify the values of the
 hash, you can use the C<values> function.  As of Perl 5.6
 the values are not copied, so if you modify $orbit (in this
 case), you modify the value.
 
-    for $orbit ( values %orbits ) {
+    for my $orbit ( values %orbits ) {
         ($orbit **= 3) *= (4/3) * 3.14159;
     }
 
@@ -1757,8 +1759,8 @@ the hash is to be modified.
 
 Use the C<rand()> function (see L<perlfunc/rand>):
 
-    $index   = rand @array;
-    $element = $array[$index];
+    my $index   = rand @array;
+    my $element = $array[$index];
 
 Or, simply:
 
@@ -1846,23 +1848,24 @@ same element.  Here's an example of how to pull out the first word
 after the first number on each item, and then sort those words
 case-insensitively.
 
-    @idx = ();
+    my @idx;
     for (@data) {
+        my $item;
         ($item) = /\d+\s*(\S+)/;
         push @idx, uc($item);
     }
-    @sorted = @data[ sort { $idx[$a] cmp $idx[$b] } 0 .. $#idx ];
+    my @sorted = @data[ sort { $idx[$a] cmp $idx[$b] } 0 .. $#idx ];
 
 which could also be written this way, using a trick
 that's come to be known as the Schwartzian Transform:
 
-    @sorted = map  { $_->[0] }
+    my @sorted = map  { $_->[0] }
         sort { $a->[1] cmp $b->[1] }
         map  { [ $_, uc( (/\d+\s*(\S+)/)[0]) ] } @data;
 
 If you need to sort on several fields, the following paradigm is useful.
 
-    @sorted = sort {
+    my @sorted = sort {
         field1($a) <=> field1($b) ||
         field2($a) cmp field2($b) ||
         field3($a) cmp field3($b)
@@ -1887,8 +1890,8 @@ For example, you don't have to store individual bits in an array
 array of bits to a string, use C<vec()> to set the right bits. This
 sets C<$vec> to have bit N set only if C<$ints[N]> was set:
 
-    @ints = (...); # array of bits, e.g. ( 1, 0, 0, 1, 1, 0 ... )
-    $vec = '';
+    my @ints = (...); # array of bits, e.g. ( 1, 0, 0, 1, 1, 0 ... )
+    my $vec = '';
     foreach( 0 .. $#ints ) {
         vec($vec,$_,1) = 1 if $ints[$_];
     }
@@ -1944,9 +1947,9 @@ from Benjamin Goldberg:
 
 Or use the CPAN module L<Bit::Vector>:
 
-    $vector = Bit::Vector->new($num_of_bits);
+    my $vector = Bit::Vector->new($num_of_bits);
     $vector->Index_List_Store(@ints);
-    @ints = $vector->Index_List_Read();
+    my @ints = $vector->Index_List_Read();
 
 L<Bit::Vector> provides efficient methods for bit vector, sets of
 small integers and "big int" math.
@@ -1954,10 +1957,10 @@ small integers and "big int" math.
 Here's a more extensive illustration using vec():
 
     # vec demo
-    $vector = "\xff\x0f\xef\xfe";
+    my $vector = "\xff\x0f\xef\xfe";
     print "Ilya's string \\xff\\x0f\\xef\\xfe represents the number ",
     unpack("N", $vector), "\n";
-    $is_set = vec($vector, 23, 1);
+    my $is_set = vec($vector, 23, 1);
     print "Its 23rd bit is ", $is_set ? "set" : "clear", ".\n";
     pvec($vector);
 
@@ -2122,13 +2125,13 @@ entry for C<each()> in L<perlfunc>.
 
 Create a reverse hash:
 
-    %by_value = reverse %by_key;
-    $key = $by_value{$value};
+    my %by_value = reverse %by_key;
+    my $key = $by_value{$value};
 
 That's not particularly efficient.  It would be more space-efficient
 to use:
 
-    while (($key, $value) = each %by_key) {
+    while (my ($key, $value) = each %by_key) {
         $by_value{$value} = $key;
     }
 
@@ -2136,7 +2139,7 @@ If your hash could have repeated values, the methods above will only find
 one of the associated keys.   This may or may not worry you.  If it does
 worry you, you can always reverse the hash into a hash of arrays instead:
 
-    while (($key, $value) = each %by_key) {
+    while (my ($key, $value) = each %by_key) {
          push @{$key_list_by_value{$value}}, $key;
     }
 
@@ -2335,26 +2338,26 @@ See the documentation for C<each> in L<perlfunc>.
 First you extract the keys from the hashes into lists, then solve
 the "removing duplicates" problem described above.  For example:
 
-    %seen = ();
-    for $element (keys(%foo), keys(%bar)) {
+    my %seen = ();
+    for my $element (keys(%foo), keys(%bar)) {
         $seen{$element}++;
     }
-    @uniq = keys %seen;
+    my @uniq = keys %seen;
 
 Or more succinctly:
 
-    @uniq = keys %{{%foo,%bar}};
+    my @uniq = keys %{{%foo,%bar}};
 
 Or if you really want to save space:
 
-    %seen = ();
+    my %seen = ();
     while (defined ($key = each %foo)) {
         $seen{$key}++;
     }
     while (defined ($key = each %bar)) {
         $seen{$key}++;
     }
-    @uniq = keys %seen;
+    my @uniq = keys %seen;
 
 =head2 How can I store a multidimensional array in a DBM file?
 
@@ -2611,7 +2614,7 @@ instead.
 
 For some specific applications, you can use one of the DBM modules.
 See L<AnyDBM_File>.  More generically, you should consult the L<FreezeThaw>
-or L<Storable> modules from CPAN.  Starting from Perl 5.8 L<Storable> is part
+or L<Storable> modules from CPAN.  Starting from Perl 5.8, L<Storable> is part
 of the standard distribution.  Here's one example using L<Storable>'s C<store>
 and C<retrieve> functions:
 

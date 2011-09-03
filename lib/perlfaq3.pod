@@ -685,7 +685,7 @@ by line. Or more concretely, use a loop like this:
     #
     # Good Idea
     #
-    while (<FILE>) {
+    while (my $line = <$file_handle>) {
        # ...
     }
 
@@ -694,7 +694,7 @@ instead of this:
     #
     # Bad Idea
     #
-    @data = <FILE>;
+    my @data = <$file_handle>;
     foreach (@data) {
         # ...
     }
@@ -707,12 +707,12 @@ larger.
 
 Remember that both map and grep expect a LIST argument, so doing this:
 
-        @wanted = grep {/pattern/} <FILE>;
+        @wanted = grep {/pattern/} <$file_handle>;
 
 will cause the entire file to be slurped. For large files, it's better
 to loop:
 
-        while (<FILE>) {
+        while (<$file_handle>) {
                 push(@wanted, $_) if /pattern/;
         }
 
