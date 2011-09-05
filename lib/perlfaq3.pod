@@ -238,6 +238,9 @@ perl finds it:
 
     $ perl -MModule::Name -e1
 
+(If you don't receive a "Can't locate ... in @INC" error message, then Perl
+found the module name you asked for.)
+
 =head2 How do I debug my Perl programs?
 
 (contributed by brian d foy)
