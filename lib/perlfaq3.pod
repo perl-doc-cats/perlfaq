@@ -17,39 +17,119 @@ Have you read the appropriate manpages?  Here's a brief index:
 
 =item Basics
 
-perldata, perlvar, perlsyn, perlop, perlsub
+=over 4
+
+=item L<perldata> - Perl data types
+
+=item L<perlvar> - Perl pre-defined variables
+
+=item L<perlsyn> - Perl syntax
+
+=item L<perlop> - Perl operators and precedence
+
+=item L<perlsub> - Perl subroutines
+
+=back
+
 
 =item Execution
 
-perlrun, perldebug
+=over 4
+
+=item L<perlrun> - how to execute the Perl interpreter
+
+=item L<perldebug> - Perl debugging
+
+=back
+
 
 =item Functions
 
-perlfunc
+=over 4
+
+=item L<perlfunc> - Perl builtin functions
+
+=back
 
 =item Objects
 
-perlref, perlmod, perlobj, perltie
+=over 4
+
+=item L<perlref> - Perl references and nested data structures
+
+=item L<perlmod> - Perl modules (packages and symbol tables)
+
+=item L<perlobj> - Perl objects
+
+=item L<perltie> - how to hide an object class in a simple variable
+
+=back
+
 
 =item Data Structures
 
-perlref, perllol, perldsc
+=over 4
+
+=item L<perlref> - Perl references and nested data structures
+
+=item L<perllol> - Manipulating arrays of arrays in Perl
+
+=item L<perldsc> - Perl Data Structures Cookbook
+
+=back
 
 =item Modules
 
-perlmod, perlmodlib, perlsub
+=over 4
+
+=item L<perlmod> - Perl modules (packages and symbol tables)
+
+=item L<perlmodlib> - constructing new Perl modules and finding existing ones
+
+=back
+
 
 =item Regexes
 
-perlre, perlfunc, perlop, perllocale
+=over 4
+
+=item L<perlre> - Perl regular expressions
+
+=item L<perlfunc> - Perl builtin functions>
+
+=item L<perlop> - Perl operators and precedence
+
+=item L<perllocale> - Perl locale handling (internationalization and localization)
+
+=back
+
 
 =item Moving to perl5
 
-perltrap, perl
+=over 4
+
+=item L<perltrap> - Perl traps for the unwary
+
+=item L<perl>
+
+=back
+
 
 =item Linking with C
 
-perlxstut, perlxs, perlcall, perlguts, perlembed
+=over 4
+
+=item L<perlxstut> - Tutorial for writing XSUBs
+
+=item L<perlxs> - XS language reference manual
+
+=item L<perlcall> - Perl calling conventions from C
+
+=item L<perlguts> - Introduction to the Perl API
+
+=item L<perlembed> - how to embed perl in your C program
+
+=back
 
 =item Various
 
