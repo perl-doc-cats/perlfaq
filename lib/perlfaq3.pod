@@ -153,6 +153,11 @@ evaluated.  You can also examine the symbol table, get stack
 backtraces, check variable values, set breakpoints, and other
 operations typically found in symbolic debuggers.
 
+You can also use L<Devel::REPL> which is an interactive shell for Perl, 
+commonly known as a REPL - Read, Evaluate, Print, Loop.  It provides
+various handy features.
+
+
 =head2 Is there a Perl shell?
 
 The L<psh> (Perl sh) is currently at version 1.8. The Perl Shell is a shell
