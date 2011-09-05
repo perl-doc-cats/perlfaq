@@ -939,6 +939,11 @@ Perl distribution) lets you say:
     use Text::ParseWords;
     @new = quotewords(",", 0, $text);
 
+For parsing or generating CSV, though, using L<Text::CSV> rather than
+implementing it yourself is highly recommended; you'll save yourself odd bugs
+popping up later by just using code which has already been tried and tested in
+production for years.
+
 =head2 How do I strip blank space from the beginning/end of a string?
 
 (contributed by brian d foy)
