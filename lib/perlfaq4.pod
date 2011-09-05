@@ -82,7 +82,7 @@ a C<0> or using C<oct>:
 The problem comes in when you take your numbers from something that Perl
 thinks is a string, such as a command line argument in C<@ARGV>:
 
-    chmod( $ARGV[0],      $filename);   # wrong, even if "0644"
+    chmod( $ARGV[0],      $filename );  # wrong, even if "0644"
 
     chmod( oct($ARGV[0]), $filename );  # correct, treat string as octal
 
