@@ -903,7 +903,7 @@ to be re-compiled and will often allocate a megabyte or more of system
 memory, this can be a killer.  Compiling into C B<isn't going to help
 you> because the process start-up overhead is where the bottleneck is.
 
-There are two popular ways to avoid this overhead.  One solution
+There are three popular ways to avoid this overhead.  One solution
 involves running the Apache HTTP server (available from
 L<http://www.apache.org/> ) with either of the mod_perl or mod_fastcgi
 plugin modules.
@@ -920,9 +920,15 @@ With the FCGI module (from CPAN) and the mod_fastcgi
 module (available from L<http://www.fastcgi.com/> ) each of your Perl
 programs becomes a permanent CGI daemon process.
 
-Both of these solutions can have far-reaching effects on your system
-and on the way you write your CGI programs, so investigate them with
-care.
+Finally, L<Plack> is a Perl module and toolkit that contains PSGI middleware,
+helpers and adapters to web servers, allowing you to easily deploy scripts which
+can continue running, and provides flexibility with regards to which web server
+you use.  It can allow existing CGI scripts to enjoy this flexibility and
+performance with minimal changes, or can be used along with modern Perl web
+frameworks to make writing and deploying web services with Perl a breeze.
+
+These solutions can have far-reaching effects on your system and on the way you 
+write your CGI programs, so investigate them with care.
 
 See also
 L<http://www.cpan.org/modules/by-category/15_World_Wide_Web_HTML_HTTP_CGI/> .
@@ -1109,6 +1115,10 @@ when it runs fine on the command line", see the troubleshooting
 guides and references in L<perlfaq9> or in the CGI MetaFAQ:
 
     L<http://www.perl.org/CGI_MetaFAQ.html>
+
+Looking in to L<Plack> and modern Perl web frameworks is highly recommended,
+though; web programming in Perl has evolved a long way from the old days of
+simple CGI scripts.
 
 =head2 Where can I learn about object-oriented Perl programming?
 
