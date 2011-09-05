@@ -2201,11 +2201,9 @@ comparing the keys, we can compute a value with them and use that
 value as the comparison.
 
 For instance, to make our report order case-insensitive, we use
-the C<\L> sequence in a double-quoted string to make everything
-lowercase. The C<sort()> block then compares the lowercased
-values to determine in which order to put the keys.
+C<lc> to lowercase the keys before comparing them:
 
-    my @keys = sort { "\L$a" cmp "\L$b" } keys %hash;
+    my @keys = sort { lc $a cmp lc $b } keys %hash;
 
 Note: if the computation is expensive or the hash has many elements,
 you may want to look at the Schwartzian Transform to cache the
