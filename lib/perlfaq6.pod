@@ -68,6 +68,11 @@ delimiter within the pattern:
     s/\/usr\/local/\/usr\/share/g;    # bad delimiter choice
     s#/usr/local#/usr/share#g;        # better
 
+
+Using logically paired delimiters can be even more readable:
+
+    s{/usr/local/}{/usr/share}g;;     # better still
+
 =back
 
 =head2 I'm having trouble matching over more than one line. What's wrong?
