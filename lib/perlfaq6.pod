@@ -71,7 +71,7 @@ delimiter within the pattern:
 
 Using logically paired delimiters can be even more readable:
 
-    s{/usr/local/}{/usr/share}g;;     # better still
+    s{/usr/local/}{/usr/share}g;      # better still
 
 =back
 
