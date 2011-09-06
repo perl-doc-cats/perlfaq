@@ -29,8 +29,8 @@ distribution policy of perl. Perl is supported by its users. The
 core, the standard Perl library, the optional modules, and the
 documentation you're reading now were all written by volunteers. See
 the personal note at the end of the README file in the perl source
-distribution for more details. See L<perlhist> (new as of 5.005)
-for Perl's milestone releases.
+distribution for more details. See L<perlhist> for Perl's milestone 
+releases.
 
 In particular, the core development team (known as the Perl Porters)
 are a rag-tag band of highly altruistic individuals committed to

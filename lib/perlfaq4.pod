@@ -76,13 +76,13 @@ If you want to use the same literal digits (644) in Perl, you have to tell
 Perl to treat them as octal numbers either by prefixing the digits with
 a C<0> or using C<oct>:
 
-    chmod(     0644, $filename);   # right, has leading zero
+    chmod(     0644, $filename );  # right, has leading zero
     chmod( oct(644), $filename );  # also correct
 
 The problem comes in when you take your numbers from something that Perl
 thinks is a string, such as a command line argument in C<@ARGV>:
 
-    chmod( $ARGV[0],      $filename);   # wrong, even if "0644"
+    chmod( $ARGV[0],      $filename );  # wrong, even if "0644"
 
     chmod( oct($ARGV[0]), $filename );  # correct, treat string as octal
 
@@ -100,7 +100,7 @@ easiest route.
 
     printf("%.3f", 3.1415926535);   # prints 3.142
 
-The POSIX module (part of the standard Perl distribution)
+The L<POSIX> module (part of the standard Perl distribution)
 implements C<ceil()>, C<floor()>, and a number of other mathematical
 and trigonometric functions.
 
@@ -938,6 +938,11 @@ Perl distribution) lets you say:
 
     use Text::ParseWords;
     @new = quotewords(",", 0, $text);
+
+For parsing or generating CSV, though, using L<Text::CSV> rather than
+implementing it yourself is highly recommended; you'll save yourself odd bugs
+popping up later by just using code which has already been tried and tested in
+production for years.
 
 =head2 How do I strip blank space from the beginning/end of a string?
 
@@ -2196,11 +2201,9 @@ comparing the keys, we can compute a value with them and use that
 value as the comparison.
 
 For instance, to make our report order case-insensitive, we use
-the C<\L> sequence in a double-quoted string to make everything
-lowercase. The C<sort()> block then compares the lowercased
-values to determine in which order to put the keys.
+C<lc> to lowercase the keys before comparing them:
 
-    my @keys = sort { "\L$a" cmp "\L$b" } keys %hash;
+    my @keys = sort { lc $a cmp lc $b } keys %hash;
 
 Note: if the computation is expensive or the hash has many elements,
 you may want to look at the Schwartzian Transform to cache the
