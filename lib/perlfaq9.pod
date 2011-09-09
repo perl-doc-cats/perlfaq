@@ -437,16 +437,16 @@ assured that it's real.
 
 A related strategy that's less open to forgery is to give them a PIN
 (personal ID number).  Record the address and PIN (best that it be a
-random one) for later processing. In the mail you send, ask them to
-include the PIN in their reply.  But if it bounces, or the message is
-included via a "vacation" script, it'll be there anyway.  So it's
-best to ask them to mail back a slight alteration of the PIN, such as
-with the characters reversed, one added or subtracted to each digit, etc.
+random one) for later processing. In the mail you send, include a link to
+your site with the PIN included. If the mail bounces, you know it's not
+valid. If they don't click on the link, either they forged the address or
+(assuming they got the message) following through wasn't important so you
+don't need to worry about it.
 
 =head2 How do I decode a MIME/BASE64 string?
 
-The L<MIME::Base64> package (available from CPAN) handles this as well as
-the MIME/QP encoding.  Decoding base 64 becomes as simple as:
+The L<MIME::Base64> package handles this as well as the MIME/QP encoding.
+Decoding base 64 becomes as simple as:
 
     use MIME::Base64;
     $decoded = decode_base64($encoded);
@@ -477,11 +477,10 @@ Use the Email::Sender::Simple module, like so:
   use Email::Sender::Simple qw(sendmail);
   sendmail($email_mime_object);
 
-By default, Email::Sender::Simple assumes that you have a local MTA
-(Postfix, Exim, Sendmail, or even qmail) configured to route mail to the
-outside world. This generally isn't the case. If there's a remote mail
+By default, Email::Sender::Simple will try `sendmail` first, if it exists
+in your $PATH. This generally isn't the case. If there's a remote mail
 server you use to send mail, consider investigating one of the Transport
-classes. At time of writing, the available transports are:
+classes. At time of writing, the available transports include:
 
 =over 4
 
@@ -515,8 +514,7 @@ Telling Email::Sender::Simple to use your transport is straightforward.
 
 =head2 How do I use MIME to make an attachment to a mail message?
 
-Email::MIME directly supports multipart messages, and in fact the simple
-case of a plaintext email still has one 'attachment'. Email::MIME
+Email::MIME directly supports multipart messages. Email::MIME
 objects themselves are parts and can be attached to other Email::MIME
 objects. Consult the Email::MIME documentation for more information,
 including all of the supported methods and examples of their use.
@@ -559,6 +557,14 @@ hostname:
 
     $host = hostname();
 
+
+The L<Sys::Hostname::Long> module takes a different approach and tries
+harder to return the fully qualified hostname:
+
+  use Sys::Hostname::Long 'hostname_long';
+
+  my $hostname = hostname_long();
+
 To get the IP address, you can use the C<gethostbyname> built-in function
 to turn the name into a number. To turn that number into the dotted octet
 form (a.b.c.d) that most people expect, use the C<inet_ntoa> function
@@ -568,7 +574,7 @@ from the L<Socket> module, which also comes with perl.
 
     my $address = inet_ntoa(
         scalar gethostbyname( $host || 'localhost' )
-        );
+    );
 
 =head2 How do I fetch a news article or the active newsgroups?
 
