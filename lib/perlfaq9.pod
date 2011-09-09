@@ -356,7 +356,7 @@ using any data that you don't intend to use. Trust no one.
 
 =head2 How do I parse a mail header?
 
-Use the Email::MIME module. It's well-tested and supports all the
+Use the L<Email::MIME> module. It's well-tested and supports all the
 craziness that you'll see in the real world (comment-folding whitespace,
 encodings, comments, etc.).
 
@@ -367,8 +367,8 @@ encodings, comments, etc.).
   my $from    = $message->header('From');
 
 If you've already got some other kind of email object, consider passing
-it to Email::Abstract and then using its cast method to get an
-Email::MIME object:
+it to L<Email::Abstract> and then using its cast method to get an
+L<Email::MIME> object:
 
   my $mail_message_object = read_message();
   my $abstract = Email::Abstract->new($mail_message_object);
@@ -451,7 +451,7 @@ Decoding base 64 becomes as simple as:
     use MIME::Base64;
     $decoded = decode_base64($encoded);
 
-The Email::MIME module can decode base 64-encoded email message parts
+The L<Email::MIME> module can decode base 64-encoded email message parts
 transparently so the developer doesn't need to worry about it.
 
 =head2 How do I return the user's mail address?
@@ -472,30 +472,30 @@ asking the user.
 
 =head2 How do I send mail?
 
-Use the Email::Sender::Simple module, like so:
+Use the L<Email::Sender::Simple> module, like so:
 
   use Email::Sender::Simple qw(sendmail);
   sendmail($email_mime_object);
 
-By default, Email::Sender::Simple will try `sendmail` first, if it exists
+By default, L<Email::Sender::Simple> will try `sendmail` first, if it exists
 in your $PATH. This generally isn't the case. If there's a remote mail
 server you use to send mail, consider investigating one of the Transport
 classes. At time of writing, the available transports include:
 
 =over 4
 
-=item Email::Sender::Transport::Sendmail
+=item L<Email::Sender::Transport::Sendmail>
 
 This is the default. If you can use the L<mail(1)> or L<mailx(1)>
 program to send mail from the machine where your code runs, you should
 be able to use this.
 
-=item Email::Sender::Transport::SMTP
+=item L<Email::Sender::Transport::SMTP>
 
 This transport contacts a remote SMTP server over TCP. It optionally
 uses SSL and can authenticate to the server via SASL.
 
-=item Email::Sender::Transport::SMTP::TLS
+=item L<Email::Sender::Transport::SMTP::TLS>
 
 This is like the SMTP transport, but uses TLS security. You can
 authenticate with this module as well, using any mechanisms your server
@@ -503,7 +503,7 @@ supports after STARTTLS.
 
 =back
 
-Telling Email::Sender::Simple to use your transport is straightforward.
+Telling L<Email::Sender::Simple> to use your transport is straightforward.
 
   sendmail(
     $message,
@@ -514,14 +514,14 @@ Telling Email::Sender::Simple to use your transport is straightforward.
 
 =head2 How do I use MIME to make an attachment to a mail message?
 
-Email::MIME directly supports multipart messages. Email::MIME
-objects themselves are parts and can be attached to other Email::MIME
-objects. Consult the Email::MIME documentation for more information,
+L<Email::MIME> directly supports multipart messages. L<Email::MIME>
+objects themselves are parts and can be attached to other L<Email::MIME>
+objects. Consult the L<Email::MIME> documentation for more information,
 including all of the supported methods and examples of their use.
 
 =head2 How do I read mail?
 
-Use the Email::Folder module, like so:
+Use the L<Email::Folder> module, like so:
 
   use Email::Folder;
 
@@ -532,7 +532,7 @@ Use the Email::Folder module, like so:
     my $mime = Email::MIME->new($message->as_string);
   }
 
-There are different classes in the Email::Folder namespace for
+There are different classes in the L<Email::Folder> namespace for
 supporting various mailbox types. Note that these modules are generally
 rather limited and only support B<reading> rather than writing.
 
