@@ -1054,7 +1054,7 @@ but this usually can be worked around.
 
 =head2 How do I match a regular expression that's in a variable?
 X<regex, in variable> X<eval> X<regex> X<quotemeta> X<\Q, regex>
-X<\E, regex>, X<qr//>
+X<\E, regex> X<qr//>
 
 (contributed by brian d foy)
 
