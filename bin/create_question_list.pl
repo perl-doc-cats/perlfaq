@@ -108,5 +108,6 @@ sub fetch_text {
         . ( join ' ', map { ref($_) ? fetch_text($_) : $_ } @nodes )
         . $end;
     $str =~ s/\s{2,}/ /g;    # Remove extra spaces
+    $str =~ s/\s+$//;        # Remove trailing white spaces
     return $str;
 }
