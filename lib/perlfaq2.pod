@@ -198,10 +198,6 @@ Dobbs Journal (online edition). To read old I<TPJ> articles, see
 L<http://www.ddj.com/> or brian d foy's index of online TPJ content
 ( L<http://www.perlmonks.org/index.pl?node_id=711609> ).
 
-L<Perl Weekly|http://perlweekly.com/> is a free, once a week e-mail 
-(and RSS feed) round-up of hand-picked news and articles about Perl,
-created by Gabor Szabo.
-
 =head2 What mailing lists are there for Perl?
 
 A comprehensive list of Perl-related mailing lists can be found at
