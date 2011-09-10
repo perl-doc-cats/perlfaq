@@ -182,7 +182,7 @@ I copied the perl binary from one machine to another, but scripts don't work.
 
 =item *
 
-I grabbed the sources and tried to compile but gdbm/dynamic loading/malloc/linking/... failed.  How do I make it work?
+I grabbed the sources and tried to compile but gdbm/dynamic loading/malloc/linking/... failed. How do I make it work?
 
 =item *
 
@@ -1240,7 +1240,7 @@ Is there a way to hide perl's command line from programs such as "ps"?
 
 =item *
 
-I {changed directory, modified my environment} in a perl script.  How come the change disappeared when I exited the script?  How do I get my changes to be visible?
+I {changed directory, modified my environment} in a perl script. How come the change disappeared when I exited the script?  How do I get my changes to be visible?
 
 =item *
 
