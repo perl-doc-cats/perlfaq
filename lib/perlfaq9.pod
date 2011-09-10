@@ -436,7 +436,7 @@ back and they've followed your directions, you can be reasonably
 assured that it's real.
 
 A related strategy that's less open to forgery is to give them a PIN
-(personal ID number).  Record the address and PIN (best that it be a
+(personal ID number). Record the address and PIN (best that it be a
 random one) for later processing. In the mail you send, include a link to
 your site with the PIN included. If the mail bounces, you know it's not
 valid. If they don't click on the link, either they forged the address or
