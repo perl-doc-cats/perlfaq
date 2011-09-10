@@ -9,9 +9,9 @@ and programming support.
 
 =head2 How do I do (anything)?
 
-Have you looked at CPAN (see L<perlfaq2>)?  The chances are that
+Have you looked at CPAN (see L<perlfaq2>)? The chances are that
 someone has already written a module that can solve your problem.
-Have you read the appropriate manpages?  Here's a brief index:
+Have you read the appropriate manpages? Here's a brief index:
 
 =over 4
 

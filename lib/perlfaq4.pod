@@ -92,7 +92,7 @@ in octal  and decimal format:
 
     printf "0%o %d", $number, $number;
 
-=head2 Does Perl have a round() function?  What about ceil() and floor()?  Trig functions?
+=head2 Does Perl have a round() function? What about ceil() and floor()? Trig functions?
 
 Remember that C<int()> merely truncates toward 0. For rounding to a
 certain number of digits, C<sprintf()> or C<printf()> is usually the
@@ -923,7 +923,7 @@ suggests (assuming your string is contained in C<$text>):
 
      my @new = ();
      push(@new, $+) while $text =~ m{
-         "([^\"\\]*(?:\\.[^\"\\]*)*)",?  # groups the phrase inside the quotes
+         "([^\"\\]*(?:\\.[^\"\\]*)*)",? # groups the phrase inside the quotes
         | ([^,]+),?
         | ,
      }gx;
@@ -1506,7 +1506,7 @@ list context.
 
     my @matches = grep $_ eq $whatever, @array;
 
-=head2 How do I compute the difference of two arrays?  How do I compute the intersection of two arrays?
+=head2 How do I compute the difference of two arrays? How do I compute the intersection of two arrays?
 
 Use a hash. Here's code to do both and more. It assumes that each
 element is unique in a given array:

@@ -517,7 +517,7 @@ The discussion of closures in L<perlref> may help you even though we
 did not use anonymous subroutines in this answer. See
 L<perlsub/"Persistent Private Variables"> for details.
 
-=head2 What's the difference between dynamic and lexical (static) scoping?  Between local() and my()?
+=head2 What's the difference between dynamic and lexical (static) scoping? Between local() and my()?
 
 C<local($x)> saves away the old value of the global variable C<$x>
 and assigns a new value for the duration of the subroutine I<which is

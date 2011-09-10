@@ -166,7 +166,7 @@ Where to find source and documentation for Perl, support, and related matters.
 
 =item *
 
-What machines support perl?  Where do I get it?
+What machines support perl? Where do I get it?
 
 =item *
 
@@ -186,7 +186,7 @@ I grabbed the sources and tried to compile but gdbm/dynamic loading/malloc/linki
 
 =item *
 
-What modules and extensions are available for Perl?  What is CPAN?  What does CPAN/src/... mean?
+What modules and extensions are available for Perl? What is CPAN? What does CPAN/src/... mean?
 
 =item *
 
@@ -198,7 +198,7 @@ Where can I get information on Perl?
 
 =item *
 
-What are the Perl newsgroups on Usenet?  Where do I post questions?
+What are the Perl newsgroups on Usenet? Where do I post questions?
 
 =item *
 
@@ -384,7 +384,7 @@ Why isn't my octal data interpreted correctly?
 
 =item *
 
-Does Perl have a round() function?  What about ceil() and floor()?  Trig functions?
+Does Perl have a round() function? What about ceil() and floor()? Trig functions?
 
 =item *
 
@@ -540,7 +540,7 @@ How can I tell whether a certain element is contained in a list or array?
 
 =item *
 
-How do I compute the difference of two arrays?  How do I compute the intersection of two arrays?
+How do I compute the difference of two arrays? How do I compute the intersection of two arrays?
 
 =item *
 
@@ -693,7 +693,7 @@ I/O and the "f" issues: filehandles, flushing, formats, and footers.
 
 =item *
 
-How do I flush/unbuffer an output filehandle?  Why must I do this?
+How do I flush/unbuffer an output filehandle? Why must I do this?
 
 =item *
 
@@ -725,7 +725,7 @@ How can I manipulate fixed-record-length files?
 
 =item *
 
-How can I make a filehandle local to a subroutine?  How do I pass filehandles between subroutines?  How do I make an array of filehandles?
+How can I make a filehandle local to a subroutine? How do I pass filehandles between subroutines? How do I make an array of filehandles?
 
 =item *
 
@@ -813,7 +813,7 @@ How can I read in a file by paragraphs?
 
 =item *
 
-How can I read a single character from a file?  From the keyboard?
+How can I read a single character from a file? From the keyboard?
 
 =item *
 
@@ -833,7 +833,7 @@ How do I close a file descriptor by number?
 
 =item *
 
-Why can't I use "C:\temp\foo" in DOS paths?  Why doesn't `C:\temp\foo.exe` work?
+Why can't I use "C:\temp\foo" in DOS paths? Why doesn't `C:\temp\foo.exe` work?
 
 =item *
 
@@ -841,7 +841,7 @@ Why doesn't glob("*.*") get all the files?
 
 =item *
 
-Why does Perl let me delete read-only files?  Why does C<-i> clobber protected files?  Isn't this a bug in Perl?
+Why does Perl let me delete read-only files? Why does C<-i> clobber protected files? Isn't this a bug in Perl?
 
 =item *
 
@@ -1043,7 +1043,7 @@ How do I create a static variable?
 
 =item *
 
-What's the difference between dynamic and lexical (static) scoping?  Between local() and my()?
+What's the difference between dynamic and lexical (static) scoping? Between local() and my()?
 
 =item *
 
@@ -1180,7 +1180,7 @@ How can I do an atexit() or setjmp()/longjmp()? (Exception handling)
 
 =item *
 
-Why doesn't my sockets program work under System V (Solaris)?  What does the error message "Protocol not supported" mean?
+Why doesn't my sockets program work under System V (Solaris)? What does the error message "Protocol not supported" mean?
 
 =item *
 
@@ -1240,7 +1240,7 @@ Is there a way to hide perl's command line from programs such as "ps"?
 
 =item *
 
-I {changed directory, modified my environment} in a perl script. How come the change disappeared when I exited the script?  How do I get my changes to be visible?
+I {changed directory, modified my environment} in a perl script. How come the change disappeared when I exited the script? How do I get my changes to be visible?
 
 =item *
 
@@ -1337,7 +1337,7 @@ How do I extract URLs?
 
 =item *
 
-How do I download a file from the user's machine?  How do I open a file on another machine?
+How do I download a file from the user's machine? How do I open a file on another machine?
 
 =item *
 

@@ -309,7 +309,7 @@ If you expect characters to get to your device when you C<print()> them,
 you'll want to autoflush that filehandle. You can use C<select()>
 and the C<$|> variable to control autoflushing (see L<perlvar/$E<verbar>>
 and L<perlfunc/select>, or L<perlfaq5>, "How do I flush/unbuffer an
-output filehandle?  Why must I do this?"):
+output filehandle? Why must I do this?"):
 
     $oldh = select(DEV);
     $| = 1;
@@ -551,7 +551,7 @@ many CPAN modules that handle exceptions, such as L<Try::Tiny>.
 If you want the C<atexit()> syntax (and an C<rmexit()> as well), try the
 C<AtExit> module available from CPAN.
 
-=head2 Why doesn't my sockets program work under System V (Solaris)?  What does the error message "Protocol not supported" mean?
+=head2 Why doesn't my sockets program work under System V (Solaris)? What does the error message "Protocol not supported" mean?
 
 Some Sys-V based systems, notably Solaris 2.X, redefined some of the
 standard socket constants. Since these were constant across all
@@ -954,7 +954,7 @@ state there, as in:
 
     $0 = "orcus [accepting connections]";
 
-=head2 I {changed directory, modified my environment} in a perl script. How come the change disappeared when I exited the script?  How do I get my changes to be visible?
+=head2 I {changed directory, modified my environment} in a perl script. How come the change disappeared when I exited the script? How do I get my changes to be visible?
 
 =over 4
 

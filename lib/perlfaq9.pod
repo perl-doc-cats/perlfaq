@@ -157,7 +157,7 @@ attribute is HREF and there are no other attributes.
         \s* >
     }gsix;
 
-=head2 How do I download a file from the user's machine?  How do I open a file on another machine?
+=head2 How do I download a file from the user's machine? How do I open a file on another machine?
 
 In this case, download means to use the file upload feature of HTML
 forms. You allow the web surfer to specify a file to send to your web
