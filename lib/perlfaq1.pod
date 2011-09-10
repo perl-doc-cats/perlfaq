@@ -10,37 +10,35 @@ about Perl.
 =head2 What is Perl?
 
 Perl is a high-level programming language with an eclectic heritage
-written by Larry Wall and a cast of thousands. It derives from the
-ubiquitous C programming language and to a lesser extent from sed,
-awk, the Unix shell, and at least a dozen other tools and languages.
+written by Larry Wall and a cast of thousands. 
+
 Perl's process, file, and text manipulation facilities make it
 particularly well-suited for tasks involving quick prototyping, system
 utilities, software tools, system management tasks, database access,
-graphical programming, networking, and world wide web programming.
-These strengths make it especially popular with system administrators
-and CGI script authors, but mathematicians, geneticists, journalists,
-and even managers also use Perl. Maybe you should, too.
+graphical programming, networking, and web programming.
+
+Perl derives from the ubiquitous C programming language and to a 
+lesser extent from sed, awk, the Unix shell, and many other tools 
+and languages.
+
+These strengths make it especially popular with web developers
+and system administrators, but mathematicians, geneticists, journalists,
+and managers also use Perl. Maybe you should, too.
 
 =head2 Who supports Perl? Who develops it? Why is it free?
 
 The original culture of the pre-populist Internet and the deeply-held
 beliefs of Perl's author, Larry Wall, gave rise to the free and open
-distribution policy of perl. Perl is supported by its users. The
+distribution policy of Perl. Perl is supported by its users. The
 core, the standard Perl library, the optional modules, and the
-documentation you're reading now were all written by volunteers. See
-the personal note at the end of the README file in the perl source
-distribution for more details. See L<perlhist> for Perl's milestone 
-releases.
+documentation you're reading now were all written by volunteers.
 
-In particular, the core development team (known as the Perl Porters)
-are a rag-tag band of highly altruistic individuals committed to
+The core development team (known as the Perl Porters)
+are a group of highly altruistic individuals committed to
 producing better software for free than you could hope to purchase for
-money. You may snoop on pending developments via the archives at
-L<http://www.xray.mpe.mpg.de/mailing-lists/perl5-porters/>
-and L<http://archive.develooper.com/perl5-porters@perl.org/>
-or the news gateway nntp://nntp.perl.org/perl.perl5.porters or
-its web interface at L<http://nntp.perl.org/group/perl.perl5.porters> ,
-or read the faq at L<http://dev.perl.org/perl5/docs/p5p-faq.html> ,
+money. You may snoop on pending developments via the 
+L<archives|http://www.nntp.perl.org/group/perl.perl5.porters/>
+or read the L<faq|http://dev.perl.org/perl5/docs/p5p-faq.html>,
 or you can subscribe to the mailing list by sending
 perl5-porters-subscribe@perl.org a subscription request
 (an empty message with no subject is fine).
@@ -52,7 +50,7 @@ than GNU software's tend to be.
 
 You can get commercial support of Perl if you wish, although for most
 users the informal support will more than suffice. See the answer to
-"Where can I buy a commercial version of perl?" for more information.
+"Where can I buy a commercial version of Perl?" for more information.
 
 =head2 Which version of Perl should I use?
 
