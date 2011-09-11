@@ -203,16 +203,19 @@ discussed in Part 2.
 
 =head2 How does Perl compare with other languages like Java, Python, REXX, Scheme, or Tcl?
 
-Favorably in some areas, unfavorably in others. Precisely which areas
-are good and bad is often a personal choice, so asking this question
-on Usenet runs a strong risk of starting an unproductive Holy War.
+Perl can be used for almost any coding problem, even ones which require 
+intergrating specialist C code for extra speed. As with any tool it can
+be used well or badly. Perl has many strengths, and a few weaknesses,
+precisely which areas are good and bad is often a personal choice. 
 
-Probably the best thing to do is try to write equivalent code to do a
-set of tasks. These languages have their own newsgroups in which you
-can learn about (but hopefully not argue about) them.
+When choosing a language you should also be influenced buy the 
+L<resources|http://www.cpan.org/>, L<testing culture|http://www.cpantesters.org/> 
+and L<community|http://www.perl.org/community.html> which surrounds it.
 
-Some comparison documents can be found at L<http://www.perl.com/doc/FMTEYEWTK/versus/>
-if you really can't stop yourself.
+For comparisons to a specific language it is often best to create
+a small project in both languages and compare the results, make sure
+to use all the L<resources|http://www.cpan.org/> of each language,
+as a language is far more than just it's syntax.
 
 =head2 Can I do [task] in Perl?
 
