@@ -176,27 +176,13 @@ There's also I<$foo Magazin>, a German magazine dedicated to Perl, at
 German-speaking magazine for Perl beginners (see
 L<http://perl-zeitung.at.tf> ).
 
-Magazines that frequently carry quality articles on Perl include
-I<Unix Review> ( L<http://www.unixreview.com/> ), I<Linux Magazine> (
-L<http://www.linuxmagazine.com/> ), and Usenix's newsletter/magazine to
-its members, I<login:> ( L<http://www.usenix.org/> ).
+Several unix/linux releated magazines frequently includes articles on Perl.
 
-The Perl columns of Randal L. Schwartz are available on the web at
-L<http://www.stonehenge.com/merlyn/WebTechniques/> ,
-L<http://www.stonehenge.com/merlyn/UnixReview/> , and
-L<http://www.stonehenge.com/merlyn/LinuxMag/>.
+=head2 Which blogs have Perl content?
 
-The first (and for a long time, only) periodical devoted to All Things
-Perl, I<The Perl Journal> contains tutorials, demonstrations, case
-studies, announcements, contests, and much more. I<TPJ> has columns
-on web development, databases, Win32 Perl, graphical programming,
-regular expressions, and networking, and sponsors the Obfuscated Perl
-Contest and the Perl Poetry Contests. Beginning in November 2002, I<TPJ>
-moved to a reader-supported monthly e-zine format in which subscribers
-can download issues as PDF documents. In 2006, I<TPJ> merged with Dr.
-Dobbs Journal (online edition). To read old I<TPJ> articles, see
-L<http://www.ddj.com/> or brian d foy's index of online TPJ content
-( L<http://www.perlmonks.org/index.pl?node_id=711609> ).
+L<http://blogs.perl.org/> hosts many Perl blogs, there are also
+several blog aggregators: L<Perlsphere|http://perlsphere.net/> and
+L<IronMan|http://ironman.enlightenedperl.org/> are two of them.
 
 =head2 What mailing lists are there for Perl?
 
