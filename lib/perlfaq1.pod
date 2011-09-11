@@ -168,14 +168,11 @@ page at L<http://www.perl6.org/> and get involved.
 
 Production releases, which incorporate bug fixes and new functionality,
 are widely tested before release. Since the 5.000 release, we have
-averaged only about one production release per year.
+averaged about one production release per year.
 
-Larry and the Perl development team occasionally make changes to the
+The Perl development team occasionally make changes to the
 internal core of the language, but all possible efforts are made toward
-backward compatibility. While not quite all Perl 4 scripts run flawlessly
-under Perl 5, an update to perl should nearly never invalidate a program
-written for an earlier version of perl (barring accidental bug fixes
-and the rare new keyword).
+backward compatibility.
 
 =head2 Is Perl difficult to learn?
 
