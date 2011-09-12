@@ -476,12 +476,12 @@ Use the L<Email::MIME> and L<Email::Sender::Simple> modules, like so:
 
   # first, create your message
   my $message = Email::MIME->create(
-    headers => [
+    header_str => [
       From    => 'you@example.com',
       To      => 'friend@example.com',
       Subject => 'Happy birthday!',
     ],
-    body => 'Happy birthday to you!',
+    body_str => 'Happy birthday to you!',
   );
 
   use Email::Sender::Simple qw(sendmail);
