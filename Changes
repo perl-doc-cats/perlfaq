@@ -1,4 +1,5 @@
   
+  * Many small changes (bigpresh)
   * Start moving away from global file handles (shlomif)
   * Typos, clarity and other cleanups (shlomif)
   * Cleanup copy (ranguard)

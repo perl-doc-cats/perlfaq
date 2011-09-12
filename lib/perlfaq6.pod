@@ -6,7 +6,7 @@ perlfaq6 - Regular Expressions
 
 This section is surprisingly small because the rest of the FAQ is
 littered with answers involving regular expressions. For example,
-decoding a URL and checking whether something is a number are handled
+decoding a URL and checking whether something is a number can be handled
 with regular expressions, but those answers are found elsewhere in
 this document (in L<perlfaq9>: "How do I decode or create those %-encodings
 on the web" and L<perlfaq4>: "How do I determine whether a scalar is
@@ -1053,7 +1053,7 @@ but this usually can be worked around.
 
 =head2 How do I match a regular expression that's in a variable?
 X<regex, in variable> X<eval> X<regex> X<quotemeta> X<\Q, regex>
-X<\E, regex>, X<qr//>
+X<\E, regex> X<qr//>
 
 (contributed by brian d foy)
 
