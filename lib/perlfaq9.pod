@@ -476,7 +476,7 @@ Use the L<Email::MIME> and L<Email::Sender::Simple> modules, like so:
 
   # first, create your message
   my $message = Email::MIME->create(
-    headers => [
+    header => [
       From    => 'you@example.com',
       To      => 'friend@example.com',
       Subject => 'Happy birthday!',
