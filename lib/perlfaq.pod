@@ -2,11 +2,7 @@
 
 perlfaq - frequently asked questions about Perl
 
-=head1 DESCRIPTION
-
-The perlfaq comprises several documents that answer the most commonly
-asked questions about Perl and Perl programming. It's divided by topic
-into nine major sections outlined in this document.
+=head1 ABOUT THE PERLFAQ
 
 =head2 Where to get the perlfaq
 
