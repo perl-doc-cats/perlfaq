@@ -155,14 +155,14 @@ just such situations as the one above.
 
 Another operator with surprising precedence is exponentiation. It
 binds more tightly even than unary minus, making C<-2**2> produce a
-negative not a positive four. It is also right-associating, meaning
+negative four and not a positive one. It is also right-associating, meaning
 that C<2**3**2> is two raised to the ninth power, not eight squared.
 
 Although it has the same precedence as in C, Perl's C<?:> operator
-produces an lvalue. This assigns $x to either $a or $b, depending
+produces an lvalue. This assigns $x to either $if_true or $if_false, depending
 on the trueness of $maybe:
 
-    ($maybe ? $a : $b) = $x;
+    ($maybe ? $if_true : $if_false) = $x;
 
 =head2 How do I declare/create a structure?
 
