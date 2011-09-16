@@ -63,13 +63,13 @@ list. Good style (see L<perlstyle>) says to put them in except for
 one-liners:
 
     if ($whoops) { exit 1 }
-    @nums = (1, 2, 3);
+    my @nums = (1, 2, 3);
 
     if ($whoops) {
         exit 1;
     }
 
-    @lines = (
+    my @lines = (
         "There Beren came from mountains cold",
         "And lost he wandered under leaves",
     );
@@ -92,12 +92,12 @@ you need:
 =head2 How do I temporarily block warnings?
 
 If you are running Perl 5.6.0 or better, the C<use warnings> pragma
-allows fine control of what warning are produced.
+allows fine control of what warnings are produced.
 See L<perllexwarn> for more details.
 
     {
         no warnings;          # temporarily turn off warnings
-        $a = $b + $c;         # I know these might be undef
+        $x = $y + $z;         # I know these might be undef
     }
 
 Additionally, you can enable and disable categories of warnings.
@@ -107,7 +107,7 @@ complete details, including the category names and hierarchy.
 
     {
         no warnings 'uninitialized';
-        $a = $b + $c;
+        $x = $y + $z;
     }
 
 If you have an older version of Perl, the C<$^W> variable (documented
@@ -115,7 +115,7 @@ in L<perlvar>) controls runtime warnings for a block:
 
     {
         local $^W = 0;        # temporarily turn off warnings
-        $a = $b + $c;         # I know these might be undef
+        $x = $y + $z;         # I know these might be undef
     }
 
 Note that like all the punctuation variables, you cannot currently
