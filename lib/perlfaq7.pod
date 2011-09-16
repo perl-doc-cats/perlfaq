@@ -861,7 +861,7 @@ You can safely replace C<isa> with C<DOES> (although the converse is not true).
 The quick-and-dirty way to comment out more than one line of Perl is
 to surround those lines with Pod directives. You have to put these
 directives at the beginning of the line and somewhere where Perl
-expects a new statement (so not in the middle of statements like the #
+expects a new statement (so not in the middle of statements like the C<#>
 comments). You end the comment with C<=cut>, ending the Pod section:
 
     =pod
@@ -954,7 +954,7 @@ symbolic references, you are just using the package's symbol-table hash
 use your own hash or a real reference instead.
 
     $USER_VARS{"fred"} = 23;
-    $varname = "fred";
+    my $varname = "fred";
     $USER_VARS{$varname}++;  # not $$varname++
 
 There we're using the %USER_VARS hash instead of symbolic references.
