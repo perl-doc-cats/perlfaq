@@ -284,8 +284,8 @@ Here's a classic non-closure function-generating function:
         return sub { shift() + shift() };
     }
 
-    $add_sub = add_function_generator();
-    $sum = $add_sub->(4,5);                # $sum is 9 now.
+    my $add_sub = add_function_generator();
+    my $sum = $add_sub->(4,5);                # $sum is 9 now.
 
 The anonymous subroutine returned by add_function_generator() isn't
 technically a closure because it refers to no lexicals outside its own
@@ -303,11 +303,11 @@ value that the lexical had when the function was created.
         return sub { shift() + $addpiece };
     }
 
-    $f1 = make_adder(20);
-    $f2 = make_adder(555);
+    my $f1 = make_adder(20);
+    my $f2 = make_adder(555);
 
-Now C<&$f1($n)> is always 20 plus whatever $n you pass in, whereas
-C<&$f2($n)> is always 555 plus whatever $n you pass in. The $addpiece
+Now C<$f1->($n)> is always 20 plus whatever $n you pass in, whereas
+C<$f2->($n)> is always 555 plus whatever $n you pass in. The $addpiece
 in the closure sticks around.
 
 Closures are often used for less esoteric purposes. For example, when
@@ -356,9 +356,9 @@ variable's value this way, but now it's much harder. Take this code:
     print "Finally $f\n";
 
 If you are experiencing variable suicide, that C<my $f> in the subroutine
-doesn't pick up a fresh copy of the C<$f> whose value is <foo>. The output
-shows that inside the subroutine the value of C<$f> leaks through when it
-shouldn't, as in this output:
+doesn't pick up a fresh copy of the C<$f> whose value is C<'foo'>. The
+output shows that inside the subroutine the value of C<$f> leaks through
+when it shouldn't, as in this output:
 
     foobar
     foobarbar
@@ -425,7 +425,7 @@ operator:
     sub compare($$) {
         my ($val1, $regex) = @_;
         my $retval = $val1 =~ /$regex/;
-    return $retval;
+        return $retval;
     }
     $match = compare("old McDonald", qr/d.*D/i);
 
@@ -444,7 +444,7 @@ To pass an object method into a subroutine, you can do this:
 Or, you can use a closure to bundle up the object, its
 method call, and arguments:
 
-    my $whatnot =  sub { $some_obj->obfuscate(@args) };
+    my $whatnot = sub { $some_obj->obfuscate(@args) };
     func($whatnot);
     sub func {
         my $code = shift;
