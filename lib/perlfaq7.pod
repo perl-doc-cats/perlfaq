@@ -604,10 +604,10 @@ However, dynamic variables (aka global, local, or package variables)
 are effectively shallowly bound. Consider this just one more reason
 not to use them. See the answer to L<"What's a closure?">.
 
-=head2 Why doesn't "my($foo) = E<lt>FILEE<gt>;" work right?
+=head2 Why doesn't "my($foo) = E<lt>$fh<gt>;" work right?
 
 C<my()> and C<local()> give list context to the right hand side
-of C<=>. The <FH> read operation, like so many of Perl's
+of C<=>. The <$fh> read operation, like so many of Perl's
 functions and operators, can tell which context it was called in and
 behaves appropriately. In general, the scalar() function can help.
 This function does nothing to the data itself (contrary to popular myth)
@@ -618,15 +618,15 @@ doesn't help you (such as with sort()).
 To enforce scalar context in this particular case, however, you need
 merely omit the parentheses:
 
-    local($foo) = <FILE>;        # WRONG
-    local($foo) = scalar(<FILE>);   # ok
-    local $foo  = <FILE>;        # right
+    local($foo) = <$fh>;        # WRONG
+    local($foo) = scalar(<$fh>);   # ok
+    local $foo  = <$fh>;        # right
 
 You should probably be using lexical variables anyway, although the
 issue is the same here:
 
-    my($foo) = <FILE>;    # WRONG
-    my $foo  = <FILE>;    # right
+    my($foo) = <$fh>;    # WRONG
+    my $foo  = <$fh>;    # right
 
 =head2 How do I redefine a builtin function, operator, or method?
 
