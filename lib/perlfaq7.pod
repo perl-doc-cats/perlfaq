@@ -306,8 +306,8 @@ value that the lexical had when the function was created.
     my $f1 = make_adder(20);
     my $f2 = make_adder(555);
 
-Now C<$f1->($n)> is always 20 plus whatever $n you pass in, whereas
-C<$f2->($n)> is always 555 plus whatever $n you pass in. The $addpiece
+Now C<< $f1->($n) >> is always 20 plus whatever $n you pass in, whereas
+C<< $f2->($n) >> is always 555 plus whatever $n you pass in. The $addpiece
 in the closure sticks around.
 
 Closures are often used for less esoteric purposes. For example, when
