@@ -4,8 +4,8 @@ perlfaq9 - Networking
 
 =head1 DESCRIPTION
 
-This section deals with questions related to networking, the internet,
-and a few on the web.
+This section deals with questions related to networking, the Internet,
+and a few about the Web.
 
 =head2 What is the correct form of response from a CGI script?
 
