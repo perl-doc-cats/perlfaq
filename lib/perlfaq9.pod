@@ -450,7 +450,7 @@ The L<MIME::Base64> package handles this as well as the MIME/QP encoding.
 Decoding base 64 becomes as simple as:
 
     use MIME::Base64;
-    $decoded = decode_base64($encoded);
+    my $decoded = decode_base64($encoded);
 
 The L<Email::MIME> module can decode base 64-encoded email message parts
 transparently so the developer doesn't need to worry about it.
