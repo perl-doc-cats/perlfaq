@@ -199,8 +199,8 @@ method returns the string for the given capability:
 
     use Term::Cap;
 
-    $terminal = Term::Cap->Tgetent( { OSPEED => 9600 } );
-    $clear_string = $terminal->Tputs('cl');
+    my $terminal = Term::Cap->Tgetent( { OSPEED => 9600 } );
+    my $clear_string = $terminal->Tputs('cl');
 
     print $clear_screen;
 
@@ -210,7 +210,7 @@ C<Cls> method:
 
     Win32::Console;
 
-    $OUT = Win32::Console->new(STD_OUTPUT_HANDLE);
+    my $OUT = Win32::Console->new(STD_OUTPUT_HANDLE);
     my $clear_string = $OUT->Cls;
 
     print $clear_screen;
@@ -219,7 +219,7 @@ If you have a command-line program that does the job, you can call
 it in backticks to capture whatever it outputs so you can use it
 later:
 
-    $clear_string = `clear`;
+    my $clear_string = `clear`;
 
     print $clear_string;
 
@@ -230,18 +230,18 @@ you can use it to fetch the width and height in characters
 and in pixels:
 
     use Term::ReadKey;
-    ($wchar, $hchar, $wpixels, $hpixels) = GetTerminalSize();
+    my ($wchar, $hchar, $wpixels, $hpixels) = GetTerminalSize();
 
 This is more portable than the raw C<ioctl>, but not as
 illustrative:
 
     require 'sys/ioctl.ph';
     die "no TIOCGWINSZ " unless defined &TIOCGWINSZ;
-    open(TTY, "+</dev/tty")                     or die "No tty: $!";
-    unless (ioctl(TTY, &TIOCGWINSZ, $winsize='')) {
+    open(my $tty_fh, "+</dev/tty")                     or die "No tty: $!";
+    unless (ioctl($tty_fh, &TIOCGWINSZ, $winsize='')) {
         die sprintf "$0: ioctl TIOCGWINSZ (%08x: $!)\n", &TIOCGWINSZ;
     }
-    ($row, $col, $xpixel, $ypixel) = unpack('S4', $winsize);
+    my ($row, $col, $xpixel, $ypixel) = unpack('S4', $winsize);
     print "(row,col) = ($row,$col)";
     print "  (xpixel,ypixel) = ($xpixel,$ypixel)" if $xpixel || $ypixel;
     print "\n";
@@ -263,7 +263,7 @@ from CPAN, which is easier to use and in theory more portable.
     use Term::ReadKey;
 
     ReadMode('noecho');
-    $password = ReadLine(0);
+    my $password = ReadLine(0);
 
 =head2 How do I read and write the serial port?
 
