@@ -118,10 +118,12 @@ to manipulate the POSIX termios structures.
     # HotKey.pm
     package HotKey;
 
-    @ISA = qw(Exporter);
-    @EXPORT = qw(cbreak cooked readkey);
-
     use strict;
+    use warnings;
+
+    use parent 'Exporter';
+    our @EXPORT = qw(cbreak cooked readkey);
+
     use POSIX qw(:termios_h);
     my ($term, $oterm, $echo, $noecho, $fd_stdin);
 
@@ -167,7 +169,7 @@ not to block:
 
     ReadMode('cbreak');
 
-    if (defined ($char = ReadKey(-1)) ) {
+    if (defined (my $char = ReadKey(-1)) ) {
         # input was waiting and it was $char
     } else {
         # no input was waiting
