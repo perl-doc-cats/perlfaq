@@ -66,9 +66,10 @@ server error log.
 The following use of L<CGI::Carp> also redirects errors to a file of your choice,
 placed in a C<BEGIN> block to catch compile-time warnings as well:
 
+    use vars qw($log_fh);
     BEGIN {
         use CGI::Carp qw(carpout);
-        open(LOG, ">>/var/local/cgi-logs/mycgi-log")
+        open($log_fh, ">>/var/local/cgi-logs/mycgi-log")
             or die "Unable to append to mycgi-log: $!\n";
         carpout(*LOG);
     }
