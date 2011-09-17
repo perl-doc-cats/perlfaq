@@ -13,7 +13,7 @@ and a few about the Web.
 
 The Common Gateway Interface (CGI) specifies a software interface between
 a program ("CGI script") and a web server (HTTPD). It is not specific
-to Perl, and has its own FAQs and tutorials, and usenet group,
+to Perl, and has its own FAQs and tutorials, and a Usenet group,
 comp.infosystems.www.authoring.cgi.
 
 The CGI specification is outlined in an informational RFC:
