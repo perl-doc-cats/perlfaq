@@ -608,7 +608,7 @@ makes it quite easy to fetch a file:
     my $data = get( 'L<ftp://some.ftp.site/some/file.txt'> );
 
 If you want more direct or low-level control of the FTP process, you can use
-the L<Net::FTP> module (in the Standard Library since Perl 5.8). It's
+the L<Net::FTP> module (in the Standard Library since Perl 5.8). Its
 documentation has examples showing you just how to do that.
 
 =head2 How can I do RPC in Perl?
