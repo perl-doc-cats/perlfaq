@@ -239,10 +239,10 @@ the content appropriately.
     use HTTP::Request::Common qw(POST);
     use LWP::UserAgent;
 
-    $ua = LWP::UserAgent->new();
+    my $ua = LWP::UserAgent->new();
     my $req = POST 'L<http://www.perl.com/cgi-bin/cpan_mod'>,
                    [ module => 'DB_File', readme => 1 ];
-    $content = $ua->request($req)->as_string;
+    my $content = $ua->request($req)->as_string;
 
 =head2 How do I decode or create those %-encodings on the web?
 X<URI> X<CGI.pm> X<CGI> X<URI::Escape> X<RFC 2396>
@@ -337,7 +337,7 @@ a DBI compatible driver. L<HTTPD::UserAdmin> supports files used by the
       ->new(DB => "/foo/.htpasswd")
       ->add($username => $password);
 
-=head2 How do I make sure users can't enter values into a form that cause my CGI script to do bad things?
+=head2 How do I make sure users can't enter values into a form that causes my CGI script to do bad things?
 
 (contributed by brian d foy)
 
@@ -412,7 +412,7 @@ for you, too.
 
 Many people try to write their own decoder (or copy one from
 another program) and then run into one of the many "gotchas"
-of the task. It's much easier and less hassle to use C<CGI.pm>.
+of the task. It's much easier and less of a hassle to use C<CGI.pm>.
 
 =head2 How do I check a valid mail address?
 
