@@ -204,13 +204,13 @@ resources and give their content back to you as a string:
 
     use LWP::Simple qw(get);
 
-    my $html = get( "L<http://www.example.com/index.html"> );
+    my $html = get( "http://www.example.com/index.html" );
 
 It can also store the resource directly in a file:
 
     use LWP::Simple qw(getstore);
 
-    getstore( "L<http://www.example.com/index.html">, "foo.html" );
+    getstore( "http://www.example.com/index.html", "foo.html" );
 
 If you need to do something more complicated, you can use
 L<LWP::UserAgent> module to create your own user-agent (e.g. browser)
