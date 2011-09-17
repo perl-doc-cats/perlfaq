@@ -55,6 +55,9 @@ How you access/control keyboards, screens, and pointing devices
 =item Mouse
 
     Tk                      CPAN
+    Wx                      CPAN
+    Gtk2                    CPAN
+    Qt4                     kdebindings4 package
 
 =back
 
