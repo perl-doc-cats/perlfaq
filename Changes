@@ -1,3 +1,7 @@
+
+  * Make perlfaq.pod shorter/cleaner (kablamo)
+  * Many cleanups and corrections (shlomif)
+
 5.0150035 Mon 26 Sep 2011 20:44:20 +0100
   * Import perlglossary from blead
 
