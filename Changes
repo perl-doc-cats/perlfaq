@@ -1,3 +1,7 @@
+
+  * Make perlfaq.pod shorter/cleaner (kablamo)
+  * Many cleanups and corrections (shlomif)
+
 5.0150034 Mon 12 Sep 2011 18:41:25 +0100
   * Copy edit Perl 6 a bit more (ranguard)
   * Add blog section (ranguard)
