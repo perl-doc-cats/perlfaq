@@ -11,7 +11,7 @@ into nine major sections outlined in this document.
 =head2 Where to find the perlfaq
 
 The perlfaq is an evolving document.  Read the latest version at
-L<http://faq.perl.org/>.  It is also included in the standard Perl
+L<http://learn.perl.org/faq/>.  It is also included in the standard Perl
 distribution.
 
 =head2 How to use the perlfaq
@@ -32,8 +32,8 @@ your suggestion create an issue or pull request against
 L<https://github.com/perl-doc-cats/perlfaq>.
 
 Once approved, changes are merged into L<https://github.com/tpf/perlfaq>, the
-repository which drives L<http://faq.perl.org/>, and they are distributed with
-the next Perl 5 release.
+repository which drives L<http://learn.perl.org/faq/>, and they are 
+distributed with the next Perl 5 release.
 
 =head2 What if my question isn't answered in the FAQ?
 
