@@ -283,8 +283,7 @@ similar to the L<Devel::Cover> report:
 
     nytprofhtml
 
-CPAN has several other profilers that you can invoke in the same
-fashion. You might also be interested in using the L<Benchmark> to
+You might also be interested in using the L<Benchmark> to
 measure and compare code snippets.
 
 You can read more about profiling in I<Programming Perl>, chapter 20,
