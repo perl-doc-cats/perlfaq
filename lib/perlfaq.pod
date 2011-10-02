@@ -1361,7 +1361,7 @@ How do I use MIME to make an attachment to a mail message?
 
 =item *
 
-How do I read mail?
+How do I read email?
 
 =item *
 

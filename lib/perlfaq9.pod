@@ -530,7 +530,7 @@ objects themselves are parts and can be attached to other L<Email::MIME>
 objects. Consult the L<Email::MIME> documentation for more information,
 including all of the supported methods and examples of their use.
 
-=head2 How do I read mail?
+=head2 How do I read email?
 
 Use the L<Email::Folder> module, like so:
 
