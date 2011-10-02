@@ -471,7 +471,7 @@ is correct unless your policy says it is. And then there are things like
 localpart extensions (foo+bar@example.com). You really are best off
 asking the user.
 
-=head2 How do I send mail?
+=head2 How do I send email?
 
 Use the L<Email::MIME> and L<Email::Sender::Simple> modules, like so:
 

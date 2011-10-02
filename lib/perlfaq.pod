@@ -1353,7 +1353,7 @@ How do I return the user's mail address?
 
 =item *
 
-How do I send mail?
+How do I send email?
 
 =item *
 
