@@ -1,4 +1,6 @@
 
+  * Website moved from faq.perl.org -> learn.perl.org (ranguard)
+  * Delete some questions/cleanup copy (ranguard)
   * Make perlfaq.pod shorter/cleaner (kablamo)
   * Many cleanups and corrections (shlomif)
 
