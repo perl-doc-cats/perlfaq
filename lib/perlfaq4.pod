@@ -356,12 +356,17 @@ of Tom Phoenix, talks more about this. John von Neumann said, "Anyone
 who attempts to generate random numbers by deterministic means is, of
 course, living in a state of sin."
 
-If you want numbers that are more random than C<rand> with C<srand>
-provides, you should also check out the L<Math::TrulyRandom> module from
-CPAN. It uses the imperfections in your system's timer to generate
-random numbers, but this takes quite a while. If you want a better
-pseudorandom generator than the one that comes with your operating system,
-look at "Numerical Recipes in C" at L<http://www.nr.com/>.
+Perl relies on the underlying system for the implementation of
+C<rand> and C<srand>; on some systems, the generated numbers are 
+not random enough (especially on Windows : see 
+L<http://www.perlmonks.org/?node_id=803632>). 
+Several CPAN modules in the C<Math> namespace implement better
+pseudorandom generators; see for example 
+L<Math::Random::MT> ("Mersenne Twister", fast), or 
+L<Math::TrulyRandom> (uses the imperfections in the system's 
+timer to generate random numbers, which is rather slow).
+More algorithms for random numbers are described in 
+"Numerical Recipes in C" at L<http://www.nr.com/>
 
 =head2 How do I get a random number between X and Y?
 
@@ -2654,6 +2659,7 @@ If you're doing a lot of float or double processing, consider using
 the L<PDL> module from CPAN instead--it makes number-crunching easy.
 
 See L<http://search.cpan.org/dist/PGPLOT> for the code.
+
 
 =head1 AUTHOR AND COPYRIGHT
 
