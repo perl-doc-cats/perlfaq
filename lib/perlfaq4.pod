@@ -2515,6 +2515,12 @@ L<Data::Diver> does for you:
        return 1;
     }
 
+=head2 How can I prevent addition of unwanted keys into a hash?
+
+Since version 5.8.0, hashes can be I<restricted> to a fixed number
+of given keys. Methods for creating and dealing with restricted hashes 
+are exported by the L<Hash::Util> module.
+
 =head1 Data: Misc
 
 =head2 How do I handle binary data correctly?
