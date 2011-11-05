@@ -2036,7 +2036,7 @@ The C<each()> operator can be a bit tricky though. You can't add or
 delete keys of the hash while you're using it without possibly
 skipping or re-processing some pairs after Perl internally rehashes
 all of the elements. Additionally, a hash has only one iterator, so if
-you use C<keys>, C<values>, or C<each> on the same hash, you can reset
+you mix C<keys>, C<values>, or C<each> on the same hash, you risk to reset
 the iterator and mess up your processing. See the C<each> entry in
 L<perlfunc> for more details.
 
