@@ -1573,9 +1573,15 @@ same thing. Once you find the element, you stop the loop with last.
         if( /Perl/ ) { $found = $_; last }
     }
 
-If you want the array index, you can iterate through the indices
-and check the array element at each index until you find one
-that satisfies the condition.
+If you want the array index, use the C<firstidx()> function from
+C<List::MoreUtils>:
+
+    use List::MoreUtils qw(firstidx);
+    my $index = firstidx { /Perl/ } @array;
+
+Or write it yourself, iterating through the indices
+and checking the array element at each index until you find one
+that satisfies the condition:
 
     my( $found, $index ) = ( undef, -1 );
     for( $i = 0; $i < @array; $i++ ) {
