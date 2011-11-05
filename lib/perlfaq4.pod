@@ -703,43 +703,21 @@ which also forces scalar context.
 
 =head2 How do I find matching/nesting anything?
 
-This isn't something that can be done in one regular expression, no
-matter how complicated. To find something between two single
+To find something between two single
 characters, a pattern like C</x([^x]*)x/> will get the intervening
 bits in $1. For multiple ones, then something more like
-C</alpha(.*?)omega/> would be needed. But none of these deals with
-nested patterns. For balanced expressions using C<(>, C<{>, C<[> or
-C<< < >> as delimiters, use the CPAN module Regexp::Common, or see
-L<perlre/(??{ code })>. For other cases, you'll have to write a
-parser.
+C</alpha(.*?)omega/> would be needed. For nested patterns
+and/or balanced expressions, see the so-called
+L<< (?PARNO)|perlre/C<(?PARNO)> C<(?-PARNO)> C<(?+PARNO)> C<(?R)> C<(?0)> >>
+construct (available since perl 5.10).
+The CPAN module L<Regexp::Common> can help to build such
+regular expressions (see in particular 
+L<Regexp::Common::balanced> and L<Regexp::Common::delimited>).
 
-If you are serious about writing a parser, there are a number of
-modules or oddities that will make your life a lot easier. There are
-the CPAN modules L<Parse::RecDescent>, L<Parse::Yapp>, and
-L<Text::Balanced>; and the C<byacc> program. Starting from perl 5.8
-the L<Text::Balanced> is part of the standard distribution.
-
-One simple destructive, inside-out approach that you might try is to
-pull out the smallest nesting parts one at a time:
-
-    while (s/BEGIN((?:(?!BEGIN)(?!END).)*)END//gs) {
-        # do something with $1
-    }
-
-A more complicated and sneaky approach is to make Perl's regular
-expression engine do it for you. This is courtesy Dean Inada, and
-rather has the nature of an Obfuscated Perl Contest entry, but it
-really does work:
-
-    # $_ contains the string to parse
-    # BEGIN and END are the opening and closing markers for the
-    # nested text.
-
-    @( = ('(','');
-    @) = (')','');
-    ($re=$_)=~s/((BEGIN)|(END)|.)/$)[!$3]\Q$1\E$([!$2]/gs;
-    @$ = (eval{/$re/},$@!~/unmatched/i);
-    print join("\n",@$[0..$#$]) if( $$[-1] );
+More complex cases will require to write a parser, probably
+using a parsing module from CPAN, like
+L<Regexp::Grammars>, L<Parse::RecDescent>, L<Parse::Yapp>, 
+L<Text::Balanced>, or L<Marpa>. 
 
 =head2 How do I reverse a string?
 
