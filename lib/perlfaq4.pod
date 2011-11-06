@@ -324,14 +324,27 @@ results:
         some_func($iterator);
     }
 
-To call a function on each integer in a range, use the C<..> range operator:
+To call a function on each integer in a (small) range, you B<can> use:
 
-    my @results = map { some_func($_) } ($min .. $max);
+    my @results = map { some_func($_) } (5 .. 25);
 
-In old versions of Perl, the range operator used to create an
-intermediate list in memory; with large ranges, this could be
-expensive and therefore an explicit C<for> loop was often preferable.
-Since Perl5.005 this is no longer true.
+but you should be aware that in this form, the C<..> operator
+creates a list of all integers in the range, which can take a lot of
+memory for large ranges. However, the problem does not occur when
+using C<..> within a C<for> loop, because in that case the range
+operator is optimized to I<iterate> over the range, without creating
+the entire list. So
+
+    my @results = ();
+    for my $i (5 .. 500_005) {
+        push(@results, some_func($i));
+    }
+
+or even 
+
+   push(@results, some_func($_)) for 5 .. 500_005;
+
+will not create an intermediate list of 500,000 integers.
 
 =head2 How can I output Roman numerals?
 
