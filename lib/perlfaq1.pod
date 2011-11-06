@@ -204,11 +204,11 @@ discussed in Part 2.
 =head2 How does Perl compare with other languages like Java, Python, REXX, Scheme, or Tcl?
 
 Perl can be used for almost any coding problem, even ones which require 
-intergrating specialist C code for extra speed. As with any tool it can
+integrating specialist C code for extra speed. As with any tool it can
 be used well or badly. Perl has many strengths, and a few weaknesses,
 precisely which areas are good and bad is often a personal choice. 
 
-When choosing a language you should also be influenced buy the 
+When choosing a language you should also be influenced by the 
 L<resources|http://www.cpan.org/>, L<testing culture|http://www.cpantesters.org/> 
 and L<community|http://www.perl.org/community.html> which surrounds it.
 
