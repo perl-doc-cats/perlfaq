@@ -22,8 +22,8 @@ lesser extent from sed, awk, the Unix shell, and many other tools
 and languages.
 
 These strengths make it especially popular with web developers
-and system administrators, but mathematicians, geneticists, journalists,
-and managers also use Perl. Maybe you should, too.
+and system administrators. Mathematicians, geneticists, journalists,
+managers and many other people also use Perl. 
 
 =head2 Who supports Perl? Who develops it? Why is it free?
 
@@ -176,7 +176,7 @@ backward compatibility.
 
 =head2 Is Perl difficult to learn?
 
-No, Perl is easy to start learning--and easy to keep learning. It looks
+No, Perl is easy to start L<learning|http://learn.perl.org/> --and easy to keep learning. It looks
 like most programming languages you're likely to have experience
 with, so if you've ever written a C program, an awk script, a shell
 script, or even a BASIC program, you're already partway there.
@@ -198,7 +198,7 @@ of programming experience, an understanding of regular expressions, and
 the ability to understand other people's code. If there's something you
 need to do, then it's probably already been done, and a working example is
 usually available for free. Don't forget Perl modules, either.
-They're discussed in Part 3 of this FAQ, along with CPAN, which is
+They're discussed in Part 3 of this FAQ, along with L<CPAN|http://www.cpan.org/>, which is
 discussed in Part 2.
 
 =head2 How does Perl compare with other languages like Java, Python, REXX, Scheme, or Tcl?
