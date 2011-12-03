@@ -1,3 +1,5 @@
+  * Cleanups / typos, updating nested expressions (dami, reviewed by schwern)
+
 5.0150036 Sat 22 Oct 2011 16:20:34 +0100
   * Website moved from faq.perl.org -> learn.perl.org (ranguard)
   * Delete some questions/cleanup copy (ranguard)
