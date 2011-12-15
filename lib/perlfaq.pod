@@ -134,11 +134,11 @@ This section of the FAQ answers questions about where to find source and documen
 
 =item *
 
-What machines support perl? Where do I get it?
+What machines support Perl? Where do I get it?
 
 =item *
 
-How can I get a binary version of perl?
+How can I get a binary version of Perl?
 
 =item *
 
@@ -146,7 +146,7 @@ I don't have a C compiler. How can I build my own Perl interpreter?
 
 =item *
 
-I copied the perl binary from one machine to another, but scripts don't work.
+I copied the Perl binary from one machine to another, but scripts don't work.
 
 =item *
 
@@ -208,10 +208,6 @@ How do I do (anything)?
 =item *
 
 How can I use Perl interactively?
-
-=item *
-
-Is there a Perl shell?
 
 =item *
 
@@ -616,6 +612,10 @@ How can I check if a key exists in a multilevel hash?
 
 =item *
 
+How can I prevent addition of unwanted keys into a hash?
+
+=item *
+
 How do I handle binary data correctly?
 
 =item *
@@ -1015,7 +1015,7 @@ What's the difference between deep and shallow binding?
 
 =item *
 
-Why doesn't "my($foo) = E<lt>FILEE<gt>;" work right?
+Why doesn't "my($foo) = E<lt>$fhE<gt>;" work right?
 
 =item *
 
@@ -1271,7 +1271,7 @@ What is socket.ph and where do I get it?
 
 =head2 L<perlfaq9>: Networking
 
-This section deals with questions related to networking, the internet, and a few on the web.
+This section deals with questions related to networking, the Internet, and a few about the Web.
 
 =over 4
 
@@ -1329,7 +1329,7 @@ How do I edit my .htpasswd and .htgroup files with Perl?
 
 =item *
 
-How do I make sure users can't enter values into a form that cause my CGI script to do bad things?
+How do I make sure users can't enter values into a form that causes my CGI script to do bad things?
 
 =item *
 
@@ -1382,6 +1382,7 @@ How can I do RPC in Perl?
 =back
 
 
+
 =head1 CREDITS
 
 Tom Christiansen wrote the original perlfaq then expanded it with the
@@ -1398,4 +1399,3 @@ individual perlfaq documents for additional copyright information.
 This document is available under the same terms as Perl itself. Code
 examples in all the perlfaq documents are in the public domain. Use
 them as you see fit (and at your own risk with no warranty from anyone).
-
