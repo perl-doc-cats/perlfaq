@@ -23,8 +23,9 @@ my $HTML_CHARSET = 'UTF-8';
 
 {
     my $source = Path::Class::Dir->new($SOURCE);
+    my @files = sort $source->children;
 
-    while ( my $pod_file = $source->next ) {
+    foreach my $pod_file (@files) {
         next unless $pod_file->stringify =~ /.pod$/;
         next unless $pod_file->stringify =~ /\d/;
 
