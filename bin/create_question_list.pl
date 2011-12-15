@@ -1,5 +1,6 @@
+#!/usr/bin/env perl
 
-=head1 NAME 
+=head1 NAME
 
 perl create_question_list.pl - search the pod files for the questions
 
