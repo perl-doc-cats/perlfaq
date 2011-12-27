@@ -1,7 +1,8 @@
+#!/usr/bin/env perl
 
-=head1 NAME 
+=head1 NAME
 
-perl create_question_list.pl - search the pod files for the questions
+create_question_list.pl - search the pod files for the questions
 
 =head1 DESCRIPTION
 
@@ -23,8 +24,9 @@ my $HTML_CHARSET = 'UTF-8';
 
 {
     my $source = Path::Class::Dir->new($SOURCE);
+    my @files = sort $source->children;
 
-    while ( my $pod_file = $source->next ) {
+    foreach my $pod_file (@files) {
         next unless $pod_file->stringify =~ /.pod$/;
         next unless $pod_file->stringify =~ /\d/;
 

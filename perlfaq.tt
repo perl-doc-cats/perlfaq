@@ -1,0 +1,85 @@
+=head1 NAME
+
+perlfaq - frequently asked questions about Perl
+
+=head1 DESCRIPTION
+
+The perlfaq comprises several documents that answer the most commonly
+asked questions about Perl and Perl programming. It's divided by topic
+into nine major sections outlined in this document.
+
+=head2 Where to find the perlfaq
+
+The perlfaq is an evolving document.  Read the latest version at
+L<http://learn.perl.org/faq/>.  It is also included in the standard Perl
+distribution.
+
+=head2 How to use the perlfaq
+
+The C<perldoc> command line tool is part of the standard Perl distribution. To
+read the perlfaq:
+
+    $ perldoc perlfaq
+
+To search the perlfaq question headings:
+
+    $ perldoc -q open
+
+=head2 How to contribute to the perlfaq
+
+Review L<https://github.com/perl-doc-cats/perlfaq/wiki>.  If you don't find
+your suggestion create an issue or pull request against
+L<https://github.com/perl-doc-cats/perlfaq>.
+
+Once approved, changes are merged into L<https://github.com/tpf/perlfaq>, the
+repository which drives L<http://learn.perl.org/faq/>, and they are 
+distributed with the next Perl 5 release.
+
+=head2 What if my question isn't answered in the FAQ?
+
+Try the resources in L<perlfaq2>.
+
+=head1 TABLE OF CONTENTS
+
+=over 4
+
+=item perlfaq1 - General Questions About Perl
+
+=item perlfaq2 - Obtaining and Learning about Perl
+
+=item perlfaq3 - Programming Tools
+
+=item perlfaq4 - Data Manipulation
+
+=item perlfaq5 - Files and Formats
+
+=item perlfaq6 - Regular Expressions
+
+=item perlfaq7 - General Perl Language Issues
+
+=item perlfaq8 - System Interaction
+
+=item perlfaq9 - Networking
+
+=back
+
+=head1 THE QUESTIONS
+
+[% the_questions %]
+
+=head1 CREDITS
+
+Tom Christiansen wrote the original perlfaq then expanded it with the
+help of Nat Torkington. brian d foy substantialy edited and expanded
+the perlfaq. perlfaq-workers and others have also supplied feedback, 
+patches and corrections over the years.
+
+=head1 AUTHOR AND COPYRIGHT
+
+Tom Christiansen wrote the original version of this document.
+brian d foy C<< <bdfoy@cpan.org> >> wrote this version. See the
+individual perlfaq documents for additional copyright information.
+
+This document is available under the same terms as Perl itself. Code
+examples in all the perlfaq documents are in the public domain. Use
+them as you see fit (and at your own risk with no warranty from anyone).
