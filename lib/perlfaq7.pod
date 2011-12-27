@@ -464,7 +464,7 @@ In Perl 5.10, declare the variable with C<state>. The C<state>
 declaration creates the lexical variable that persists between calls
 to the subroutine:
 
-    sub counter { state $count = 1; $counter++ }
+    sub counter { state $count = 1; $count++ }
 
 You can fake a static variable by using a lexical variable which goes
 out of scope. In this example, you define the subroutine C<counter>, and
