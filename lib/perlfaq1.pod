@@ -243,9 +243,7 @@ languages that come to mind include prolog and matlab.
 
 =head2 When shouldn't I program in Perl?
 
-When your manager forbids it--but do consider replacing them :-).
-
-Actually, one good reason is when you already have an existing
+One good reason is when you already have an existing
 application written in another language that's all done (and done
 well), or you have an application language specifically designed for a
 certain task (e.g. prolog, make).
@@ -313,9 +311,9 @@ You might find these links useful:
 
 =over 4
 
-=item * L<http://perltraining.com.au/whyperl.html>
+=item * L<http://www.perl.org/about.html>
 
-=item * L<http://www.perl.org/advocacy/whyperl.html>
+=item * L<http://perltraining.com.au/whyperl.html>
 
 =back
 
