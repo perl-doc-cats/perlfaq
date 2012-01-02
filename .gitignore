@@ -1,4 +1,4 @@
 .*
 !.gitignore
 perlfaq-*
-^lib/perlfaq\.pod$
+lib/perlfaq.pod
