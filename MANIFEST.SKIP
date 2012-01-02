@@ -1,1 +1,3 @@
 bin/create_question_list.pl
+dist.ini
+perlfaq.tt
