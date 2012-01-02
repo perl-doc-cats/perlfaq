@@ -1,47 +1,11 @@
 =head1 NAME
 
-perlfaq9 - Networking
+perlfaq9 - Networking, Web and Email
 
 =head1 DESCRIPTION
 
 This section deals with questions related to networking, the Internet,
 and a few about the Web.
-
-=head2 What is the correct form of response from a CGI script?
-
-(Alan Flavell <flavell+www@a5.ph.gla.ac.uk> answers...)
-
-The Common Gateway Interface (CGI) specifies a software interface between
-a program ("CGI script") and a web server (HTTPD). It is not specific
-to Perl, and has its own FAQs and tutorials, and a Usenet group,
-comp.infosystems.www.authoring.cgi.
-
-The CGI specification is outlined in an informational RFC:
-L<http://www.ietf.org/rfc/rfc3875>
-
-These Perl FAQs very selectively cover some CGI issues. However, Perl
-programmers are strongly advised to use the C<CGI.pm> module, to take care
-of the details for them.
-
-The similarity between CGI response headers (defined in the CGI
-specification) and HTTP response headers (defined in the HTTP
-specification, RFC2616) is intentional, but can sometimes be confusing.
-
-The CGI specification defines two kinds of script: the "Parsed Header"
-script, and the "Non Parsed Header" (NPH) script. Check your server
-documentation to see what it supports. "Parsed Header" scripts are
-simpler in various respects. The CGI specification allows any of the
-usual newline representations in the CGI response (it's the server's
-job to create an accurate HTTP response based on it). So "\n" written in
-text mode is technically correct, and recommended. NPH scripts are more
-tricky: they must put out a complete and accurate set of HTTP
-transaction response headers; the HTTP specification calls for records
-to be terminated with carriage-return and line-feed; i.e., ASCII \015\012
-written in binary mode.
-
-Using C<CGI.pm> gives excellent platform independence, including EBCDIC
-systems. C<CGI.pm> selects an appropriate newline representation
-(C<$CGI::CRLF>) and sets binmode as appropriate.
 
 =head2 My CGI script runs from the command line but not the browser. (500 Server Error)
 
@@ -88,75 +52,20 @@ stamp prepended.
 
 =head2 How do I remove HTML from a string?
 
-The most correct way (albeit not the fastest) is to use L<HTML::Parser>
-from CPAN. Another mostly correct
-way is to use L<HTML::FormatText> which not only removes HTML but also
-attempts to do a little simple formatting of the resulting plain text.
-
-Many folks attempt a simple-minded regular expression approach, like
-C<< s/<.*?>//g >>, but that fails in many cases because the tags
-may continue over line breaks, they may contain quoted angle-brackets,
-or HTML comments may be present. Plus, folks forget to convert
-entities--like C<&lt;> for example.
-
-Here's one "simple-minded" approach, that works for most files:
-
-    #!/usr/bin/perl -p0777
-    s/<(?:[^>'"]*|(['"]).*?\g1)*>//gs
-
-If you want a more complete solution, see the 3-stage striphtml
-program in
-L<http://www.cpan.org/authors/Tom_Christiansen/scripts/striphtml.gz>
-.
-
-Here are some tricky cases that you should think about when picking
-a solution:
-
-    <IMG SRC = "foo.gif" ALT = "A > B">
-
-    <IMG SRC = "foo.gif"
-     ALT = "A > B">
-
-    <!-- <A comment> -->
-
-    <script>if (a<b && a>c)</script>
-
-    <# Just data #>
-
-    <![INCLUDE CDATA [ >>>>>>>>>>>> ]]>
-
-If HTML comments include other tags, those solutions would also break
-on text like this:
-
-    <!-- This section commented out.
-        <B>You can't see me!</B>
-    -->
+The best way it to use L<HTML::Parser>from CPAN. You could also use
+L<HTML::FormatText> which not only removes HTML but also attempts to do a 
+little simple formatting of the resulting plain text.
 
 =head2 How do I extract URLs?
 
-You can easily extract all sorts of URLs from HTML with
-L<HTML::SimpleLinkExtor> which handles anchors, images, objects,
-frames, and many other tags that can contain a URL. If you need
-anything more complex, you can create your own subclass of
+L<HTML::SimpleLinkExtor> will extract URLS from HTML, it handles anchors, 
+images, objects, frames, and many other tags that can contain a URL. 
+If you need anything more complex, you can create your own subclass of
 L<HTML::LinkExtor> or L<HTML::Parser>. You might even use
 L<HTML::SimpleLinkExtor> as an example for something specifically
 suited to your needs.
 
 You can use L<URI::Find> to extract URLs from an arbitrary text document.
-
-Less complete solutions involving regular expressions can save
-you a lot of processing time if you know that the input is simple. One
-solution from Tom Christiansen runs 100 times faster than most
-module-based approaches but only extracts URLs from anchors where the first
-attribute is HREF and there are no other attributes.
-
-    #!/usr/bin/perl -n00
-    # qxurl - tchrist@perl.com
-    print "$2\n" while m{
-        < \s*
-          A \s+ HREF \s* = \s* (["']) (.*?) \g1
-        \s* >
-    }gsix;
 
 =head2 How do I download a file from the user's machine? How do I open a file on another machine?
 
@@ -171,29 +80,6 @@ method.
 
 See the section in the C<CGI.pm> documentation on file uploads for code
 examples and details.
-
-=head2 How do I make an HTML pop-up menu with Perl?
-
-(contributed by brian d foy)
-
-The C<CGI.pm> module (which comes with Perl) has functions to create
-the HTML form widgets. See the C<CGI.pm> documentation for more
-examples.
-
-    use CGI qw/:standard/;
-    print header,
-        start_html('Favorite Animals'),
-
-        start_form,
-            "What's your favorite animal? ",
-        popup_menu(
-            -name   => 'animal',
-            -values => [ qw( Llama Alpaca Camel Ram ) ]
-            ),
-        submit,
-
-        end_form,
-        end_html;
 
 =head2 How do I fetch an HTML file?
 
@@ -455,22 +341,6 @@ Decoding base 64 becomes as simple as:
 The L<Email::MIME> module can decode base 64-encoded email message parts
 transparently so the developer doesn't need to worry about it.
 
-=head2 How do I return the user's mail address?
-
-Ask them for it. There are so many email providers available that it's
-rather unlikely the local system has any idea how to determine a user's
-email address. The one notable exception is for organization-specific
-email (e.g. foo@yourcompany.com) where policy can be codified in your
-program. In that case, you can look at $ENV{USER}, $ENV{LOGNAME}, and
-getpwuid($<) in scalar context, like so:
-
-  my $user_name = getpwuid($<)
-
-But note that you still cannot make any assumptions about whether this
-is correct unless your policy says it is. And then there are things like
-localpart extensions (foo+bar@example.com). You really are best off
-asking the user.
-
 =head2 How do I send email?
 
 Use the L<Email::MIME> and L<Email::Sender::Simple> modules, like so:
@@ -587,36 +457,14 @@ from the L<Socket> module, which also comes with perl.
         scalar gethostbyname( $host || 'localhost' )
     );
 
-=head2 How do I fetch a news article or the active newsgroups?
+=head2 How do I fetch/put an (S)FTP file?
 
-Use the L<Net::NNTP> or L<News::NNTPClient> modules, both available from CPAN.
-This can make tasks like fetching the newsgroup list as simple as
-
-    perl -MNews::NNTPClient
-      -e 'print News::NNTPClient->new->list("newsgroups")'
-
-=head2 How do I fetch/put an FTP file?
-
-(contributed by brian d foy)
-
-The L<LWP> family of modules (available on CPAN as the libwww-perl distribution)
-can work with FTP just like it can with many other protocols. L<LWP::Simple>
-makes it quite easy to fetch a file:
-
-    use LWP::Simple;
-
-    my $data = get( 'L<ftp://some.ftp.site/some/file.txt'> );
-
-If you want more direct or low-level control of the FTP process, you can use
-the L<Net::FTP> module (in the Standard Library since Perl 5.8). Its
-documentation has examples showing you just how to do that.
+L<Net::FTP>, and L<Net::SFTP> allow you to interact with FTP and SFTP (Secure
+FTP) servers.
 
 =head2 How can I do RPC in Perl?
 
-(contributed by brian d foy)
-
-Use one of the RPC modules you can find on CPAN (
-L<http://search.cpan.org/search?query=RPC&mode=all> ).
+Use one of the RPC modules( L<https://metacpan.org/search?q=RPC> ).
 
 =head1 AUTHOR AND COPYRIGHT
 
