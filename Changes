@@ -1,3 +1,5 @@
+  * Change auto generate of questions a bit (ranguard)
+  * Autogenerate question index in perlfaq.pod (doherty)
   * Cleanups / typos, updating nested expressions (dami, reviewed by schwern)
 
 5.0150036 Sat 22 Oct 2011 16:20:34 +0100
