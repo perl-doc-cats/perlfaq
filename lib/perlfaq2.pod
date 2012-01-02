@@ -178,6 +178,10 @@ Several unix/linux releated magazines frequently includes articles on Perl.
 
 =head2 Which Perl blogs should I read?
 
+L<Perl News|http://perlnews.org/> covers some of the major events in the Perl
+world, L<Perl Weekly|http://perlweekly.com/> is a weekly e-mail 
+(and RSS feed) of hand-picked Perl articles.
+
 L<http://blogs.perl.org/> hosts many Perl blogs, there are also
 several blog aggregators: L<Perlsphere|http://perlsphere.net/> and
 L<IronMan|http://ironman.enlightenedperl.org/> are two of them.
