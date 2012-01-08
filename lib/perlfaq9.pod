@@ -150,19 +150,6 @@ of web servers--apache does it differently from iPlanet which does
 it differently from IIS. Check your web server documentation for
 the details for your particular server.
 
-=head2 How do I edit my .htpasswd and .htgroup files with Perl?
-
-The L<HTTPD::UserAdmin> and L<HTTPD::GroupAdmin> modules provide a
-consistent OO interface to these files, regardless of how they're
-stored. Databases may be text, dbm, Berkeley DB or any database with
-a DBI compatible driver. L<HTTPD::UserAdmin> supports files used by the
-"Basic" and "Digest" authentication schemes. Here's an example:
-
-    use HTTPD::UserAdmin ();
-    HTTPD::UserAdmin
-      ->new(DB => "/foo/.htpasswd")
-      ->add($username => $password);
-
 =head2 How do I make sure users can't enter values into a form that causes my CGI script to do bad things?
 
 (contributed by brian d foy)
