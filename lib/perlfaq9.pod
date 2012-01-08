@@ -63,7 +63,7 @@ but for anything other than a very basic web site, using a web framework
 
 =head2 How do I remove HTML from a string?
 
-Use L<HTML::Parser>, or L<HTML::FormatText> which not only removes HTML 
+Use L<HTML::Strip>, or L<HTML::FormatText> which not only removes HTML 
 but also attempts to do a little simple formatting of the resulting 
 plain text.
 
