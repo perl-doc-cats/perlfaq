@@ -144,11 +144,12 @@ redirect.
 
 =head2 How do I put a password on my web pages?
 
-To enable authentication for your web server, you need to configure
-your web server. The configuration is different for different sorts
-of web servers--apache does it differently from iPlanet which does
-it differently from IIS. Check your web server documentation for
-the details for your particular server.
+See if the web framework you are using has an
+authentication system and if that fits your needs.
+
+Alternativly look at L<Plack::Middleware::Auth::Basic>,
+or one of the other L<Plack authentication|https://metacpan.org/search?q=plack+auth>
+options.
 
 =head2 How do I make sure users can't enter values into a form that causes my CGI script to do bad things?
 
@@ -157,7 +158,7 @@ the details for your particular server.
 You can't prevent people from sending your script bad data. Even if
 you add some client-side checks, people may disable them or bypass
 them completely. For instance, someone might use a module such as
-L<LWP> to access your CGI program. If you want to prevent data that
+L<LWP> to submit to your website. If you want to prevent data that
 try to use SQL injection or other sorts of attacks (and you should
 want to), you have to not trust any data that enter your program.
 
