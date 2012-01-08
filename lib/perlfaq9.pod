@@ -189,45 +189,6 @@ L<Email::MIME> object:
   my $abstract = Email::Abstract->new($mail_message_object);
   my $email_mime_object = $abstract->cast('Email::MIME');
 
-=head2 How do I decode a CGI form?
-
-(contributed by brian d foy)
-
-Use the C<CGI.pm> module that comes with Perl. It's quick,
-it's easy, and it actually does quite a bit of work to
-ensure things happen correctly. It handles GET, POST, and
-HEAD requests, multipart forms, multivalued fields, query
-string and message body combinations, and many other things
-you probably don't want to think about.
-
-It doesn't get much easier: the C<CGI.pm> module automatically
-parses the input and makes each value available through the
-C<param()> function.
-
-    use CGI qw(:standard);
-
-    my $total = param( 'price' ) + param( 'shipping' );
-
-    my @items = param( 'item' ); # multiple values, same field name
-
-If you want an object-oriented approach, C<CGI.pm> can do that too.
-
-    use CGI;
-
-    my $cgi = CGI->new();
-
-    my $total = $cgi->param( 'price' ) + $cgi->param( 'shipping' );
-
-    my @items = $cgi->param( 'item' );
-
-You might also try L<CGI::Minimal> which is a lightweight version
-of the same thing. Other CGI::* modules on CPAN might work better
-for you, too.
-
-Many people try to write their own decoder (or copy one from
-another program) and then run into one of the many "gotchas"
-of the task. It's much easier and less of a hassle to use C<CGI.pm>.
-
 =head2 How do I check a valid mail address?
 
 (partly contributed by Aaron Sherman)
