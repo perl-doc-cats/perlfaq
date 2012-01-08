@@ -63,13 +63,13 @@ but for anything other than a very basic web site, using a web framework
 
 =head2 How do I remove HTML from a string?
 
-The best way it to use L<HTML::Parser>from CPAN. You could also use
+The best way is to use L<HTML::Parser> from CPAN. You could also use
 L<HTML::FormatText> which not only removes HTML but also attempts to do a 
 little simple formatting of the resulting plain text.
 
 =head2 How do I extract URLs?
 
-L<HTML::SimpleLinkExtor> will extract URLS from HTML, it handles anchors, 
+L<HTML::SimpleLinkExtor> will extract URLs from HTML, it handles anchors, 
 images, objects, frames, and many other tags that can contain a URL. 
 If you need anything more complex, you can create your own subclass of
 L<HTML::LinkExtor> or L<HTML::Parser>. You might even use
