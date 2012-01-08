@@ -7,49 +7,6 @@ perlfaq9 - Networking, Web and Email
 This section deals with questions related to networking, the Internet,
 and a few about the Web.
 
-=head2 My CGI script runs from the command line but not the browser. (500 Server Error)
-
-(contributed by brian d foy)
-
-There are many things that might be wrong with your CGI program, and only
-some of them might be related to Perl. Try going through the L<troubleshooting
-guide|L<http://www.perlmonks.org/?node_id=380424>> on 
-L<Perlmonks|L<http://www.perlmonks.org/>> .
-
-=head2 How can I get better error messages from a CGI program?
-
-Use the L<CGI::Carp> module. It replaces C<warn> and C<die>, plus the
-normal L<Carp> module's C<carp>, C<croak>, and C<confess> functions with
-more verbose and safer versions. It still sends them to the normal
-server error log.
-
-    use CGI::Carp;
-    warn "This is a complaint";
-    die "But this one is serious";
-
-The following use of L<CGI::Carp> also redirects errors to a file of your choice,
-placed in a C<BEGIN> block to catch compile-time warnings as well:
-
-    use vars qw($log_fh);
-    BEGIN {
-        use CGI::Carp qw(carpout);
-        open($log_fh, ">>/var/local/cgi-logs/mycgi-log")
-            or die "Unable to append to mycgi-log: $!\n";
-        carpout(*LOG);
-    }
-
-You can even arrange for fatal errors to go back to the client browser,
-which is nice for your own debugging, but might confuse the end user.
-
-    use CGI::Carp qw(fatalsToBrowser);
-    die "Bad error here";
-
-Even if the error happens before you get the HTTP header out, the module
-will try to take care of this to avoid the dreaded server 500 errors.
-Normal warnings still go out to the server error log (or wherever
-you've sent them with C<carpout>) with the application name and date
-stamp prepended.
-
 =head2 How do I remove HTML from a string?
 
 The best way it to use L<HTML::Parser>from CPAN. You could also use
@@ -174,33 +131,16 @@ is one way to do it:
 
 =head2 How do I redirect to another page?
 
-Specify the complete URL of the destination (even if it is on the same
-server). This is one of the two different kinds of CGI "Location:"
-responses which are defined in the CGI specification for a Parsed Headers
-script. The other kind (an absolute URLpath) is resolved internally to
-the server without any HTTP redirection. The CGI specifications do not
-allow relative URLs in either case.
+Most Perl Web Frameworks will have a mechanism for doing this,
+using the L<Catalyst> framework it would be:
 
-Use of C<CGI.pm> is strongly recommended. This example shows redirection
-with a complete URL. This redirection is handled by the web browser.
-
-    use CGI qw/:standard/;
-
-    my $url = 'L<http://www.cpan.org/'>;
-    print redirect($url);
-
-This example shows a redirection with an absolute URLpath. This
-redirection is handled by the local web server.
-
-    my $url = '/CPAN/index.html';
-    print redirect($url);
-
-But if coded directly, it could be as follows (the final "\n" is
-shown separately, for clarity), using either a complete URL or
-an absolute URLpath.
-
-    print "Location: $url\n";   # CGI response header
-    print "\n";                 # end of headers
+    $c->res->redirect($url);
+    $c->detach();
+    
+If you are using Plack (which most frameworks do), then
+L<Plack::Middleware::Rewrite> is worth looking at if you
+are migrating from Apache or have URL's you want to always
+redirect.
 
 =head2 How do I put a password on my web pages?
 
