@@ -24,20 +24,6 @@ suited to your needs.
 
 You can use L<URI::Find> to extract URLs from an arbitrary text document.
 
-=head2 How do I download a file from the user's machine? How do I open a file on another machine?
-
-In this case, download means to use the file upload feature of HTML
-forms. You allow the web surfer to specify a file to send to your web
-server. To you it looks like a download, and to the user it looks
-like an upload. No matter what you call it, you do it with what's
-known as B<multipart/form-data> encoding. The C<CGI.pm> module (which
-comes with Perl as part of the Standard Library) supports this in the
-C<start_multipart_form()> method, which isn't the same as the C<startform()>
-method.
-
-See the section in the C<CGI.pm> documentation on file uploads for code
-examples and details.
-
 =head2 How do I fetch an HTML file?
 
 (contributed by brian d foy)
