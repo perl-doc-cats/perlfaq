@@ -1,3 +1,5 @@
+5.0150037 Sun  8 Jan 2012 21:24:39 +0100
+  * Better XML parsing recommendations (apeiron)
   * Remove various old questions & update a few (ranguard)
   * Change auto generate of questions a bit (ranguard)
   * Autogenerate question index in perlfaq.pod (doherty)
