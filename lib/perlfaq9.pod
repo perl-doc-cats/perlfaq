@@ -34,7 +34,7 @@ There are many Perl web frameworks, e.g. :
 
 =back
 
-These are just a few of the more widley used ones. All of them
+These are just a few of the more widely used ones. All of them
 interact with or use L<Plack> which is worth understanding
 the basics of, as there is a lot of useful
 L<Plack::Middleware|https://metacpan.org/search?q=plack%3A%3Amiddleware>.
@@ -69,7 +69,7 @@ plain text.
 
 =head2 How do I extract URLs?
 
-L<HTML::SimpleLinkExtor> will extract URLS from HTML, it handles anchors, 
+L<HTML::SimpleLinkExtor> will extract URLs from HTML, it handles anchors, 
 images, objects, frames, and many other tags that can contain a URL. 
 If you need anything more complex, you can create your own subclass of
 L<HTML::LinkExtor> or L<HTML::Parser>. You might even use
