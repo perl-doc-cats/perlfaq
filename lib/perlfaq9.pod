@@ -5,7 +5,61 @@ perlfaq9 - Networking, Web and Email
 =head1 DESCRIPTION
 
 This section deals with questions related to networking, the Internet,
-and a few about the Web.
+and running Web sites.
+
+=head2 Should I use a web framework?
+
+Yes. If you are building a web site with any level of interactivity 
+(forms / users / databases), you
+will want to use a framework to make handling requests
+and responses easier.
+
+If there is no interactivity then you may still want
+to look at using something like L<Template Toolkit|https://metacpan.org/module/Template>
+or L<Plack::Middleware::TemplateToolkit> 
+so maintenence of your HTML files (and other assets) is easier.
+
+=head2 Which web framework should I use?
+X<framework> X<CGI.pm> X<CGI> X<Catalyst> X<Dancer>
+
+There are many Perl web frameworks, e.g. :
+
+=over 4
+
+=item L<Web::Simple> - A quick and easy way to build simple web applications
+
+=item L<Dancer> - Lightweight yet powerful web application framework
+
+=item L<Catalyst> - Elegant MVC Web Application Framework
+
+=back
+
+These are just a few of the more widley used ones. All of them
+interact with or use L<Plack> which is worth understanding
+the basics of, as there is a lot of useful
+L<Plack::Middleware|https://metacpan.org/search?q=plack%3A%3Amiddleware>.
+
+As to which one you should use, it depends on the complexity
+of the site you are trying to build. Review the three listed
+above and see which suites your needs best. Many of them share the
+same L<MVC|http://en.wikipedia.org/wiki/Model-view-controller>
+concepts so once you understand one it is easier to understand
+the others.
+
+=head2 What is Plack and PSGI?
+
+L<PSGI> is the Perl Web Server Gateway Interface Specification, it is
+a standard that many Perl web frameworks use, you should not need to 
+understand it to build a web site, the part you might want to use is L<Plack>.
+
+L<Plack> is a set of tools for using the PSGI stack. It contains 
+L<middleware|https://metacpan.org/search?q=plack%3A%3Amiddleware> 
+components, a reference server and utilities for Web application frameworks. 
+Plack is like Ruby's Rack or Python's Paste for WSGI.
+
+You could build a web site using L<Plack> and your own code,
+but for anything other than a very basic web site, using a web framework 
+(that uses L<Plack>) is a better option.
 
 =head2 How do I remove HTML from a string?
 
@@ -127,7 +181,7 @@ options.
 You can't prevent people from sending your script bad data. Even if
 you add some client-side checks, people may disable them or bypass
 them completely. For instance, someone might use a module such as
-L<LWP> to submit to your website. If you want to prevent data that
+L<LWP> to submit to your web site. If you want to prevent data that
 try to use SQL injection or other sorts of attacks (and you should
 want to), you have to not trust any data that enter your program.
 

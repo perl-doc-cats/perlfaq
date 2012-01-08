@@ -145,7 +145,7 @@ such as:
 
 L<Perl Mongers|http://www.pm.org/> uses the pm.org domain for services 
 related to local Perl user groups, including the hosting of mailing lists 
-and web sites. See the L<Perl Mongers website|http://www.pm.org/> for more 
+and web sites. See the L<Perl Mongers web site|http://www.pm.org/> for more 
 information about joining, starting, or requesting services for a 
 Perl user group.
 
