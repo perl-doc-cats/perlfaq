@@ -74,24 +74,14 @@ the content appropriately.
     my $content = $ua->request($req)->as_string;
 
 =head2 How do I decode or create those %-encodings on the web?
-X<URI> X<CGI.pm> X<CGI> X<URI::Escape> X<RFC 2396>
+X<URI> X<URI::Escape> X<RFC 2396>
 
-(contributed by brian d foy)
+Most of the time you should not need to do this as
+your web framework, or if you are making a request,
+the L<LWP> or other module would handle it for you.
 
-Those C<%> encodings handle reserved characters in URIs, as described
-in RFC 2396, Section 2. This encoding replaces the reserved character
-with the hexadecimal representation of the character's number from
-the US-ASCII table. For instance, a colon, C<:>, becomes C<%3A>.
-
-In CGI scripts, you don't have to worry about decoding URIs if you are
-using C<CGI.pm>. You shouldn't have to process the URI yourself,
-either on the way in or the way out.
-
-If you have to encode a string yourself, remember that you should
-never try to encode an already-composed URI. You need to escape the
-components separately then put them together. To encode a string, you
-can use the L<URI::Escape> module. The C<uri_escape> function
-returns the escaped string:
+To encode a string yourself, use the L<URI::Escape> module. The C<uri_escape> 
+function returns the escaped string:
 
     my $original = "Colon : Hash # Percent %";
 
@@ -105,15 +95,8 @@ To decode the string, use the C<uri_unescape> function:
 
     print $unescaped; # back to original
 
-If you wanted to do it yourself, you simply need to replace the
-reserved characters with their encodings. A global substitution
-is one way to do it:
-
-    # encode
-    $string =~ s/([^^A-Za-z0-9\-_.!~*'()])/ sprintf "%%%0x", ord $1 /eg;
-
-    #decode
-    $string =~ s/%([A-Fa-f\d]{2})/chr hex $1/eg;
+Remember not to encode a full URI, you need to escape each
+component separately and then join them together.
 
 =head2 How do I redirect to another page?
 
