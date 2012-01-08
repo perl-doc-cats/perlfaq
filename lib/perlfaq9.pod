@@ -1,6 +1,6 @@
 =head1 NAME
 
-perlfaq9 - Networking, Web and Email
+perlfaq9 - Web, Email and Networking
 
 =head1 DESCRIPTION
 
