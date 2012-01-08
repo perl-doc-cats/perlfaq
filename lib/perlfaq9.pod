@@ -17,7 +17,7 @@ and responses easier.
 If there is no interactivity then you may still want
 to look at using something like L<Template Toolkit|https://metacpan.org/module/Template>
 or L<Plack::Middleware::TemplateToolkit> 
-so maintenence of your HTML files (and other assets) is easier.
+so maintenance of your HTML files (and other assets) is easier.
 
 =head2 Which web framework should I use?
 X<framework> X<CGI.pm> X<CGI> X<Catalyst> X<Dancer>
