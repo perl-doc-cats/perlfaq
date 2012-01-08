@@ -4,8 +4,8 @@ perlfaq9 - Web, Email and Networking
 
 =head1 DESCRIPTION
 
-This section deals with questions related to networking, the Internet,
-and running Web sites.
+This section deals with questions related to running web sites,
+sending and receiving email as well as general networking.
 
 =head2 Should I use a web framework?
 
