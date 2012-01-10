@@ -26,11 +26,13 @@ There are many Perl web frameworks, e.g. :
 
 =over 4
 
-=item L<Web::Simple> - A quick and easy way to build simple web applications
+=item L<Catalyst> - Elegant MVC Web Application Framework
 
 =item L<Dancer> - Lightweight yet powerful web application framework
 
-=item L<Catalyst> - Elegant MVC Web Application Framework
+=item L<Mojolicious> - Real-time web framework
+
+=item L<Web::Simple> - A quick and easy way to build simple web applications
 
 =back
 
