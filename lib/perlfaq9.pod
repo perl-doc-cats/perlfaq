@@ -42,7 +42,7 @@ the basics of, as there is a lot of useful
 L<Plack::Middleware|https://metacpan.org/search?q=plack%3A%3Amiddleware>.
 
 As to which one you should use, it depends on the complexity
-of the site you are trying to build. Review the three listed
+of the site you are trying to build. Review the frameworks listed
 above and see which suits your needs best. Many of them share the
 same L<MVC|http://en.wikipedia.org/wiki/Model-view-controller>
 concepts so once you understand one it is easier to understand
