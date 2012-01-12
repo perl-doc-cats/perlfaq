@@ -255,6 +255,22 @@ Decoding base 64 becomes as simple as:
 The L<Email::MIME> module can decode base 64-encoded email message parts
 transparently so the developer doesn't need to worry about it.
 
+=head2 How do I find the user's mail address?
+
+Ask them for it. There are so many email providers available that it's
+rather unlikely the local system has any idea how to determine a user's
+email address. The one notable exception is for organization-specific
+email (e.g. foo@yourcompany.com) where policy can be codified in your
+program. In that case, you can look at $ENV{USER}, $ENV{LOGNAME}, and
+getpwuid($<) in scalar context, like so:
+
+  my $user_name = getpwuid($<)
+
+But note that you still cannot make any assumptions about whether this
+is correct unless your policy says it is. And then there are things like
+localpart extensions (foo+bar@example.com). You really are best off
+asking the user.
+
 =head2 How do I send email?
 
 Use the L<Email::MIME> and L<Email::Sender::Simple> modules, like so:
