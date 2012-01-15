@@ -276,13 +276,13 @@ transparently so the developer doesn't need to worry about it.
 Ask them for it. There are so many email providers available that it's
 unlikely the local system has any idea how to determine a user's email address.
 
-The exception is for organization-specific email (e.g. foo@yourcompany.com) 
-where policy can be codified in your program. In that case, you could look at 
+The exception is for organization-specific email (e.g. foo@yourcompany.com)
+where policy can be codified in your program. In that case, you could look at
 $ENV{USER}, $ENV{LOGNAME}, and getpwuid($<) in scalar context, like so:
 
   my $user_name = getpwuid($<)
 
-But you still cannot make assumptions about whether this is correct, unless 
+But you still cannot make assumptions about whether this is correct, unless
 your policy says it is. You really are best off asking the user.
 
 =head2 How do I send email?
