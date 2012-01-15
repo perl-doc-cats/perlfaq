@@ -26,13 +26,30 @@ There are many Perl web frameworks, e.g. :
 
 =over 4
 
-=item L<Catalyst> - Elegant MVC Web Application Framework
+=item L<Catalyst>
 
-=item L<Dancer> - Lightweight yet powerful web application framework
+Strongly object-oriented and fully-featured with a long development history and
+a large community and addon ecosystem. Can be hard to learn and dependency on
+Moose makes it unsuited for CGI-mode deployment.
 
-=item L<Mojolicious> - Real-time web framework
+=item L<Dancer>
 
-=item L<Web::Simple> - A quick and easy way to build simple web applications
+Young and free of legacy weight, providing a lightweight and easy to learn API.
+Has a growing addon ecosystem. Strong dependency on global variables makes it
+unsuitable for large projects.
+
+=item L<Mojolicious>
+
+Young and free of any CPAN dependencies it provides compatibility with modern
+technologies like WebSockets. Strict dependence on pureperl reimplementations of
+CPAN modules makes it hard to use faster XS modules or reuse existing experience.
+
+=item L<Web::Simple>
+
+Still experimental, strongly object-oriented and intended as a toolkit for
+building micro web apps, custom frameworks or for tieing together existing
+Plack-compatible web applications with one central dispatcher. Uses lightweight
+OO library Moo and is also suitable for CGI deployment. API still in flux.
 
 =back
 
