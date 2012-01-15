@@ -29,8 +29,7 @@ There are many Perl web frameworks, e.g. :
 =item L<Catalyst>
 
 Strongly object-oriented and fully-featured with a long development history and
-a large community and addon ecosystem. Can be hard to learn and dependency on
-Moose makes it unsuited for CGI-mode deployment.
+a large community and addon ecosystem. It has quite a steep learning curve.
 
 =item L<Dancer>
 
@@ -46,10 +45,10 @@ CPAN modules makes it hard to use faster XS modules or reuse existing experience
 
 =item L<Web::Simple>
 
-Still experimental, strongly object-oriented and intended as a toolkit for
+Strongly object-oriented and intended as a toolkit for
 building micro web apps, custom frameworks or for tieing together existing
 Plack-compatible web applications with one central dispatcher. Uses lightweight
-OO library Moo and is also suitable for CGI deployment. API still in flux.
+OO library Moo and is also suitable for CGI deployment.
 
 =back
 
