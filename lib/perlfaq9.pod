@@ -282,9 +282,8 @@ $ENV{USER}, $ENV{LOGNAME}, and getpwuid($<) in scalar context, like so:
 
   my $user_name = getpwuid($<)
 
-But note that you still cannot make any assumptions about whether this
-is correct unless your policy says it is. You really are best off
-asking the user.
+But you still cannot make assumptions about whether this is correct, unless 
+your policy says it is. You really are best off asking the user.
 
 =head2 How do I send email?
 
