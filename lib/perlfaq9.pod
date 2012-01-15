@@ -9,14 +9,14 @@ sending and receiving email as well as general networking.
 
 =head2 Should I use a web framework?
 
-Yes. If you are building a web site with any level of interactivity 
+Yes. If you are building a web site with any level of interactivity
 (forms / users / databases), you
 will want to use a framework to make handling requests
 and responses easier.
 
 If there is no interactivity then you may still want
 to look at using something like L<Template Toolkit|https://metacpan.org/module/Template>
-or L<Plack::Middleware::TemplateToolkit> 
+or L<Plack::Middleware::TemplateToolkit>
 so maintenance of your HTML files (and other assets) is easier.
 
 =head2 Which web framework should I use?
@@ -51,28 +51,28 @@ the others.
 =head2 What is Plack and PSGI?
 
 L<PSGI> is the Perl Web Server Gateway Interface Specification, it is
-a standard that many Perl web frameworks use, you should not need to 
+a standard that many Perl web frameworks use, you should not need to
 understand it to build a web site, the part you might want to use is L<Plack>.
 
-L<Plack> is a set of tools for using the PSGI stack. It contains 
-L<middleware|https://metacpan.org/search?q=plack%3A%3Amiddleware> 
-components, a reference server and utilities for Web application frameworks. 
+L<Plack> is a set of tools for using the PSGI stack. It contains
+L<middleware|https://metacpan.org/search?q=plack%3A%3Amiddleware>
+components, a reference server and utilities for Web application frameworks.
 Plack is like Ruby's Rack or Python's Paste for WSGI.
 
 You could build a web site using L<Plack> and your own code,
-but for anything other than a very basic web site, using a web framework 
+but for anything other than a very basic web site, using a web framework
 (that uses L<Plack>) is a better option.
 
 =head2 How do I remove HTML from a string?
 
-Use L<HTML::Strip>, or L<HTML::FormatText> which not only removes HTML 
-but also attempts to do a little simple formatting of the resulting 
+Use L<HTML::Strip>, or L<HTML::FormatText> which not only removes HTML
+but also attempts to do a little simple formatting of the resulting
 plain text.
 
 =head2 How do I extract URLs?
 
-L<HTML::SimpleLinkExtor> will extract URLs from HTML, it handles anchors, 
-images, objects, frames, and many other tags that can contain a URL. 
+L<HTML::SimpleLinkExtor> will extract URLs from HTML, it handles anchors,
+images, objects, frames, and many other tags that can contain a URL.
 If you need anything more complex, you can create your own subclass of
 L<HTML::LinkExtor> or L<HTML::Parser>. You might even use
 L<HTML::SimpleLinkExtor> as an example for something specifically
@@ -136,7 +136,7 @@ Most of the time you should not need to do this as
 your web framework, or if you are making a request,
 the L<LWP> or other module would handle it for you.
 
-To encode a string yourself, use the L<URI::Escape> module. The C<uri_escape> 
+To encode a string yourself, use the L<URI::Escape> module. The C<uri_escape>
 function returns the escaped string:
 
     my $original = "Colon : Hash # Percent %";
@@ -161,7 +161,7 @@ using the L<Catalyst> framework it would be:
 
     $c->res->redirect($url);
     $c->detach();
-    
+
 If you are using Plack (which most frameworks do), then
 L<Plack::Middleware::Rewrite> is worth looking at if you
 are migrating from Apache or have URL's you want to always
@@ -310,7 +310,7 @@ uses SSL and can authenticate to the server via SASL.
 
 This is like the SMTP transport, but uses TLS security. You can
 authenticate with this module as well, using any mechanisms your server
-supports after STARTTLS. 
+supports after STARTTLS.
 
 =back
 
