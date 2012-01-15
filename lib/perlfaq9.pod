@@ -39,9 +39,10 @@ unsuitable for large projects.
 
 =item L<Mojolicious>
 
-Young and free of any CPAN dependencies it provides compatibility with modern
-technologies like WebSockets. Strict dependence on pureperl reimplementations of
-CPAN modules makes it hard to use faster XS modules or reuse existing experience.
+Fairly young and designed by the same author as L<Catalyst>, it focuses on HTML5
+and real-time web technologies such as WebSockets. A strong emphasis on
+innovation and user-friendliness without compromises can make it harder to reuse
+existing experience.
 
 =item L<Web::Simple>
 
