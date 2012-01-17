@@ -26,29 +26,13 @@ There are many Perl web frameworks, e.g. :
 
 =over 4
 
-=item L<Catalyst>
+=item L<Catalyst|http://catalystframework.org>
 
-Strongly object-oriented and fully-featured with a long development history and
-a large community and addon ecosystem. It is excellent for large and complex
-applications, where you have full control over the server.
+=item L<Dancer|http://perldancer.org>
 
-=item L<Dancer>
-
-Young and free of legacy weight, providing a lightweight and easy to learn API.
-Has a growing addon ecosystem. It is best used for small and tiny projects and
-very easy to learn for beginners.
-
-=item L<Mojolicious>
-
-Fairly young and focuses on HTML5 and real-time web technologies such as
-WebSockets. It is most useful when you don't have the desire or ability to use
-CPAN dependencies, or wish to employ innovative web technologies.
+=item L<Mojolicious|http://mojolicio.us>
 
 =item L<Web::Simple>
-
-Experimental, strongly object-oriented, built for speed and intended as a
-toolkit for building micro web apps, custom frameworks or for tieing together
-existing Plack-compatible web applications with one central dispatcher.
 
 =back
 
