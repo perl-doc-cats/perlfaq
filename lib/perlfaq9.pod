@@ -47,8 +47,7 @@ very easy to learn for beginners.
 =item L<Mojolicious>
 
 Fairly young with a focus on HTML5 and real-time web technologies such as
-WebSockets. It is most useful when you don't have the desire or ability to use
-CPAN dependencies, or wish to employ innovative web technologies.
+WebSockets.
 
 =item L<Web::Simple>
 
