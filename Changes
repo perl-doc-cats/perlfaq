@@ -1,3 +1,8 @@
+  * Marpa::XS updated (Jeffrey Kegler)
+  * Frameworks (wchristian, ranguard, bigpresh, kraih)
+  * Cleanup (wchristian)
+  * Users email (apeiron, ranguard)
+
 5.0150037 Sun  8 Jan 2012 21:24:39 +0100
   * Better XML parsing recommendations (apeiron)
   * Remove various old questions & update a few (ranguard)
