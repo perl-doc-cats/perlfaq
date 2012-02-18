@@ -1,4 +1,5 @@
-  * Remove ctags question (ranguard)
+  * Rewrite "How do I create a module?" (ranguard)
+  * Remove more old questions (ranguard)
   * Improve Email::MIME example (madsen)
   * Fix to regex (RT #74215)
 
