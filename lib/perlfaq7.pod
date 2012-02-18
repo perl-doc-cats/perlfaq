@@ -182,13 +182,11 @@ L<perlnewmod> is a good place to start, ignore the bits
 about uploading to CPAN if you don't want to make your
 module publicly available.
 
-Many CPAN authors now use L<Dist::Zilla> even though it
-takes quite a bit of getting used to.
-
 L<ExtUtils::ModuleMaker> and L<Module::Starter> are also
-good places to start.
+good places to start. Many CPAN authors now use L<Dist::Zilla>
+to automate as much as possible.
 
-Detailed documentation can be found at:
+Detailed documentation about modules can be found at:
 L<perlmod>, L<perlmodlib>, L<perlmodstyle>.
 
 If you need to include C code or C library interfaces 
