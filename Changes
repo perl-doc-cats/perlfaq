@@ -1,3 +1,7 @@
+  * Remove ctags question (ranguard)
+  * Improve Email::MIME example (madsen)
+  * Fix to regex (RT #74215)
+
 5.0150038 Thu 19 Jan 2012 21:10:06 +0100
   * Marpa::XS updated (Jeffrey Kegler)
   * Frameworks (wchristian, ranguard, bigpresh, kraih)
