@@ -8,7 +8,7 @@ perlglossary - Perl Glossary
 =head1 DESCRIPTION
 
 A glossary of terms (technical and otherwise) used in the Perl
-documentation, derived from the Glossary of the Glossary of I<Programming
+documentation, derived from the Glossary of I<Programming
 Perl>, Fourth Edition.  Words or phrases in bold are defined elsewhere in
 this glossary.
 
@@ -17,7 +17,9 @@ the Free On-Line Dictionary of Computing L<http://foldoc.org/>,
 the Jargon File L<http://catb.org/~esr/jargon/>,
 and Wikipedia L<http://www.wikipedia.org/>.
 
-=over
+=head2 A
+
+=over 4
 
 =item accessor methods
 
@@ -247,6 +249,12 @@ Descriptive X<awk (editing term)>editing term—short for “awkward”. Also
 coincidentally refers to a venerable text-processing language from which
 Perl derived some of its high-level ideas.
 
+=back
+
+=head2 B
+
+=over 4
+
 =item backreference
 
 A X<backreferences, about>X<references, backreferences>substring B<captured>
@@ -430,6 +438,12 @@ their orientation (see B<endian>). Named after some similar languages spoken
 (for similar reasons) between compilers and interpreters in the late 20ᵗʰ
 century. These languages are characterized by representing everything as a
 nonarchitecture-dependent sequence of bytes.
+
+=back
+
+=head2 C
+
+=over 4
 
 =item C
 
@@ -790,6 +804,12 @@ In academia, a curriculum vitæ, a fancy kind of résumé. In Perl, an X<CV
 (code value)>X<code value (CV)>internal “code value” typedef holding a
 B<subroutine>. The C<CV> type is a subclass of B<SV>.
 
+=back
+
+=head2 D
+
+=over 4
+
 =item dangling statement
 
 A bare, single B<X<dangling statements>X<statements, dangling>statement>,
@@ -982,6 +1002,12 @@ temporarily changed (and implicitly restored later) by a C<local> operator.
 that is in the middle of calling another subroutine “contains” that
 subroutine at B<runtime>.
 
+=back
+
+=head2 E
+
+=over 4
+
 =item eclectic
 
 Derived X<eclectic (term)>from many sources. Some would say I<too> many.
@@ -1109,6 +1135,12 @@ necessarily in that order.
 A Perl module X<extensions, defined>that also pulls in B<compiled> C or C++
 code. More generally, any experimental option that can be B<compiled> into
 Perl, such as multithreading.
+
+=back
+
+=head2 F
+
+=over 4
 
 =item false
 
@@ -1308,6 +1340,12 @@ Someone X<funny characters>X<characters, funny>like Larry, or one of his
 peculiar friends. Also refers to the strange prefixes that Perl requires as
 noun markers on its variables.
 
+=back
+
+=head2 G
+
+=over 4
+
 =item garbage collection
 
 A misnamed feature—X<garbage collection, defined>it should be called,
@@ -1392,6 +1430,12 @@ to other members of your group.
 
 An internal “glob value” X<GV (glob value)>X<glob value (GV)>typedef,
 holding a B<typeglob>. The C<GV> type is a subclass of B<SV>.
+
+=back
+
+=head2 H
+
+=over 4
 
 =item hacker
 
@@ -1479,6 +1523,12 @@ virtue of a programmer. See also B<laziness> and B<impatience>.
 Short for a “hash value” X<HV (hash value)>X<hash value (HV)>typedef, which
 holds Perl’s internal representation of a hash. The C<HV> type is a
 subclass of B<SV>.
+
+=back
+
+=head2 I
+
+=over 4
 
 =item identifier
 
@@ -1696,12 +1746,24 @@ The integer X<IV (Integer Value)>X<Integer Value (IV)>four, not to be
 confused with six, Tom’s favorite editor. IV also means an internal Integer
 Value of the type a B<scalar> can hold, not to be confused with an B<NV>.
 
+=back
+
+=head2 J
+
+=over 4
+
 =item JAPH
 
 “Just Another Perl Hacker”, a X<JAPH acronym>clever but cryptic bit of Perl
 code that, when executed, evaluates to that string. Often used to
 illustrate a particular Perl feature, and something of an ongoing
 Obfuscated Perl Contest seen in USENET signatures.
+
+=back
+
+=head2 K
+
+=over 4
 
 =item key
 
@@ -1711,6 +1773,12 @@ associated with that key.
 =item keyword
 
 See B<reserved words>.
+
+=back
+
+=head2 L
+
+=over 4
 
 =item label
 
@@ -1930,6 +1998,12 @@ An X<lvalue modifier>X<modifiers, lvalue>adjectival pseudofunction that
 warps the meaning of an B<lvalue> in some declarative fashion. Currently
 there are three lvalue modifiers: C<my>, C<our>, and C<local>.
 
+=back
+
+=head2 M
+
+=over 4
+
 =item magic
 
 Technically X<magic (term)>speaking, any extra semantics attached to a
@@ -2092,6 +2166,12 @@ B<inheritance> and B<single inheritance>.) In computer languages (including
 Perl), it is the notion that a given class may have multiple direct
 ancestors or B<base classes>.
 
+=back
+
+=head2 N
+
+=over 4
+
 =item named pipe
 
 A B<pipe> X<named pipes>X<pipes, names>with a name embedded in the
@@ -2178,6 +2258,12 @@ confused with an B<IV>.
 
 Half a B<byte>, X<nybble>equivalent to one B<hexadecimal> digit, and worth
 four B<bits>.
+
+=back
+
+=head2 O
+
+=over 4
 
 =item object
 
@@ -2278,6 +2364,12 @@ The one X<ownership, file>X<files, ownership of>user (apart from the
 superuser) who has absolute control over a B<file>. A file may also have a
 B<group> of users who may exercise joint ownership if the real owner
 permits it. See B<permission bits>.
+
+=back
+
+=head2 P
+
+=over 4
 
 =item package
 
@@ -2576,6 +2668,12 @@ Pumpkin now and then.
 A “X<PV (pointer value)>X<pointer value (PV)>pointer value”, which is Perl
 Internals Talk for a C<char*>.
 
+=back
+
+=head2 Q
+
+=over 4
+
 =item qualified
 
 Possessing a X<qualified (term)>complete name. The symbol C<$Ent::moot> is
@@ -2586,6 +2684,12 @@ from the top-level directory.
 
 A X<quantifiers, about>component of a B<regular expression> specifying how
 many times the foregoing B<atom> may occur.
+
+=back
+
+=head2 R
+
+=over 4
 
 =item race condition
 
@@ -2746,6 +2850,12 @@ if you’re not confused yet.
 
 A B<value> that X<rvalue (term)>X<values, rvalue>you might find on the
 right side of an B<assignment>. See also B<lvalue>.
+
+=back
+
+=head2 S
+
+=over 4
 
 =item sandbox
 
@@ -3258,6 +3368,12 @@ avoid any confusion, we nearly always say “syscall” for something you could
 call indirectly via Perl’s C<syscall> function, and never for something you
 would call with Perl’s C<system> function.
 
+=back
+
+=head2 T
+
+=over 4
+
 =item taint checks
 
 The X<taint checks, about>special bookkeeping Perl does to track the flow
@@ -3435,6 +3551,12 @@ Camel chapter 2, “Bits and Pieces”.
 A description of X<typemap>how C types may be transformed to and from Perl
 types within an B<extension> module written in B<XS>.
 
+=back
+
+=head2 U
+
+=over 4
+
 =item UDP
 
 User Datagram Protocol, the X<User Datagram Protocol (UDP)>X<UDP (User
@@ -3487,6 +3609,12 @@ characters with the General Category of Uppercase Letter, but any character
 with the Uppercase property, including some Letter Numbers and Symbols. Not
 to be confused with B<titlecase>.
 
+=back
+
+=head2 V
+
+=over 4
+
 =item value
 
 An actual piece X<values, defined>of data, in contrast to all the
@@ -3533,6 +3661,12 @@ specified with a C<v> followed by a series of decimal integers in dot
 notation, for instance, C<v1.20.300.4000>. Each number turns into a
 B<character> with the specified ordinal value. (The C<v> is optional when
 there are at least three integers.)
+
+=back
+
+=head2 W
+
+=over 4
 
 =item warning
 
@@ -3592,6 +3726,12 @@ C<format> declarations. Also used to mean the opposite of magic because
 everything works exactly as it appears, as in the three- argument form of
 C<open>.
 
+=back
+
+=head2 X
+
+=over 4
+
 =item XS
 
 An X<XS (eXternal Subroutine)>X<eXternal Subroutine (XS)>extraordinarily
@@ -3603,11 +3743,23 @@ in existing C or C++ or in an exciting extension language called
 
 An X<XSUB (term)>external B<subroutine> defined in B<XS>.
 
+=back
+
+=head2 Y
+
+=over 4
+
 =item yacc
 
 Yet X<yacc acronym>Another Compiler Compiler. A parser generator without
 which Perl probably would not have existed. See the file I<perly.y> in the
 Perl source distribution.
+
+=back
+
+=head2 Z
+
+=over 4
 
 =item zero width
 
