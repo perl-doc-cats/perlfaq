@@ -868,7 +868,7 @@ comments). You end the comment with C<=cut>, ending the Pod section:
 
 The quick-and-dirty method only works well when you don't plan to
 leave the commented code in the source. If a Pod parser comes along,
-you're multiline comment is going to show up in the Pod translation.
+your multiline comment is going to show up in the Pod translation.
 A better way hides it from Pod parsers as well.
 
 The C<=begin> directive can mark a section for a particular purpose.
