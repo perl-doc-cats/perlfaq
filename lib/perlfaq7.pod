@@ -414,7 +414,7 @@ Here's an example of how to pass in a string and a regular expression
 for it to match against. You construct the pattern with the C<qr//>
 operator:
 
-    sub compare($$) {
+    sub compare {
         my ($val1, $regex) = @_;
         my $retval = $val1 =~ /$regex/;
         return $retval;
