@@ -370,7 +370,7 @@ the tool runs on Windows 9x/NT/2000/XP or later.
 
 L<http://kephra.sf.net>
 
-GUI Editor written in Perl using wxWidgets ans Scintilla with lots of smaller features.
+GUI Editor written in Perl using wxWidgets and Scintilla with lots of smaller features.
 Aims for an UI based on Perls principles like TIMTWTDI and "easy thinkd should be ..".
 
 =item Komodo
