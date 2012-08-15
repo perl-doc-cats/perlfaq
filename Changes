@@ -1,3 +1,8 @@
+5.0150041 Wed 15 Aug 2012 22:00:37 +0100
+  * Kephra added as an editor (lichtkind)
+  * Fixes array operation typos in perlfaq4 (oalders)
+  * fixed misleading use of an array to store (Martin Becker)
+
 5.0150040 Sat  9 Jun 2012 12:02:27 +0100
   * perlglossary provided by Tom C. from Camel 4
   * remove prototypes and & for subroutine (mauke)
