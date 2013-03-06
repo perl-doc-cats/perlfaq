@@ -1,3 +1,8 @@
+5.0150042 Wed  6 Mar 2013 14:37:08 +0100
+  * Fix dodgy link as reports in #114260 of cpan RT (ranguard)
+  * Hex typo (Martin Becker)
+  * Typo (joaquinferrero)
+ 
 5.0150041 Wed 15 Aug 2012 22:00:37 +0100
   * Kephra added as an editor (lichtkind)
   * Fixes array operation typos in perlfaq4 (oalders)
