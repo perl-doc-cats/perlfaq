@@ -1048,11 +1048,11 @@ where you expect it so you need to adjust your shebang line.
 
 =head2 Do I need to recompile XS modules when there is a change in the C library?
 
-(contributed by Mike Doherty)
+(contributed by Alex Beamish)
 
-If the new version of the C library is ABI-compatible (note: B, not P) with the
-version you're upgrading from, and if the shared library version didn't change,
-no re-compilation should be necessary.
+If the new version of the C library is ABI-compatible (that's Application
+Binary Interface compatible) with the version you're upgrading from, and if the
+shared library version didn't change, no re-compilation should be necessary.
 
 =head1 AUTHOR AND COPYRIGHT
 
