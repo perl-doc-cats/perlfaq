@@ -644,29 +644,49 @@ the prototype of C<foo> and passes it the current value of the argument
 list, C<@_>. Here's an example; the C<bar> subroutine calls C<&foo>,
 which prints its arguments list:
 
-    sub bar { &foo }
+    sub foo { print "Args in foo are: @_\n"; }
 
-    sub foo { print "Args in foo are: @_\n" }
+    sub bar { &foo; }
 
-    bar( qw( a b c ) );
+    bar( "a", "b", "c" );
 
 When you call C<bar> with arguments, you see that C<foo> got the same C<@_>:
 
     Args in foo are: a b c
 
 Calling the subroutine with trailing parentheses, with or without arguments,
-does not use the current C<@_> and respects the subroutine prototype. Changing
-the example to put parentheses after the call to C<foo> changes the program:
+does not use the current C<@_>. Changing the example to put parentheses after
+the call to C<foo> changes the program:
 
-    sub bar { &foo() }
+    sub foo { print "Args in foo are: @_\n"; }
 
-    sub foo { print "Args in foo are: @_\n" }
+    sub bar { &foo(); }
 
-    bar( qw( a b c ) );
+    bar( "a", "b", "c" );
 
 Now the output shows that C<foo> doesn't get the C<@_> from its caller.
 
-    Args in foo are:
+    Args in foo are: 
+
+However, using C<&> in the call still overrides the prototype of C<foo> if
+present:
+
+    sub foo ($$$) { print "Args infoo are: @_\n"; }
+
+    sub bar_1 { &foo; }
+    sub bar_2 { &foo(); }
+    sub bar_3 { foo( $_[0], $_[1], $_[2] ); }
+    # sub bar_4 { foo(); }
+    # bar_4 doesn't compile: "Not enough arguments for main::foo at ..."
+
+    bar_1( "a", "b", "c" );
+    # Args in foo are: a b c
+
+    bar_2( "a", "b", "c" );
+    # Args in foo are: 
+
+    bar_3( "a", "b", "c" );
+    # Args in foo are: a b c
 
 The main use of the C<@_> pass-through feature is to write subroutines
 whose main job it is to call other subroutines for you. For further
