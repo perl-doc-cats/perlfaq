@@ -1400,6 +1400,26 @@ The last is particularly useful because it knows about machine-dependent
 architectures. The C<lib.pm> pragmatic module was first
 included with the 5.002 release of Perl.
 
+=head2 Where are modules installed?
+
+Modules are installed on a case-by-case basis (as provided by the methods
+described in the previous section), and in the operating system. All of these
+paths are stored in @INC, which you can display with the one-liner
+
+    perl -e 'print join("\n",@INC,"")'
+
+The same information is displayed at the end of the output from the command
+
+    perl -V
+
+To find out where a module's source code is located, use
+
+    perldoc -l Encode
+
+to display the path to the module. In some cases (for example, the C<AutoLoader>
+module), this command will show the path to a separate C<pod> file; the module
+itself should be in the same directory, with a 'pm' file extension.
+
 =head2 What is socket.ph and where do I get it?
 
 It's a Perl 4 style file defining values for system networking
