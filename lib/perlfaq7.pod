@@ -174,7 +174,7 @@ Here's an example:
     $person->{AGE}  = 24;           # set field AGE to 24
     $person->{NAME} = "Nat";        # set field NAME to "Nat"
 
-If you're looking for something a bit more rigorous, try L<perltoot>.
+If you're looking for something a bit more rigorous, try L<perlootut>.
 
 =head2 How do I create a module?
 
@@ -240,10 +240,7 @@ Perl doesn't get more formal than that and lets you set up the package
 just the way that you like it (that is, it doesn't set up anything for
 you).
 
-The Perl documentation has several tutorials that cover class
-creation, including L<perlboot> (Barnyard Object Oriented Tutorial),
-L<perltoot> (Tom's Object Oriented Tutorial), L<perlbot> (Bag o'
-Object Tricks), and L<perlobj>.
+See also L<perlootut>, a tutorial that covers class creation, and L<perlobj>.
 
 =head2 How can I tell if a variable is tainted?
 
@@ -633,7 +630,7 @@ then you'll want to use the C<use overload> pragma, documented
 in L<overload>.
 
 If you're talking about obscuring method calls in parent classes,
-see L<perltoot/"Overridden Methods">.
+see L<perlootut/"Overriding methods and method resolution">.
 
 =head2 What's the difference between calling a function as &foo and foo()?
 
@@ -792,9 +789,8 @@ when complex syntax is involved.
 
 =head2 How can I catch accesses to undefined variables, functions, or methods?
 
-The AUTOLOAD method, discussed in L<perlsub/"Autoloading"> and
-L<perltoot/"AUTOLOAD: Proxy Methods">, lets you capture calls to
-undefined functions and methods.
+The AUTOLOAD method, discussed in L<perlsub/"Autoloading"> lets you capture
+calls to undefined functions and methods.
 
 When it comes to undefined variables that would trigger a warning
 under C<use warnings>, you can promote the warning to an error.
@@ -805,7 +801,7 @@ under C<use warnings>, you can promote the warning to an error.
 
 Some possible reasons: your inheritance is getting confused, you've
 misspelled the method name, or the object is of the wrong type. Check
-out L<perltoot> for details about any of the above cases. You may
+out L<perlootut> for details about any of the above cases. You may
 also use C<print ref($object)> to find out the class C<$object> was
 blessed into.
 
