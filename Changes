@@ -1,4 +1,11 @@
 
+  * avoid gensym in examples (Karen Etheridge)
+  * Cleanup of perltoot/boot etc (Smylers)
+  * Perl release schedule (Alex Beamish)
+  * Module search path (Alex Beamish)
+  * XS recompiling modules (Alex Beamish)
+  * clarify &foo() ignores prototype (mauke)
+
 5.0150043 Sun 12 May 2013 19:40:17 +0100
   * Various typos and URL fixes (dsteinbrunner)
   * Typo (argrath)
@@ -7,7 +14,7 @@
   * Fix dodgy link as reports in #114260 of cpan RT (ranguard)
   * Hex typo (Martin Becker)
   * Typo (joaquinferrero)
- 
+
 5.0150041 Wed 15 Aug 2012 22:00:37 +0100
   * Kephra added as an editor (lichtkind)
   * Fixes array operation typos in perlfaq4 (oalders)
