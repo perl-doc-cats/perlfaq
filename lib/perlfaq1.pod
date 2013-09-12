@@ -179,7 +179,7 @@ backward compatibility.
 Recently, the plan has been to release a new version of Perl roughly every
 April, but getting the release right is more important than sticking rigidly to
 a calendar date, so the release date is somewhat flexible.  The historical
-release dates can be viewed at L<http://www.cpan.org/src/README.html>. 
+release dates can be viewed at L<http://www.cpan.org/src/README.html>.
 
 Even numbered minor versions (5.14, 5.16, 5.18) are production versions, and
 odd numbered minor versions (5.15, 5.17, 5.19) are development versions. Unless

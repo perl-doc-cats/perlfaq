@@ -189,8 +189,8 @@ to automate as much as possible.
 Detailed documentation about modules can be found at:
 L<perlmod>, L<perlmodlib>, L<perlmodstyle>.
 
-If you need to include C code or C library interfaces 
-use h2xs. h2xs will create the module distribution structure 
+If you need to include C code or C library interfaces
+use h2xs. h2xs will create the module distribution structure
 and the initial interface files.
 L<perlxs> and L<perlxstut> explain the details.
 
@@ -663,7 +663,7 @@ the call to C<foo> changes the program:
 
 Now the output shows that C<foo> doesn't get the C<@_> from its caller.
 
-    Args in foo are: 
+    Args in foo are:
 
 However, using C<&> in the call still overrides the prototype of C<foo> if
 present:
@@ -680,7 +680,7 @@ present:
     # Args in foo are: a b c
 
     bar_2( "a", "b", "c" );
-    # Args in foo are: 
+    # Args in foo are:
 
     bar_3( "a", "b", "c" );
     # Args in foo are: a b c
