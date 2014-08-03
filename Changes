@@ -1,3 +1,7 @@
+5.0150045 Sun 3 Aug 2014 18:16:06 +0100
+  * Improve example, use File::Spec (Brian Fraser)
+  * Typo in perlfaq7 (Rares Aioanei, via shlomif)
+  * Typo in perlfaq1 (Xaerxess)
 
 5.0150044 Thu 12 Sep 2013 20:51:52 +0100
   * avoid gensym in examples (Karen Etheridge)
