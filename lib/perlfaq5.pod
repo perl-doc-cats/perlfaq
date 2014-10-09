@@ -280,7 +280,7 @@ newlines:
     while( sysread $fh, $buffer, 4096 ) {
         $lines += ( $buffer =~ tr/\n// );
     }
-    close FILE;
+    close $fh;
 
 However, that doesn't work if the line ending isn't a newline. You
 might change that C<tr///> to a C<s///> so you can count the number of
@@ -291,7 +291,7 @@ times the input record separator, C<$/>, shows up:
     while( sysread $fh, $buffer, 4096 ) {
         $lines += ( $buffer =~ s|$/||g; );
     }
-    close FILE;
+    close $fh;
 
 If you don't mind shelling out, the C<wc> command is usually the
 fastest, even with the extra interprocess overhead. Ensure that you
