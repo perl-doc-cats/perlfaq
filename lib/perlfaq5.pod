@@ -200,7 +200,7 @@ you can fit the whole thing in memory!):
 
     print $out $content;
 
-Modules such as L<File::Slurp> and L<Tie::File> can help with that
+Modules such as L<Path::Tiny> and L<Tie::File> can help with that
 too. If you can, however, avoid reading the entire file at once. Perl
 won't give that memory back to the operating system until the process
 finishes.
@@ -1135,13 +1135,13 @@ C<$DB_RECNO> bindings, which allow you to tie an array to a file so that
 accessing an element of the array actually accesses the corresponding
 line in the file.
 
-If you want to load the entire file, you can use the L<File::Slurp>
+If you want to load the entire file, you can use the L<Path::Tiny>
 module to do it in one simple and efficient step:
 
-    use File::Slurp;
+    use Path::Tiny;
 
-    my $all_of_it = read_file($filename); # entire file in scalar
-    my @all_lines = read_file($filename); # one line per element
+    my $all_of_it = path($filename)->slurp; # entire file in scalar
+    my @all_lines = path($filename)->lines; # one line per element
 
 Or you can read the entire file contents into a scalar like this:
 
