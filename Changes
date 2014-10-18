@@ -1,3 +1,9 @@
+  * refer to Marpa::R2 instead of Marpa::XS (Jeffrey Kegler)
+  * misc spelling and grammar fixes (darfich)
+  * avoid bareword filehandles (Shlomi Fish, perl RT#122923)
+  * reference Path::Tiny instead of File::Slurp (RT#83126)
+  * some dist building cleanup (Karen Etheridge)
+
 5.0150045 Sun 3 Aug 2014 18:16:06 +0100
   * Improve example, use File::Spec (Brian Fraser)
   * Typo in perlfaq7 (Rares Aioanei, via shlomif)
