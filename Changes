@@ -1,3 +1,6 @@
+Revision history for {{$dist->name}}
+
+{{$NEXT}}
   * refer to Marpa::R2 instead of Marpa::XS (Jeffrey Kegler)
   * misc spelling and grammar fixes (darfich)
   * avoid bareword filehandles (Shlomi Fish, perl RT#122923)
