@@ -1,4 +1,4 @@
-#!/usr/bin/env perl
+=pod
 
 =head1 NAME
 
@@ -12,39 +12,60 @@ Used to create the list in perlfaq.pod
 
 use strict;
 use warnings;
+package inc::CreateQuestionList;
 
-use Path::Class;
-use Data::Dumper;
+use Moose;
+with
+    'Dist::Zilla::Role::FileGatherer',
+    'Dist::Zilla::Role::FileMunger';
+
 use Template;
 use HTML::TreeBuilder;
 use Pod::Simple::XHTML;
 
-# constants
-my $SOURCE       = './lib';
 my $HTML_CHARSET = 'UTF-8';
 
-my $the_questions = get_questions();
+sub gather_files {
+    my $self = shift;
 
-my $out_handle = Path::Class::Dir->new($SOURCE)->file('perlfaq.pod')->openw();
+    require Dist::Zilla::File::InMemory;
+    $self->add_file(
+        Dist::Zilla::File::InMemory->new({
+            name    => 'lib/perlfaq.pod',
+            content => '',  # filled in later
+        })
+    );
+    return;
+}
 
-my $tt = Template->new( { POST_CHOMP => 1, } );
-$tt->process( 'perlfaq.tt', { the_questions => $the_questions }, $out_handle )
-    || die $tt->error();
+sub munge_files {
+    my $self = shift;
 
-$out_handle->close();
+    my ($file) = grep { $_->name eq 'lib/perlfaq.pod' } @{$self->zilla->files};
+
+    my $encoded_content;
+    open my $fh, sprintf('>:encoding(%s)', $file->encoding), \$encoded_content
+        or $self->log_fatal('cannot open handle to create ' . $file->name . ' content: ' . $!);
+
+    my $the_questions = $self->get_questions();
+    my $tt = Template->new( { POST_CHOMP => 1, } );
+    $tt->process( 'perlfaq.tt', { the_questions => $the_questions }, $fh)
+        || die $tt->error();
+    close $fh;
+
+    $file->encoded_content($encoded_content);
+}
 
 sub get_questions {
+    my $self = shift;
 
     my $out;
     {
-        my $source = Path::Class::Dir->new($SOURCE);
-        my @files  = sort $source->children;
+        foreach my $pod_file (@{$self->zilla->files}) {
+            next unless $pod_file->name =~ /.pod$/;
+            next unless $pod_file->name =~ /\d/;
 
-        foreach my $pod_file (@files) {
-            next unless $pod_file->stringify =~ /.pod$/;
-            next unless $pod_file->stringify =~ /\d/;
-
-            # next unless $pod_file->stringify =~ /3/;
+            # next unless $pod_file->name =~ /3/;
 
             my $parser = Pod::Simple::XHTML->new;
             $parser->html_header('');
@@ -52,7 +73,10 @@ sub get_questions {
             $parser->html_charset($HTML_CHARSET);
             my $html = '';
             $parser->output_string( \$html );
-            $parser->parse_file( $pod_file->stringify );
+
+            open my $pod_fh, sprintf('<:encoding(%s)', $pod_file->encoding), \$pod_file->encoded_content
+                or $self->log_fatal('cannot open handle to ' . $pod_file->name . ' content: ' . $!);
+            $parser->parse_file($pod_fh);
 
             my $root
                 = HTML::TreeBuilder->new_from_content($html);    # empty tree
@@ -130,3 +154,5 @@ sub fetch_text {
     $str =~ s/\s+$//;        # Remove trailing white spaces
     return $str;
 }
+
+1;
