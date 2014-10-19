@@ -1,4 +1,4 @@
 .*
-!.gitignore
-perlfaq-*
-lib/perlfaq.pod
+!/.gitignore
+/perlfaq-*/
+/perlfaq-*.tar.gz
