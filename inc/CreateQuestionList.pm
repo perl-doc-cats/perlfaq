@@ -49,7 +49,7 @@ sub munge_files {
 
     my $the_questions = $self->get_questions();
     my $tt = Template->new( { POST_CHOMP => 1, } );
-    $tt->process( 'perlfaq.tt', { the_questions => $the_questions }, $fh)
+    $tt->process( 'inc/perlfaq.tt', { the_questions => $the_questions }, $fh)
         || die $tt->error();
     close $fh;
 
