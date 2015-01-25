@@ -2,6 +2,8 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
   * many updates to vendor and tool details in perlfaq3 (Michiel Beijen)
+  * distribution version bumped to match the first blead version it will be
+    included in (5.021009)
 
 5.0150046   20142014-10-19 02:04:58Z
   * refer to Marpa::R2 instead of Marpa::XS (Jeffrey Kegler)
