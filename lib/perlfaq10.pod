@@ -1,0 +1,8 @@
+=head1 NAME
+
+perlfaq10 - Testing perl
+
+=head1 DESCRIPTION
+
+This section of the FAQ answers questions related to testing perl modules
+and scripts.
