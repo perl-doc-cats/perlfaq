@@ -6,3 +6,33 @@ perlfaq10 - Testing perl
 
 This section of the FAQ answers questions related to testing perl modules
 and scripts.
+
+=head2 How can I run module tests?
+
+You can run any test file with
+
+    $ perl -Ilib t/23.sometest.t
+
+You will get detailed output of the single tests and any STDOUT and STDERR
+output.
+
+C<prove> is a more advanced tool which by default will give you a summary
+in colored output, without STDOUT.
+
+    $ prove t/23.sometest.t
+
+To run all tests you usually do
+
+    $ prove -lr t
+    # -r recurse through t
+    # -l: same as perl -I lib
+
+See
+
+    $ perldoc prove
+
+for all the various options.
+
+
+
+
