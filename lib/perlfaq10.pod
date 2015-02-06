@@ -35,4 +35,28 @@ for all the various options.
 
 
 
+=head2 How can I mock a subroutine or a module?
 
+With mocking you can test your code by replacing real functionality
+(usually from other modules you use in your code) with simulated.
+
+It's useful when the real code would require network
+and you don't have it or don't want to use it; database connection,
+hardware, ...
+
+It's also useful for simulating errors or situations that you cannot
+produce yourself - database connection timeout, changing the system time, ...
+
+Replacing one subroutine with another can be done with L<Sub::Override>
+for example;
+
+    use Sub::Override;
+    my $override = Sub::Override->new( "Other::Module::foo" => sub {
+        my (@args) = @_;
+        ...
+    });
+    ...
+    $override->restore; # get back original functionality
+
+For other tasks there already exist mocking modules, for example
+L<Test::MockTime>, which replaces the time with simulated time.
