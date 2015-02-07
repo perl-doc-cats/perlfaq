@@ -60,6 +60,11 @@ You can then test it by doing
 
 More and smaller subroutines result in better testing possibilities.
 
+=head2 How can I catch errors, warnings, STDERR or STDOUT?
+
+L<Test::Trap> is a module which lets you catch output of the code,
+exit, die, warnings without messing with the dirty stuff like replacing
+core functions yourself.
 
 =head2 How can I mock a subroutine or a module?
 
