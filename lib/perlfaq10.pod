@@ -54,7 +54,7 @@ You can then test it by doing
 
     use FindBin '$Bin';
     local @ARGV = qw/ --do-something /;
-    require "$Bin/../bin/script.pl
+    require "$Bin/../bin/script.pl";
     my $result = main();
     ...
 
@@ -95,9 +95,9 @@ L<Test::MockTime>, which replaces the time with simulated time.
 =head2 How can I automate tests and process test results?
 
 Sometimes there is the need to process tests yourself instead of just
-getting the usual prove output.
+getting the usual C<prove> output.
 
-In Continuous integration systems you might need to provide XML
+In Continuous Integration systems you might need to provide XML
 output. There is L<TAP::Harness::JUnit> which you can use with Jenkins, for
 example.
 
