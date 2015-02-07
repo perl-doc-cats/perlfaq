@@ -21,7 +21,7 @@ in colored output, without STDOUT.
 
     $ prove t/23.sometest.t
 
-To run all tests you usually do
+To run all test files you usually do
 
     $ prove -lr t
     # -r recurse through t
@@ -33,6 +33,32 @@ See
 
 for all the various options.
 
+=head2 How can I test a script?
+
+Making a system call to the script and checking its output and exit code
+is one method. This might not be enough for covering every test case, and
+simulating behaviour can be more cumbersome.
+
+If you have to deal with a script that has one C<main> subroutine you can at
+least do this:
+
+    main() unless caller(0);
+
+    sub main {
+        ...
+    }
+
+C<main()> will not be called when being C<require>d by another script.
+
+You can then test it by doing
+
+    use FindBin '$Bin';
+    local @ARGV = qw/ --do-something /;
+    require "$Bin/../bin/script.pl
+    my $result = main();
+    ...
+
+More and smaller subroutines result in better testing possibilities.
 
 
 =head2 How can I mock a subroutine or a module?
