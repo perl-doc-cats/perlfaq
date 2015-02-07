@@ -60,3 +60,14 @@ for example;
 
 For other tasks there already exist mocking modules, for example
 L<Test::MockTime>, which replaces the time with simulated time.
+
+=head2 How can I automate tests and process test results?
+
+Sometimes there is the need to process tests yourself instead of just
+getting the usual prove output.
+
+In Continuous integration systems you might need to provide XML
+output. There is L<TAP::Harness::JUnit> which you can use with Jenkins, for
+example.
+
+To produce your own output, you may use <TAP::Parser::Aggregator>.
