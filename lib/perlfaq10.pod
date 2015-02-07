@@ -74,7 +74,7 @@ It's also useful for simulating errors or situations that you cannot
 produce yourself - database connection timeout, changing the system time, ...
 
 Replacing one subroutine with another can be done with L<Sub::Override>
-for example;
+for example:
 
     use Sub::Override;
     my $override = Sub::Override->new( "Other::Module::foo" => sub {
@@ -96,4 +96,4 @@ In Continuous integration systems you might need to provide XML
 output. There is L<TAP::Harness::JUnit> which you can use with Jenkins, for
 example.
 
-To produce your own output, you may use <TAP::Parser::Aggregator>.
+To produce your own output, you may use L<TAP::Parser::Aggregator>.
