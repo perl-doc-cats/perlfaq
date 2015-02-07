@@ -102,3 +102,22 @@ output. There is L<TAP::Harness::JUnit> which you can use with Jenkins, for
 example.
 
 To produce your own output, you may use L<TAP::Parser::Aggregator>.
+
+=head2 How can I make my test suite faster?
+
+Tests can take a lot of time. You can run several test files in parallel by
+calling prove like this:
+
+    $ prove -j 9 -lr t
+
+This will run 9 tests in parallel.
+
+There are modules on CPAN that can't be tested like that. In most cases it's
+because the author just didn't think of that while writing the tests.
+A common error is that several test files use the same temp file paths
+which results in broken test results.
+
+Have that in mind when writing your tests. If you can't avoid several tests
+using the same resources use a locking mechanism.
+
+
