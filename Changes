@@ -1,6 +1,9 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  * Fix typo (Douglas L. Jenkins)
+  * Fix Time::Seconds example (Niko Tyni)
+  * Basic README.pod (Shlomi Fish)
 
 5.021009    20152015-01-25 22:36:24Z
   * many updates to vendor and tool details in perlfaq3 (Michiel Beijen)
