@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  * fix LICENSE address and update prereq for its content
 
 5.021010    20152015-07-28 18:30:48Z
   * Fix typo (Douglas L. Jenkins)
