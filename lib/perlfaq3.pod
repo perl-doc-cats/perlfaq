@@ -366,6 +366,12 @@ Perl Editor by EngInSite is a complete integrated development
 environment (IDE) for creating, testing, and  debugging  Perl scripts;
 the tool runs on Windows 9x/NT/2000/XP or later.
 
+=item IntelliJ IDEA
+
+L<https://plugins.jetbrains.com/plugin/7796>
+
+Camelcade plugin provides Perl5 support in IntelliJ IDEA and other JetBrains IDEs.
+
 =item Kephra
 
 L<http://kephra.sf.net>
