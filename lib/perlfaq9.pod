@@ -223,7 +223,6 @@ If you've already got some other kind of email object, consider passing
 it to L<Email::Abstract> and then using its cast method to get an
 L<Email::MIME> object:
 
-  my $mail_message_object = read_message();
   my $abstract = Email::Abstract->new($mail_message_object);
   my $email_mime_object = $abstract->cast('Email::MIME');
 
