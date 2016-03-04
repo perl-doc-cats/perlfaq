@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  * update info on Perl 6
   * fix LICENSE address and update prereq for its content
   * excluded README.pod from the shipped tarball distribution
 
