@@ -319,13 +319,7 @@ be able to use this.
 =item L<Email::Sender::Transport::SMTP>
 
 This transport contacts a remote SMTP server over TCP. It optionally
-uses SSL and can authenticate to the server via SASL.
-
-=item L<Email::Sender::Transport::SMTP::TLS>
-
-This is like the SMTP transport, but uses TLS security. You can
-authenticate with this module as well, using any mechanisms your server
-supports after STARTTLS.
+uses TLS or SSL and can authenticate to the server via SASL.
 
 =back
 
