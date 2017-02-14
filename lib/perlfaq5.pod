@@ -622,6 +622,25 @@ related to whether they're strings, typeglobs, objects, or anything else.
 It's the syntax of the fundamental operators. Playing the object
 game doesn't help you at all here.
 
+=head2 How can I open a filehandle to a string?
+X<string> X<open> X<IO::String> X<filehandle>
+
+(contributed by Peter J. Holzer, hjp-usenet2@hjp.at)
+
+Since Perl 5.8.0 a file handle referring to a string can be created by
+calling open with a reference to that string instead of the filename.
+This file handle can then be used to read from or write to the string:
+
+    open(my $fh, '>', \$string) or die "Could not open string for writing";
+    print $fh "foo\n";
+    print $fh "bar\n";    # $string now contains "foo\nbar\n"
+
+    open(my $fh, '<', \$string) or die "Could not open string for reading";
+    my $x = <$fh>;    # $x now contains "foo\n"
+
+With older versions of Perl, the L<IO::String> module provides similar
+functionality.
+
 =head2 How can I set up a footer format to be used with write()?
 X<footer>
 
@@ -679,25 +698,6 @@ There are also some tricks that you can play with C<formline> and the
 accumulator variable C<$^A>, but you lose a lot of the value of formats
 since C<formline> won't handle paging and so on. You end up reimplementing
 formats when you use them.
-
-=head2 How can I open a filehandle to a string?
-X<string> X<open> X<IO::String> X<filehandle>
-
-(contributed by Peter J. Holzer, hjp-usenet2@hjp.at)
-
-Since Perl 5.8.0 a file handle referring to a string can be created by
-calling open with a reference to that string instead of the filename.
-This file handle can then be used to read from or write to the string:
-
-    open(my $fh, '>', \$string) or die "Could not open string for writing";
-    print $fh "foo\n";
-    print $fh "bar\n";    # $string now contains "foo\nbar\n"
-
-    open(my $fh, '<', \$string) or die "Could not open string for reading";
-    my $x = <$fh>;    # $x now contains "foo\n"
-
-With older versions of Perl, the L<IO::String> module provides similar
-functionality.
 
 =head2 How can I output my numbers with commas added?
 X<number, commify>
