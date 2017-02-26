@@ -38,7 +38,6 @@ are a group of highly altruistic individuals committed to
 producing better software for free than you could hope to purchase for
 money. You may snoop on pending developments via the
 L<archives|http://www.nntp.perl.org/group/perl.perl5.porters/>
-or read the L<faq|http://dev.perl.org/perl5/docs/p5p-faq.html>,
 or you can subscribe to the mailing list by sending
 perl5-porters-subscribe@perl.org a subscription request
 (an empty message with no subject is fine).
