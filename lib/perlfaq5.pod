@@ -846,7 +846,7 @@ To get around this, either upgrade to Perl v5.6.0 or later, do the glob
 yourself with readdir() and patterns, or use a module like L<File::Glob>,
 one that doesn't use the shell to do globbing.
 
-=head2 How can I open a file with a leading ">" or trailing blanks?
+=head2 How can I open a file named with a leading ">" or trailing blanks?
 X<filename, special characters>
 
 (contributed by Brian McCauley)
