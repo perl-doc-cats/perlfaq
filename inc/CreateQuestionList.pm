@@ -12,7 +12,7 @@ Used to create the list in perlfaq.pod
 
 use strict;
 use warnings;
-package inc::CreateQuestionList;
+package CreateQuestionList;
 
 use Moose;
 with
