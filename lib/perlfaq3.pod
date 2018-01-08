@@ -493,7 +493,7 @@ L<http://www.vim.org/>
 
 =item Vile
 
-L<http://dickey.his.com/vile/vile.html>
+L<http://invisible-island.net/vile/vile.html>
 
 =back
 
