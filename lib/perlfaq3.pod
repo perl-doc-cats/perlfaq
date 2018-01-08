@@ -296,8 +296,8 @@ L<http://www.ddj.com/184404522> , and "Profiling in Perl"
 L<http://www.ddj.com/184404580> .
 
 Perl.com has two interesting articles on profiling: "Profiling Perl",
-by Simon Cozens, L<http://www.perl.com/lpt/a/850> and "Debugging and
-Profiling mod_perl Applications", by Frank Wiles,
+by Simon Cozens, L<https://www.perl.com/pub/2004/06/25/profiling.html/>
+and "Debugging and Profiling mod_perl Applications", by Frank Wiles,
 L<http://www.perl.com/pub/a/2006/02/09/debug_mod_perl.html> .
 
 Randal L. Schwartz writes about profiling in "Speeding up Your Perl
