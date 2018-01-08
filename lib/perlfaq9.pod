@@ -129,8 +129,8 @@ the form using the C<www_form_urlencode> method from L<HTTP::Tiny>:
 
     my $ua = HTTP::Tiny->new;
 
-    my $query = $ua->www_form_urlencode([ module => 'DB_File', readme => 1 ]);
-    my $url = "http://www.perl.com/cgi-bin/cpan_mod?$query";
+    my $query = $ua->www_form_urlencode([ q => 'DB_File', lucky => 1 ]);
+    my $url = "https://metacpan.org/search?$query";
     my $content = $ua->get($url)->{content};
 
 If you're using the POST method, the C<post_form> method will encode the
@@ -140,8 +140,8 @@ content appropriately.
 
     my $ua = HTTP::Tiny->new;
 
-    my $url = 'http://www.perl.com/cgi-bin/cpan_mod';
-    my $form = [ module => 'DB_File', readme => 1 ];
+    my $url = 'https://metacpan.org/search';
+    my $form = [ q => 'DB_File', lucky => 1 ];
     my $content = $ua->post_form($url, $form)->{content};
 
 =head2 How do I decode or create those %-encodings on the web?
