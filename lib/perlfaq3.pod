@@ -336,7 +336,7 @@ Put that in your F<.exrc> file (replacing the caret characters
 with control characters) and away you go. In insert mode, ^T is
 for indenting, ^D is for undenting, and ^O is for blockdenting--as
 it were. A more complete example, with comments, can be found at
-L<http://www.cpan.org/authors/id/TOMC/scripts/toms.exrc.gz>
+L<http://www.cpan.org/authors/id/T/TO/TOMC/scripts/toms.exrc.gz>
 
 =head2 Is there an IDE or Windows Perl Editor?
 
@@ -554,7 +554,7 @@ are text editors for OS X that have a Perl sensitivity mode
 =head2 Where can I get Perl macros for vi?
 
 For a complete version of Tom Christiansen's vi configuration file,
-see L<http://www.cpan.org/authors/Tom_Christiansen/scripts/toms.exrc.gz> ,
+see L<http://www.cpan.org/authors/id/T/TO/TOMC/scripts/toms.exrc.gz> ,
 the standard benchmark file for vi emulators. The file runs best with nvi,
 the current version of vi out of Berkeley, which incidentally can be built
 with an embedded Perl interpreter--see L<http://www.cpan.org/src/misc/> .
@@ -577,7 +577,7 @@ For CPerlMode, see L<http://www.emacswiki.org/cgi-bin/wiki/CPerlMode>
 
 The Curses module from CPAN provides a dynamically loadable object
 module interface to a curses library. A small demo can be found at the
-directory L<http://www.cpan.org/authors/Tom_Christiansen/scripts/rep.gz> ;
+directory L<http://www.cpan.org/authors/id/T/TO/TOMC/scripts/rep.gz> ;
 this program repeats a command and updates the screen as needed, rendering
 B<rep ps axu> similar to B<top>.
 
