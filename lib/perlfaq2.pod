@@ -81,8 +81,7 @@ contains tens of thousands of modules and extensions, source code
 and documentation, designed for I<everything> from commercial
 database interfaces to keyboard/screen control and running large web sites.
 
-You can search CPAN on L<http://metacpan.org> or
-L<http://search.cpan.org/>.
+You can search CPAN on L<http://metacpan.org>.
 
 The master web site for CPAN is L<http://www.cpan.org/>,
 L<http://www.cpan.org/SITES.html> lists all mirrors.

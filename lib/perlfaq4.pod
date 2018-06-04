@@ -2660,7 +2660,7 @@ The arrays.h/arrays.c code in the L<PGPLOT> module on CPAN does just this.
 If you're doing a lot of float or double processing, consider using
 the L<PDL> module from CPAN instead--it makes number-crunching easy.
 
-See L<http://search.cpan.org/dist/PGPLOT> for the code.
+See L<https://metacpan.org/release/PGPLOT> for the code.
 
 
 =head1 AUTHOR AND COPYRIGHT
