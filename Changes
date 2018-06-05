@@ -1,4 +1,6 @@
-Revision history for perlfaq
+Revision history for {{$dist->name}}
+
+{{$NEXT}}
 
 5.20180605  2018-06-05 05:02:49Z
   * changed distribution $VERSION format, to 5.YYYYmmdd
