@@ -1,6 +1,11 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  * changed distribution $VERSION format, to 5.YYYYmmdd
+  * updated guidance on SMTP over TLS (thanks, Michiel Beijen!)
+  * removed defunct documentation links (thanks, J.Maslak!)
+  * more details added to perlfaq1/Which version of Perl should I use?
+    (thanks, J.Maslak!)
 
 5.021011    2016-03-04 20:04:08Z
   * update info on Perl 6
