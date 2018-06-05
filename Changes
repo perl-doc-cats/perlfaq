@@ -6,6 +6,11 @@ Revision history for {{$dist->name}}
   * removed defunct documentation links (thanks, J.Maslak!)
   * more details added to perlfaq1/Which version of Perl should I use?
     (thanks, J.Maslak!)
+  * fixed the rounding sample code in perlfaq4 to properly demonstrate
+    half-way-point alternation, rather than floating point errors (thanks,
+    Denilson Sá Maia!)
+  * we no longer recommend given/when in perlfaq7 (thanks, Tom Molesworth!)
+  * change search.cpan.org links to metacpan.org (thanks, Leo Lapworth!)
 
 5.021011    2016-03-04 20:04:08Z
   * update info on Perl 6
