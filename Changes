@@ -1,6 +1,6 @@
-Revision history for {{$dist->name}}
+Revision history for perlfaq
 
-{{$NEXT}}
+5.20180605  2018-06-05 05:02:49Z
   * changed distribution $VERSION format, to 5.YYYYmmdd
   * updated guidance on SMTP over TLS (thanks, Michiel Beijen!)
   * removed defunct documentation links (thanks, J.Maslak!)
