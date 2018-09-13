@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  * updated references to web frameworks in perlfaq9 (thanks, Dan Book!)
 
 5.20180605  2018-06-05 05:02:49Z
   * changed distribution $VERSION format, to 5.YYYYmmdd
