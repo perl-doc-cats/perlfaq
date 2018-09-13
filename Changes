@@ -1,6 +1,6 @@
-Revision history for {{$dist->name}}
+Revision history for perlfaq
 
-{{$NEXT}}
+5.20180913  2018-09-13 04:33:27Z
   * updated references to web frameworks in perlfaq9 (thanks, Dan Book!)
 
 5.20180605  2018-06-05 05:02:49Z
