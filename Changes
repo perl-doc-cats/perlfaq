@@ -1,6 +1,6 @@
-Revision history for {{$dist->name}}
+Revision history for perlfaq
 
-{{$NEXT}}
+5.20180915  2018-09-15 22:28:25Z
   * use '.' in paths in example 'require' clauses, as . is no longer
     guaranteed to be in @INC
 
