@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  * use '.' in paths in example 'require' clauses, as . is no longer
+    guaranteed to be in @INC
 
 5.20180913  2018-09-13 04:33:27Z
   * updated references to web frameworks in perlfaq9 (thanks, Dan Book!)
