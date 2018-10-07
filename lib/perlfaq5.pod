@@ -797,7 +797,7 @@ To open file for writing, create new file, file must not exist:
 
 To open file for appending, create if necessary:
 
-    open my $fh, '>>' $path                               or die $!;
+    open my $fh, '>>', $path                              or die $!;
     sysopen my $fh, $path, O_WRONLY|O_APPEND|O_CREAT      or die $!;
     sysopen my $fh, $path, O_WRONLY|O_APPEND|O_CREAT, 0666 or die $!;
 
