@@ -1537,7 +1537,7 @@ a similar interface, but does the traversal for you too:
 (contributed by brian d foy)
 
 If you have an empty directory, you can use Perl's built-in C<rmdir>.
-If the directory is not empty (so, no files or subdirectories), you
+If the directory is not empty (so, with files or subdirectories), you
 either have to empty it yourself (a lot of work) or use a module to
 help you.
 
