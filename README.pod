@@ -1,0 +1,20 @@
+=encoding utf8
+
+=head1 Sources of the Perl FAQ (Frequently Asked Questions)
+
+This repository contains the sources of the perlfaq as maintained by
+perl-doc-cats on GitHub. For more information, see:
+
+=over 4
+
+=item * L<http://perldoc.perl.org/perlfaq.html>
+
+=item * L<https://github.com/perl-doc-cats/perlfaq>
+
+=back
+
+=head1 LICENSE
+
+See the file C<LICENSE> for licensing information.
+
+=cut
