@@ -114,7 +114,7 @@ be mangled by many mailers):
     $/ = '';          # read in whole paragraph, not just one line
     while ( <> ) {
         while ( /^From /gm ) { # /m makes ^ match next to \n
-        print "leading from in paragraph $.\n";
+        print "leading From in paragraph $.\n";
         }
     }
 
