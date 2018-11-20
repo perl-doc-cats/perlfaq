@@ -772,26 +772,26 @@ boundary before the "P" and after the "l". As long as something other
 than a word character precedes the "P" and succeeds the "l", the
 pattern will match. These strings match /\bPerl\b/.
 
-    "Perl"    # no word char before P or after l
+    "Perl"    # no word char before "P" or after "l"
     "Perl "   # same as previous (space is not a word char)
-    "'Perl'"  # the ' char is not a word char
-    "Perl's"  # no word char before P, non-word char after "l"
+    "'Perl'"  # the "'" char is not a word char
+    "Perl's"  # no word char before "P", non-word char after "l"
 
 These strings do not match /\bPerl\b/.
 
-    "Perl_"   # _ is a word char!
-    "Perler"  # no word char before P, but one after l
+    "Perl_"   # "_" is a word char!
+    "Perler"  # no word char before "P", but one after "l"
 
 You don't have to use \b to match words though. You can look for
 non-word characters surrounded by word characters. These strings
 match the pattern /\b'\b/.
 
-    "don't"   # the ' char is surrounded by "n" and "t"
-    "qep'a'"  # the ' char is surrounded by "p" and "a"
+    "don't"   # the "'" char is surrounded by "n" and "t"
+    "qep'a'"  # the "'" char is surrounded by "p" and "a"
 
 These strings do not match /\b'\b/.
 
-    "foo'"    # there is no word char after non-word '
+    "foo'"    # there is no word char after non-word "'"
 
 You can also use the complement of \b, \B, to specify that there
 should not be a word boundary.
