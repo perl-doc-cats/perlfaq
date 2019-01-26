@@ -1240,6 +1240,10 @@ indentation correctly preserved:
         --Bilbo in /usr/src/perl/pp_ctl.c
     EVER_ON_AND_ON
 
+Beginning with Perl version 5.26, a much simpler and cleaner way to
+write indented here documents has been added to the language: the
+tilde (~) modifier. See L<perlop/"Indented Here-docs"> for details.
+
 =head1 Data: Arrays
 
 =head2 What is the difference between a list and an array?
