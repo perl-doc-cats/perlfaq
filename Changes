@@ -1,7 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
-  * Fix a missing comma in an open example (thanks, Joaquin Ferrero!)
+  * Many typos and pod markup fixed (PR#75, #76) thanks, Joaquin Ferrero!)
 
 5.20180915  2018-09-15 22:28:25Z
   * use '.' in paths in example 'require' clauses, as . is no longer
