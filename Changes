@@ -1,4 +1,6 @@
-Revision history for perlfaq
+Revision history for {{$dist->name}}
+
+{{$NEXT}}
 
 5.20190126  2019-01-26 04:39:37Z
   * Many typos and pod markup fixed (PR#75, #76) thanks, Joaquin Ferrero!)
