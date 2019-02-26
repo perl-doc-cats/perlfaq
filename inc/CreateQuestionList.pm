@@ -12,7 +12,7 @@ Used to create the list in perlfaq.pod
 
 use strict;
 use warnings;
-package CreateQuestionList;
+package inc::CreateQuestionList;
 
 use Moose;
 with
@@ -41,7 +41,7 @@ sub gather_files {
 sub munge_files {
     my $self = shift;
 
-    my ($file) = grep { $_->name eq 'lib/perlfaq.pod' } @{$self->zilla->files};
+    my ($file) = grep $_->name eq 'lib/perlfaq.pod', @{$self->zilla->files};
 
     my $encoded_content;
     open my $fh, sprintf('>:encoding(%s)', $file->encoding), \$encoded_content
@@ -148,7 +148,7 @@ sub fetch_text {
     # Wrap CSTART/CEND and recurse down if needed
     my $str
         = $start
-        . ( join ' ', map { ref($_) ? fetch_text($_) : $_ } @nodes )
+        . ( join ' ', map ref($_) ? fetch_text($_) : $_, @nodes )
         . $end;
     $str =~ s/\s{2,}/ /g;    # Remove extra spaces
     $str =~ s/\s+$//;        # Remove trailing white spaces
