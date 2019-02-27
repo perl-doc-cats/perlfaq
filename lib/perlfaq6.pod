@@ -901,7 +901,7 @@ C<44>.
 
     print "Found $1 after while" if m/(\d\d)/g; # finds "44"
 
-Typically you use the C<\G> anchor with the C<c> modifier
+Typically you use the C<\G> anchor with the C<c> flag
 when you want to try a different match if one fails,
 such as in a tokenizer. Jeffrey Friedl offers this example
 which works in 5.004 or later.
@@ -920,7 +920,7 @@ For each line, the C<PARSER> loop first tries to match a series
 of digits followed by a word boundary. This match has to
 start at the place the last match left off (or the beginning
 of the string on the first match). Since C<m/ \G( \d+\b
-)/gcx> uses the C<c> modifier, if the string does not match that
+)/gcx> uses the C<c> flag, if the string does not match that
 regular expression, perl does not reset pos() and the next
 match starts at the same position to try a different
 pattern.
