@@ -251,7 +251,7 @@ illustrative:
 (This question has nothing to do with the web. See a different
 FAQ for that.)
 
-There's an example of this in L<perlfunc/crypt>. First, you put the
+There's an example of this in L<perlfunc/crypt>). First, you put the
 terminal into "no echo" mode, then just read the password normally.
 You may do this with an old-style C<ioctl()> function, POSIX terminal
 control (see L<POSIX> or its documentation the Camel Book), or a call
