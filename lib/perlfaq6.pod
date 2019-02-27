@@ -348,7 +348,7 @@ To escape the special meaning of C<.>, we use C<\Q>:
     $string =~ s/\Q$regex/Polyp/;
     # $string is now "Placido Polyp Octopus"
 
-The use of C<\Q> causes the C<.> in the regex to be treated as a
+The use of C<\Q> causes the <.> in the regex to be treated as a
 regular character, so that C<P.> matches a C<P> followed by a dot.
 
 =head2 What is C</o> really for?
