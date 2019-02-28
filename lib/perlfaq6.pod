@@ -842,7 +842,7 @@ string where the last match left off. The regular
 expression engine cannot skip over any characters to find
 the next match with this anchor, so C<\G> is similar to the
 beginning of string anchor, C<^>. The C<\G> anchor is typically
-used with the C<g> flag. It uses the value of C<pos()>
+used with the C<g> modifier. It uses the value of C<pos()>
 as the position to start the next match. As the match
 operator makes successive matches, it updates C<pos()> with the
 position of the next character past the last match (or the
@@ -852,7 +852,7 @@ to look at it). Each string has its own C<pos()> value.
 Suppose you want to match all of consecutive pairs of digits
 in a string like "1122a44" and stop matching when you
 encounter non-digits. You want to match C<11> and C<22> but
-the letter <a> shows up between C<22> and C<44> and you want
+the letter C<a> shows up between C<22> and C<44> and you want
 to stop at C<a>. Simply matching pairs of digits skips over
 the C<a> and still matches C<44>.
 
@@ -869,7 +869,7 @@ found.
     my @pairs = m/\G(\d\d)/g; # qw( 11 22 )
 
 You can also use the C<\G> anchor in scalar context. You
-still need the C<g> flag.
+still need the C<g> modifier.
 
     $_ = "1122a44";
     while( m/\G(\d\d)/g ) {
@@ -886,7 +886,7 @@ and the next match on the same string starts at the beginning.
 
     print "Found $1 after while" if m/(\d\d)/g; # finds "11"
 
-You can disable C<pos()> resets on fail with the C<c> flag, documented
+You can disable C<pos()> resets on fail with the C<c> modifier, documented
 in L<perlop> and L<perlreref>. Subsequent matches start where the last
 successful match ended (the value of C<pos()>) even if a match on the
 same string has failed in the meantime. In this case, the match after
