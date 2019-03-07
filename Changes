@@ -3,7 +3,7 @@ Revision history for perlfaq
 {{$NEXT}}
 
 5.20190126  2019-01-26 04:39:37Z
-  * Many typos and pod markup fixed (PR#75, #76) thanks, Joaquin Ferrero!)
+  * Many typos and pod markup fixed (PR#75, #76; thanks, Joaquin Ferrero!)
   * Added reference in perlfaq to new ~ syntax in indented here-docs (PR#77,
     thanks Celejar!)
 
