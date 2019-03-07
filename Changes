@@ -1,6 +1,7 @@
 Revision history for perlfaq
 
 {{$NEXT}}
+  * fix bad pod markup in perlfaq8 (PR #78; thanks, Joaquín Ferrero!)
 
 5.20190126  2019-01-26 04:39:37Z
   * Many typos and pod markup fixed (PR#75, #76; thanks, Joaquin Ferrero!)
