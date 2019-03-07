@@ -1319,7 +1319,7 @@ settings. See the L<ExtUtils::Makemaker> documentation for more details.
 (contributed by brian d foy)
 
 If you know the directory already, you can add it to C<@INC> as you would
-for any other directory. You might <use lib> if you know the directory
+for any other directory. You might C<use lib> if you know the directory
 at compile time:
 
     use lib $directory;
