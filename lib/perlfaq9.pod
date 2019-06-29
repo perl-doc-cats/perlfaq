@@ -91,7 +91,8 @@ L<HTML::LinkExtor> or L<HTML::Parser>. You might even use
 L<HTML::SimpleLinkExtor> as an example for something specifically
 suited to your needs.
 
-You can use L<URI::Find> to extract URLs from an arbitrary text document.
+You can use L<URI::Find> or L<URL::Search> to extract URLs from an
+arbitrary text document.
 
 =head2 How do I fetch an HTML file?
 
