@@ -283,26 +283,18 @@ your policy says it is. You really are best off asking the user.
 
 =head2 How do I send email?
 
-Use the L<Email::MIME> and L<Email::Sender::Simple> modules, like so:
+Use the L<Email::Stuffer> module, like so:
 
   # first, create your message
-  my $message = Email::MIME->create(
-    header_str => [
-      From    => 'you@example.com',
-      To      => 'friend@example.com',
-      Subject => 'Happy birthday!',
-    ],
-    attributes => {
-      encoding => 'quoted-printable',
-      charset  => 'utf-8',
-    },
-    body_str => "Happy birthday to you!\n",
-  );
+  my $message = Email::Stuffer->from('you@example.com')
+                              ->to('friend@example.com')
+                              ->subject('Happy birthday!')
+                              ->text_body("Happy birthday to you!\n");
 
-  use Email::Sender::Simple qw(sendmail);
-  sendmail($message);
+  $message->send_or_die;
 
-By default, L<Email::Sender::Simple> will try `sendmail` first, if it exists
+By default, L<Email::Sender::Simple> (the C<send> and C<send_or_die> methods
+use this under the hood) will try C<sendmail> first, if it exists
 in your $PATH. This generally isn't the case. If there's a remote mail
 server you use to send mail, consider investigating one of the Transport
 classes. At time of writing, the available transports include:
@@ -322,14 +314,9 @@ uses TLS or SSL and can authenticate to the server via SASL.
 
 =back
 
-Telling L<Email::Sender::Simple> to use your transport is straightforward.
+Telling L<Email::Stuffer> to use your transport is straightforward.
 
-  sendmail(
-    $message,
-    {
-      transport => $email_sender_transport_object,
-    }
-  );
+  $message->transport($email_sender_transport_object)->send_or_die;
 
 =head2 How do I use MIME to make an attachment to a mail message?
 
@@ -337,6 +324,15 @@ L<Email::MIME> directly supports multipart messages. L<Email::MIME>
 objects themselves are parts and can be attached to other L<Email::MIME>
 objects. Consult the L<Email::MIME> documentation for more information,
 including all of the supported methods and examples of their use.
+
+L<Email::Stuffer> uses L<Email::MIME> under the hood to construct
+messages, and wraps the most common attachment tasks with the simple
+C<attach> and C<attach_file> methods.
+
+  Email::Stuffer->to('friend@example.com')
+                ->subject('The file')
+                ->attach_file('stuff.csv')
+                ->send_or_die;
 
 =head2 How do I read email?
 
