@@ -97,23 +97,23 @@ You can use L<URI::Find> to extract URLs from an arbitrary text document.
 
 (contributed by brian d foy)
 
-Use the libwww-perl distribution. The L<LWP::Simple> module can fetch web
-resources and give their content back to you as a string:
+The core L<HTTP::Tiny> module can fetch web resources and give their
+content back to you as a string:
 
-    use LWP::Simple qw(get);
+    use HTTP::Tiny;
 
-    my $html = get( "http://www.example.com/index.html" );
+    my $ua = HTTP::Tiny->new;
+    my $html = $ua->get( "http://www.example.com/index.html" )->{content};
 
 It can also store the resource directly in a file:
 
-    use LWP::Simple qw(getstore);
+    $ua->mirror( "http://www.example.com/index.html", "foo.html" );
 
-    getstore( "http://www.example.com/index.html", "foo.html" );
-
-If you need to do something more complicated, you can use
-L<LWP::UserAgent> module to create your own user-agent (e.g. browser)
-to get the job done. If you want to simulate an interactive web
-browser, you can use the L<WWW::Mechanize> module.
+If you need to do something more complicated, the L<HTTP::Tiny> object can
+be customized by setting attributes, or you can use L<LWP::UserAgent> from
+the libwww-perl distribution or L<Mojo::UserAgent> from the Mojolicious
+distribution to make common tasks easier. If you want to simulate an
+interactive web browser, you can use the L<WWW::Mechanize> module.
 
 =head2 How do I automate an HTML form submission?
 
@@ -122,25 +122,26 @@ and forms or a web site, you can use L<WWW::Mechanize>. See its
 documentation for all the details.
 
 If you're submitting values using the GET method, create a URL and encode
-the form using the C<query_form> method:
+the form using the C<www_form_urlencode> method from L<HTTP::Tiny>:
 
-    use LWP::Simple;
-    use URI::URL;
+    use HTTP::Tiny;
 
-    my $url = url('L<http://www.perl.com/cgi-bin/cpan_mod')>;
-    $url->query_form(module => 'DB_File', readme => 1);
-    $content = get($url);
+    my $ua = HTTP::Tiny->new;
 
-If you're using the POST method, create your own user agent and encode
-the content appropriately.
+    my $query = $ua->www_form_urlencode([ module => 'DB_File', readme => 1 ]);
+    my $url = "http://www.perl.com/cgi-bin/cpan_mod?$query";
+    my $content = $ua->get($url)->{content};
 
-    use HTTP::Request::Common qw(POST);
-    use LWP::UserAgent;
+If you're using the POST method, the C<post_form> method will encode the
+content appropriately.
 
-    my $ua = LWP::UserAgent->new();
-    my $req = POST 'L<http://www.perl.com/cgi-bin/cpan_mod'>,
-                   [ module => 'DB_File', readme => 1 ];
-    my $content = $ua->request($req)->as_string;
+    use HTTP::Tiny;
+
+    my $ua = HTTP::Tiny->new;
+
+    my $url = 'http://www.perl.com/cgi-bin/cpan_mod';
+    my $form = [ module => 'DB_File', readme => 1 ];
+    my $content = $ua->post_form($url, $form)->{content};
 
 =head2 How do I decode or create those %-encodings on the web?
 X<URI> X<URI::Escape> X<RFC 2396>
