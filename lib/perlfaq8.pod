@@ -1396,10 +1396,6 @@ environment variables, run-time switches, and in-code statements:
 
 =back
 
-The last is particularly useful because it knows about machine-dependent
-architectures. The C<lib.pm> pragmatic module was first
-included with the 5.002 release of Perl.
-
 =head2 Where are modules installed?
 
 Modules are installed on a case-by-case basis (as provided by the methods
