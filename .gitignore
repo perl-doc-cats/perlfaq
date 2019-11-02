@@ -1,4 +1,6 @@
 /.ackrc
+/.build/
 !/.gitignore
+/.latest
 /perlfaq-*/
 /perlfaq-*.tar.gz
