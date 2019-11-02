@@ -1,6 +1,6 @@
 Revision history for perlfaq
 
-{{$NEXT}}
+5.20191102  2019-11-02 05:34:43Z
   * fix bad pod markup in perlfaq8 (PR #78; thanks, Joaquín Ferrero!)
   * remove stale section about lib.pm (PR #82, Dan Book)
   * update perlfaq9 to reference Email::Stuffer (PR #79, Dan Book)
