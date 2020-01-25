@@ -1,6 +1,6 @@
 Revision history for perlfaq
 
-{{$NEXT}}
+5.20200125  2020-01-25 19:11:04Z
   * remove references to smartmatch in perlfaq4; replace use of
     List::Util::first with any (PR#85, Dan Book)
   * add links to plackperl.org (#66)
