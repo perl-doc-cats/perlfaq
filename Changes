@@ -3,6 +3,7 @@ Revision history for perlfaq
 {{$NEXT}}
   * remove references to smartmatch in perlfaq4; replace use of
     List::Util::first with any (PR#85, Dan Book)
+  * add links to plackperl.org (#66)
 
 5.20191102  2019-11-02 05:34:43Z
   * fix bad pod markup in perlfaq8 (PR #78; thanks, Joaquín Ferrero!)
