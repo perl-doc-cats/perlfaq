@@ -1,5 +1,7 @@
 Revision history for perlfaq
 
+{{$NEXT}}
+
 5.20200523  2020-05-22 03:28:54Z
   * switch perlbug references to GitHub issue tracker (PR##87, Dan Book)
 
