@@ -3,10 +3,10 @@ Revision history for perlfaq
 {{$NEXT}}
 
 5.20200523  2020-05-22 03:28:54Z
-  * switch perlbug references to GitHub issue tracker (PR##87, Dan Book)
+  * switch perlbug references to GitHub issue tracker (PR#87, Dan Book)
 
 5.20200522  2020-05-22 02:24:31Z
-  * updated perlfaq1 entry on Raku (PR##86, Dan Book)
+  * updated perlfaq1 entry on Raku (PR#86, Dan Book)
 
 5.20200125  2020-01-25 19:11:04Z
   * remove references to smartmatch in perlfaq4; replace use of
