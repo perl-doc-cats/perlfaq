@@ -134,7 +134,7 @@ The current major release of Perl is Perl 5, first released in
 1994. It can run scripts from the previous major release, Perl 4
 (March 1991), but has significant differences.
 
-Raku is a reinvention of Perl, it is a language in the same lineage but
+Raku is a reinvention of Perl, a language in the same lineage but
 not compatible. The two are complementary, not mutually exclusive. Raku is
 not meant to replace Perl, and vice versa. See L</"What is Raku (Perl 6)?">
 below to find out more.
