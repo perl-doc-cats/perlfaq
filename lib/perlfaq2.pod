@@ -226,7 +226,7 @@ wanted to report a bug in L<Business::ISBN>, you could send a message to
 bug-Business-ISBN@rt.cpan.org .
 
 Some modules might have special reporting requirements, such as a
-Github or Google Code tracking system, so you should check the
+GitHub or Google Code tracking system, so you should check the
 module documentation too.
 
 =head1 AUTHOR AND COPYRIGHT
