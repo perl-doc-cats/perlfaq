@@ -4,6 +4,8 @@ Revision history for perlfaq
   * typo fix (PR#90, Samanta Navarro)
   * fix learn.perl.org link, which now directs to perldoc.perl.org (PR#91, Dan
     Book)
+  * modern updates to "How do I efficiently match many regular expressions"
+    (PR#92, Dan Book)
 
 5.20200523  2020-05-22 03:28:54Z
   * switch perlbug references to GitHub issue tracker (PR#87, Dan Book)
