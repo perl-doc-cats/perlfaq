@@ -1,5 +1,7 @@
 Revision history for perlfaq
 
+{{$NEXT}}
+
 5.20201107  2020-11-07 21:02:39Z
   * typo fix (PR#90, Samanta Navarro)
   * fix learn.perl.org link, which now directs to perldoc.perl.org (PR#91, Dan
