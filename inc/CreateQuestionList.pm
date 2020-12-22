@@ -12,7 +12,8 @@ Used to create the list in perlfaq.pod
 
 use strict;
 use warnings;
-package inc::CreateQuestionList;
+package # hide from PAUSE
+  inc::CreateQuestionList;
 
 use Moose;
 with
