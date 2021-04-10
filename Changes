@@ -1,6 +1,7 @@
 Revision history for perlfaq
 
 {{$NEXT}}
+  * Add entry to faq4 for equivalent to ruby #{}, python fstring (John Karr)
 
 5.20201107  2020-11-07 21:02:39Z
   * typo fix (PR#90, Samanta Navarro)
