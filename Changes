@@ -1,6 +1,6 @@
 Revision history for perlfaq
 
-{{$NEXT}}
+5.20210411  2021-04-11 00:45:30Z
   * Add entry to faq4 for equivalent to ruby #{}, python fstring
     (PR#93, John Karr)
 
