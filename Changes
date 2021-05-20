@@ -1,6 +1,7 @@
 Revision history for perlfaq
 
 {{$NEXT}}
+  * faq5: remove suggestion to use read() for slurping (PR#96, Dan Book)
 
 5.20210411  2021-04-11 00:45:30Z
   * Add entry to faq4 for equivalent to ruby #{}, python fstring
