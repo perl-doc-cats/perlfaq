@@ -1,6 +1,6 @@
 Revision history for perlfaq
 
-{{$NEXT}}
+5.20210520  2021-05-20 04:16:03Z
   * faq5: remove suggestion to use read() for slurping (PR#96, Dan Book)
 
 5.20210411  2021-04-11 00:45:30Z
