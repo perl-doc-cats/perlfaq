@@ -734,6 +734,10 @@ It is easier to see with comments:
         \G\d{3}            # after the last group, get three digits
         (?=\d)             # but they have to have more digits after them.
     )/$1,/xg;
+    
+(Note: some in cultures digits are grouped in e.g., fours. So one should simply
+change 3 to 4 in all the examples above. (More complex grouping is beyond the
+scope of this FAQ.))
 
 =head2 How can I translate tildes (~) in a filename?
 X<tilde> X<tilde expansion>
