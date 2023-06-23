@@ -2213,9 +2213,9 @@ comparing the keys, we can compute a value with them and use that
 value as the comparison.
 
 For instance, to make our report order case-insensitive, we use
-C<lc> to lowercase the keys before comparing them:
+C<fc> to safely lowercase the keys before comparing them:
 
-    my @keys = sort { lc $a cmp lc $b } keys %hash;
+    my @keys = sort { fc($a) cmp fc($b) } keys %hash;
 
 Note: if the computation is expensive or the hash has many elements,
 you may want to look at the Schwartzian Transform to cache the
@@ -2233,7 +2233,7 @@ we can provide a secondary sort on the hash key.
     my @keys = sort {
         $hash{$a} <=> $hash{$b}
             or
-        "\L$a" cmp "\L$b"
+        fc($a) cmp fc($b)
     } keys %hash;
 
 =head2 How can I always keep my hash sorted?
