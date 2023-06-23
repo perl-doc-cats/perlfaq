@@ -2197,10 +2197,9 @@ such as C<each()>.
 (contributed by brian d foy)
 
 To sort a hash, start with the keys. In this example, we give the list of
-keys to the sort function which then compares them ASCIIbetically (which
-might be affected by your locale settings). The output list has the keys
-in ASCIIbetical order. Once we have the keys, we can go through them to
-create a report which lists the keys in ASCIIbetical order.
+keys to the sort function which then compares them strings. The output list 
+has the keys in string order. Once we have the keys, we can go through them to
+create a report which lists the keys in string order.
 
     my @keys = sort { $a cmp $b } keys %hash;
 
@@ -2215,7 +2214,13 @@ value as the comparison.
 For instance, to make our report order case-insensitive, we use
 C<fc> to safely lowercase the keys before comparing them:
 
+    use v5.16;
     my @keys = sort { fc($a) cmp fc($b) } keys %hash;
+
+Earlier versions of this answer used C<lc>, but that could give 
+unexpected results with some Unicode strings. See L<perlfunc/fc>
+for the details. The Unicode::UCD module does the same thing for
+earlier perls.
 
 Note: if the computation is expensive or the hash has many elements,
 you may want to look at the Schwartzian Transform to cache the
@@ -2230,6 +2235,7 @@ are ordered by their value.
 From there we can get more complex. If the hash values are the same,
 we can provide a secondary sort on the hash key.
 
+    use v5.16;
     my @keys = sort {
         $hash{$a} <=> $hash{$b}
             or
