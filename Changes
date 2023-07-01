@@ -1,6 +1,6 @@
 Revision history for perlfaq
 
-{{$NEXT}}
+5.20230701  2023-07-01 00:23:37Z
   * Fix Unicode code point range in glossary (Felipe Gasper, #98)
   * faq4: recommend fc() for string sorting, rather than lc() (brian d foy,
     #102)
