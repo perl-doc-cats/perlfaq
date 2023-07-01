@@ -1,6 +1,9 @@
 Revision history for perlfaq
 
 {{$NEXT}}
+  * Fix Unicode code point range in glossary (Felipe Gasper, #98)
+  * faq4: recommend fc() for string sorting, rather than lc() (brian d foy,
+    #102)
 
 5.20210520  2021-05-20 04:16:03Z
   * faq5: remove suggestion to use read() for slurping (PR#96, Dan Book)
