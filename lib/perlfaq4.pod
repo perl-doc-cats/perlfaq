@@ -2199,7 +2199,7 @@ This is very similar to "How do I process an entire hash?", also in
 L<perlfaq4>, but a bit simpler in the common cases.
 
 You can use the C<keys()> built-in function in scalar context to find out
-have many entries you have in a hash:
+how many entries you have in a hash:
 
     my $key_count = keys %hash; # must be scalar context!
 
