@@ -226,16 +226,18 @@ install and use the L<Module::CoreList> module. It has the information
 about the modules (with their versions) included with each release
 of Perl.
 
-Every CPAN module has a bug tracker set up in RT, L<http://rt.cpan.org>.
-You can submit bugs to RT either through its web interface or by
-email. To email a bug report, send it to
-bug-E<lt>distribution-nameE<gt>@rt.cpan.org . For example, if you
-wanted to report a bug in L<Business::ISBN>, you could send a message to
-bug-Business-ISBN@rt.cpan.org .
+Many modules might note their reporting requirements, such as a GitHub
+or Google Code tracking system. MetaCPAN (L<https://metacpan.org>) will
+show the denoted bugtracker in the left sidebar of a module as the
+"Issues" link. You should check the module documentation too.
 
-Some modules might have special reporting requirements, such as a
-GitHub or Google Code tracking system, so you should check the
-module documentation too.
+Failing that, every CPAN module has a bug tracker set up in RT,
+L<http://rt.cpan.org>. You can submit bugs to RT either through its web
+interface or by email. To email a bug report, send it to I<<
+bug-E<lt>distribution-nameE<gt>@rt.cpan.org >>. For example, if you
+wanted to report a bug in the example module L<Foo::Bar>, you could send
+a message to I<bug-Foo-Bar@rt.cpan.org> .
+
 
 =head1 AUTHOR AND COPYRIGHT
 
