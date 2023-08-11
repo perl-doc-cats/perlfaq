@@ -277,7 +277,7 @@ Perl's C<&> bitwise operator works on both numbers and strings,
 sometimes producing surprising results when you expected a number
 but received a string. You probably expected perl to automatically
 convert the operands to numbers like the mathematical operators would.
-Instead, perl treats string operands as a bitvectors.
+Instead, perl treats string operands as bitvectors.
 
 Consider the bitwise difference between the number 3 and the bitvector
 represented by "3". A number has the bit pattern for its magnitude. The
@@ -305,7 +305,7 @@ Remember that a perl scalar can have both string and numeric values at
 the same time. A value that starts as a string and has never encountered
 a numeric operation has no numeric value yet. Perl does this to save
 time and work so it doesn't have to decide a numeric value for a scalar
-it might never use as a number. In that case, string sematics wins. But,
+it might never use as a number. In that case, string semantics wins. But,
 if there is a numeric value already, numeric semantics win. Force perl
 to compute the numeric value by adding 0:
 
