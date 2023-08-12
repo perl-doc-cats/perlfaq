@@ -2,6 +2,6 @@ use strict;
 use warnings;
 package perlfaq;
 
-our $VERSION = '5.20230702';
+our $VERSION = '5.20230813';
 
 1;
