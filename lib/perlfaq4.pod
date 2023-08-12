@@ -1361,8 +1361,8 @@ by a comma:
 Since you're assigning to a scalar, the righthand side is in scalar
 context. The comma operator (yes, it's an operator!) in scalar
 context evaluates its lefthand side, throws away the result, and
-evaluates it's righthand side and returns the result. In effect,
-that list-lookalike assigns to C<$scalar> it's rightmost value. Many
+evaluates its righthand side and returns the result. In effect,
+that list-lookalike assigns to C<$scalar> its rightmost value. Many
 people mess this up because they choose a list-lookalike whose
 last element is also the count they expect:
 
