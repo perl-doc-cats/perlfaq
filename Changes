@@ -1,6 +1,10 @@
 Revision history for perlfaq
 
 {{$NEXT}}
+  * some typo fixes to perlfaq4 (PR #103 and PR#104, brian d foy)
+  * some wording improvements to perlfaq4 for "Why doesn't & work the way I want it to?"
+    (PR#104, resolves issue #101, brian d foy)
+  * some updates to perlfaq2 for perl magazines (PR#105, brian d foy)
 
 5.20230701  2023-07-01 00:23:37Z
   * Fix Unicode code point range in glossary (Felipe Gasper, #98)
