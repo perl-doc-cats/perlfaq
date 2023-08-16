@@ -18,6 +18,9 @@ bin/check_links - verify the links in the perlfaq
 	# check a range with the min and max
 	perl bin/check_links 3 6
 
+	# see all the errors at the end
+	perl bin/check_links | sort
+
 =head1 DESCRIPTION
 
 This program extracts the links from all the perlfaq pages then tries
@@ -30,7 +33,12 @@ does not handle. Sometimes those chains lead to dead links, or even
 cycles.
 
 If the program cannot connect to a server, it reports a 500
-status.
+status. This does not mean the link is bad since this could be a local
+network hiccup.
+
+If there are any bad links (permanent redirects, or any 4xx or 5xx
+statuses), this program exits with a non-zero value. If no links are
+bad, it exits with 0.
 
 =head1 AUTHOR
 
@@ -54,10 +62,14 @@ $max //= $min;
 
 my $ua = Mojo::UserAgent->new;
 $ua->inactivity_timeout(10);
-# $ua->on(start => sub ($ua, $tx) { say "Getting " . $tx->req->url; });
-
 
 my $Checked = {};
+
+sub print_status ( $code, $section, $link, $redirect = undef ) {
+	printf "%3d  %8s  %s%s\n",  $code, $section, $link,
+		defined $redirect ? ' -> ' . $redirect : '';
+		;
+	}
 
 my @promises =
 	map {
@@ -67,15 +79,13 @@ my @promises =
 			$Checked->{$t->{link}}{code} = $tx->res->code;
 			$Checked->{$t->{link}}{count}++;
 			$Checked->{$t->{link}}{location} = $tx->res->headers->location;
-
-			printf "%3d  %8s  %s%s\n",
-				$tx->res->code, $t->{section}, $t->{link},
-				$tx->res->headers->location ? ' -> ' . $tx->res->headers->location : '';
-				;
+			print_status( $tx->res->code, $t->{section}, $t->{link}, $tx->res->headers->location )
 			};
 
 		my $error = sub ($err) {
-			printf "%3d  %8s  %s\n", 500, $t->{section}, $t->{link};
+			$Checked->{$t->{link}}{code} = 500;
+			$Checked->{$t->{link}}{count}++;
+			print_status( 500, $t->{section}, $t->{link}, undef )
 			};
 
 		my $promise = $ua->get_p( $t->{link} )->then(
@@ -95,4 +105,6 @@ my @promises =
 my $all = Mojo::Promise->all_settled( @promises );
 $all->wait;
 
-# say dumper( $Checked );
+my $Errors = () = grep { $_->{code} =~ m/30[18]|[45]\d\d/  } values $Checked->%*;
+
+exit( $Errors ? 1 : 0 );
