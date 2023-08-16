@@ -13,7 +13,7 @@ numbers, dates, strings, arrays, hashes, and miscellaneous data issues.
 
 For the long explanation, see David Goldberg's "What Every Computer
 Scientist Should Know About Floating-Point Arithmetic"
-(L<http://web.cse.msu.edu/~cse320/Documents/FloatingPoint.pdf>).
+(L<https://dl.acm.org/doi/pdf/10.1145/103162.103163>).
 
 Internally, your computer represents floating-point numbers in binary.
 Digital (as in powers of two) computers cannot store all numbers
@@ -378,7 +378,7 @@ will not create an intermediate list of 500,000 integers.
 
 =head2 How can I output Roman numerals?
 
-Get the L<http://www.cpan.org/modules/by-module/Roman> module.
+Get the L<https://metacpan.org/pod/Roman> module.
 
 =head2 Why aren't my random numbers random?
 
@@ -394,7 +394,7 @@ rather than more.
 Computers are good at being predictable and bad at being random
 (despite appearances caused by bugs in your programs :-). The
 F<random> article in the "Far More Than You Ever Wanted To Know"
-collection in L<http://www.cpan.org/misc/olddoc/FMTEYEWTK.tgz>, courtesy
+collection in L<https://www.cpan.org/misc/olddoc/FMTEYEWTK.tgz>, courtesy
 of Tom Phoenix, talks more about this. John von Neumann said, "Anyone
 who attempts to generate random numbers by deterministic means is, of
 course, living in a state of sin."
@@ -402,14 +402,14 @@ course, living in a state of sin."
 Perl relies on the underlying system for the implementation of
 C<rand> and C<srand>; on some systems, the generated numbers are
 not random enough (especially on Windows : see
-L<http://www.perlmonks.org/?node_id=803632>).
+L<https://www.perlmonks.org/?node_id=803632>).
 Several CPAN modules in the C<Math> namespace implement better
 pseudorandom generators; see for example
 L<Math::Random::MT> ("Mersenne Twister", fast), or
 L<Math::TrulyRandom> (uses the imperfections in the system's
 timer to generate random numbers, which is rather slow).
 More algorithms for random numbers are described in
-"Numerical Recipes in C" at L<http://www.nr.com/>
+"Numerical Recipes in C" at L<https://www.nr.com/>
 
 =head2 How do I get a random number between X and Y?
 
@@ -561,7 +561,7 @@ You can also do the same things with the L<DateTime> module:
 
 You can use the L<Time::JulianDay> module available on CPAN. Ensure
 that you really want to find a Julian day, though, as many people have
-different ideas about Julian days (see L<http://www.hermetic.ch/cal_stud/jdn.htm>
+different ideas about Julian days (see L<https://www.hermetic.ch/cal_stud/jdn.htm>
 for instance):
 
     $  perl -MTime::JulianDay -le 'print local_julian_day( time )'
@@ -1676,7 +1676,7 @@ reallocate less memory, or quickly insert elements in the middle of
 the chain.
 
 Steve Lembark goes through the details in his YAPC::NA 2009 talk "Perly
-Linked Lists" ( L<http://www.slideshare.net/lembark/perly-linked-lists> ),
+Linked Lists" ( L<https://www.slideshare.net/lembark/perly-linked-lists> ),
 although you can just use his L<LinkedList::Single> module.
 
 =head2 How do I handle circular lists?
@@ -1923,7 +1923,7 @@ This can be conveniently combined with precalculation of keys as given
 above.
 
 See the F<sort> article in the "Far More Than You Ever Wanted
-To Know" collection in L<http://www.cpan.org/misc/olddoc/FMTEYEWTK.tgz> for
+To Know" collection in L<https://www.cpan.org/misc/olddoc/FMTEYEWTK.tgz> for
 more about this approach.
 
 See also the question later in L<perlfaq4> on sorting hashes.
@@ -2720,7 +2720,7 @@ The arrays.h/arrays.c code in the L<PGPLOT> module on CPAN does just this.
 If you're doing a lot of float or double processing, consider using
 the L<PDL> module from CPAN instead--it makes number-crunching easy.
 
-See L<https://metacpan.org/release/PGPLOT> for the code.
+See L<https://metacpan.org/pod/PGPLOT> for the code.
 
 
 =head1 AUTHOR AND COPYRIGHT

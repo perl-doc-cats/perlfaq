@@ -1,0 +1,58 @@
+#!/usr/bin/perl
+use v5.36;
+use strict;
+use warnings;
+
+use File::Spec::Functions;
+use Mojo::Promise;
+use Mojo::UserAgent;
+use Mojo::Util qw(dumper);
+
+@ARGV = ( 1, 9 ) unless @ARGV;
+my( $min, $max ) = @ARGV;
+$max //= $min;
+
+my $ua = Mojo::UserAgent->new;
+# $ua->on(start => sub ($ua, $tx) { say "Getting " . $tx->req->url; });
+
+
+my $Checked = {};
+
+my @promises =
+	map {
+		my $t = $_;
+
+		my $success = sub ($tx) {
+			$Checked->{$t->{link}}{code} = $tx->res->code;
+			$Checked->{$t->{link}}{count}++;
+			$Checked->{$t->{link}}{location} = $tx->res->headers->location;
+
+			printf "%3d  %8s  %s%s\n",
+				$tx->res->code, $t->{section}, $t->{link},
+				$tx->res->headers->location ? ' -> ' . $tx->res->headers->location : '';
+				;
+			};
+
+		my $error = sub ($tx) {
+			$Checked->{$t->{link}} = $tx->res->code;
+			printf "ERROR: %8s  %3d  %s\n", $t->{section}, $tx->res->code, $t->{link};
+			};
+
+		my $promise = $ua->get_p( $t->{link} )->then(
+			$success,
+			$error,
+			);
+		}
+	map {
+		my $section = "perlfaq$_";
+		my $path = catfile( 'lib', "$section.pod" );
+		my $contents = Mojo::File->new( $path )->slurp;
+		my @links = $contents =~ m|L<(?:[^>]+?\|)?(https?://.+?)>|ig;
+		map { { section => $section, path => $path, link => $_ } } @links;
+		}
+	$min .. $max;
+
+my $all = Mojo::Promise->all_settled( @promises );
+$all->wait;
+
+# say dumper( $Checked );

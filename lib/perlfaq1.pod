@@ -37,7 +37,7 @@ The core development team (known as the Perl Porters)
 are a group of highly altruistic individuals committed to
 producing better software for free than you could hope to purchase for
 money. You may snoop on pending developments via the
-L<archives|http://www.nntp.perl.org/group/perl.perl5.porters/>
+L<archives|https://www.nntp.perl.org/group/perl.perl5.porters/>
 or you can subscribe to the mailing list by sending
 perl5-porters-subscribe@perl.org a subscription request
 (an empty message with no subject is fine).
@@ -114,7 +114,7 @@ minor release (i.e. perl5.25.x, where 25 is the minor release).
 
 =item *
 
-You can consult L<releases|http://dev.perl.org/perl5> to determine the
+You can consult L<releases|https://dev.perl.org/perl5/> to determine the
 current stable release of Perl.
 
 =back
@@ -177,7 +177,7 @@ backward compatibility.
 Recently, the plan has been to release a new version of Perl roughly every
 April, but getting the release right is more important than sticking rigidly to
 a calendar date, so the release date is somewhat flexible.  The historical
-release dates can be viewed at L<http://www.cpan.org/src/README.html>.
+release dates can be viewed at L<https://www.cpan.org/src/README.html>.
 
 Even numbered minor versions (5.14, 5.16, 5.18) are production versions, and
 odd numbered minor versions (5.15, 5.17, 5.19) are development versions. Unless
@@ -185,13 +185,13 @@ you want to try out an experimental feature, you probably never want to install
 a development version of Perl.
 
 The Perl development team are called Perl 5 Porters, and their
-organization is described at L<http://perldoc.perl.org/perlpolicy.html>.
+organization is described at L<https://perldoc.perl.org/perlpolicy>.
 The organizational rules really just boil down to one: Larry is always
 right, even when he was wrong.
 
 =head2 Is Perl difficult to learn?
 
-No, Perl is easy to start L<learning|http://learn.perl.org/> --and easy to keep learning. It looks
+No, Perl is easy to start L<learning|https://learn.perl.org/> --and easy to keep learning. It looks
 like most programming languages you're likely to have experience
 with, so if you've ever written a C program, an awk script, a shell
 script, or even a BASIC program, you're already partway there.
@@ -213,7 +213,7 @@ of programming experience, an understanding of regular expressions, and
 the ability to understand other people's code. If there's something you
 need to do, then it's probably already been done, and a working example is
 usually available for free. Don't forget Perl modules, either.
-They're discussed in Part 3 of this FAQ, along with L<CPAN|http://www.cpan.org/>, which is
+They're discussed in Part 3 of this FAQ, along with L<CPAN|https://www.cpan.org/>, which is
 discussed in Part 2.
 
 =head2 How does Perl compare with other languages like Java, Python, REXX, Scheme, or Tcl?
@@ -224,12 +224,12 @@ be used well or badly. Perl has many strengths, and a few weaknesses,
 precisely which areas are good and bad is often a personal choice.
 
 When choosing a language you should also be influenced by the
-L<resources|http://www.cpan.org/>, L<testing culture|http://www.cpantesters.org/>
-and L<community|http://www.perl.org/community.html> which surrounds it.
+L<resources|https://www.cpan.org/>, L<testing culture|http://www.cpantesters.org/>
+and L<community|https://www.perl.org/community.html> which surrounds it.
 
 For comparisons to a specific language it is often best to create
 a small project in both languages and compare the results, make sure
-to use all the L<resources|http://www.cpan.org/> of each language,
+to use all the L<resources|https://www.cpan.org/> of each language,
 as a language is far more than just it's syntax.
 
 =head2 Can I do [task] in Perl?
@@ -292,7 +292,7 @@ programs to produce the same output, spinning things quickly out of
 control while still providing hours of amusement for their creators and
 readers.
 
-CPAN has several JAPH programs at L<http://www.cpan.org/misc/japh>.
+CPAN has several JAPH programs at L<https://www.cpan.org/misc/japh>.
 
 =head2 How can I convince others to use Perl?
 
@@ -312,8 +312,8 @@ choice and how Perl might satisfy that requirement.
 
 You don't have to worry about finding or paying for Perl; it's freely
 available and several popular operating systems come with Perl. Community
-support in places such as Perlmonks ( L<http://www.perlmonks.com> )
-and the various Perl mailing lists ( L<http://lists.perl.org> ) means that
+support in places such as Perlmonks ( L<https://www.perlmonks.com> )
+and the various Perl mailing lists ( L<https://lists.perl.org> ) means that
 you can usually get quick answers to your problems.
 
 Finally, keep in mind that Perl might not be the right tool for every
@@ -326,9 +326,9 @@ You might find these links useful:
 
 =over 4
 
-=item * L<http://www.perl.org/about.html>
+=item * L<https://www.perl.org/about.html>
 
-=item * L<http://perltraining.com.au/whyperl.html>
+=item * L<https://perltraining.com.au/whyperl.html>
 
 =back
 

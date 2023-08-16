@@ -16,7 +16,7 @@ related matters.
 
 The standard release of Perl (the one maintained by the Perl
 development team) is distributed only in source code form. You
-can find the latest releases at L<http://www.cpan.org/src/>.
+can find the latest releases at L<https://www.cpan.org/src/>.
 
 Perl builds and runs on a bewildering number of platforms. Virtually
 all known and current Unix derivatives are supported (perl's native
@@ -24,7 +24,7 @@ platform), as are other systems like VMS, DOS, OS/2, Windows,
 QNX, BeOS, OS X, MPE/iX and the Amiga.
 
 Binary distributions for some proprietary platforms can be found
-L<http://www.cpan.org/ports/> directory. Because these are not part of
+L<https://www.cpan.org/ports/> directory. Because these are not part of
 the standard distribution, they may and in fact do differ from the
 base perl port in a variety of ways. You'll have to check their
 respective release notes to see just what the differences are. These
@@ -35,13 +35,13 @@ source release of perl).
 
 =head2 How can I get a binary version of Perl?
 
-See L<CPAN Ports|http://www.cpan.org/ports/>
+See L<CPAN Ports|https://www.cpan.org/ports/>
 
 =head2 I don't have a C compiler. How can I build my own Perl interpreter?
 
 For Windows, use a binary version of Perl,
-L<Strawberry Perl|http://strawberryperl.com/> and
-L<ActivePerl|http://www.activestate.com/activeperl> come with a
+L<Strawberry Perl|https://strawberryperl.com/> and
+L<ActivePerl|https://www.activestate.com/products/perl/> come with a
 bundled C compiler.
 
 Otherwise if you really do want to build Perl, you need to get a
@@ -85,12 +85,12 @@ contains tens of thousands of modules and extensions, source code
 and documentation, designed for I<everything> from commercial
 database interfaces to keyboard/screen control and running large web sites.
 
-You can search CPAN on L<http://metacpan.org>.
+You can search CPAN on L<https://metacpan.org>.
 
-The master web site for CPAN is L<http://www.cpan.org/>,
-L<http://www.cpan.org/SITES.html> lists all mirrors.
+The master web site for CPAN is L<https://www.cpan.org/>,
+L<https://www.cpan.org/SITES.html> lists all mirrors.
 
-See the CPAN FAQ at L<http://www.cpan.org/misc/cpan-faq.html> for answers
+See the CPAN FAQ at L<https://www.cpan.org/misc/cpan-faq.html> for answers
 to the most frequently asked questions about CPAN.
 
 The L<Task::Kensho> module has a list of recommended modules which
@@ -100,18 +100,18 @@ you should review as a good starting point.
 
 =over 4
 
-=item * L<http://www.perl.org/>
+=item * L<https://www.perl.org/>
 
-=item * L<http://perldoc.perl.org/>
+=item * L<https://perldoc.perl.org/>
 
-=item * L<http://learn.perl.org/>
+=item * L<https://learn.perl.org/>
 
 =back
 
 The complete Perl documentation is available with the Perl distribution.
 If you have Perl installed locally, you probably have the documentation
 installed as well: type C<perldoc perl> in a terminal or
-L<view online|http://perldoc.perl.org/perl.html>.
+L<view online|https://perldoc.perl.org/perl>.
 
 (Some operating system distributions may ship the documentation in a different
 package; for instance, on Debian, you need to install the C<perl-doc> package.)
@@ -121,13 +121,13 @@ L<perlfaq2> for more details.
 
 =head2 What is perl.com? Perl Mongers? pm.org? perl.org? cpan.org?
 
-L<Perl.com|http://www.perl.com/> used to be part of the O'Reilly
+L<Perl.com|https://www.perl.com/> used to be part of the O'Reilly
 Network, a subsidiary of O'Reilly Media. Although it retains most of
 the original content from its O'Reilly Network, it is now hosted by
-L<The Perl Foundation|http://www.perlfoundation.org/>.
+L<The Perl Foundation|https://www.perlfoundation.org/>.
 
 The Perl Foundation is an advocacy organization for the Perl language
-which maintains the web site L<http://www.perl.org/> as a general
+which maintains the web site L<https://www.perl.org/> as a general
 advocacy site for the Perl language. It uses the domain to provide
 general support services to the Perl community, including the hosting
 of mailing lists, web sites, and other services. There are also many
@@ -136,39 +136,39 @@ such as:
 
 =over 4
 
-=item * L<http://www.perl.org/>
+=item * L<https://www.perl.org/>
 
-=item * L<http://learn.perl.org/>
+=item * L<https://learn.perl.org/>
 
-=item * L<http://jobs.perl.org/>
+=item * L<https://jobs.perl.org/>
 
-=item * L<http://lists.perl.org/>
+=item * L<https://lists.perl.org/>
 
 =back
 
-L<Perl Mongers|http://www.pm.org/> uses the pm.org domain for services
+L<Perl Mongers|https://www.pm.org/> uses the pm.org domain for services
 related to local Perl user groups, including the hosting of mailing lists
-and web sites. See the L<Perl Mongers web site|http://www.pm.org/> for more
+and web sites. See the L<Perl Mongers web site|https://www.pm.org/> for more
 information about joining, starting, or requesting services for a
 Perl user group.
 
-CPAN, or the Comprehensive Perl Archive Network L<http://www.cpan.org/>,
+CPAN, or the Comprehensive Perl Archive Network L<https://www.cpan.org/>,
 is a replicated, worldwide repository of Perl software.
 See L<What is CPAN?|/"What modules and extensions are available for Perl? What is CPAN?">.
 
 =head2 Where can I post questions?
 
-There are many Perl L<mailing lists|lists.perl.org> for various
-topics, specifically the L<beginners list|http://lists.perl.org/list/beginners.html>
+There are many Perl L<mailing lists|https://lists.perl.org> for various
+topics, specifically the L<beginners list|https://lists.perl.org/list/beginners.html>
 may be of use.
 
 Other places to ask questions are on the
-L<PerlMonks site|http://www.perlmonks.org/> or
-L<stackoverflow|http://stackoverflow.com/questions/tagged/perl>.
+L<PerlMonks site|https://www.perlmonks.org/> or
+L<stackoverflow|https://stackoverflow.com/questions/tagged/perl>.
 
 =head2 Perl Books
 
-There are many good L<books on Perl|http://www.perl.org/books/library.html>.
+There are many good L<books on Perl|https://www.perl.org/books/library.html>.
 
 =head2 Which magazines have Perl content?
 
@@ -178,25 +178,25 @@ will find Perl content in more general interest programming titles.
 In the distant past, there have been a few Perl magazines. The first was I<The Perl
 Journal>, published by Jon Orwant. After that, there was I<The Perl Review>,
 published by brian d foy, and  I<$foo Magazin>, published by Renée Bäcker
-(L<http://www.foo-magazin.de>).
+(L<https://www.foo-magazin.de>).
 
 The closest you might find today is Perl Weekly, (L<https://perlweekly.com>),
 an online newsletter with a magazine-like format.
 
 =head2 Which Perl blogs should I read?
 
-L<Perl News|http://perlnews.org/> covers some of the major events in the Perl
-world, L<Perl Weekly|http://perlweekly.com/> is a weekly e-mail
+L<Perl News|https://perlnews.org/> covers some of the major events in the Perl
+world, L<Perl Weekly|https://perlweekly.com/> is a weekly e-mail
 (and RSS feed) of hand-picked Perl articles.
 
-L<http://blogs.perl.org/> hosts many Perl blogs, there are also
-several blog aggregators: L<Perlsphere|http://perlsphere.net/> and
-L<IronMan|http://ironman.enlightenedperl.org/> are two of them.
+L<https://blogs.perl.org/> hosts many Perl blogs, there are also
+several blog aggregators: L<Perlsphere|https://perl.theplanetarium.org.uk/> and
+L<IronMan|https://ironman.enlightenedperl.org/> are two of them.
 
 =head2 What mailing lists are there for Perl?
 
 A comprehensive list of Perl-related mailing lists can be found at
-L<http://lists.perl.org/>
+L<https://lists.perl.org/>
 
 =head2 Where can I buy a commercial version of Perl?
 
@@ -206,7 +206,7 @@ in releases and comes in well-defined packages. There is a very large
 and supportive user community and an extensive literature.
 
 If you still need commercial support
-L<ActiveState|http://www.activestate.com/activeperl> offers
+L<ActiveState|https://www.activestate.com/products/perl/> offers
 this.
 
 =head2 Where do I send bug reports?
@@ -226,7 +226,7 @@ install and use the L<Module::CoreList> module. It has the information
 about the modules (with their versions) included with each release
 of Perl.
 
-Every CPAN module has a bug tracker set up in RT, L<http://rt.cpan.org>.
+Every CPAN module has a bug tracker set up in RT, L<https://rt.cpan.org>.
 You can submit bugs to RT either through its web interface or by
 email. To email a bug report, send it to
 bug-E<lt>distribution-nameE<gt>@rt.cpan.org . For example, if you

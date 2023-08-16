@@ -15,7 +15,7 @@ will want to use a framework to make handling requests
 and responses easier.
 
 If there is no interactivity then you may still want
-to look at using something like L<Template Toolkit|https://metacpan.org/module/Template>
+to look at using something like L<Template Toolkit|https://metacpan.org/pod/Template>
 or L<Plack::Middleware::TemplateToolkit>
 so maintenance of your HTML files (and other assets) is easier.
 
@@ -104,11 +104,11 @@ content back to you as a string:
     use HTTP::Tiny;
 
     my $ua = HTTP::Tiny->new;
-    my $html = $ua->get( "http://www.example.com/index.html" )->{content};
+    my $html = $ua->get( "https://www.example.com/index.html" )->{content};
 
 It can also store the resource directly in a file:
 
-    $ua->mirror( "http://www.example.com/index.html", "foo.html" );
+    $ua->mirror( "https://www.example.com/index.html", "foo.html" );
 
 If you need to do something more complicated, the L<HTTP::Tiny> object can
 be customized by setting attributes, or you can use L<LWP::UserAgent> from

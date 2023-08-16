@@ -741,7 +741,7 @@ Note that you I<must> use Bourne shell (C<sh(1)>) redirection syntax in
 backticks, not C<csh(1)>!  Details on why Perl's C<system()> and backtick
 and pipe opens all use the Bourne shell are in the
 F<versus/csh.whynot> article in the "Far More Than You Ever Wanted To
-Know" collection in L<http://www.cpan.org/misc/olddoc/FMTEYEWTK.tgz> . To
+Know" collection in L<https://www.cpan.org/misc/olddoc/FMTEYEWTK.tgz> . To
 capture a command's STDERR and STDOUT together:
 
     $output = `cmd 2>&1`;                       # either with backticks
@@ -915,7 +915,7 @@ causes many inefficiencies.
 
 Try the L<Net::FTP>, L<TCP::Client>, and L<Net::Telnet> modules
 (available from CPAN).
-L<http://www.cpan.org/scripts/netstuff/telnet.emul.shar> will also help
+L<https://www.cpan.org/scripts/netstuff/telnet.emul.shar> will also help
 for emulating the telnet protocol, but L<Net::Telnet> is quite
 probably easier to use.
 
@@ -1098,8 +1098,8 @@ The L<DBI> module provides an abstract interface to most database
 servers and types, including Oracle, DB2, Sybase, mysql, Postgresql,
 ODBC, and flat files. The DBI module accesses each database type
 through a database driver, or DBD. You can see a complete list of
-available drivers on CPAN: L<http://www.cpan.org/modules/by-module/DBD/> .
-You can read more about DBI on L<http://dbi.perl.org/> .
+available drivers on CPAN: L<https://www.cpan.org/modules/by-module/DBD/> .
+You can read more about DBI on L<https://dbi.perl.org/> .
 
 Other modules provide more specific access: L<Win32::ODBC>, L<Alzabo>,
 C<iodbc>, and others found on CPAN Search: L<https://metacpan.org/> .
