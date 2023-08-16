@@ -3,6 +3,46 @@ use v5.36;
 use strict;
 use warnings;
 
+=head1 NAME
+
+bin/check_links - verify the links in the perlfaq
+
+=head1 SYNOPSIS
+
+	# check all the links in
+	perl bin/check_links
+
+	# check a single perlfaq page, just specify the number
+	perl bin/check_links 3
+
+	# check a range with the min and max
+	perl bin/check_links 3 6
+
+=head1 DESCRIPTION
+
+This program extracts the links from all the perlfaq pages then tries
+to fetch them. It reports the HTTP status, the perlfaq page, and the
+link. In the case of a redirect response, it also reports the Location
+value.
+
+Note that redirections sometimes leads to more redirections, which this
+does not handle. Sometimes those chains lead to dead links, or even
+cycles.
+
+If the program cannot connect to a server, it reports a 500
+status.
+
+=head1 AUTHOR
+
+brian d foy, bdfoy@cpan.org
+
+=head1 LICENSE
+
+You can use and distribute this under the same terms as perl. A LICENSE
+file is included with the perlfaq repository.
+
+=cut
+
 use File::Spec::Functions;
 use Mojo::Promise;
 use Mojo::UserAgent;
