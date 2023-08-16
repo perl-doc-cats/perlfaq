@@ -408,13 +408,6 @@ Padre is cross-platform IDE for Perl written in Perl using wxWidgets to provide
 a native look and feel. It's open source under the Artistic License. It
 is one of the newer Perl IDEs.
 
-=item PerlBuilder
-
-L<https://www.solutionsoft.com/perl.htm>
-
-PerlBuilder is an integrated development environment for Windows that
-supports Perl development.
-
 =item visiPerl+
 
 L<https://helpconsulting.net/visiperl/index.html>
@@ -851,7 +844,7 @@ anything a module written in C can. For more on mod_perl, see
 L<https://perl.apache.org/>
 
 With the FCGI module (from CPAN) and the mod_fastcgi
-module (available from L<https://www.fastcgi.com/> ) each of your Perl
+module (available from L<https://fastcgi-archives.github.io/mod_fastcgi.html> ) each of your Perl
 programs becomes a permanent CGI daemon process.
 
 Finally, L<Plack> is a Perl module and toolkit that contains PSGI middleware,
