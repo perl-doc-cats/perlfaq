@@ -409,7 +409,7 @@ L<Math::Random::MT> ("Mersenne Twister", fast), or
 L<Math::TrulyRandom> (uses the imperfections in the system's
 timer to generate random numbers, which is rather slow).
 More algorithms for random numbers are described in
-"Numerical Recipes in C" at L<https://www.nr.com/>
+"Numerical Recipes in C" at L<http://numerical.recipes>
 
 =head2 How do I get a random number between X and Y?
 

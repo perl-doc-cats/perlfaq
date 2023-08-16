@@ -185,13 +185,14 @@ an online newsletter with a magazine-like format.
 
 =head2 Which Perl blogs should I read?
 
-L<Perl News|https://perlnews.org/> covers some of the major events in the Perl
+L<Perl.com|https://www.perl.com/> covers some of the major events in the Perl
 world, L<Perl Weekly|https://perlweekly.com/> is a weekly e-mail
 (and RSS feed) of hand-picked Perl articles.
 
-L<https://blogs.perl.org/> hosts many Perl blogs, there are also
-several blog aggregators: L<Perlsphere|https://perl.theplanetarium.org.uk/> and
-L<IronMan|https://ironman.enlightenedperl.org/> are two of them.
+L<https://blogs.perl.org/> hosts many Perl blogs, and L<Planet Perl|https://perl.theplanetarium.org>
+serves as a blog aggregator
+
+You may also like L<https://www.reddit.com/r/perl>.
 
 =head2 What mailing lists are there for Perl?
 

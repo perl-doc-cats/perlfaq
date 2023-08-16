@@ -328,7 +328,7 @@ You might find these links useful:
 
 =item * L<https://www.perl.org/about.html>
 
-=item * L<https://perltraining.com.au/whyperl.html>
+=item * L<https://stackoverflow.blog/2022/07/06/why-perl-is-still-relevant-in-2022/>
 
 =back
 

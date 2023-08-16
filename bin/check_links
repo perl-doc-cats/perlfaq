@@ -13,6 +13,7 @@ my( $min, $max ) = @ARGV;
 $max //= $min;
 
 my $ua = Mojo::UserAgent->new;
+$ua->inactivity_timeout(10);
 # $ua->on(start => sub ($ua, $tx) { say "Getting " . $tx->req->url; });
 
 
@@ -33,9 +34,8 @@ my @promises =
 				;
 			};
 
-		my $error = sub ($tx) {
-			$Checked->{$t->{link}} = $tx->res->code;
-			printf "ERROR: %8s  %3d  %s\n", $t->{section}, $tx->res->code, $t->{link};
+		my $error = sub ($err) {
+			printf "%3d  %8s  %s\n", 500, $t->{section}, $t->{link};
 			};
 
 		my $promise = $ua->get_p( $t->{link} )->then(

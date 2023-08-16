@@ -302,9 +302,9 @@ L<https://www.perl.com/pub/2006/02/09/debug_mod_perl.html/> .
 
 Randal L. Schwartz writes about profiling in "Speeding up Your Perl
 Programs" for I<Unix Review>,
-L<https://www.stonehenge.com/merlyn/UnixReview/col49.html> , and "Profiling
+L<http://www.stonehenge.com/merlyn/UnixReview/col49.html> , and "Profiling
 in Template Toolkit via Overriding" for I<Linux Magazine>,
-L<https://www.stonehenge.com/merlyn/LinuxMag/col75.html> .
+L<http://www.stonehenge.com/merlyn/LinuxMag/col75.html> .
 
 =head2 How do I cross-reference my Perl programs?
 
@@ -360,7 +360,7 @@ editing/debugging with Eclipse.
 
 =item Enginsite
 
-L<https://www.enginsite.com/>
+L<http://enginsite.com/>
 
 Perl Editor by EngInSite is a complete integrated development
 environment (IDE) for creating, testing, and  debugging  Perl scripts;
@@ -449,10 +449,6 @@ Unix editors as well.
 
 L<https://www.gnu.org/software/emacs/manual/efaq-w32.html>
 
-=item MicroEMACS
-
-L<https://www.microemacs.de/>
-
 =item XEmacs
 
 L<https://www.xemacs.org/Download/index.html>
@@ -480,10 +476,6 @@ L<https://invisible-island.net/vile/vile.html>
 The following are Win32 multilanguage editor/IDEs that support Perl:
 
 =over 4
-
-=item MultiEdit
-
-L<https://www.MultiEdit.com/>
 
 =item SlickEdit
 
