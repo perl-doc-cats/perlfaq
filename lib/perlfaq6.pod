@@ -161,7 +161,7 @@ Do not use regexes. Use a module and forget about the
 regular expressions. The L<XML::LibXML>, L<HTML::TokeParser> and
 L<HTML::TreeBuilder> modules are good starts, although each namespace
 has other parsing modules specialized for certain tasks and different
-ways of doing it. Start at CPAN Search ( L<http://metacpan.org/> )
+ways of doing it. Start at CPAN Search ( L<https://metacpan.org/> )
 and wonder at all the work people have done for you already! :)
 
 =head2 I put a regular expression into $/ but it didn't work. What's wrong?

@@ -208,7 +208,7 @@ but each case is treated separately.
 =item *
 
 Get a login for the Perl Authors Upload Server (PAUSE) if you don't
-already have one: L<http://pause.perl.org>
+already have one: L<https://pause.perl.org/pause/query>
 
 =item *
 
