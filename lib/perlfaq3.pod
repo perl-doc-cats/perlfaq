@@ -340,214 +340,78 @@ L<http://www.cpan.org/authors/id/T/TO/TOMC/scripts/toms.exrc.gz>
 
 =head2 Is there an IDE or Windows Perl Editor?
 
-Perl programs are just plain text, so any editor will do.
+There are several IDEs that support Perl. Perl programs are just plain
+text, so any editor will do as long as that editor lets you work with
+plain text. Word processors, which add formatting and other unseen file data,
+will not work as a code editor.
 
-If you're on Unix, you already have an IDE--Unix itself. The Unix
-philosophy is the philosophy of several small tools that each do one
-thing and do it well. It's like a carpenter's toolbox.
+You may want an editor that supports the language server protocol (LSP).
+There are a couple projects that supply the Perl intelligence:
 
-If you want an IDE, check the following (in alphabetical order, not
-order of preference):
+=ver 4
 
-=over 4
+=item L<Perl Language Server|https://github.com/richterger/Perl-LanguageServer>
 
-=item Eclipse
-
-L<http://e-p-i-c.sf.net/>
-
-The Eclipse Perl Integration Project integrates Perl
-editing/debugging with Eclipse.
-
-=item Enginsite
-
-L<http://www.enginsite.com/>
-
-Perl Editor by EngInSite is a complete integrated development
-environment (IDE) for creating, testing, and  debugging  Perl scripts;
-the tool runs on Windows 9x/NT/2000/XP or later.
-
-=item IntelliJ IDEA
-
-L<https://plugins.jetbrains.com/plugin/7796>
-
-Camelcade plugin provides Perl5 support in IntelliJ IDEA and other JetBrains IDEs.
-
-=item Kephra
-
-L<http://kephra.sf.net>
-
-GUI editor written in Perl using wxWidgets and Scintilla with lots of smaller features.
-Aims for a UI based on Perl principles like TIMTOWTDI and "easy things should be easy,
-hard things should be possible".
-
-=item Komodo
-
-L<http://www.ActiveState.com/Products/Komodo/>
-
-ActiveState's cross-platform (as of October 2004, that's Windows, Linux,
-and Solaris), multi-language IDE has Perl support, including a regular expression
-debugger and remote debugging.
-
-=item Notepad++
-
-L<http://notepad-plus.sourceforge.net/>
-
-=item Open Perl IDE
-
-L<http://open-perl-ide.sourceforge.net/>
-
-Open Perl IDE is an integrated development environment for writing
-and debugging Perl scripts with ActiveState's ActivePerl distribution
-under Windows 95/98/NT/2000.
-
-=item OptiPerl
-
-L<http://www.optiperl.com/>
-
-OptiPerl is a Windows IDE with simulated CGI environment, including
-debugger and syntax-highlighting editor.
-
-=item Padre
-
-L<http://padre.perlide.org/>
-
-Padre is cross-platform IDE for Perl written in Perl using wxWidgets to provide
-a native look and feel. It's open source under the Artistic License. It
-is one of the newer Perl IDEs.
-
-=item PerlBuilder
-
-L<http://www.solutionsoft.com/perl.htm>
-
-PerlBuilder is an integrated development environment for Windows that
-supports Perl development.
-
-=item visiPerl+
-
-L<http://helpconsulting.net/visiperl/index.html>
-
-From Help Consulting, for Windows.
-
-=item Visual Perl
-
-L<http://www.activestate.com/Products/Visual_Perl/>
-
-Visual Perl is a Visual Studio.NET plug-in from ActiveState.
-
-=item Zeus
-
-L<http://www.zeusedit.com/lookmain.html>
-
-Zeus for Windows is another Win32 multi-language editor/IDE
-that comes with support for Perl.
+=item L<Perl Navigator|https://github.com/bscan/PerlNavigator>
 
 =back
 
-For editors: if you're on Unix you probably have vi or a vi clone
-already, and possibly an emacs too, so you may not need to download
-anything. In any emacs the cperl-mode (M-x cperl-mode) gives you
-perhaps the best available Perl editing mode in any editor.
-
-If you are using Windows, you can use any editor that lets you work
-with plain text, such as NotePad or WordPad. Word processors, such as
-Microsoft Word or WordPerfect, typically do not work since they insert
-all sorts of behind-the-scenes information, although some allow you to
-save files as "Text Only". You can also download text editors designed
-specifically for programming, such as Textpad (
-L<http://www.textpad.com/> ) and UltraEdit ( L<http://www.ultraedit.com/> ),
-among others.
-
-If you are using MacOS, the same concerns apply. MacPerl (for Classic
-environments) comes with a simple editor. Popular external editors are
-BBEdit ( L<http://www.barebones.com/products/bbedit/> ) or Alpha (
-L<http://www.his.com/~jguyer/Alpha/Alpha8.html> ). MacOS X users can use
-Unix editors as well.
+Here's an alphabetical and incomplete list of some popular text editors. All
+editors support LSP except when noted:
 
 =over 4
 
-=item GNU Emacs
+=item L<Atom|https://atom-editor.cc/>
 
-L<http://www.gnu.org/software/emacs/windows/ntemacs.html>
+=item L<BBEdit|http://www.barebones.com/> or TextWrangler (macOS)
 
-=item MicroEMACS
+=item L<ConTEXT|http://www.contexteditor.org/> (Windows)
 
-L<http://www.microemacs.de/>
+No LSP support.
 
-=item XEmacs
+=item L<Eclipse|http://e-p-i-c.sf.net/>
 
-L<http://www.xemacs.org/Download/index.html>
+=item L<Emacs|https://www.gnu.org/software/emacs/download.html>
 
-=item Jed
+Use cperl-mode.
 
-L<http://space.mit.edu/~davis/jed/>
+=item L<Geany|https://www.geany.org>
 
-=back
+=item L<IntelliJ IDEA|https://www.jetbrains.com/idea/>
 
-or a vi clone such as
+USe the L<Perl plugin from the Jet Brains marketplace|https://plugins.jetbrains.com/plugin/7796>.
 
-=over 4
+Camelcade plugin provides Perl5 support in IntelliJ IDEA and other JetBrains IDEs:
+L<Perl5-IDEA|https://github.com/Camelcade/Perl5-IDEA/>.
 
-=item Vim
+IDEA Ultimate includes LSP support.
 
-L<http://www.vim.org/>
+=item L<Kate|https://kate-editor.org>
 
-=item Vile
+=item L<Notepad++|https://notepad-plus-plus.org> (Windows)
 
-L<http://invisible-island.net/vile/vile.html>
+No LSP support.
 
-=back
+=item L<Sublime Text|https://www.sublimetext.com/>
 
-The following are Win32 multilanguage editor/IDEs that support Perl:
+=item L<Textpad|http://www.textpad.com/> (Windows)
 
-=over 4
+No LSP support.
 
-=item MultiEdit
+=item L<UltraEdit|http://www.ultraedit.com/>
 
-L<http://www.MultiEdit.com/>
+=item vi and L<vim|http://www.vim.org/>, L<NeoVim|https://neovim.io>
 
-=item SlickEdit
+There are several other forks or customizations of the vi line of editors.
+You might also like L<Vim::Debug::Manual> and
+L<coc-perl|https://github.com/perl-ide/coc-perl>.
 
-L<http://www.slickedit.com/>
+=item L<Visual Studio Code|https://code.visualstudio.com/>
 
-=item ConTEXT
+Install the L<Perl plugin|https://marketplace.visualstudio.com/items?itemName=richterger.perl>
+from the Visual Studio Marketplace.
 
-L<http://www.contexteditor.org/>
-
-=back
-
-There is also a toyedit Text widget based editor written in Perl
-that is distributed with the Tk module on CPAN. The ptkdb
-( L<http://ptkdb.sourceforge.net/> ) is a Perl/Tk-based debugger that
-acts as a development environment of sorts. Perl Composer
-( L<http://perlcomposer.sourceforge.net/> ) is an IDE for Perl/Tk
-GUI creation.
-
-In addition to an editor/IDE you might be interested in a more
-powerful shell environment for Win32. Your options include
-
-=over 4
-
-=item bash
-
-from the Cygwin package ( L<http://cygwin.com/> )
-
-=item zsh
-
-L<http://www.zsh.org/>
-
-=back
-
-Cygwin is covered by the GNU General Public
-License (but that shouldn't matter for Perl use). Cygwin
-contains (in addition to the shell) a comprehensive set
-of standard Unix toolkit utilities.
-
-=over 4
-
-=item BBEdit and TextWrangler
-
-are text editors for OS X that have a Perl sensitivity mode
-( L<http://www.barebones.com/> ).
+=item L<WebStorm|https://www.jetbrains.com/webstorm/>
 
 =back
 
