@@ -413,6 +413,8 @@ from the Visual Studio Marketplace.
 
 =item L<WebStorm|https://www.jetbrains.com/webstorm/>
 
+Use the L<Perl plugin from the JetBrains marketplace|https://plugins.jetbrains.com/plugin/7796>.
+
 =back
 
 =head2 Where can I get Perl macros for vi?
