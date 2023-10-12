@@ -373,7 +373,7 @@ No LSP support.
 
 =item L<Emacs|https://www.gnu.org/software/emacs/download.html>
 
-Use cperl-mode.
+Use cperl-mode and L<lsp-mode|https://emacs-lsp.github.io/lsp-mode>.
 
 =item L<Geany|https://www.geany.org>
 
