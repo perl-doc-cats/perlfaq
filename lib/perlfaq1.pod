@@ -122,8 +122,8 @@ current stable release of Perl.
 =head2 What are Perl 4, Perl 5, or Raku (Perl 6)?
 
 In short, Perl 4 is the parent to both Perl 5 and Raku (formerly known as
-Perl 6). Perl 5 is the older sibling, and though they are different languages,
-someone who knows one will spot many similarities in the other.
+Perl 6). Perl 5 is Raku's older sibling, and though they are different
+languages, someone who knows one will spot many similarities in the other.
 
 The number after Perl (i.e. the 5 after Perl 5) is the major release
 of the perl interpreter as well as the version of the language. Each
