@@ -348,7 +348,7 @@ will not work as a code editor.
 You may want an editor that supports the language server protocol (LSP).
 There are a couple projects that supply the Perl intelligence:
 
-=ver 4
+=over 4
 
 =item L<Perl Language Server|https://github.com/richterger/Perl-LanguageServer>
 
@@ -379,7 +379,7 @@ Use cperl-mode.
 
 =item L<IntelliJ IDEA|https://www.jetbrains.com/idea/>
 
-USe the L<Perl plugin from the Jet Brains marketplace|https://plugins.jetbrains.com/plugin/7796>.
+Use the L<Perl plugin from the JetBrains marketplace|https://plugins.jetbrains.com/plugin/7796>.
 
 Camelcade plugin provides Perl5 support in IntelliJ IDEA and other JetBrains IDEs:
 L<Perl5-IDEA|https://github.com/Camelcade/Perl5-IDEA/>.
