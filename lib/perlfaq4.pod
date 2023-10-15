@@ -910,7 +910,7 @@ used a word boundary, C<\b>?
 	$string =~ s/\b(\w)/\U$1/g;  # A Camel'S Journey
 
 How is Perl supposed to know not to capitalize that C<s>? You could work
-harder to look for preceeding whitespace or the beginning of the string:
+harder to look for preceding whitespace or the beginning of the string:
 
     $string =~ s/( (?:^|\s) \w ) /\U$1/xg; # A Camel's Journey
 
