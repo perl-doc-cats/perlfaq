@@ -728,7 +728,7 @@ commas:
     en-IN 1,23,45,67,890
 
 L<CLDR::Number> has many more advanced features to handle just about
-anything that you might want. Olaf Anders article "Stop Writing Your Own
+anything that you might want. Olaf Alders' article "Stop Writing Your Own
 Commify Functions" has more examples
 (L<https://www.olafalders.com/2015/09/04/stop-writing-your-own-commify-
 functions/>).
