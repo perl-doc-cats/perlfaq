@@ -784,7 +784,7 @@ Within Perl, you may use this directly:
           : ( $ENV{HOME} || $ENV{LOGDIR} )
     }ex;
 
-=head2 How come when I open a file read-write it wipes it out?
+=head2 When I open a file read-write, why does it wipe it out?
 X<clobber> X<read-write> X<clobbering> X<truncate> X<truncating>
 
 Because you're using something like this, which truncates the file

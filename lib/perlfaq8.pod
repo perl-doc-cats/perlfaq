@@ -19,7 +19,7 @@ The C<$^O> variable (C<$OSNAME> if you use C<English>) contains an
 indication of the name of the operating system (not its release
 number) that your perl binary was built for.
 
-=head2 How come exec() doesn't return?
+=head2 Why does exec() not return?
 X<exec> X<system> X<fork> X<open> X<pipe>
 
 (contributed by brian d foy)
