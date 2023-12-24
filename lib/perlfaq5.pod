@@ -1516,7 +1516,7 @@ array in double quotes. You can send it to print without them:
 (contributed by brian d foy)
 
 The L<File::Find> module, which comes with Perl, does all of the hard
-work to traverse a directory structure. It comes with Perl. You simply
+work to traverse a directory structure. You simply
 call the C<find> subroutine with a callback subroutine and the
 directories you want to traverse:
 
