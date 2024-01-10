@@ -262,10 +262,10 @@ binding).
 Closures are most often used in programming languages where you can
 have the return value of a function be itself a function, as you can
 in Perl. Note that some languages provide anonymous functions but are
-not capable of providing proper closures: the version 2 of the Python
-language, for example. For more information on closures, check out any
-textbook on functional programming. Scheme is a language that not only
-supports but encourages closures.
+not capable of providing proper closures: for example Python 2. For
+more information on closures, check out any textbook on functional
+programming. Scheme is a language that not only supports but
+encourages closures.
 
 Here's a classic non-closure function-generating function:
 
