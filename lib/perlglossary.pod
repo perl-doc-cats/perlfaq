@@ -3294,6 +3294,9 @@ called a “case structure”, named after the similar Pascal construct. Most
 switch statements in Perl are spelled C<given>. See “The C<given>
 statement” in Camel chapter 4, “Statements and Declarations”.
 
+The C<given>, C<when> keywords and the smartmatch (C<~~>) operator will
+be removed in Perl 5.42.
+
 =item symbol
 
 Generally, X<symbols>X<symbols>any B<token> or B<metasymbol>. Often used

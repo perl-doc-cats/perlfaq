@@ -692,7 +692,7 @@ details, see L<perlsub>.
 =head2 How do I create a switch or case statement?
 
 There is a given/when statement in Perl, but it is experimental and
-likely to change in future. See L<perlsyn> for more details.
+will be removed in Perl 5.42. See L<perlsyn> for more details.
 
 The general answer is to use a CPAN module such as L<Switch::Plain>:
 
