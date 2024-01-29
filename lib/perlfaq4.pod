@@ -1473,11 +1473,11 @@ elements.
     my @unique = keys %hash;
 
 If you want to use a module, try the C<uniq> function from
-L<List::MoreUtils>. In list context it returns the unique elements,
+L<List::Util>. In list context it returns the unique elements,
 preserving their order in the list. In scalar context, it returns the
 number of unique elements.
 
-    use List::MoreUtils qw(uniq);
+    use List::Util qw(uniq);
 
     my @unique = uniq( 1, 2, 3, 4, 4, 5, 6, 5, 7 ); # 1,2,3,4,5,6,7
     my $unique = uniq( 1, 2, 3, 4, 4, 5, 6, 5, 7 ); # 7
