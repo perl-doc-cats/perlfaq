@@ -1479,8 +1479,8 @@ number of unique elements.
 
     use List::Util qw(uniq);
 
-    my @unique = uniq( 1, 2, 3, 4, 4, 5, 6, 5, 7 ); # 1,2,3,4,5,6,7
-    my $unique = uniq( 1, 2, 3, 4, 4, 5, 6, 5, 7 ); # 7
+    my @unique = uniq( 1, 2, 3, 4, 4, 5, 6, 5, 8 ); # 1,2,3,4,5,6,8
+    my $unique = uniq( 1, 2, 3, 4, 4, 5, 6, 5, 8 ); # 7
 
 You can also go through each element and skip the ones you've seen
 before. Use a hash to keep track. The first time the loop sees an
