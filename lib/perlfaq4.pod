@@ -1473,18 +1473,18 @@ elements.
     my @unique = keys %hash;
 
 If you want to use a module, try the C<uniq> function from
-L<List::MoreUtils>. In list context it returns the unique elements,
+L<List::Util>. In list context it returns the unique elements,
 preserving their order in the list. In scalar context, it returns the
 number of unique elements.
 
-    use List::MoreUtils qw(uniq);
+    use List::Util qw(uniq);
 
-    my @unique = uniq( 1, 2, 3, 4, 4, 5, 6, 5, 7 ); # 1,2,3,4,5,6,7
-    my $unique = uniq( 1, 2, 3, 4, 4, 5, 6, 5, 7 ); # 7
+    my @unique = uniq( 1, 2, 3, 4, 4, 5, 6, 5, 8 ); # 1,2,3,4,5,6,8
+    my $unique = uniq( 1, 2, 3, 4, 4, 5, 6, 5, 8 ); # 7
 
 You can also go through each element and skip the ones you've seen
 before. Use a hash to keep track. The first time the loop sees an
-element, that element has no key in C<%Seen>. The C<next> statement
+element, that element has no key in C<%seen>. The C<next> statement
 creates the key and immediately uses its value, which is C<undef>, so
 the loop continues to the C<push> and increments the value for that
 key. The next time the loop sees that same element, its key exists in
