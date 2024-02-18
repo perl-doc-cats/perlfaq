@@ -1,5 +1,7 @@
 Revision history for perlfaq
 
+{{$NEXT}}
+
 5.20240218  2024-02-18 17:37:25Z
   * add entry for "UTF-8 string" in perlglossary (PR#99, Felipe Gasper)
   * update the bug tracker advice to de-emphasize rt.cpan.org (PR#107, brian d foy)
