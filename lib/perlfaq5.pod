@@ -191,7 +191,7 @@ If, for some odd reason, you really want to see the whole file at once
 rather than processing line-by-line, you can slurp it in (as long as
 you can fit the whole thing in memory!):
 
-    open my $in,  '<',  $file      or die "Can't read old file: $!"
+    open my $in,  '<',  $file      or die "Can't read old file: $!";
     open my $out, '>', "$file.new" or die "Can't write new file: $!";
 
     my $content = do { local $/; <$in> }; # slurp!
