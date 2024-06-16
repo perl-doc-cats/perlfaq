@@ -135,8 +135,8 @@ the loop that prints the existing lines.
 
 To change existing lines, insert the code to modify the lines inside
 the C<while> loop. In this case, the code finds all lowercased
-versions of "perl" and uppercases them. The happens for every line, so
-be sure that you're supposed to do that on every line!
+versions of "perl" and uppercases them. This happens for every line,
+so be sure that you're supposed to do that on every line!
 
     open my $in,  '<',  $file      or die "Can't read old file: $!";
     open my $out, '>', "$file.new" or die "Can't write new file: $!";
