@@ -2724,7 +2724,7 @@ you wanted to copy.
 You can use the C<UNIVERSAL> class (see L<UNIVERSAL>). However, please
 be very careful to consider the consequences of doing this: adding
 methods to every object is very likely to have unintended
-consequences. If possible, it would be better to have all your object
+consequences. If possible, it would be better to have all your objects
 inherit from some common base class, or to use an object system like
 Moose that supports roles.
 
