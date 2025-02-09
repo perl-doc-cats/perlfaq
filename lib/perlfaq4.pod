@@ -463,7 +463,7 @@ To get the day of year for any date, use L<POSIX>'s C<mktime> to get
 a time in epoch seconds for the argument to C<localtime>.
 
     use POSIX qw/mktime strftime/;
-    my $week_of_year = strftime "%j",
+    my $day_of_year = strftime "%j",
         localtime( mktime( 0, 0, 0, 18, 11, 87 ) );
 
 You can also use L<Time::Piece>, which comes with Perl and provides a
