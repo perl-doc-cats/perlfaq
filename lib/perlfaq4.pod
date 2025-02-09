@@ -1103,7 +1103,7 @@ C<unpack> with the A (ASCII) format. By using a number after the format
 specifier, you can denote the column width. See the C<pack> and C<unpack>
 entries in L<perlfunc> for more details.
 
-    my @fields = unpack( $line, "A8 A8 A8 A16 A4" );
+    my @fields = unpack( "A8 A8 A8 A16 A4", $line );
 
 Note that spaces in the format argument to C<unpack> do not denote literal
 spaces. If you have space separated data, you may want C<split> instead.
