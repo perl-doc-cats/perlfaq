@@ -99,7 +99,7 @@ Have you read the appropriate manpages? Here's a brief index:
 
 =item L<perlre> - Perl regular expressions
 
-=item L<perlfunc> - Perl builtin functions>
+=item L<perlfunc> - Perl builtin functions
 
 =item L<perlop> - Perl operators and precedence
 
@@ -173,7 +173,7 @@ that C<CPAN.pm> understands and can use to re-install every module:
     $ cpan -a
 
 Inside a Perl program, you can use the L<ExtUtils::Installed> module to
-show all installed distributions, although it can take awhile to do
+show all installed distributions, although it can take a while to do
 its magic. The standard library which comes with Perl just shows up
 as "Perl" (although you can get those with L<Module::CoreList>).
 
@@ -362,12 +362,12 @@ L<http://e-p-i-c.sf.net/>
 The Eclipse Perl Integration Project integrates Perl
 editing/debugging with Eclipse.
 
-=item Enginsite
+=item EngInSite
 
 L<http://www.enginsite.com/>
 
 Perl Editor by EngInSite is a complete integrated development
-environment (IDE) for creating, testing, and  debugging  Perl scripts;
+environment (IDE) for creating, testing, and debugging Perl scripts;
 the tool runs on Windows 9x/NT/2000/XP or later.
 
 =item IntelliJ IDEA
