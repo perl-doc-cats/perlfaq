@@ -293,7 +293,7 @@ times the input record separator, C<$/>, shows up:
     my $lines = 0;
     open my($fh), '<:raw', $filename or die "Can't open $filename: $!";
     while( sysread $fh, $buffer, 4096 ) {
-        $lines += ( $buffer =~ s|$/||g; );
+        $lines += ( $buffer =~ s|$/||g );
     }
     close $fh;
 
@@ -307,7 +307,7 @@ have an untainted filename though:
 
     my $lines;
     if( $filename =~ /^([0-9a-z_.]+)\z/ ) {
-        $lines = `/usr/bin/wc -l $1`
+        $lines = `/usr/bin/wc -l $1`;
         chomp $lines;
     }
 
@@ -559,7 +559,7 @@ or a scalar variable containing one:
 
     ($ifh, $ofh, $efh) = (*STDIN, *STDOUT, *STDERR);
     print $ofh "Type it: ";
-    my $got = <$ifh>
+    my $got = <$ifh>;
     print $efh "What was that: $got";
 
 If you're passing a filehandle to a function, you can write
@@ -853,7 +853,7 @@ To open file for update, file must not exist:
 To open a file without blocking, creating if necessary:
 
     sysopen my $fh, '/foo/somefile', O_WRONLY|O_NDELAY|O_CREAT
-        or die "can't open /foo/somefile: $!":
+        or die "can't open /foo/somefile: $!";
 
 Be warned that neither creation nor deletion of files is guaranteed to
 be an atomic operation over NFS. That is, two processes might both
