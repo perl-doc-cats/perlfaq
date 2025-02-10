@@ -1,0 +1,100 @@
+=encoding UTF-8
+
+=head1 Where does this fit in the documentation?
+
+This might fit well as an addition to perlunifaq, the tone of providing
+practical solutions makes the perlfaq collection seem like the right place.
+It could fit in perlfaq5, or be a new perlfaq10. I seek guidance from the
+documentation maintainers on where is best.
+
+=head1 How do I get rid of Wide Character in Print and Garbled Unicode?
+
+My perl scripts complain about wide characters in Print, and turns some characters into gibberish.
+
+I've read L<perlunicode>, L<perlunifaq>, L<perluniintro> and L<perlunicook>, now I'm even more confused. For me string and UTF-8 are synonyms, I want Perl to see it this way and stop downgrading behind my back.
+
+=head2 Be SAD with the PERL_UNICODE Environment Variable or the -C switch
+
+The -C switch (documented in L<perlrun/Command-Switches>) controls some Unicode features, anything set in the PERL_UNICODE environment is treated as if it followed the -C switch. The commonly used B<#!/usr/bin/env perl> ignores
+switches, but PERL_UNICODE works with it.
+
+There are 3 switches that you want to set: B<SAD>. B<S> will set STDIN, STDOUT and STDERR to UTF-8. B<A> will expect @ARGV to be in UTF-8. B<D> will make UTF-8 the
+default for input and output streams (like file handles).
+
+In .profile or .bashrc, or whatever is appropriate for your distribution and shell: B<export PERL_UNICODE=SAD>
+
+The downside is that setting any of these may break older code. You will feel this when installing CPAN modules, some of which may fail tests. While installing modules turn it off by setting it to nothing: B<export PERL_UNICODE=>
+
+=head2 use unicode_strings and utf8 (but not :utf8)
+
+ use utf8;
+ use feature 'unicode_strings';
+
+B<use utf8;> is telling Perl that your script is in UTF-8, encoding :utf8 should not be used, whenever you specify an encoding it should be UTF-8.
+
+The unicode_strings feature tells Perl you would like strings to be unicode. Unfortunately, there is no way to tell Perl that strings must be unicode.
+
+=head2 Expect to encode or decode
+
+Add L<Encode> to your script boiler plate. If you're using CPAN modules to return values you expect to be strings, don't be surprised when they come back as bytes.
+
+ use Encode qw(decode encode);
+
+=head2 The Unicode Bug and testing that your code isn't mangling unicode.
+
+Perl's L<Unicode Bug|perlunicode#The-"Unicode-Bug"> pertains to getting confused about characters between 128 and 255. When testing that your code handles non-ascii characters you should make sure your test cases include
+both this range and characters above it.
+
+=head2 In a test unicode is sometimes mangled.
+
+Try running your tests with perl instead of prove or yath, if they pass from perl and prove/yath the issue is likely display only.
+
+=head2 Garbled terminal characters
+
+Even when you use the S switch, Perl sometimes doesn't set the terminal to UTF-8 (maybe this is a bug, or maybe there is some reason for this, does perlrun need a docpatch to explain why?). To fix this set the binmode in your script.
+
+ binmode( STDOUT, 'encoding:(UTF-8)');
+
+=head2 BOM -- There's gibberish or worse at the beginning of my file.
+
+The BOM is a non-printing character (\N{ZERO WIDTH NO-BREAK SPACE}) that lurks at the beginning of UTF-8 and UTF-16 files. BOM stands for Byte Order Marker. It's optional in UTF-8, but required for UTF-16, which supports both Byte orders. When reading files it means the data from the first line ends up with an invisible 3 byte character.
+
+If your program intends to only compare a two line file to see if the lines are the same, the first line will have an extra invisible character and your program won't work! The BOM can only be seen with a hex editor, or when Perl mishandles it as a byte string and turns it to gibberish. Length on the two strings will show the first is a character longer than the second, although they appear identical.
+
+ # remove it via character name
+ use charnames ':full';
+ $firstline =~ s/^\N{ZERO WIDTH NO-BREAK SPACE}//;
+ # remove it by hex value
+ $firstline =~ s/^\x{FeFF}//;
+ # \s does not match the BOM!
+ # but it is matched as a non-word character
+ $firstline =~ s/^\W+//;
+
+While you don't want the BOM in your data; Perl will write the mandatory BOM when you create a new UTF-16 file. Perl does not create the optional BOM for new UTF-8 files. If for some reason you want to write the BOM for UTF-8 you'll need to print the character at the beginning of the file.
+
+=head2 YAML and JSON
+
+The JSON specification requires UTF-8, YAML additionally accepts UTF-16.
+
+JSON::PP, JSON::XS and CpanelJSON::XS default to bytes but in their OO usage can accept and return Unicode Strings. Counterintuitively, the utf8 parameter needs to be set to false! The Mojo::JSON doc is explicit that it works with Bytes.
+
+  use Encode qw(decode encode);
+  use utf8;
+  use feature 'unicode_strings';
+  binmode( STDOUT, 'encoding:(UTF-8)');
+  use JSON::PP; # JSON::XS and CpanelJSON::XS have same interface
+  use YAML::XS;
+  use Data::Printer; # displays unicode, Data::Dumper shows hex values
+  my $dataref = [ '1', "\x{1F600}", "Brontë", "Japanese for Pearl 珠" ];
+  say "JSON .................";
+  my $MyJSONUnicodeString =
+    JSON::PP->new()->utf8(0)->pretty(1)->encode( $dataref );
+  say $MyJSONUnicodeString;
+  my $dejson = JSON::PP->new()->utf8(0)->decode( $MyJSONUnicodeString );
+  p $dejson;
+  say "YAML .................";
+  my $yaml =  decode( 'UTF-8', Dump $dataref );
+  say $yaml;
+  my $deyamled = Load( encode( 'UTF-8', $yaml ) ) ;
+  p $deyamled;
+
