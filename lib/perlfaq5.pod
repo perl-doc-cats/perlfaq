@@ -1399,7 +1399,7 @@ to, you may be able to do this:
 
     require './sys/syscall.ph';
     my $rc = syscall(SYS_close(), $fd + 0);  # must force numeric
-    die "can't sysclose $fd: $!" unless $rc == -1;
+    die "can't sysclose $fd: $!" if $rc == -1;
 
 Or, just use the fdopen(3S) feature of C<open()>:
 
