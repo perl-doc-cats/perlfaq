@@ -70,7 +70,7 @@ are in base 10:
     print $string + 44; # prints 688, certainly not octal!
 
 This problem usually involves one of the Perl built-ins that has the
-same name a Unix command that uses octal numbers as arguments on the
+same name as a Unix command that uses octal numbers as arguments on the
 command line. In this example, C<chmod> on the command line knows that
 its first argument is octal because that's what it does:
 
@@ -313,10 +313,10 @@ it might never use as a number. In that case, string semantics wins. But,
 if there is a numeric value already, numeric semantics win. Force perl
 to compute the numeric value by adding 0:
 
-    my($i, $j) = ("11", "3"); $j += 0  # $i & $j  # "11"  &  3 -> 3
+    my($i, $j) = ("11", "3"); $j += 0;  # $i & $j  # "11"  &  3 -> 3
 
 However, this is not a documented feature, or as L<perlop> says, it "is not
-well defined". One way to fix ensure numeric semantics is to explicitly
+well defined". One way to ensure numeric semantics is to explicitly
 convert both of values to numbers:
 
 	(0+$i) & (0+$j)
@@ -405,7 +405,7 @@ course, living in a state of sin."
 
 Perl relies on the underlying system for the implementation of
 C<rand> and C<srand>; on some systems, the generated numbers are
-not random enough (especially on Windows : see
+not random enough (especially on Windows: see
 L<http://www.perlmonks.org/?node_id=803632>).
 Several CPAN modules in the C<Math> namespace implement better
 pseudorandom generators; see for example
@@ -580,7 +580,7 @@ X<timelocal>
 
 To do it correctly, you can use one of the C<Date> modules since they
 work with calendars instead of times. The L<DateTime> module makes it
-simple, and give you the same time of day, only the day before,
+simple, and gives you the same time of day, only the day before,
 despite daylight saving time changes:
 
     use DateTime;
@@ -898,7 +898,7 @@ for you:
 			autoformat($s, { case => $style }) =~ s/\R+\z//r;
     }
 
-Each style has a different idea of what if should do with small words:
+Each style has a different idea of what it should do with small words:
 
 	original:  Going to the desert with a camel
 	sentence:  Going to the desert with a camel
@@ -1196,7 +1196,7 @@ When you want a list to be expanded per C<$">, use C<@{[ ... ]}>.
     my $scalar = 'STRING';
     my @array = ( 'zorro', 'a', 1, 'B', 3 );
 
-    # Print the current date and time and then Tommorrow
+    # Print the current date and time and then Tomorrow
     my $t = Time::Piece->new;
     say "Now is: ${\ $t->cdate() }";
     say "Tomorrow: ${\ do{ my $T=Time::Piece->new + ONE_DAY ; $T->fullday }}";
@@ -1536,7 +1536,7 @@ array. This kind of an array will take up less space:
     my @primes = (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31);
     my @is_tiny_prime = ();
     for (@primes) { $is_tiny_prime[$_] = 1 }
-    # or simply  @istiny_prime[@primes] = (1) x @primes;
+    # or simply  @is_tiny_prime[@primes] = (1) x @primes;
 
 Now you check whether $is_tiny_prime[$some_number].
 
@@ -1639,7 +1639,7 @@ two different answers:
     cmpStrHard(\%a, \%b) == 0 ? "the same" : "different";
 
 
-The first reports that both those the hashes contain the same data,
+The first reports that both hashes contain the same data,
 while the second reports that they do not. Which you prefer is left as
 an exercise to the reader.
 
@@ -2088,7 +2088,7 @@ all of the keys of the hash and gives them back to you as a list. You
 can then get the value through the particular key you're processing:
 
     foreach my $key ( keys %hash ) {
-        my $value = $hash{$key}
+        my $value = $hash{$key};
         ...
     }
 
@@ -2097,7 +2097,7 @@ process the hash elements. For instance, you can sort the keys so you
 can process them in lexical order:
 
     foreach my $key ( sort keys %hash ) {
-        my $value = $hash{$key}
+        my $value = $hash{$key};
         ...
     }
 
@@ -2106,7 +2106,7 @@ to deal with the keys that start with C<text:>, you can select just
 those using C<grep>:
 
     foreach my $key ( grep /^text:/, keys %hash ) {
-        my $value = $hash{$key}
+        my $value = $hash{$key};
         ...
     }
 
@@ -2140,7 +2140,7 @@ the original hashes as they were.
 
 If you want to preserve the original hashes, copy one hash (C<%hash1>)
 to a new hash (C<%new_hash>), then add the keys from the other hash
-(C<%hash2> to the new hash. Checking that the key already exists in
+(C<%hash2>) to the new hash. Checking that the key already exists in
 C<%new_hash> gives you a chance to decide what to do with the
 duplicates:
 
@@ -2525,7 +2525,7 @@ back the reference from the stringified form, at least without doing
 some extra work on your own.
 
 Remember that the entry in the hash will still be there even if
-the referenced variable  goes out of scope, and that it is entirely
+the referenced variable goes out of scope, and that it is entirely
 possible for Perl to subsequently allocate a different variable at
 the same address. This will mean a new variable might accidentally
 be associated with the value for an old.
