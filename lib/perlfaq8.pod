@@ -1126,7 +1126,7 @@ C<sysopen()>:
 
     use Fcntl;
     sysopen(my $fh, "/foo/somefile", O_WRONLY|O_NDELAY|O_CREAT, 0644)
-        or die "can't open /foo/somefile: $!":
+        or die "can't open /foo/somefile: $!";
 
 =head2 How do I tell the difference between errors from the shell and perl?
 
@@ -1316,7 +1316,7 @@ L<ExtUtils::MakeMaker> advocated. INSTALL_BASE does not support
 installing modules for multiple versions of Perl or different
 architectures under the same directory. You should consider whether you
 really want that and, if you do, use the older PREFIX and LIB
-settings. See the L<ExtUtils::Makemaker> documentation for more details.
+settings. See the L<ExtUtils::MakeMaker> documentation for more details.
 
 =head2 How do I add the directory my program lives in to the module/library search path?
 
