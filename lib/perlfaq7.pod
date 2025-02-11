@@ -672,7 +672,7 @@ Now the output shows that C<foo> doesn't get the C<@_> from its caller.
 However, using C<&> in the call still overrides the prototype of C<foo> if
 present:
 
-    sub foo ($$$) { print "Args infoo are: @_\n"; }
+    sub foo ($$$) { print "Args in foo are: @_\n"; }
 
     sub bar_1 { &foo; }
     sub bar_2 { &foo(); }
@@ -772,7 +772,7 @@ A totally different approach is to create a hash of function references.
 
     my %commands = (
         "happy" => \&joy,
-        "sad",  => \&sullen,
+        "sad"   => \&sullen,
         "done"  => sub { die "See ya!" },
         "mad"   => \&angry,
     );
@@ -841,7 +841,7 @@ diagnostics as L<Carp> does, use the C<caller> built-in:
         my( $package, $filename, $line ) = caller;
 
         print "I was called from package $package\n";
-        );
+    };
 
 By default, your program starts in package C<main>, so you will
 always be in some package.
