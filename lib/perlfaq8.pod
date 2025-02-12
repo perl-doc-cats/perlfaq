@@ -215,9 +215,7 @@ C<Cls> method:
     Win32::Console;
 
     my $OUT = Win32::Console->new(STD_OUTPUT_HANDLE);
-    my $clear_string = $OUT->Cls;
-
-    print $clear_screen;
+    $OUT->Cls;
 
 If you have a command-line program that does the job, you can call
 it in backticks to capture whatever it outputs so you can use it
