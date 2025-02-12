@@ -116,8 +116,8 @@ L<view online|http://perldoc.perl.org/perl.html>.
 (Some operating system distributions may ship the documentation in a different
 package; for instance, on Debian, you need to install the C<perl-doc> package.)
 
-Many good books have been written about Perl--see the section later in
-L<perlfaq2> for more details.
+Many good books have been written about Perl--see the L</"Perl Books"> section
+for more details.
 
 =head2 What is perl.com? Perl Mongers? pm.org? perl.org? cpan.org?
 
