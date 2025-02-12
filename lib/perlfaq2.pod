@@ -158,7 +158,7 @@ See L<What is CPAN?|/"What modules and extensions are available for Perl? What i
 
 =head2 Where can I post questions?
 
-There are many Perl L<mailing lists|lists.perl.org> for various
+There are many Perl L<mailing lists|https://lists.perl.org> for various
 topics, specifically the L<beginners list|http://lists.perl.org/list/beginners.html>
 may be of use.
 
