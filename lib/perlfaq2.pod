@@ -225,13 +225,13 @@ To determine if a module came with your version of Perl, you can
 install and use L<Module::CoreList>. It knows the modules (with their
 versions) included with each release of Perl:
 
-	$ corelist File::Copy
-	Data for 2023-07-02
-	File::Copy was first released with perl 5.002
+    $ corelist File::Copy
+    Data for 2023-07-02
+    File::Copy was first released with perl 5.002
 
-	$ corelist Business::ISBN
-	Data for 2023-07-02
-	Business::ISBN was not in CORE (or so I think)
+    $ corelist Business::ISBN
+    Data for 2023-07-02
+    Business::ISBN was not in CORE (or so I think)
 
 If the module does not come with Perl, report its issues
 using the tool that the particular module author decided to use, such as
