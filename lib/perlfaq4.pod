@@ -505,7 +505,7 @@ millennium.
 You could just store all your dates as a number and then subtract.
 Life isn't always that simple though.
 
-The L<Time::Piece> module, which comes with Perl, replaces L<localtime>
+The L<Time::Piece> module, which comes with Perl, replaces C<localtime>
 with a version that returns an object. It also overloads the comparison
 operators so you can compare them directly:
 
