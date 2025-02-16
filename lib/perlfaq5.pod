@@ -1116,7 +1116,7 @@ the filesystems, not of utime().
 X<print, to multiple files>
 
 To connect one filehandle to several output filehandles,
-you can use the L<IO::Tee> or L<Tie::FileHandle::Multiplex> modules.
+you can use the L<IO::Tee> or L<Tie::FileHandle::MultiPlex> modules.
 
 If you only have to do this once, you can print individually
 to each filehandle.
