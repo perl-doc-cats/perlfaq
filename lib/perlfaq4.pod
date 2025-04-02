@@ -409,9 +409,7 @@ not random enough (especially on Windows: see
 L<http://www.perlmonks.org/?node_id=803632>).
 Several CPAN modules in the C<Math> namespace implement better
 pseudorandom generators; see for example
-L<Math::Random::MT> ("Mersenne Twister", fast), or
-L<Math::TrulyRandom> (uses the imperfections in the system's
-timer to generate random numbers, which is rather slow).
+L<Math::Random::MT> ("Mersenne Twister", fast).
 More algorithms for random numbers are described in
 "Numerical Recipes in C" at L<http://www.nr.com/>
 
