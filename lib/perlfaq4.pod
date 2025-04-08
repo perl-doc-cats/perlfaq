@@ -409,11 +409,15 @@ not random enough (especially on Windows: see
 L<http://www.perlmonks.org/?node_id=803632>).
 Several CPAN modules in the C<Math> namespace implement better
 pseudorandom generators; see for example
-L<Math::Random::MT> ("Mersenne Twister", fast), or
-L<Math::TrulyRandom> (uses the imperfections in the system's
-timer to generate random numbers, which is rather slow).
+L<Math::Random::MT> ("Mersenne Twister", fast).
 More algorithms for random numbers are described in
 "Numerical Recipes in C" at L<http://www.nr.com/>
+
+There are several modules to sample system sources of random numbers,
+which are useful for security tokens and cryptography. For example,
+L<Crypt::URandom>.
+See the "CPAN Author's Guide to Random Data for Security" at
+L<https://security.metacpan.org/docs/guides/random-data-for-security.html>
 
 =head2 How do I get a random number between X and Y?
 
