@@ -2459,6 +2459,11 @@ What you get X<Pern (term)>when you do C<Perl++> twice. Doing it only once
 will curl your hair. You have to increment it eight times to shampoo your
 hair. Lather, rinse, iterate.
 
+=item phaser
+
+The lifetime (execution timeline) of a program is broken up into phases. A
+phaser is a block of code called during a specific execution phase.
+
 =item pipe
 
 A X<pipes, defined>direct B<connection> that carries the output of one
