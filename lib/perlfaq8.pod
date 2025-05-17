@@ -915,8 +915,7 @@ causes many inefficiencies.
 
 =head2 Can I use perl to run a telnet or ftp session?
 
-Try the L<Net::FTP>, L<TCP::Client>, and L<Net::Telnet> modules
-(available from CPAN).
+Try the L<Net::FTP> and L<Net::Telnet> modules (available from CPAN).
 L<http://www.cpan.org/scripts/netstuff/telnet.emul.shar> will also help
 for emulating the telnet protocol, but L<Net::Telnet> is quite
 probably easier to use.
