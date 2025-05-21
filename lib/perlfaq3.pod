@@ -296,8 +296,8 @@ or I<Mastering Perl>, chapter 5.
 L<perldebguts> documents creating a custom debugger if you need to
 create a special sort of profiler. brian d foy describes the process
 in I<The Perl Journal>, "Creating a Perl Debugger",
-L<http://www.ddj.com/184404522> , and "Profiling in Perl"
-L<http://www.ddj.com/184404580> .
+L<https://drdobbs.com/creating-a-perl-debugger/184404522> , and
+"Profiling in Perl" L<https://drdobbs.com/profiling-in-perl/184404580> .
 
 Perl.com has two interesting articles on profiling: "Profiling Perl",
 by Simon Cozens, L<https://www.perl.com/pub/2004/06/25/profiling.html/>
@@ -406,7 +406,7 @@ under Windows 95/98/NT/2000.
 
 =item OptiPerl
 
-L<http://www.optiperl.com/>
+L<https://www.uptiv.com/free/optiperl/>
 
 OptiPerl is a Windows IDE with simulated CGI environment, including
 debugger and syntax-highlighting editor.
@@ -575,7 +575,7 @@ Note that the perl-mode of emacs will have fits with C<"main'foo">
 are probably using C<"main::foo"> in new Perl code anyway, so this
 shouldn't be an issue.
 
-For CPerlMode, see L<http://www.emacswiki.org/cgi-bin/wiki/CPerlMode>
+For CPerlMode, see L<https://www.emacswiki.org/emacs/CPerlMode>
 
 =head2 How can I use curses with Perl?
 
