@@ -1,6 +1,6 @@
 Revision history for perlfaq
 
-{{$NEXT}}
+5.20250619  2025-06-19 00:43:39Z
   * fix reference to tty (PR#117, Jakub Wilk)
   * various typo fixes (numerous PRs: Elvin Aslanov, Dan Book, Dave Cross,
     vaitkus)
