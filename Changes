@@ -1,6 +1,12 @@
 Revision history for perlfaq
 
 {{$NEXT}}
+  * fix reference to tty (PR#117, Jakub Wilk)
+  * various typo fixes (numerous PRs: Elvin Aslanov, Dan Book, Dave Cross,
+    vaitkus)
+  * remove mention of TCP::Client (PR#139, vaitkus)
+  * modernized references to random number modules (PR#143, Robert Rothenberg)
+  * added "phaser" to glossary (PR#146, James E Keenan)
 
 5.20240218  2024-02-18 17:37:25Z
   * add entry for "UTF-8 string" in perlglossary (PR#99, Felipe Gasper)
